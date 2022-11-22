@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --h-height: 100px;
+    --f-height: 240px;
+}
+
+$main-font: "Rubik";
+$font-color: #181818;
+$title-color: #000;
+$color-1: #B479F8;
+$color-2: #F59626;
+$color-3: #E0C8FC;
+$transition: .3s ease;
+$radius: 10px;
+
+/* mixins */
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin box {
+    background: #FFFFFF;
+    box-shadow: 4px 7px 20px rgba(0, 0, 0, 0.14);
+    border-radius: 1em;
+}
+@mixin no-appearance {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    outline: none;
+}
+
+a, a:hover, a:focus, a:active {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+p, label, span, a, button, form, fieldset, legend, select, input, textarea, button, div, blockquote, cite, figure, figcaption, table, ul, ol, dl, address {
+    line-height: 100%;
+    margin-bottom: 0px;
+}
+
+
+button {
+    background: none;
+    border: none;
+    padding: unset;
+    display: block;
+    font-family: inherit;
+    outline: none;
+    color: inherit;
+}
+.btn {
+    @include flex-center;
+    padding: 0.9em 2em;
+    text-align: center;
+    transition: $transition;
+    width: fit-content;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: $radius;
+    &-1 {
+        @extend .btn;
+        color: #fff;
+        background: $color-1;
+        border: 1px solid $color-1;
+        &:hover, &:focus, &:active {
+            color: #fff;
+            background: $color-2;
+            border: 1px solid $color-2;
+        }
+    }
+    &-2 {
+        @extend .btn;
+        color: $color-1;
+        background: $color-3;
+        border: 1px solid $color-3;
+        &:hover, &:focus, &:active {
+            color: $color-1;
+            background: $color-3;
+            border: 1px solid $color-3;
+        }
+    }
+}
+
+
+/* Text styles */
+h1, .h1, h2, h3, h4, h5, h6 {
+    color: $title-color;
+    line-height: 100%;
+}
+h1, .h1 {
+    text-align: left;
+    font-size: 3.8em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+h2 {
+    text-align: left;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+h3 {
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+h4 {
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1em;
+}
+h5 {
+    text-align: left;
+    font-size: 1.25em;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+h6 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.fs {
+    &-08 {font-size: 0.8em;}
+    &-09 {font-size: 0.9em;}
+    &-10 {font-size: 1em;}
+    &-11 {font-size: 1.1em;}
+    &-12 {font-size: 1.2em;}
+    &-13 {font-size: 1.3em;}
+    &-14 {font-size: 1.4em;}
+    &-15 {font-size: 1.5em;}
+    &-16 {font-size: 1.6em;}
+    &-17 {font-size: 1.7em;}
+    &-18 {font-size: 1.8em;}
+    &-19 {font-size: 1.9em;}
+    &-20 {font-size: 2em;}
+    &-25 {font-size: 2.5em;}
+    &-30 {font-size: 3em;}
+    &-35 {font-size: 3.5em;}
+    &-40 {font-size: 4em;}
+}
+.fw {
+    &-3 {font-weight: 300;}
+    &-4 {font-weight: 400;}
+    &-5 {font-weight: 500;}
+    &-6 {font-weight: 600;}
+    &-7 {font-weight: 700;}
+    &-8 {font-weight: 800;}
+    &-9 {font-weight: 900;}
+}
+.color-2 {color: $color-2;}
+
+
+.container.custom-container {
+    @media (min-width: 1680px){
+        max-width: 1600px;
+    }
+}
+
+
+body {
+    margin: 0;
+    font-family: $main-font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    font-weight: 400;
+    color: $font-color;
+    overflow-x: hidden;
+    // @media (max-width: 1399px){
+    //     --h2: 140px;
+    // }
+}
+
+main {
+    min-height: calc(100vh - var(--h-height) - var(--f-height));
+}
+
+header {
+    height: var(--h-height);
+    nav {
+        ul {
+            display: flex;
+            list-style: none;
+            padding-left: 0px;
+            li {
+                &:not(:first-child){margin-left: 2.4em;}
+                a {
+                    font-size: 1.25em;
+                }
+            }
+        }
+    }
+}
+
+
+.sec-home-1 {
+    h1 {
+        color: #AAA8A8;
+        font-size: 1.8em;
+        font-weight: 300;
+        text-align: left;
+    }
+}
+
+.sec-home-2 {
+    margin-top: -1em;
+    .box {
+        @include box();
+        text-align: center;
+        padding: 1.5em;
+        hr {
+            height: 4px;
+            width: 60%;
+            margin: 1em auto;
+            border: none;
+            background-color: $color-2;
+            opacity: 1;
+        }
+        .btn-2 {
+            width: 90%;
+            margin: 1em auto 0;
+            padding: .5em 1em;
+        }
+    }
+}
+
+
+footer {
+    height: var(--f-height);
+    background-color: #131313;
+    color: rgba($color: #fff, $alpha: .83);
+    font-size: .9em;
+    .social {
+        @include flex-center();
+        list-style: none;
+        padding-left: 0px;
+        li {
+            &:not(:first-child){margin-left: .6em;}
+            a {
+                opacity: .8;
+                transition: $transition;
+                &:hover, &:focus, &:active {
+                    opacity: 1;
+                }
+                img {
+                    width: 2em;
+                    height: 2em;
+                }
+            }
+        }
+    }
+    address {
+        ul {
+            li:not(:first-child){margin-top: 1em;}
+        }
+    }
+}
