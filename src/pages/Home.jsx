@@ -1,14 +1,20 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, FreeMode  } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/free-mode'
 
 import portfolio from '../assets/imgs/portfolio.svg'
 import star from '../assets/imgs/star.svg'
 import stack from '../assets/imgs/stack.svg'
 import { FiChevronRight } from "react-icons/fi"
-
-import {Link} from 'react-router-dom'
 
 const Home = () => {
     return (
@@ -201,9 +207,78 @@ const Home = () => {
             </section>
 
             <section className='sec-home-5 mb-8'>
-                <Container className='custom-container mb-5'>
+                <Container className='custom-container'>
                     <h2>Спецпредожения</h2>
                     <h4>отличная возможность начать</h4>
+
+                    <Swiper
+                        className='mt-5'
+                        modules={[Navigation, FreeMode]}
+                        spaceBetween={20}
+                        slidesPerView={4}
+                        navigation
+                        freeMode={true}
+                        // breakpoints={{
+                        //     576: {
+                        //         spaceBetween: 15,
+                        //         slidesPerView: 'auto'
+                        //     },
+                        //     768: {
+                        //         spaceBetween: 30,
+                        //         slidesPerView: 'auto'
+                        //     },
+                        //     1400: {
+                        //         spaceBetween: 50,
+                        //         slidesPerView: 'auto'
+                        //     },
+                        // }}
+                        >
+                        <SwiperSlide>
+                            <figure className='offer'>
+                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
+                                <figcaption>
+                                    <h3>Lorem ipsum dolor</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
+                                </figcaption>
+                            </figure>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <figure className='offer'>
+                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
+                                <figcaption>
+                                    <h3>Lorem ipsum dolor</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
+                                </figcaption>
+                            </figure>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <figure className='offer'>
+                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
+                                <figcaption>
+                                    <h3>Lorem ipsum dolor</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
+                                </figcaption>
+                            </figure>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <figure className='offer'>
+                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
+                                <figcaption>
+                                    <h3>Lorem ipsum dolor</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
+                                </figcaption>
+                            </figure>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <figure className='offer'>
+                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
+                                <figcaption>
+                                    <h3>Lorem ipsum dolor</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
+                                </figcaption>
+                            </figure>
+                        </SwiperSlide>
+                    </Swiper>
                 </Container>
             </section>
 
