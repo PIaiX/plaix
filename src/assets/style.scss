@@ -6,11 +6,14 @@
 }
 
 $main-font: "Rubik";
+$font-script: "Brush";
 $font-color: #181818;
 $title-color: #000;
 $color-1: #B479F8;
 $color-2: #F59626;
 $color-3: #E0C8FC;
+$color-4: #9A4AF6;
+$gray: #636363;
 $transition: .3s ease;
 $radius: 10px;
 
@@ -24,6 +27,14 @@ $radius: 10px;
     background: #FFFFFF;
     box-shadow: 4px 7px 20px rgba(0, 0, 0, 0.14);
     border-radius: 1em;
+    hr {
+        height: 4px;
+        width: 60%;
+        margin: 1em auto;
+        border: none;
+        background-color: $color-2;
+        opacity: 1;
+    }
 }
 @mixin no-appearance {
     appearance: none;
@@ -56,7 +67,7 @@ button {
 }
 .btn {
     @include flex-center;
-    padding: 0.9em 2em;
+    padding: 0.8em 2em;
     text-align: center;
     transition: $transition;
     width: fit-content;
@@ -77,13 +88,13 @@ button {
     }
     &-2 {
         @extend .btn;
-        color: $color-1;
+        color: $color-4;
         background: $color-3;
         border: 1px solid $color-3;
         &:hover, &:focus, &:active {
-            color: $color-1;
-            background: $color-3;
-            border: 1px solid $color-3;
+            color: $color-3;
+            background: $color-4;
+            border: 1px solid $color-4;
         }
     }
 }
@@ -102,9 +113,15 @@ h1, .h1 {
 }
 h2 {
     text-align: left;
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-bottom: 1em;
+    font-size: 2.4em;
+    font-weight: 700;
+    margin-bottom: .5em;
+    &::before {
+        content: '⎯⎯⎯⎯';
+        font-weight: 400;
+        color: $color-4;
+        margin-right: .5em;
+    }
 }
 h3 {
     text-align: center;
@@ -113,9 +130,10 @@ h3 {
 }
 h4 {
     text-align: left;
-    font-size: 1.5em;
-    font-weight: 500;
-    text-align: center;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: $color-4;
+    text-transform: uppercase;
     margin-bottom: 1em;
 }
 h5 {
@@ -158,12 +176,16 @@ h6 {
     &-9 {font-weight: 900;}
 }
 .color-2 {color: $color-2;}
-
+.accent {color: $color-4;}
+.script {font-family: $font-script;}
 
 .container.custom-container {
     @media (min-width: 1680px){
         max-width: 1600px;
     }
+}
+.mb-8 {
+    margin-bottom: 8em;
 }
 
 
@@ -218,18 +240,70 @@ header {
         @include box();
         text-align: center;
         padding: 1.5em;
-        hr {
-            height: 4px;
-            width: 60%;
-            margin: 1em auto;
-            border: none;
-            background-color: $color-2;
-            opacity: 1;
-        }
         .btn-2 {
             width: 90%;
             margin: 1em auto 0;
             padding: .5em 1em;
+        }
+    }
+}
+
+
+.sec-home-3 {
+    background: url(imgs/bg/bg-1.svg) no-repeat;
+    background-size: cover;
+}
+.service-card {
+    @include box();
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    figcaption {
+        padding: 1.3em;
+        p {
+            color: $gray;
+            font-size: 1.1em;
+            line-height: 120%;
+        }
+        .link {
+            color: $color-4;
+            font-size: 1.2em;
+            margin-top: 1em;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+
+.sec-home-4 {
+    background: url(imgs/bg/bg-2.png) no-repeat;
+    background-position: right bottom;
+    ul {
+        li {
+            padding-left: 2.4em;
+            position: relative;
+            &::before {
+                content: '▶';
+                color: $color-2;
+                font-size: 2em;
+                position: absolute;
+                top: 1em;
+                left: 0em;
+
+            }
+            &:not(:first-child){
+                margin-top: 2em;
+            }
+            h3 {
+                margin-bottom: .75em;
+                text-align: left;
+            }
         }
     }
 }

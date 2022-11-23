@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Brush';
+    src: local('Brush font one'), local('Brush-font-one'),
+        url('Brush font one.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -10,6 +10,7 @@ import vk from '../assets/imgs/vk.png'
 import tg from '../assets/imgs/tg.png'
 import wapp from '../assets/imgs/wapp.png'
 import fb from '../assets/imgs/fb.png'
+import online from '../assets/imgs/Online.svg'
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 
 const Footer = () => {
@@ -49,6 +50,11 @@ const Footer = () => {
                             <li>
                                 <a href="/">
                                     <img src={fb} alt="fb" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    <img src={online} alt="online" />
                                 </a>
                             </li>
                         </ul>

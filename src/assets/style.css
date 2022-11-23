@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --h-height: 100px;
@@ -31,7 +32,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.9em 2em;
+  padding: 0.8em 2em;
   text-align: center;
   transition: 0.3s ease;
   width: -webkit-fit-content;
@@ -53,14 +54,14 @@ button {
   border: 1px solid #F59626;
 }
 .btn-2 {
-  color: #B479F8;
+  color: #9A4AF6;
   background: #E0C8FC;
   border: 1px solid #E0C8FC;
 }
 .btn-2:hover, .btn-2:focus, .btn-2:active {
-  color: #B479F8;
-  background: #E0C8FC;
-  border: 1px solid #E0C8FC;
+  color: #E0C8FC;
+  background: #9A4AF6;
+  border: 1px solid #9A4AF6;
 }
 
 /* Text styles */
@@ -78,9 +79,15 @@ h1, .h1 {
 
 h2 {
   text-align: left;
-  font-size: 2.5em;
-  font-weight: 600;
-  margin-bottom: 1em;
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+h2::before {
+  content: "⎯⎯⎯⎯";
+  font-weight: 400;
+  color: #9A4AF6;
+  margin-right: 0.5em;
 }
 
 h3 {
@@ -91,9 +98,10 @@ h3 {
 
 h4 {
   text-align: left;
-  font-size: 1.5em;
-  font-weight: 500;
-  text-align: center;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #9A4AF6;
+  text-transform: uppercase;
   margin-bottom: 1em;
 }
 
@@ -188,10 +196,22 @@ h6 {
   color: #F59626;
 }
 
+.accent {
+  color: #9A4AF6;
+}
+
+.script {
+  font-family: "Brush";
+}
+
 @media (min-width: 1680px) {
   .container.custom-container {
     max-width: 1600px;
   }
+}
+
+.mb-8 {
+  margin-bottom: 8em;
 }
 
 body {
@@ -253,6 +273,73 @@ header nav ul li a {
   width: 90%;
   margin: 1em auto 0;
   padding: 0.5em 1em;
+}
+
+.sec-home-3 {
+  background: url(imgs/bg/bg-1.svg) no-repeat;
+  background-size: cover;
+}
+
+.service-card {
+  background: #FFFFFF;
+  box-shadow: 4px 7px 20px rgba(0, 0, 0, 0.14);
+  border-radius: 1em;
+  overflow: hidden;
+}
+.service-card hr {
+  height: 4px;
+  width: 60%;
+  margin: 1em auto;
+  border: none;
+  background-color: #F59626;
+  opacity: 1;
+}
+.service-card img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.service-card figcaption {
+  padding: 1.3em;
+}
+.service-card figcaption p {
+  color: #636363;
+  font-size: 1.1em;
+  line-height: 120%;
+}
+.service-card figcaption .link {
+  color: #9A4AF6;
+  font-size: 1.2em;
+  margin-top: 1em;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  display: block;
+  text-align: center;
+}
+
+.sec-home-4 {
+  background: url(imgs/bg/bg-2.png) no-repeat;
+  background-position: right bottom;
+}
+.sec-home-4 ul li {
+  padding-left: 2.4em;
+  position: relative;
+}
+.sec-home-4 ul li::before {
+  content: "▶";
+  color: #F59626;
+  font-size: 2em;
+  position: absolute;
+  top: 1em;
+  left: 0em;
+}
+.sec-home-4 ul li:not(:first-child) {
+  margin-top: 2em;
+}
+.sec-home-4 ul li h3 {
+  margin-bottom: 0.75em;
+  text-align: left;
 }
 
 footer {
