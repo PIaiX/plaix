@@ -10,10 +10,11 @@ $font-script: "Brush";
 $font-color: #181818;
 $title-color: #000;
 $color-1: #B479F8;
-$color-2: #F59626;
+$color-2: #F8AA4E;
 $color-3: #E0C8FC;
 $color-4: #9A4AF6;
 $color-5: #FF65E8;
+$color-6: #F5A23F;
 $gray: #636363;
 $transition: .3s ease;
 $radius: 10px;
@@ -81,10 +82,18 @@ button {
         color: #fff;
         background: $color-1;
         border: 1px solid $color-1;
-        &:hover, &:focus, &:active {
+        &:hover, &:focus {
+            color: #fff;
+            background: $color-1;
+            border: 1px solid $color-1;
+            box-shadow: 0px 0px .75em rgba($color: $color-4, $alpha: .3);
+            animation: pulse .4s linear;
+        }
+        &:active {
             color: #fff;
             background: $color-2;
             border: 1px solid $color-2;
+            box-shadow: none;
         }
     }
     &-2 {
@@ -93,12 +102,43 @@ button {
         background: $color-3;
         border: 1px solid $color-3;
         &:hover, &:focus, &:active {
-            color: $color-3;
-            background: $color-4;
-            border: 1px solid $color-4;
+            color: $color-4;
+            background: $color-3;
+            border: 1px solid $color-3;
+            box-shadow: 0px 0px .75em rgba($color: $color-4, $alpha: .3);
+            animation: pulse .4s linear;
+        }
+        &:active {
+            color: $color-4;
+            background: $color-2;
+            border: 1px solid $color-2;
+            box-shadow: none;
+        }
+    }
+    &-3 {
+        @extend .btn;
+        color: #fff;
+        background: $color-2;
+        border: 1px solid $color-2;
+        &:hover, &:focus, &:active {
+            color: #fff;
+            background: $color-6;
+            border: 1px solid $color-6;
+            
         }
     }
 }
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px .75em rgba($color: $color-4, $alpha: .3);
+    }
+    50% {
+        box-shadow: 0px 0px .75em rgba($color: $color-4, $alpha: .6);
+    }
+    100% {
+        box-shadow: 0px 0px .75em rgba($color: $color-4, $alpha: .3);
+    }
+  }
 
 
 /* Text styles */

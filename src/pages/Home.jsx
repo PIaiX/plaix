@@ -294,9 +294,23 @@ const Home = () => {
             </section>
 
             <section className='sec-home-6 mb-8'>
-                <Container className='custom-container mb-5'>
+                <Container className='custom-container'>
                     <h2>Поработаем?</h2>
                     <h4>Заполните форму и наш менеджер свяжется с вами в ближайшее время</h4>
+
+                    <Row lg={2} className='mt-5'>
+                        <Col>
+                            <button type='button' className='btn-3 fs-11 mx-auto'>Заполнить бриф</button>
+                        </Col>
+                        <Col>
+                            <form action="">
+                                <div className="fw-5">Телефон</div>
+                                <input type="tel" placeholder='Телефон'/>
+                                <div className="fw-5">Комментарий</div>
+                                <textarea rows="5" placeholder='Ваш комментарий'></textarea>
+                            </form>
+                        </Col>
+                    </Row>
                 </Container>
             </section>
 

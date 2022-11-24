@@ -28,7 +28,7 @@ button {
   color: inherit;
 }
 
-.btn, .btn-2, .btn-1 {
+.btn, .btn-3, .btn-2, .btn-1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,10 +48,19 @@ button {
   background: #B479F8;
   border: 1px solid #B479F8;
 }
-.btn-1:hover, .btn-1:focus, .btn-1:active {
+.btn-1:hover, .btn-1:focus {
   color: #fff;
-  background: #F59626;
-  border: 1px solid #F59626;
+  background: #B479F8;
+  border: 1px solid #B479F8;
+  box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.3);
+  -webkit-animation: pulse 0.4s linear;
+          animation: pulse 0.4s linear;
+}
+.btn-1:active {
+  color: #fff;
+  background: #F8AA4E;
+  border: 1px solid #F8AA4E;
+  box-shadow: none;
 }
 .btn-2 {
   color: #9A4AF6;
@@ -59,11 +68,53 @@ button {
   border: 1px solid #E0C8FC;
 }
 .btn-2:hover, .btn-2:focus, .btn-2:active {
-  color: #E0C8FC;
-  background: #9A4AF6;
-  border: 1px solid #9A4AF6;
+  color: #9A4AF6;
+  background: #E0C8FC;
+  border: 1px solid #E0C8FC;
+  box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.3);
+  -webkit-animation: pulse 0.4s linear;
+          animation: pulse 0.4s linear;
+}
+.btn-2:active {
+  color: #9A4AF6;
+  background: #F8AA4E;
+  border: 1px solid #F8AA4E;
+  box-shadow: none;
+}
+.btn-3 {
+  color: #fff;
+  background: #F8AA4E;
+  border: 1px solid #F8AA4E;
+}
+.btn-3:hover, .btn-3:focus, .btn-3:active {
+  color: #fff;
+  background: #F5A23F;
+  border: 1px solid #F5A23F;
 }
 
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.3);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 0.75em rgba(154, 74, 246, 0.3);
+  }
+}
 /* Text styles */
 h1, .h1, h2, h3, h4, h5, h6 {
   color: #000;
@@ -193,7 +244,7 @@ h6 {
 }
 
 .color-2 {
-  color: #F59626;
+  color: #F8AA4E;
 }
 
 .accent {
@@ -266,7 +317,7 @@ header nav ul li a {
   width: 60%;
   margin: 1em auto;
   border: none;
-  background-color: #F59626;
+  background-color: #F8AA4E;
   opacity: 1;
 }
 .sec-home-2 .box .btn-2 {
@@ -291,7 +342,7 @@ header nav ul li a {
   width: 60%;
   margin: 1em auto;
   border: none;
-  background-color: #F59626;
+  background-color: #F8AA4E;
   opacity: 1;
 }
 .service-card img {
@@ -328,7 +379,7 @@ header nav ul li a {
 }
 .sec-home-4 ul li::before {
   content: "▶";
-  color: #F59626;
+  color: #F8AA4E;
   font-size: 2em;
   position: absolute;
   top: 1em;
