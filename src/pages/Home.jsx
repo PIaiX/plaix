@@ -211,74 +211,85 @@ const Home = () => {
                     <h2>Спецпредожения</h2>
                     <h4>отличная возможность начать</h4>
 
-                    <Swiper
-                        className='mt-5'
-                        modules={[Navigation, FreeMode]}
-                        spaceBetween={20}
-                        slidesPerView={4}
-                        navigation
-                        freeMode={true}
-                        // breakpoints={{
-                        //     576: {
-                        //         spaceBetween: 15,
-                        //         slidesPerView: 'auto'
-                        //     },
-                        //     768: {
-                        //         spaceBetween: 30,
-                        //         slidesPerView: 'auto'
-                        //     },
-                        //     1400: {
-                        //         spaceBetween: 50,
-                        //         slidesPerView: 'auto'
-                        //     },
-                        // }}
-                        >
-                        <SwiperSlide>
-                            <figure className='offer'>
-                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
-                                <figcaption>
-                                    <h3>Lorem ipsum dolor</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
-                                </figcaption>
-                            </figure>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <figure className='offer'>
-                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
-                                <figcaption>
-                                    <h3>Lorem ipsum dolor</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
-                                </figcaption>
-                            </figure>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <figure className='offer'>
-                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
-                                <figcaption>
-                                    <h3>Lorem ipsum dolor</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
-                                </figcaption>
-                            </figure>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <figure className='offer'>
-                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
-                                <figcaption>
-                                    <h3>Lorem ipsum dolor</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
-                                </figcaption>
-                            </figure>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <figure className='offer'>
-                                <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
-                                <figcaption>
-                                    <h3>Lorem ipsum dolor</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur </p>
-                                </figcaption>
-                            </figure>
-                        </SwiperSlide>
-                    </Swiper>
+                    <div className="position-relative">
+                        <Swiper
+                            className='mt-5'
+                            modules={[Navigation, FreeMode]}
+                            spaceBetween={20}
+                            slidesPerView={4}
+                            navigation
+                            freeMode={true}
+                            // breakpoints={{
+                            //     576: {
+                            //         spaceBetween: 15,
+                            //         slidesPerView: 'auto'
+                            //     },
+                            //     768: {
+                            //         spaceBetween: 30,
+                            //         slidesPerView: 'auto'
+                            //     },
+                            //     1400: {
+                            //         spaceBetween: 50,
+                            //         slidesPerView: 'auto'
+                            //     },
+                            // }}
+                            >
+                            <SwiperSlide>
+                                <figure className='offer'>
+                                    <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
+                                    <figcaption>
+                                        <h2>Lorem ipsum dolor</h2>
+                                        <h4 className='accent-1'>Lorem ipsum dolor sit amet, consectetur </h4>
+                                    </figcaption>
+                                </figure>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <figure className='offer'>
+                                    <img src="imgs/offer-bg-2.jfif" alt="Lorem ipsum dolor" />
+                                    <figcaption>
+                                        <h2>Lorem ipsum dolor</h2>
+                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
+                                    </figcaption>
+                                </figure>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <figure className='offer'>
+                                    <img src="imgs/offer-bg-3.jfif" alt="Lorem ipsum dolor" />
+                                    <figcaption>
+                                        <h2 className='accent-2'>Lorem ipsum dolor</h2>
+                                        <h4 className='accent-1'>Lorem ipsum dolor sit amet, consectetur </h4>
+                                    </figcaption>
+                                </figure>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <figure className='offer'>
+                                    <img src="imgs/offer-bg-4.jfif" alt="Lorem ipsum dolor" />
+                                    <figcaption>
+                                        <h2>Lorem ipsum dolor</h2>
+                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
+                                    </figcaption>
+                                </figure>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <figure className='offer'>
+                                    <img src="imgs/offer-bg-5.png" alt="Lorem ipsum dolor" />
+                                    <figcaption>
+                                        <h2>Lorem ipsum dolor</h2>
+                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
+                                    </figcaption>
+                                </figure>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <figure className='offer'>
+                                    <img src="imgs/offer-bg-6.png" alt="Lorem ipsum dolor" />
+                                    <figcaption>
+                                        <h2>Lorem ipsum dolor</h2>
+                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
+                                    </figcaption>
+                                </figure>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
                 </Container>
             </section>
 

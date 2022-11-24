@@ -342,6 +342,47 @@ header nav ul li a {
   text-align: left;
 }
 
+.swiper {
+  position: unset;
+}
+.swiper-button, .swiper-button-prev, .swiper-button-next {
+  background-color: #fff;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+}
+.swiper-button-next {
+  right: -2em;
+}
+.swiper-button-prev {
+  left: -2em;
+}
+.swiper-button::after, .swiper-button-next::after, .swiper-button-prev::after {
+  color: #B479F8;
+  font-weight: 700;
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+.swiper-button:hover, .swiper-button-next:hover, .swiper-button-prev:hover, .swiper-button:focus, .swiper-button-next:focus, .swiper-button-prev:focus {
+  background-color: #B479F8;
+}
+.swiper-button:hover::after, .swiper-button-next:hover::after, .swiper-button-prev:hover::after, .swiper-button:focus::after, .swiper-button-next:focus::after, .swiper-button-prev:focus::after {
+  color: #fff;
+}
+.swiper-button:active, .swiper-button-next:active, .swiper-button-prev:active {
+  background-color: #9A4AF6;
+}
+.swiper-button:active::after, .swiper-button-next:active::after, .swiper-button-prev:active::after {
+  color: #fff;
+}
+
 .offer {
   border: 3px solid #9A4AF6;
   border-radius: 1.25em;
@@ -364,7 +405,29 @@ header nav ul li a {
   z-index: 2;
   width: 100%;
   height: 100%;
-  padding: 1em;
+  padding: 3em 2em;
+  color: #fff;
+}
+.offer figcaption h2 {
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: left;
+}
+.offer figcaption h2::before {
+  content: unset;
+}
+.offer figcaption h4 {
+  color: #fff;
+  text-align: left;
+  line-height: 120%;
+}
+.offer figcaption .accent-1 {
+  color: #9A4AF6;
+}
+.offer figcaption .accent-2 {
+  color: #FF65E8;
 }
 
 footer {

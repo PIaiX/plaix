@@ -13,6 +13,7 @@ $color-1: #B479F8;
 $color-2: #F59626;
 $color-3: #E0C8FC;
 $color-4: #9A4AF6;
+$color-5: #FF65E8;
 $gray: #636363;
 $transition: .3s ease;
 $radius: 10px;
@@ -308,6 +309,60 @@ header {
     }
 }
 
+.swiper {
+    position: unset;
+    &-button {
+        background-color: #fff;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.18);
+        @include flex-center();
+        margin-top: 0px;
+        transform: translateY(-50%);
+        transition: $transition;
+        &-next {
+            @extend .swiper-button;
+            right: -2em;
+        }
+        &-prev {
+            @extend .swiper-button;
+            left: -2em;
+        }
+        &::after {
+            color: $color-1;
+            font-weight: 700;
+            font-size: 1.25em;
+            line-height: 1.2em;
+        }
+        &:hover, &:focus {
+            background-color: $color-1;
+            &::after {
+                color: #fff;
+            }
+        }
+        &:active {
+            background-color: $color-4;
+            &::after {
+                color: #fff;
+            }
+        }
+    }
+    // &-button-next, &-button-prev {
+    //     background-color: #fff;
+    //     width: 4em;
+    //     height: 4em;
+    //     border-radius: 50%;
+    //     box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.18);
+    //     @include flex-center();
+    //     &::after {
+    //         color: $color-1;
+    //         font-weight: 700;
+    //         font-size: 1.25em;
+    //         line-height: 1.2em;
+    //     }
+    // }
+}
 
 .offer {
     border: 3px solid $color-4;
@@ -329,7 +384,23 @@ header {
         z-index: 2;
         width: 100%;
         height: 100%;
-        padding: 1em;
+        padding: 3em 2em;
+        color: #fff;
+        h2 {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: left;
+            &::before {content: unset;}
+        }
+        h4 {
+            color: #fff;
+            text-align: left;
+            line-height: 120%;
+        }
+        .accent-1 {color: $color-4;}
+        .accent-2 {color: $color-5;}
     }
 }
 
