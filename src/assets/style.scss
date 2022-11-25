@@ -58,6 +58,59 @@ p, label, span, a, button, form, fieldset, legend, select, input, textarea, butt
 }
 
 
+/* Form elements */
+input, textarea {
+    background: #F6F6F6;
+    border: none;
+    border-radius: 4px;
+    padding: 1em 1.5em;
+    width: 100%;
+    line-height: normal;
+    outline: none;
+    display: block;
+    transition: $transition;
+    &:-moz-placeholder, &::-moz-placeholder,
+    &::-webkit-input-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder {
+        color: #B7B7B7;
+        font-weight: 400;
+    }
+    &::placeholder {
+        color: #B7B7B7;
+        font-weight: 400;
+    }
+}
+input {
+    &[type='checkbox']{
+        @include no-appearance;
+        width: 1em;
+        height: 1em;
+        background-color: #fff;
+        background-image: url(imgs/mark.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 80%;
+        border: 1px solid #ABABAB;
+        border-radius: .25em;
+        box-shadow: none;
+        padding: 0px;
+        margin: 0px;
+        transition: $transition;
+        &:checked {
+            border: 1px solid $color-1;
+            background-color: $color-1;
+        }
+    }
+}
+label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    span {
+        flex:1;
+        margin-left: .6em;
+    }
+}
+
 button {
     background: none;
     border: none;
@@ -125,6 +178,16 @@ button {
             background: $color-6;
             border: 1px solid $color-6;
             
+        }
+    }
+    &-4 {
+        @extend .btn;
+        color: #fff;
+        background: transparent;
+        border: 1px solid #fff;
+        &:hover, &:focus, &:active {
+            color: $color-4;
+            background: #fff;
         }
     }
 }
@@ -443,6 +506,96 @@ header {
         .accent-2 {color: $color-5;}
     }
 }
+
+
+.imgs {
+    position: relative;
+    filter: drop-shadow(.75em .75em 1em rgba(0, 0, 0, .35));
+    .bg {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    }
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: 50%;
+        height: 25%;
+        transform: translate(-50%, -50%);
+    }
+}
+.form {
+    background: #FFFFFF;
+    box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.07);
+    .top {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        button {
+            background-color: #F4F4F4;
+            color: #AAA8A8;
+            flex: 1;
+            padding: 1em;
+            font-size: 1.1em;
+        }
+    }
+    form {
+        padding: 2em;
+    }
+}
+
+article.preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2em;
+    &:hover {
+        figcaption {
+            top: 0%;
+        }
+    }
+    figure {
+        position: relative;
+        img {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            z-index: 1;
+        }
+        figcaption {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: 2;
+            background-color: rgba($color: $color-1, $alpha: 1.0);
+            color: #fff;
+            padding: 1em;
+            transition: height $transition;
+            h5 {color: #fff;}
+            .bottom {
+                list-style: none;
+                padding-left: 0px;
+                display: flex;
+                align-items: center;
+                li {
+                    @include flex-center();
+                    &:not(:first-child) {
+                        margin-left: 2em;
+                    }
+                    span {
+                        font-weight: 300;
+                        margin-left: .5em;
+                    }
+                }
+                
+            }
+            button {display: none;}
+        }
+    }
+}
+
 
 footer {
     height: var(--f-height);

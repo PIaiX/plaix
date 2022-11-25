@@ -15,6 +15,8 @@ import portfolio from '../assets/imgs/portfolio.svg'
 import star from '../assets/imgs/star.svg'
 import stack from '../assets/imgs/stack.svg'
 import { FiChevronRight } from "react-icons/fi"
+import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
+import ArticlePreview from '../components/ArticlePreview'
 
 const Home = () => {
     return (
@@ -186,19 +188,8 @@ const Home = () => {
                             </Row>
                         </Col>
                         <Col>
-                            <svg width="423" height="520" viewBox="0 0 423 520" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M225.339 0.534736C295.998 6.28507 338.28 74.6493 376.865 133.51C408.896 182.372 428.448 237.19 417.721 294.009C406.534 353.269 371.401 403.57 319.81 435.733C258.577 473.907 180.012 518.833 117.825 480.97C57.2067 444.062 88.0031 354.698 74.0104 286.076C61.1979 223.242 11.4716 162.697 41.4078 106.21C75.9625 41.0089 150.53 -5.55326 225.339 0.534736Z" fill="#E0C8FC"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M192.196 17.542C261.909 23.3701 303.642 92.6596 341.725 152.317C373.339 201.84 392.643 257.4 382.076 314.989C371.055 375.05 336.407 426.032 285.517 458.63C225.115 497.321 147.616 542.855 86.2539 504.48C26.4387 467.072 56.798 376.498 42.9747 306.948C30.3173 243.263 -18.758 181.898 10.7614 124.647C44.835 58.5639 118.39 11.3716 192.196 17.542Z" stroke="#9A4AF6" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M207.196 3.54197C276.909 9.37013 318.642 78.6596 356.725 138.317C388.339 187.84 407.643 243.4 397.076 300.989C386.055 361.05 351.407 412.032 300.517 444.63C240.115 483.321 162.616 528.855 101.254 490.48C41.4387 453.072 71.798 362.498 57.9747 292.948C45.3173 229.263 -3.75801 167.898 25.7614 110.647C59.835 44.5639 133.39 -2.62842 207.196 3.54197Z" stroke="#9A4AF6" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M207.203 3.52758C276.917 9.20095 318.633 76.6503 356.701 134.723C388.304 182.931 407.594 237.016 397.011 293.075C385.973 351.541 351.311 401.169 300.41 432.901C239.996 470.565 162.483 514.889 101.128 477.533C41.3209 441.119 71.7051 352.951 57.8997 285.247C45.2586 223.254 -3.80218 163.519 25.7334 107.789C59.8256 43.4601 133.396 -2.47894 207.203 3.52758Z" fill="#C4C4C4"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M207.203 3.52758C276.917 9.20095 318.633 76.6503 356.701 134.723C388.304 182.931 407.594 237.016 397.011 293.075C385.973 351.541 351.311 401.169 300.41 432.901C239.996 470.565 162.483 514.889 101.128 477.533C41.3209 441.119 71.7051 352.951 57.8997 285.247C45.2586 223.254 -3.80218 163.519 25.7334 107.789C59.8256 43.4601 133.396 -2.47894 207.203 3.52758Z" fill="url(#pattern0)"/>
-                                <defs>
-                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                    <use xlinkHref="#photo" transform="translate(-0.215284 -0.0640599) scale(0.0014326 0.00116573)"/>
-                                    </pattern>
-                                    <image xlinkHref="imgs/photo.jfif" id="photo" x="0" y="0" width="977" height="976"/>
-                                </defs>
-                            </svg>
+                        <img src="imgs/subtract2.png" alt="subtract" />
+                            <img src="imgs/subtract.png" alt="subtract" />
 
                             <div className="script fs-30">Дизайнер</div>
                         </Col>
@@ -300,15 +291,30 @@ const Home = () => {
 
                     <Row lg={2} className='mt-5'>
                         <Col>
-                            <button type='button' className='btn-3 fs-11 mx-auto'>Заполнить бриф</button>
+                            <div className="imgs">
+                                <img src="imgs/monitor.png" alt="monitor" className='bg'/>
+                                <Logo className='logo'/>
+                            </div>
+                            <button type='button' className='btn-3 fs-11 mx-auto mt-5'>Заполнить бриф</button>
                         </Col>
                         <Col>
+                        <div className="form">
+                            <div className="top">
+                                <button type='button'>Мне нужна консультация</button>
+                                <button type='button'>У меня есть проект</button>
+                            </div>
                             <form action="">
-                                <div className="fw-5">Телефон</div>
-                                <input type="tel" placeholder='Телефон'/>
-                                <div className="fw-5">Комментарий</div>
+                                <div className="fw-5 mb-2">Телефон</div>
+                                <input type="tel" placeholder='Телефон' className='mb-3'/>
+                                <div className="fw-5 mb-2">Комментарий</div>
                                 <textarea rows="5" placeholder='Ваш комментарий'></textarea>
+                                <label className='mt-4'>
+                                    <input type="checkbox"/>
+                                    <span>Я согласен на обработку персональных данных</span>
+                                </label>
+                                <button type='button' className='btn-1 fs-11 mx-auto mt-4'>Оставить заявку</button>
                             </form>
+                        </div>
                         </Col>
                     </Row>
                 </Container>
@@ -318,6 +324,33 @@ const Home = () => {
                 <Container className='custom-container mb-5'>
                     <h2>Блог</h2>
                     <h4>Lorem ipsum dolor sit amet</h4>
+                    <Swiper
+                            className='mt-5'
+                            modules={[Navigation]}
+                            spaceBetween={20}
+                            slidesPerView={3}
+                            navigation
+                            >
+                            <SwiperSlide>
+                                <ArticlePreview/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className='preview'>
+                                    <figure>
+                                        <img src="imgs/offer-bg-5.png" alt="" />
+                                        <figcaption>
+                                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                                            <div className='bottom'>
+                                                <span>5 мин</span>
+                                                <span>128</span>
+                                                <span>12.01.2022</span>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                            </SwiperSlide>
+
+                        </Swiper>
                 </Container>
             </section>
         </main>
