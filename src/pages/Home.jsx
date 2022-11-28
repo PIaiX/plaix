@@ -14,9 +14,11 @@ import 'swiper/css/free-mode'
 import portfolio from '../assets/imgs/portfolio.svg'
 import star from '../assets/imgs/star.svg'
 import stack from '../assets/imgs/stack.svg'
+import plant from '../assets/imgs/plant.png'
 import { FiChevronRight } from "react-icons/fi"
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import ArticlePreview from '../components/ArticlePreview'
+import FormCallback from '../components/FormCallback'
 
 const Home = () => {
     return (
@@ -284,12 +286,12 @@ const Home = () => {
                 </Container>
             </section>
 
-            <section className='sec-home-6 mb-8'>
+            <section className='sec-home-6 mb-5'>
                 <Container className='custom-container'>
                     <h2>Поработаем?</h2>
                     <h4>Заполните форму и наш менеджер свяжется с вами в ближайшее время</h4>
 
-                    <Row lg={2} className='mt-5'>
+                    <Row lg={2} className='mt-5 gx-5'>
                         <Col>
                             <div className="imgs">
                                 <img src="imgs/monitor.png" alt="monitor" className='bg'/>
@@ -298,26 +300,11 @@ const Home = () => {
                             <button type='button' className='btn-3 fs-11 mx-auto mt-5'>Заполнить бриф</button>
                         </Col>
                         <Col>
-                        <div className="form">
-                            <div className="top">
-                                <button type='button'>Мне нужна консультация</button>
-                                <button type='button'>У меня есть проект</button>
-                            </div>
-                            <form action="">
-                                <div className="fw-5 mb-2">Телефон</div>
-                                <input type="tel" placeholder='Телефон' className='mb-3'/>
-                                <div className="fw-5 mb-2">Комментарий</div>
-                                <textarea rows="5" placeholder='Ваш комментарий'></textarea>
-                                <label className='mt-4'>
-                                    <input type="checkbox"/>
-                                    <span>Я согласен на обработку персональных данных</span>
-                                </label>
-                                <button type='button' className='btn-1 fs-11 mx-auto mt-4'>Оставить заявку</button>
-                            </form>
-                        </div>
+                            <FormCallback />
                         </Col>
                     </Row>
                 </Container>
+                <img src={plant} alt="plant" className='bg-sec'/>
             </section>
 
             <section className='sec-home-7 mb-8'>
@@ -325,32 +312,32 @@ const Home = () => {
                     <h2>Блог</h2>
                     <h4>Lorem ipsum dolor sit amet</h4>
                     <Swiper
-                            className='mt-5'
-                            modules={[Navigation]}
-                            spaceBetween={20}
-                            slidesPerView={3}
-                            navigation
-                            >
-                            <SwiperSlide>
-                                <ArticlePreview/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <article className='preview'>
-                                    <figure>
-                                        <img src="imgs/offer-bg-5.png" alt="" />
-                                        <figcaption>
-                                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                                            <div className='bottom'>
-                                                <span>5 мин</span>
-                                                <span>128</span>
-                                                <span>12.01.2022</span>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                            </SwiperSlide>
-
-                        </Swiper>
+                        className='mt-5'
+                        modules={[Navigation]}
+                        spaceBetween={20}
+                        slidesPerView={3}
+                        navigation
+                        >
+                        <SwiperSlide>
+                            <ArticlePreview/>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <ArticlePreview/>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <ArticlePreview/>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <ArticlePreview/>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <ArticlePreview/>
+                        </SwiperSlide>
+                    </Swiper>
+                    <button type='button' className='btn-3 fs-13 mt-5 mx-auto'>
+                        <span>Перейти в блог</span>
+                        <FiChevronRight/>
+                    </button>
                 </Container>
             </section>
         </main>

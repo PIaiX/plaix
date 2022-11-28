@@ -6,26 +6,34 @@ const ArticlePreview = () => {
     return (
         <article className='preview'>
             <figure>
-                <img src="imgs/offer-bg-5.png" alt="" />
+                <img src="imgs/img.jfif" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
                 <figcaption>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                    <Link to='/' className='btn-4 my-4'>Посмотреть</Link>
-                    <ul className='bottom'>
-                        <li>
-                            <FiClock/>
-                            <span>5 мин</span>
-                        </li>
-                        <li>
-                            <FiEye/>
-                            <span>128</span>
-                        </li>
-                        <li>
-                            <FiCalendar/>
-                            <span>12.01.2022</span>
-                        </li>
-                    </ul>
+                    <div>
+                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                    </div>
+                    <div className="bottom">
+                        <Link to='/' className='btn-4'>Читать далее</Link>
+                        <ul>
+                            <li>
+                                <FiClock/>
+                                <span>5 мин</span>
+                            </li>
+                            <li>
+                                <FiEye/>
+                                <span>128</span>
+                            </li>
+                            <li>
+                                <FiCalendar/>
+                                <span>12.01.2022</span>
+                            </li>
+                        </ul>
+                    </div>
                 </figcaption>
             </figure>
+            <ul className="tags">
+                <li>#Разработка</li>
+                <li>#CSS</li>
+            </ul>
         </article>
     );
 };
