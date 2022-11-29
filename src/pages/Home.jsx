@@ -6,9 +6,10 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, FreeMode  } from 'swiper'
+import { Navigation, FreeMode, EffectFade } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/effect-fade'
 import 'swiper/css/free-mode'
 
 import portfolio from '../assets/imgs/portfolio.svg'
@@ -162,8 +163,8 @@ const Home = () => {
 
             <section className='sec-home-4 mb-8'>
                 <Container className='custom-container'>
-                    <Row lg={2}>
-                        <Col>
+                    <Row>
+                        <Col lg={5}>
                             <Row>
                                 <Col lg={10}>
                                     <h2>О Нас</h2>
@@ -189,11 +190,32 @@ const Home = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col>
-                        <img src="imgs/subtract2.png" alt="subtract" />
-                            <img src="imgs/subtract.png" alt="subtract" />
-
-                            <div className="script fs-30">Дизайнер</div>
+                        <Col lg={7}>
+                            <Swiper
+                                modules={[Navigation, EffectFade]}
+                                effect="fade"
+                                spaceBetween={0}
+                                slidesPerView={1}
+                                navigation
+                                >
+                                <SwiperSlide>
+                                    <div className='about-imgs'>
+                                        <div className='team-1'>
+                                            <img src="imgs/team.jfif" alt="Команда" className='img'/>
+                                            <img src="imgs/subtract2.png" alt="mask" className='mask'/>
+                                        </div>
+                                        <div className='photo'>
+                                            <img src="imgs/photo.jfif" alt="Дизайнер" className='img'/>
+                                            <img src="imgs/subtract.png" alt="Дизайнер" className='mask'/>
+                                        </div>
+                                        <div className='team-2'>
+                                            <img src="imgs/team2.jfif" alt="Команда" className='img'/>
+                                            <img src="imgs/subtract3.png" alt="mask" className='mask'/>
+                                        </div>
+                                        <h3>Дизайнер</h3>
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
                         </Col>
                     </Row>
                 </Container>
