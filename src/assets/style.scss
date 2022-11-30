@@ -477,6 +477,7 @@ header {
 .sec-home-4 {
     background: url(imgs/bg/bg-2.png) no-repeat;
     background-position: right bottom;
+    position: relative;
     ul {
         li {
             padding-left: 2.4em;
@@ -499,93 +500,34 @@ header {
             }
         }
     }
-    .about-imgs {
+    .team-imgs {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        height: 800px;
-        width: 100%;
-        z-index: 1;
-        .team-1 {
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-            width: 30%;
-            height: 50%;
-            object-fit: cover;
-            z-index: 1;
-            .img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .mask {
-                position: absolute;
-                z-index: 2;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .team-2 {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            width: 30%;
-            height: 50%;
-            object-fit: cover;
-            z-index: 1;
-            .img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .mask {
-                position: absolute;
-                z-index: 2;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .photo {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            width: 50%;
-            height: 80%;
-            object-fit: cover;
-            transform: translateX(-50%);
-            z-index: 2;
-            .img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .mask {
-                position: absolute;
-                z-index: 2;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                height: 100%;
-            }
+        svg {
+            width: 100%;
         }
         h3 {
+            position: absolute;
+            z-index: 5;
+            bottom: 0px;
+            left: 50%;
             font-family: $font-script;
             font-size: 3em;
-            position: relative;
-            z-index: 5;
+            font-weight: 400;
+            color: $gray;
+            transform: translateX(-50%);
+        }
+    }
+    .about-slider {
+        margin-top: -100px;
+        width: 120%;
+        margin-left: -10%;
+        .swiper-button-prev {
+            top: 60%;
+            left: 25%;
+        }
+        .swiper-button-next {
+            top: 60%;
+            right: 25%;
         }
     }
 }

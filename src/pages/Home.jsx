@@ -20,6 +20,7 @@ import { FiChevronRight } from "react-icons/fi"
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import ArticlePreview from '../components/ArticlePreview'
 import FormCallback from '../components/FormCallback'
+import SvgMask from '../components/SvgMask'
 
 const Home = () => {
     return (
@@ -164,11 +165,11 @@ const Home = () => {
             <section className='sec-home-4 mb-8'>
                 <Container className='custom-container'>
                     <Row>
-                        <Col lg={5}>
+                        <Col lg={6}>
+                            <h2>О Нас</h2>
+                            <h4>команда, которая работает над вашими проектами</h4>
                             <Row>
                                 <Col lg={10}>
-                                    <h2>О Нас</h2>
-                                    <h4>команда, которая работает над вашими проектами</h4>
                                     <ul className="mt-5 list-unstyled">
                                         <li>
                                             <h3>Опыт</h3>
@@ -190,29 +191,26 @@ const Home = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col lg={7}>
+                        <Col lg={6} className='position-relative'>
                             <Swiper
+                                className='about-slider'
                                 modules={[Navigation, EffectFade]}
                                 effect="fade"
+                                fadeEffect={{ crossFade: true }}
                                 spaceBetween={0}
                                 slidesPerView={1}
                                 navigation
                                 >
                                 <SwiperSlide>
-                                    <div className='about-imgs'>
-                                        <div className='team-1'>
-                                            <img src="imgs/team.jfif" alt="Команда" className='img'/>
-                                            <img src="imgs/subtract2.png" alt="mask" className='mask'/>
-                                        </div>
-                                        <div className='photo'>
-                                            <img src="imgs/photo.jfif" alt="Дизайнер" className='img'/>
-                                            <img src="imgs/subtract.png" alt="Дизайнер" className='mask'/>
-                                        </div>
-                                        <div className='team-2'>
-                                            <img src="imgs/team2.jfif" alt="Команда" className='img'/>
-                                            <img src="imgs/subtract3.png" alt="mask" className='mask'/>
-                                        </div>
+                                    <div className='team-imgs'>
+                                        <SvgMask imgLink0={'imgs/photo.jfif'} imgLink1={'imgs/team.jfif'} imgLink2={'imgs/team2.jfif'}/>
                                         <h3>Дизайнер</h3>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className='team-imgs'>
+                                        <SvgMask imgLink0={'imgs/photo.jfif'} imgLink1={'imgs/team2.jfif'} imgLink2={'imgs/team.jfif'}/>
+                                        <h3>ктото</h3>
                                     </div>
                                 </SwiperSlide>
                             </Swiper>
