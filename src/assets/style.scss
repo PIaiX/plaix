@@ -401,19 +401,82 @@ main {
 }
 
 header {
+    position: relative;
     height: var(--h-height);
-    nav {
+    nav.main {
+        height: var(--h-height);
         ul {
+            height: var(--h-height);
             display: flex;
+            align-items: stretch;
             list-style: none;
             padding-left: 0px;
             li {
                 &:not(:first-child){margin-left: 2.4em;}
                 a {
+                    @include flex-center();
+                    height: 100%;
                     font-size: 1.25em;
                 }
             }
         }
+    }
+    .services {
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        display: flex;
+        align-items: stretch;
+        nav {
+            &.level-1 {
+                width: 30%;
+                background-color: #F6F6F6;
+                padding: 3em 3em 3em 10%;
+                ul {
+                    list-style: none;
+                    padding-left: 0px;
+                    li {
+                        a {
+                            font-size: 1em;
+                            font-weight: 400;
+                            display: block;
+                            padding: .75em 0;
+                            display: flex;
+                            justify-content: space-between;
+                            &.active {
+                                color: $color-2;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+            &.level-2 {
+                width: 70%;
+                padding: 3em 10% 3em 3em;
+                ul {
+                    list-style: none;
+                    padding-left: 0px;
+                    li {
+                        a {
+                            font-size: 1em;
+                            font-weight: 400;
+                            display: block;
+                            padding: .75em 0;
+                            // transition: $transition;
+                            &.active {
+                                color: $color-2;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 
@@ -475,9 +538,12 @@ header {
 
 
 .sec-home-4 {
-    background: url(imgs/bg/bg-2.png) no-repeat;
-    background-position: right bottom;
     position: relative;
+    .bg {
+        position: absolute;
+        bottom: -3%;
+        right: -3%;
+    }
     ul {
         li {
             padding-left: 2.4em;
@@ -509,7 +575,7 @@ header {
             position: absolute;
             z-index: 5;
             bottom: 0px;
-            left: 50%;
+            left: 48%;
             font-family: $font-script;
             font-size: 3em;
             font-weight: 400;
@@ -519,15 +585,15 @@ header {
     }
     .about-slider {
         margin-top: -100px;
-        width: 120%;
-        margin-left: -10%;
+        width: calc(100% + 200px);
+        margin-left: -150px;
         .swiper-button-prev {
             top: 60%;
-            left: 25%;
+            left: 18%;
         }
         .swiper-button-next {
             top: 60%;
-            right: 25%;
+            right: 32%;
         }
     }
 }

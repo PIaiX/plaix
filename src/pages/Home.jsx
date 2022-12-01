@@ -163,7 +163,8 @@ const Home = () => {
             </section>
 
             <section className='sec-home-4 mb-8'>
-                <Container className='custom-container'>
+                <Container className='custom-container position-relative'>
+                    <img src="imgs/bg-2.png" alt="cup" className='bg'/>
                     <Row>
                         <Col lg={6}>
                             <h2>О Нас</h2>
@@ -209,8 +210,8 @@ const Home = () => {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className='team-imgs'>
-                                        <SvgMask imgLink0={'imgs/photo.jfif'} imgLink1={'imgs/team2.jfif'} imgLink2={'imgs/team.jfif'}/>
-                                        <h3>ктото</h3>
+                                        <SvgMask imgLink0={'imgs/img1.jpg'} imgLink1={'imgs/team2.jfif'} imgLink2={'imgs/team.jfif'}/>
+                                        <h3>кто-то</h3>
                                     </div>
                                 </SwiperSlide>
                             </Swiper>
@@ -333,7 +334,6 @@ const Home = () => {
                     <h4>Lorem ipsum dolor sit amet</h4>
                     <Swiper
                         className='mt-5'
-                        modules={[Navigation]}
                         spaceBetween={20}
                         slidesPerView={3}
                         navigation
