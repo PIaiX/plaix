@@ -1,58 +1,73 @@
 import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
+import {Link} from 'react-router-dom'
+import useIsMobile from '../hooks/isMobile'
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import { FiChevronDown, FiChevronRight } from "react-icons/fi"
+import { IoPersonCircle, IoMenu } from "react-icons/io5"
 
 const Header = () => {
-    const [catalogMenu, setCatalogMenu] = useState(false)
-    const [sublevel, setSublevel] = useState(0)
-    const meHandler = () => {
-        setCatalogMenu(true);
-    }
-    const mlHandler = () => {
-        setCatalogMenu(false);
-    }
+    const {mobile} = useIsMobile('991px')
 
+    const [services, setServices] = useState(false)
+    const [sublevel, setSublevel] = useState(0)
 
     return (
         <header>
             <Container className='custom-container h-100 d-flex justify-content-between align-items-center'>
-                <Logo/>
-                <nav className='main'>
-                    <ul>
-                        <li>
-                            <a href='/'>Главная</a>
-                        </li>
-                        <li>
-                            <a href='/' onMouseEnter={()=>meHandler()} onMouseLeave={()=>mlHandler()}>
-                                Услуги
-                                <FiChevronDown className='color-2'/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='/'>Портфолио</a>
-                        </li>
-                        <li>
-                            <a href='/'>О Нас</a>
-                        </li>
-                        <li>
-                            <a href='/'>Отзывы</a>
-                        </li>
-                        <li>
-                            <a href='/'>Блог</a>
-                        </li>
-                        <li>
-                            <a href='/'>Контакты</a>
-                        </li>
-                        <li>
-                            <a href='/'>Личный кабинет</a>
-                        </li>
-                    </ul>
-                </nav>
+                <Logo className='logo'/>
+                {
+                    (mobile)
+                    ? <nav className='main'>
+                        <ul>
+                            <li>
+                                <Link to='/'>
+                                    <IoPersonCircle/>
+                                </Link>
+                            </li>
+                            <li>
+                                <button type='button'>
+                                    <IoMenu/>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    : <nav className='main'>
+                        <ul>
+                            <li>
+                                <a href='/'>Главная</a>
+                            </li>
+                            <li>
+                                <a href='/' onMouseEnter={()=>setServices(true)} onMouseLeave={()=>setServices(false)}>
+                                    Услуги
+                                    <FiChevronDown className='color-2 fs-13'/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/'>Портфолио</a>
+                            </li>
+                            <li>
+                                <a href='/'>О Нас</a>
+                            </li>
+                            <li>
+                                <a href='/'>Отзывы</a>
+                            </li>
+                            <li>
+                                <a href='/'>Блог</a>
+                            </li>
+                            <li>
+                                <a href='/'>Контакты</a>
+                            </li>
+                            <li>
+                                <a href='/'>Личный кабинет</a>
+                            </li>
+                        </ul>
+                    </nav>
+                }
             </Container>
             {
-                (catalogMenu) &&
-                <div className="services" onMouseEnter={()=>meHandler()} onMouseLeave={()=>mlHandler()}>
+                (services) &&
+                <div className="services" onMouseEnter={()=>setServices(true)} onMouseLeave={()=>setServices(false)}>
                     <nav className='level-1'>
                         <ul>
                             <li>
@@ -93,29 +108,35 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <nav className='level-2'>
+                    <div className='level-2'>
                         {
                             (sublevel === 0) &&
-                            <ul>
-                                <li><a href="/">Лэндинг</a></li>
-                                <li><a href="/">Корпоративный сайт</a></li>
-                                <li><a href="/">Интернет магазин</a></li>
-                                <li><a href="/">Портал</a></li>
-                                <li><a href="/">Квиз/Опросник</a></li>
-                                <li><a href="/">Индивидуальная разработка</a></li>
-                            </ul>
+                            <nav>
+                                <ul>
+                                    <li><a href="/">Лэндинг</a></li>
+                                    <li><a href="/">Корпоративный сайт</a></li>
+                                    <li><a href="/">Интернет магазин</a></li>
+                                    <li><a href="/">Портал</a></li>
+                                    <li><a href="/">Квиз/Опросник</a></li>
+                                    <li><a href="/">Индивидуальная разработка</a></li>
+                                </ul>
+                                <img src="imgs/img1.jpg" alt="Web разработка" />
+                            </nav>
                         }
                         {
                             (sublevel === 1) &&
-                            <ul>
-                                <li><a href="/">Мобильные приложения 1</a></li>
-                                <li><a href="/">Мобильные приложения 2</a></li>
-                                <li><a href="/">Мобильные приложения 3</a></li>
-                                <li><a href="/">Мобильные приложения 4</a></li>
-                                <li><a href="/">Мобильные приложения 5</a></li>
-                            </ul>
+                            <nav>
+                                <ul>
+                                    <li><a href="/">Мобильные приложения 1</a></li>
+                                    <li><a href="/">Мобильные приложения 2</a></li>
+                                    <li><a href="/">Мобильные приложения 3</a></li>
+                                    <li><a href="/">Мобильные приложения 4</a></li>
+                                    <li><a href="/">Мобильные приложения 5</a></li>
+                                </ul>
+                                <img src="imgs/img2.jfif" alt="Мобильные приложения" />
+                            </nav>
                         }
-                    </nav>
+                    </div>
                 </div>
             }
         </header>

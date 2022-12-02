@@ -1,6 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -21,6 +19,9 @@ import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import ArticlePreview from '../components/ArticlePreview'
 import FormCallback from '../components/FormCallback'
 import SvgMask from '../components/SvgMask'
+import ServiceCard from '../components/ServiceCard'
+import Offer from '../components/Offer'
+import Plus from '../components/Plus'
 
 const Home = () => {
     return (
@@ -28,15 +29,15 @@ const Home = () => {
             <section className='sec-home-1'>
                 <Container className='custom-container'>
                     <Row className='align-items-center'>
-                        <Col lg={6}>
-                            <p className='h1 mb-5'><span className='color-2'>Мы знаем</span>, как реализовать ваш проект. </p>
+                        <Col md={6} xl={5}>
+                            <p className='h1 mb-4 mb-xxl-5'><span className='color-2'>Мы знаем</span>, как реализовать ваш проект. </p>
 
-                            <h1 className='mb-5'>Разработка сайтов, мобильных приложений и веб-сервисов</h1>
+                            <h1 className='mb-4 mb-xxl-5'>Разработка сайтов, мобильных приложений и веб-сервисов</h1>
 
                             <button type='button' className='btn-1 fs-13'>обсудить проект</button>
                         </Col>
-                        <Col lg={6}>
-                            <img src="imgs/main-img.png" alt="Разработка сайтов, мобильных приложений и веб-сервисов" />
+                        <Col md={6} xl={7}>
+                            <img src="imgs/main-img.png" alt="Разработка сайтов, мобильных приложений и веб-сервисов" className='img-fluid ms-auto d-block'/>
                         </Col>
                     </Row>
                 </Container>
@@ -44,42 +45,15 @@ const Home = () => {
 
             <section className='sec-home-2 mb-8'>
                 <Container>
-                    <Row lg={3} className='gx-5'>
+                    <Row lg={3} className='gx-4 gx-xl-5'>
                         <Col>
-                            <div className="box p-4">
-                                <img src={portfolio} alt="Огромное портфолио" />
-                                <h3>Огромное портфолио</h3>
-                                <hr />
-                                <p className="fs-09">Более сотни реализованных проектов из совершенно разных сфер</p>
-                                <button type='button' className='btn-2 fs-12'>
-                                    <span>Портфолио</span>
-                                    <FiChevronRight/>
-                                </button>
-                            </div>
+                            <Plus title={"Огромное портфолио"} text={"Более сотни реализованных проектов из совершенно разных сфер"} imgUrl={portfolio} />
                         </Col>
                         <Col>
-                            <div className="box p-4">
-                                <img src={star} alt="Нас рекомендуют" />
-                                <h3>Нас рекомендуют</h3>
-                                <hr />
-                                <p className="fs-09">Отзывы - наше всё. Каждый второй клиент по рекомендации</p>
-                                <button type='button' className='btn-2 fs-12'>
-                                    <span>Отзывы</span>
-                                    <FiChevronRight/>
-                                </button>
-                            </div>
+                            <Plus title={"Нас рекомендуют"} text={"Отзывы - наше всё. Каждый второй клиент по рекомендации"} imgUrl={star} />
                         </Col>
                         <Col>
-                            <div className="box p-4">
-                                <img src={stack} alt="Стек технологий" />
-                                <h3>Стек технологий</h3>
-                                <hr />
-                                <p className="fs-09">Современные технологии и собственные разработки</p>
-                                <button type='button' className='btn-2 fs-12'>
-                                    <span>Перейти</span>
-                                    <FiChevronRight/>
-                                </button>
-                            </div>
+                            <Plus title={"Стек технологий"} text={"Современные технологии и собственные разработки"} imgUrl={stack} />
                         </Col>
                     </Row>
                 </Container>
@@ -91,72 +65,24 @@ const Home = () => {
                     <h4>Приступим к вашему проекту уже завтра</h4>
                 </Container>
                 <Container>
-                    <Row lg={3} className='g-5'>
+                    <Row xs={2} lg={3} className='g-4 g-xl-5'>
                         <Col>
-                            <figure className='service-card'>
-                                <img src="imgs/img1.jpg" alt="" />
-                                <figcaption>
-                                    <h3>Web разработка</h3>
-                                    <hr />
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие.</p>
-                                    <Link to='/' className='link'>Перейти</Link>
-                                </figcaption>
-                            </figure>
+                            <ServiceCard title={"Web разработка"} text={"Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие."} imgUrl={"imgs/img1.jpg"}/>
                         </Col>
                         <Col>
-                            <figure className='service-card'>
-                                <img src="imgs/img1.jpg" alt="" />
-                                <figcaption>
-                                    <h3>Web разработка</h3>
-                                    <hr />
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие.</p>
-                                    <Link to='/' className='link'>Перейти</Link>
-                                </figcaption>
-                            </figure>
+                            <ServiceCard title={"Мобильные приложения"} text={"Создаём приложения для iOS и Android. Разрабатываем серверную часть и API."} imgUrl={"imgs/img2.jfif"}/>
                         </Col>
                         <Col>
-                            <figure className='service-card'>
-                                <img src="imgs/img1.jpg" alt="" />
-                                <figcaption>
-                                    <h3>Web разработка</h3>
-                                    <hr />
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие.</p>
-                                    <Link to='/' className='link'>Перейти</Link>
-                                </figcaption>
-                            </figure>
+                            <ServiceCard title={"Дизайн"} text={"Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI."} imgUrl={"imgs/img3.jfif"}/>
                         </Col>
                         <Col>
-                            <figure className='service-card'>
-                                <img src="imgs/img1.jpg" alt="" />
-                                <figcaption>
-                                    <h3>Web разработка</h3>
-                                    <hr />
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие.</p>
-                                    <Link to='/' className='link'>Перейти</Link>
-                                </figcaption>
-                            </figure>
+                            <ServiceCard title={"Продвижение"} text={"Поможем вам привлечь новых клиентов и продвинем сайт в Yandex и Google"} imgUrl={"imgs/img4.jfif"}/>
                         </Col>
                         <Col>
-                            <figure className='service-card'>
-                                <img src="imgs/img1.jpg" alt="" />
-                                <figcaption>
-                                    <h3>Web разработка</h3>
-                                    <hr />
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие.</p>
-                                    <Link to='/' className='link'>Перейти</Link>
-                                </figcaption>
-                            </figure>
+                            <ServiceCard title={"IT СУбподряд"} text={"Решаем задачи на субподряде для digital-агентств и IT-компаний."} imgUrl={"imgs/img5.jfif"}/>
                         </Col>
                         <Col>
-                            <figure className='service-card'>
-                                <img src="imgs/img1.jpg" alt="" />
-                                <figcaption>
-                                    <h3>Web разработка</h3>
-                                    <hr />
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие.</p>
-                                    <Link to='/' className='link'>Перейти</Link>
-                                </figcaption>
-                            </figure>
+                            <ServiceCard title={"b2b-продукты"} text={"Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию."} imgUrl={"imgs/img6.png"}/>
                         </Col>
                     </Row>
                 </Container>
@@ -166,12 +92,12 @@ const Home = () => {
                 <Container className='custom-container position-relative'>
                     <img src="imgs/bg-2.png" alt="cup" className='bg'/>
                     <Row>
-                        <Col lg={6}>
+                        <Col xl={6}>
                             <h2>О Нас</h2>
                             <h4>команда, которая работает над вашими проектами</h4>
-                            <Row>
-                                <Col lg={10}>
-                                    <ul className="mt-5 list-unstyled">
+                            <Row className='mt-4 mt-xxl-5'>
+                                <Col xl={10}>
+                                    <ul className="list-unstyled">
                                         <li>
                                             <h3>Опыт</h3>
                                             <p className='fs-12'>Обладаем высокой экспертизой в области мобильной и веб-разработки, поэтому делаем качественные продукты точно в срок.</p>
@@ -192,7 +118,7 @@ const Home = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col lg={6} className='position-relative'>
+                        <Col xl={6} className='position-relative'>
                             <Swiper
                                 className='about-slider'
                                 modules={[Navigation, EffectFade]}
@@ -222,85 +148,42 @@ const Home = () => {
 
             <section className='sec-home-5 mb-8'>
                 <Container className='custom-container'>
-                    <h2>Спецпредожения</h2>
-                    <h4>отличная возможность начать</h4>
+                    <h2 className='d-none d-lg-block'>Спецпредожения</h2>
+                    <h4 className='d-none d-lg-block'>отличная возможность начать</h4>
 
-                    <div className="position-relative">
+                    <div className="position-relative mt-lg-5">
                         <Swiper
-                            className='mt-5'
                             modules={[Navigation, FreeMode]}
                             spaceBetween={20}
-                            slidesPerView={4}
+                            slidesPerView={2}
                             navigation
                             freeMode={true}
-                            // breakpoints={{
-                            //     576: {
-                            //         spaceBetween: 15,
-                            //         slidesPerView: 'auto'
-                            //     },
-                            //     768: {
-                            //         spaceBetween: 30,
-                            //         slidesPerView: 'auto'
-                            //     },
-                            //     1400: {
-                            //         spaceBetween: 50,
-                            //         slidesPerView: 'auto'
-                            //     },
-                            // }}
+                            breakpoints={{
+                                768: {
+                                    slidesPerView: 3
+                                },
+                                1200: {
+                                    slidesPerView: 4
+                                },
+                            }}
                             >
                             <SwiperSlide>
-                                <figure className='offer'>
-                                    <img src="imgs/offer-bg-1.jfif" alt="Lorem ipsum dolor" />
-                                    <figcaption>
-                                        <h2>Lorem ipsum dolor</h2>
-                                        <h4 className='accent-1'>Lorem ipsum dolor sit amet, consectetur </h4>
-                                    </figcaption>
-                                </figure>
+                                <Offer imgUrl={"imgs/offer-bg-1.jfif"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={1}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <figure className='offer'>
-                                    <img src="imgs/offer-bg-2.jfif" alt="Lorem ipsum dolor" />
-                                    <figcaption>
-                                        <h2>Lorem ipsum dolor</h2>
-                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
-                                    </figcaption>
-                                </figure>
+                                <Offer imgUrl={"imgs/offer-bg-2.jfif"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <figure className='offer'>
-                                    <img src="imgs/offer-bg-3.jfif" alt="Lorem ipsum dolor" />
-                                    <figcaption>
-                                        <h2 className='accent-2'>Lorem ipsum dolor</h2>
-                                        <h4 className='accent-1'>Lorem ipsum dolor sit amet, consectetur </h4>
-                                    </figcaption>
-                                </figure>
+                                <Offer imgUrl={"imgs/offer-bg-3.jfif"} title={'Lorem ipsum dolor'} titleColor={2} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={1}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <figure className='offer'>
-                                    <img src="imgs/offer-bg-4.jfif" alt="Lorem ipsum dolor" />
-                                    <figcaption>
-                                        <h2>Lorem ipsum dolor</h2>
-                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
-                                    </figcaption>
-                                </figure>
+                                <Offer imgUrl={"imgs/offer-bg-4.jfif"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <figure className='offer'>
-                                    <img src="imgs/offer-bg-5.png" alt="Lorem ipsum dolor" />
-                                    <figcaption>
-                                        <h2>Lorem ipsum dolor</h2>
-                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
-                                    </figcaption>
-                                </figure>
+                                <Offer imgUrl={"imgs/offer-bg-5.png"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <figure className='offer'>
-                                    <img src="imgs/offer-bg-6.png" alt="Lorem ipsum dolor" />
-                                    <figcaption>
-                                        <h2>Lorem ipsum dolor</h2>
-                                        <h4>Lorem ipsum dolor sit amet, consectetur </h4>
-                                    </figcaption>
-                                </figure>
+                                <Offer imgUrl={"imgs/offer-bg-6.png"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -312,7 +195,10 @@ const Home = () => {
                     <h2>Поработаем?</h2>
                     <h4>Заполните форму и наш менеджер свяжется с вами в ближайшее время</h4>
 
-                    <Row lg={2} className='mt-5 gx-5'>
+                    <Row xs={1} lg={2} className='flex-lg-row-reverse mt-5 gx-4 gx-xl-5'>
+                        <Col>
+                            <FormCallback />
+                        </Col>
                         <Col>
                             <div className="imgs">
                                 <img src="imgs/monitor.png" alt="monitor" className='bg'/>
@@ -320,23 +206,27 @@ const Home = () => {
                             </div>
                             <button type='button' className='btn-3 fs-11 mx-auto mt-5'>Заполнить бриф</button>
                         </Col>
-                        <Col>
-                            <FormCallback />
-                        </Col>
                     </Row>
                 </Container>
                 <img src={plant} alt="plant" className='bg-sec'/>
             </section>
 
             <section className='sec-home-7 mb-8'>
-                <Container className='custom-container mb-5'>
+                <Container className='custom-container mb-lg-5'>
                     <h2>Блог</h2>
                     <h4>Lorem ipsum dolor sit amet</h4>
                     <Swiper
                         className='mt-5'
                         spaceBetween={20}
-                        slidesPerView={3}
-                        navigation
+                        slidesPerView={1}
+                        breakpoints={{
+                            576: {
+                                slidesPerView: 2
+                            },
+                            992: {
+                                slidesPerView: 3
+                            },
+                        }}
                         >
                         <SwiperSlide>
                             <ArticlePreview/>
