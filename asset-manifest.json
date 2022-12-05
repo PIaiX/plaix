@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/plaix/static/css/main.48706906.css",
+    "main.js": "/plaix/static/js/main.990ffc5f.js",
+    "static/media/Brush font one.otf": "/plaix/static/media/Brush font one.e983456600a141ed9b85.otf",
+    "static/media/plant.png": "/plaix/static/media/plant.bcb2f87e73044ecd5531.png",
+    "static/media/bg-2.png": "/plaix/static/media/bg-2.8ee8bcb0974fc9c872f2.png",
+    "static/media/instagram.png": "/plaix/static/media/instagram.07dfe410fc7c1f35027c.png",
+    "static/media/brief.png": "/plaix/static/media/brief.01982c168dfabc23d01c.png",
+    "static/media/wapp.png": "/plaix/static/media/wapp.eca700d97569e0d4d228.png",
+    "static/media/tg.png": "/plaix/static/media/tg.a85c19d3244eb1044b30.png",
+    "static/media/vk.png": "/plaix/static/media/vk.cd186cf9fb4fe16c511c.png",
+    "static/media/Online.svg": "/plaix/static/media/Online.88eaac486e150420a450b887d90f8b38.svg",
+    "static/media/stack.svg": "/plaix/static/media/stack.6429b4642d8a0e0829313da5fcbc9246.svg",
+    "static/media/logo.svg": "/plaix/static/media/logo.6ca224716b88a3b5dd5db95ae81cb448.svg",
+    "static/media/message.svg": "/plaix/static/media/message.d93a631021678558c48d3271c6d3521a.svg",
+    "static/media/bg-1.svg": "/plaix/static/media/bg-1.16c74df1a66f158b0625.svg",
+    "static/media/mobile-about.svg": "/plaix/static/media/mobile-about.cafb6d2ab944d21e471a92e1731b3e28.svg",
+    "static/media/mobile-blog.svg": "/plaix/static/media/mobile-blog.cd734a1bc00c466ea1ff7efade5a4aa0.svg",
+    "static/media/services.svg": "/plaix/static/media/services.a8735b6eb94b0233d986bee8393da419.svg",
+    "static/media/mobile-account.svg": "/plaix/static/media/mobile-account.a829a7fa824e547c1097885477d14bff.svg",
+    "static/media/mobile-reviews.svg": "/plaix/static/media/mobile-reviews.ad0d8fb42e406a9fa56ae4e1ef055140.svg",
+    "static/media/mobile-contacts.svg": "/plaix/static/media/mobile-contacts.8393e3a985df48e241b7e1cbda3eb0f5.svg",
+    "static/media/portfolio.svg": "/plaix/static/media/portfolio.0900ab3aea5dc10a91e53f9d93a7f2fd.svg",
+    "static/media/star.svg": "/plaix/static/media/star.f22c5d16cf4a8c42807a056d971193c3.svg",
+    "static/media/call.svg": "/plaix/static/media/call.a8d37b12359bef68c05c92e84a784e32.svg",
+    "static/media/mobile-portfolio.svg": "/plaix/static/media/mobile-portfolio.8f0bbad2720a8b2bbb88ba26d985df9f.svg",
+    "static/media/cases.svg": "/plaix/static/media/cases.88e3b2738c3a30a48c2fe4a328125104.svg",
+    "index.html": "/plaix/index.html",
+    "static/media/mobile-home.svg": "/plaix/static/media/mobile-home.7e7d4503a151d06a082416cecfbb44df.svg",
+    "static/media/home.svg": "/plaix/static/media/home.5b7836d3b606d906ab9cc8429774bb87.svg",
+    "static/media/mark.svg": "/plaix/static/media/mark.75a115e5516724d0b167.svg",
+    "main.48706906.css.map": "/plaix/static/css/main.48706906.css.map",
+    "main.990ffc5f.js.map": "/plaix/static/js/main.990ffc5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48706906.css",
+    "static/js/main.990ffc5f.js"
+  ]
+}
