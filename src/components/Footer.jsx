@@ -3,16 +3,16 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import useIsMobile from '../hooks/isMobile'
 
-import instagram from '../assets/imgs/instagram.png'
-import vk from '../assets/imgs/vk.png'
-import tg from '../assets/imgs/tg.png'
-import wapp from '../assets/imgs/wapp.png'
-import fb from '../assets/imgs/fb.png'
-import online from '../assets/imgs/Online.svg'
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
+import {ReactComponent as Home} from '../assets/imgs/home.svg'
+import {ReactComponent as Call} from '../assets/imgs/call.svg'
+import {ReactComponent as Cases} from '../assets/imgs/cases.svg'
+import {ReactComponent as Services} from '../assets/imgs/services.svg'
+import {ReactComponent as Message} from '../assets/imgs/message.svg'
+import Social from './utils/Social'
 
 const Footer = () => {
     const {mobile} = useIsMobile('991px')
@@ -26,29 +26,34 @@ const Footer = () => {
                     ? <nav>
                         <ul>
                             <li>
-                                <Link to='/'>
+                                <NavLink to='/'>
+                                    <Home/>
                                     <span>Главная</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to='/'>
+                                <NavLink to='services'>
+                                    <Services/>
                                     <span>Услуги</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to='/'>
+                                <NavLink to='cases'>
+                                    <Cases/>
                                     <span>Кейсы</span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to='/'>
+                                <a href="tel:+79000000000">
+                                    <Call/>
                                     <span>Звонок</span>
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link to='/'>
+                                <NavLink to='messages'>
+                                    <Message/>
                                     <span>Сообщение</span>
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -61,38 +66,7 @@ const Footer = () => {
                         </Col>
                         <Col md={3}>
                             <p className='text-center mb-4'>Мы в соц. сетях</p>
-                            <ul className='social'>
-                                <li>
-                                    <a href="/">
-                                        <img src={instagram} alt="instagram" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/">
-                                        <img src={vk} alt="vk" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/">
-                                        <img src={tg} alt="tg" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/">
-                                        <img src={wapp} alt="wapp" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/">
-                                        <img src={fb} alt="fb" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/">
-                                        <img src={online} alt="online" />
-                                    </a>
-                                </li>
-                            </ul>
+                            <Social/>
                         </Col>
                         <Col md={3}>
                             <address className='text-end'>

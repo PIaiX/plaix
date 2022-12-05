@@ -14,6 +14,8 @@ import portfolio from '../assets/imgs/portfolio.svg'
 import star from '../assets/imgs/star.svg'
 import stack from '../assets/imgs/stack.svg'
 import plant from '../assets/imgs/plant.png'
+import pencil from '../assets/imgs/pencil.png'
+import cup from '../assets/imgs/bg/bg-2.png'
 import { FiChevronRight } from "react-icons/fi"
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import ArticlePreview from '../components/ArticlePreview'
@@ -60,12 +62,12 @@ const Home = () => {
             </section>
 
             <section className='sec-home-3 mb-8'>
-                <Container className='custom-container mb-5'>
+                <Container className='custom-container mb-4 mb-sm-5'>
                     <h2>Наши услуги</h2>
                     <h4>Приступим к вашему проекту уже завтра</h4>
                 </Container>
                 <Container>
-                    <Row xs={2} lg={3} className='g-4 g-xl-5'>
+                    <Row xs={2} lg={3} className='g-2 g-sm-4 g-xl-5'>
                         <Col>
                             <ServiceCard title={"Web разработка"} text={"Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие."} imgUrl={"imgs/img1.jpg"}/>
                         </Col>
@@ -86,6 +88,13 @@ const Home = () => {
                         </Col>
                     </Row>
                 </Container>
+
+                <Container className='mt-5'>
+                    <button type='button' className='brief'>
+                        <p className='fs-17 fw-3 mb-2 mb-sm-3'>У Вас есть проект для нас?</p>
+                        <h2>Заполнить Бриф</h2>
+                    </button>
+                </Container>
             </section>
 
             <section className='sec-home-4 mb-8'>
@@ -95,7 +104,7 @@ const Home = () => {
                         <Col xl={6}>
                             <h2>О Нас</h2>
                             <h4>команда, которая работает над вашими проектами</h4>
-                            <Row className='mt-4 mt-xxl-5'>
+                            <Row className='mt-3 mt-sm-4 mt-xxl-5'>
                                 <Col xl={10}>
                                     <ul className="list-unstyled">
                                         <li>
@@ -144,6 +153,7 @@ const Home = () => {
                         </Col>
                     </Row>
                 </Container>
+                <img src={pencil} alt="pencil" className='d-block d-lg-none mx-auto'/>
             </section>
 
             <section className='sec-home-5 mb-8'>
@@ -154,13 +164,17 @@ const Home = () => {
                     <div className="position-relative mt-lg-5">
                         <Swiper
                             modules={[Navigation, FreeMode]}
-                            spaceBetween={20}
+                            spaceBetween={5}
                             slidesPerView={2}
-                            navigation
                             freeMode={true}
+                            navigation
                             breakpoints={{
+                                576: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
                                 768: {
-                                    slidesPerView: 3
+                                    slidesPerView: 3,
                                 },
                                 1200: {
                                     slidesPerView: 4
@@ -195,20 +209,21 @@ const Home = () => {
                     <h2>Поработаем?</h2>
                     <h4>Заполните форму и наш менеджер свяжется с вами в ближайшее время</h4>
 
-                    <Row xs={1} lg={2} className='flex-lg-row-reverse mt-5 gx-4 gx-xl-5'>
-                        <Col>
-                            <FormCallback />
-                        </Col>
-                        <Col>
+                    <Row xs={1} lg={2} className='mt-4 mt-sm-5 gx-4 gx-xl-5'>
+                        <Col className='d-none d-lg-block'>
                             <div className="imgs">
                                 <img src="imgs/monitor.png" alt="monitor" className='bg'/>
                                 <Logo className='logo'/>
                             </div>
-                            <button type='button' className='btn-3 fs-11 mx-auto mt-5'>Заполнить бриф</button>
+                            <button type='button' className='btn-3 fs-11 mx-auto mt-4 mt-sm-5'>Заполнить бриф</button>
+                        </Col>
+                        <Col>
+                            <FormCallback />
                         </Col>
                     </Row>
                 </Container>
                 <img src={plant} alt="plant" className='bg-sec'/>
+                <img src={cup} alt="cup" className='img-fluid d-block d-lg-none w-25 mx-auto mt-3'/>
             </section>
 
             <section className='sec-home-7 mb-8'>
@@ -216,15 +231,21 @@ const Home = () => {
                     <h2>Блог</h2>
                     <h4>Lorem ipsum dolor sit amet</h4>
                     <Swiper
-                        className='mt-5'
-                        spaceBetween={20}
+                        className='mt-4 mt-sm-5'
+                        spaceBetween={12}
                         slidesPerView={1}
                         breakpoints={{
                             576: {
-                                slidesPerView: 2
+                                slidesPerView: 2,
+                                spaceBetween: 12,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
                             },
                             992: {
-                                slidesPerView: 3
+                                slidesPerView: 3,
+                                spaceBetween: 20,
                             },
                         }}
                         >
@@ -244,7 +265,7 @@ const Home = () => {
                             <ArticlePreview/>
                         </SwiperSlide>
                     </Swiper>
-                    <button type='button' className='btn-3 fs-13 mt-5 mx-auto'>
+                    <button type='button' className='btn-3 fs-13 mt-4 mt-sm-5 mx-auto'>
                         <span>Перейти в блог</span>
                         <FiChevronRight/>
                     </button>

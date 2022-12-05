@@ -23,22 +23,22 @@ const FormCallback = () => {
                     <div className="fw-5 mb-2">Комментарий</div>
                     <textarea rows="5" placeholder='Ваш комментарий'  className='mb-3'></textarea>
                     <input type="file" />
-                    <label className='fs-09 mt-4'>
+                    <label className='fs-09 mt-3 mt-sm-4'>
                         <input type="checkbox"/>
                         <span className='gray'>Я согласен на обработку персональных данных</span>
                     </label>
-                    <button type='button' className='btn-1 fs-11 mx-auto mt-4'>Оставить заявку</button>
+                    <button type='button' className='btn-1 fs-11 mx-auto mt-3 mt-sm-4'>Оставить заявку</button>
                 </form>
                 : <form action="">
                     <div className="fw-5 mb-2">Телефон</div>
                     <input type="tel" placeholder='Телефон' className='mb-3'/>
                     <div className="fw-5 mb-2">Комментарий</div>
                     <textarea rows="5" placeholder='Ваш комментарий'></textarea>
-                    <label className='fs-09 mt-4'>
+                    <label className='fs-09 mt-3 mt-sm-4'>
                         <input type="checkbox"/>
                         <span className='gray'>Я согласен на обработку персональных данных</span>
                     </label>
-                    <button type='button' className='btn-1 fs-11 mx-auto mt-4'>Оставить заявку</button>
+                    <button type='button' className='btn-1 fs-11 mx-auto mt-3 mt-sm-4'>Оставить заявку</button>
                 </form>
             }
         </div>

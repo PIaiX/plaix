@@ -22,6 +22,7 @@
         --w-cont: 540px;
     }
     @media (max-width: 575px){
+        --h-height: 60px;
         --w-cont: 100%;
     }
 }
@@ -313,11 +314,17 @@ h2 {
     font-size: 2.4em;
     font-weight: 700;
     margin-bottom: .5em;
+    @media (max-width: 575px){
+        font-size: 2em;
+    }
     &::before {
         content: '⎯⎯⎯⎯';
         font-weight: 400;
         color: $color-4;
         margin-right: .5em;
+        @media (max-width: 575px){
+            content: '⎯⎯';
+        }
     }
 }
 h3 {
@@ -387,6 +394,15 @@ h6 {
     @media (max-width: 1199px){
         margin-bottom: 6em;
     }
+    @media (max-width: 991px){
+        margin-bottom: 5em;
+    }
+    @media (max-width: 767px){
+        margin-bottom: 4em;
+    }
+    @media (max-width: 575px){
+        margin-bottom: 3em;
+    }
 }
 .swiper {
     position: unset;
@@ -435,6 +451,10 @@ h6 {
     @media (max-width: 1199px){
         width: 200px;
         height: 55px;
+    }
+    @media (max-width: 575px){
+        width: 140px;
+        height: 40px;
     }
 }
 
@@ -503,6 +523,9 @@ header {
                     @media (max-width: 991px){
                         font-size: 3em;
                         color: $color-1;
+                    }
+                    @media (max-width: 575px){
+                        font-size: 2.5em;
                     }
                 }
             }
@@ -642,6 +665,32 @@ header {
     order: 3;
     background: url(imgs/bg/bg-1.svg) no-repeat;
     background-size: cover;
+    .brief {
+        @media (min-width: 992px){
+            display: none;
+        }
+        color: #fff;
+        padding: 2em;
+        border-radius: 7px;
+        background-image: url(imgs/bg/brief.png);
+        background-repeat: no-repeat;
+        background-position: 100% 70%;
+        background-color: rgba($color: $color-4, $alpha: .5);
+        background-size: cover;
+        background-blend-mode: overlay;
+        width: 100%;
+        @media (max-width: 575px){
+            font-size: .8em;
+        }
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+            font-weight: 600;
+            &::before {content: unset}
+        }
+    }
 }
 .service-card {
     @include box();
@@ -659,6 +708,12 @@ header {
         @media (max-width: 1199px){
             height: 165px;
         }
+        @media (max-width: 767px){
+            height: 150px;
+        }
+        @media (max-width: 575px){
+            height: 30vw;
+        }
     }
     figcaption {
         flex:1;
@@ -667,6 +722,9 @@ header {
         flex-direction: column;
         justify-content: space-between;
         align-items: stretch;
+        @media (max-width: 575px){
+            padding: 1em;
+        }
         p {
             color: $gray;
             font-size: 1.1em;
@@ -681,6 +739,9 @@ header {
             display: block;
             text-align: center;
         }
+    }
+    hr {
+        @media (max-width: 767px){margin-bottom: 0px;}
     }
 }
 
@@ -711,10 +772,21 @@ header {
             }
             &:not(:first-child){
                 margin-top: 2em;
+                @media (max-width: 575px){
+                    margin-top: 1.25em;
+                }
             }
             h3 {
                 margin-bottom: .75em;
                 text-align: left;
+                @media (max-width: 575px){
+                    margin-bottom: .25em;
+                }
+            }
+            p {
+                @media (max-width: 575px){
+                    font-weight: 300;
+                }
             }
         }
     }
@@ -735,6 +807,9 @@ header {
             @media (max-width: 991px){
                 height: 550px;
             }
+            @media (max-width: 575px){
+                height: 120vw;
+            }
         }
         h3 {
             position: absolute;
@@ -746,6 +821,14 @@ header {
             font-weight: 400;
             color: $gray;
             transform: translateX(-50%);
+            @media (max-width: 767px){
+                position: relative;
+                z-index: unset;
+                bottom: 0;
+                left: 0;
+                transform: translateX(0%);
+                margin-top: 1rem;
+            }
         }
     }
     .about-slider {
@@ -771,12 +854,18 @@ header {
             @media (max-width: 1199px){
                 left: 30%;
             }
+            @media (max-width: 767px){
+                left: 12%;
+            }
         }
         .swiper-button-next {
             top: 60%;
             right: 32%;
             @media (max-width: 1199px){
                 right: 30%;
+            }
+            @media (max-width: 767px){
+                right: 15%;
             }
         }
     }
@@ -794,6 +883,10 @@ header {
     border-radius: 1.25em;
     padding: .2em;
     position: relative;
+    @media (max-width: 575px){
+        border: 2px solid $color-4;
+        padding: 2px;
+    }
     img {
         position: relative;
         z-index: 1;
@@ -809,6 +902,9 @@ header {
         }
         @media (max-width: 991px){
             height: 300px;
+        }
+        @media (max-width: 575px){
+            height: 65vw;
         }
     }
     figcaption {
@@ -877,6 +973,7 @@ header {
     }
     .form {
         background: #FFFFFF;
+        border-radius: 0 0 1.5em 1.5em;
         box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.07);
         .top {
             display: flex;
@@ -916,6 +1013,9 @@ header {
                         transition: $transition;
                         opacity: 0;
                     }
+                    @media (max-width: 575px){
+                        display: none;
+                    }
                 }
                 &.active {
                     background-color: $color-2;
@@ -931,6 +1031,9 @@ header {
         }
         form {
             padding: 2em;
+            @media (max-width: 575px){
+                padding: 1em;
+            }
         }
     }
 }
@@ -973,6 +1076,12 @@ article.preview {
             }
             @media (max-width: 1199px){
                 height: 280px;
+            }
+            @media (max-width: 767px){
+                height: 230px;
+            }
+            @media (max-width: 575px){
+                height: 70vw;
             }
         }
         figcaption {
@@ -1118,24 +1227,54 @@ footer {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-            }
-        }
-    }
-    .social {
-        @include flex-center();
-        list-style: none;
-        padding-left: 0px;
-        li {
-            &:not(:first-child){margin-left: .6em;}
-            a {
-                opacity: .8;
-                transition: $transition;
-                &:hover, &:focus, &:active {
-                    opacity: 1;
-                }
-                img {
-                    width: 2em;
-                    height: 2em;
+                li {
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: $gray;
+                        position: relative;
+                        transition: $transition;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            z-index: 1;
+                            top: -.25em;
+                            left: 49%;
+                            transform: translateX(-50%);
+                            width: 2.5em;
+                            height: 2.5em;
+                            background-color: $color-2;
+                            border-radius: 50%;
+                            opacity: 0;
+                            transition: $transition;
+                        }
+                        svg {
+                            position: relative;
+                            z-index: 2;
+                            width: 2em;
+                            height: 2em;
+                            color: inherit;
+                            margin-bottom: .25em;
+                        }
+                        span {
+                            position: relative;
+                            z-index: 2;
+                        }
+                        &:hover, &:focus, &.active {
+                            color: #000;
+                            &::before {
+                                opacity: 1;
+                            }
+                        }
+                        &:active {
+                            color: #000;
+                            &::before {
+                                opacity: 1;
+                                background-color: $color-1;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1143,6 +1282,72 @@ footer {
     address {
         ul {
             li:not(:first-child){margin-top: 1em;}
+        }
+    }
+}
+.social {
+    @include flex-center();
+    list-style: none;
+    padding-left: 0px;
+    li {
+        &:not(:first-child){margin-left: .6em;}
+        a {
+            opacity: .8;
+            transition: $transition;
+            &:hover, &:focus, &:active {
+                opacity: 1;
+            }
+            img {
+                width: 2em;
+                height: 2em;
+            }
+        }
+    }
+}
+
+
+.offcanvas {
+    &.offcanvas-end {
+        padding: 3em 2em;
+        nav {
+            margin-bottom: 2em;
+            ul {
+                list-style: none;
+                padding-left: 0px;
+                li {
+                    &:not(:first-child){margin-top: 1.5em;}
+                    a {
+                        font-size: 1.6em;
+                        img {
+                            width: 1.5em;
+                            height: 1.5em;
+                        }
+                        span {
+                            margin-left: 1em;
+                        }
+                    }
+                }
+            }
+        }
+        .social li a img {
+            width: 3em;
+            height: 3em;
+        }
+        @media (max-width: 575px){
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .close {
+        position: absolute;
+        top: .2em;
+        right: .2em;
+        z-index: 10;
+        font-size: 2.5em;
+        color: $color-1;
+        transition: $transition;
+        &:hover, &:active {
+            color: $color-4;
         }
     }
 }
