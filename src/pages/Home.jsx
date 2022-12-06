@@ -17,7 +17,7 @@ import stack from '../assets/imgs/stack.svg'
 import plant from '../assets/imgs/plant.png'
 import pencil from '../assets/imgs/pencil.png'
 import cup from '../assets/imgs/bg/bg-2.png'
-import { FiChevronRight } from "react-icons/fi"
+import { FiChevronRight, FiAward, FiHeadphones, FiCheckCircle } from "react-icons/fi"
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import ArticlePreview from '../components/ArticlePreview'
 import FormCallback from '../components/FormCallback'
@@ -109,16 +109,25 @@ const Home = () => {
                                 <Col xl={10}>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <h3>Опыт</h3>
-                                            <p className='fs-12'>Обладаем высокой экспертизой в области мобильной и веб-разработки, поэтому делаем качественные продукты точно в срок.</p>
+                                            <FiCheckCircle/>
+                                            <div className='flex-1'>
+                                                <h3>Опыт</h3>
+                                                <p>Обладаем высокой экспертизой в области мобильной и веб-разработки, поэтому делаем качественные продукты точно в срок.</p>
+                                            </div>
                                         </li>
                                         <li>
-                                            <h3>Качество</h3>
-                                            <p className='fs-12'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
+                                            <FiCheckCircle/>
+                                            <div className='flex-1'>
+                                                <h3>Качество</h3>
+                                                <p>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
+                                            </div>
                                         </li>
                                         <li>
-                                            <h3>Поддержка</h3>
-                                            <p className='fs-12'>Создаем приложения и сайты, с которыми удобно работать: наш код легко поддерживать и просто передать.</p>
+                                            <FiCheckCircle/>
+                                            <div className='flex-1'>
+                                                <h3>Поддержка</h3>
+                                                <p>Создаем приложения и сайты, с которыми удобно работать: наш код легко поддерживать и просто передать.</p>
+                                            </div>
                                         </li>
                                     </ul>
                                     <button type='button' className='btn-1 fs-13 mt-4 mx-auto'>
