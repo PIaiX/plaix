@@ -12,7 +12,7 @@ const ArticlePreview = () => {
                         <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                     </div>
                     <div className="bottom">
-                        <Link to='/' className='btn-4'>Читать далее</Link>
+                        <Link to='/blog/article' className='btn-4'>Читать далее</Link>
                         <ul>
                             <li>
                                 <FiClock/>

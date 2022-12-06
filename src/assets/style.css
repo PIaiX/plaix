@@ -318,6 +318,14 @@ h1, .h1 {
   font-weight: 600;
   margin-bottom: 1em;
 }
+h1.inner, .h1.inner {
+  font-size: 2.7em;
+}
+@media (max-width: 1199px) {
+  h1.inner, .h1.inner {
+    font-size: 2em;
+  }
+}
 @media (max-width: 1199px) {
   h1, .h1 {
     font-size: 3em;
@@ -1426,6 +1434,44 @@ article.preview .tags li {
   margin-bottom: 0.5em;
 }
 
+article.preview-mini {
+  margin-bottom: 2em;
+  border-bottom: 1px solid #B479F8;
+  padding-bottom: 1em;
+}
+article.preview-mini .tags {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  color: #B479F8;
+  margin-bottom: 0.5em;
+}
+article.preview-mini .tags li {
+  margin-right: 0.75em;
+  margin-bottom: 0.5em;
+}
+article.preview-mini .info {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  color: #636363;
+  font-weight: 300;
+  margin-top: 0.5em;
+}
+article.preview-mini .info li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+article.preview-mini .info li:not(:first-child) {
+  margin-left: 1em;
+}
+article.preview-mini .info li span:not(:first-child) {
+  margin-left: 0.25em;
+}
+
 @-webkit-keyframes showFull {
   from {
     top: var(--start);
@@ -1475,6 +1521,71 @@ article.preview .tags li {
     padding-top: var(--pad-t-start);
   }
 }
+.sec-home-8 .box {
+  background: #FFFFFF;
+  box-shadow: 4px 7px 20px rgba(0, 0, 0, 0.14);
+  border-radius: 1em;
+  padding: 2em;
+}
+.sec-home-8 .box hr {
+  height: 4px;
+  width: 60%;
+  margin: 1em auto;
+  border: none;
+  background-color: #F8AA4E;
+  opacity: 1;
+}
+@media (max-width: 1399px) {
+  .sec-home-8 .box {
+    padding: 1.5em;
+  }
+}
+@media (max-width: 1199px) {
+  .sec-home-8 .box {
+    padding: 1em;
+  }
+}
+.sec-home-8 .box h3 {
+  text-align: left;
+}
+.sec-home-8 .tags {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sec-home-8 .tags li {
+  margin-bottom: 0.5em;
+}
+.sec-home-8 .tags li:not(:last-child) {
+  margin-right: 0.5em;
+}
+.sec-home-8 .tags li button, .sec-home-8 .tags li a {
+  padding: 0.5em 0.75em;
+  border-radius: 1em;
+  background-color: #F8AA4E;
+  color: #fff;
+}
+tr .sec-home-8 .tags li button:hover, .sec-home-8 .tags li button:focus, tr .sec-home-8 .tags li a:hover, .sec-home-8 .tags li a:focus {
+  background-color: #F5A23F;
+}
+.sec-home-8 .tags li button:active, .sec-home-8 .tags li button.active, .sec-home-8 .tags li a:active, .sec-home-8 .tags li a.active {
+  background-color: #B479F8;
+}
+
+.sec-home-9 .img {
+  max-width: 100%;
+  border-radius: 2em;
+  margin-bottom: 2em;
+}
+.sec-home-9 p {
+  font-size: 1em;
+  line-height: 140%;
+  font-weight: 300;
+  margin-bottom: 1.5em;
+  color: #2D2D2D;
+}
+
 footer {
   height: var(--f-height);
   background-color: #131313;

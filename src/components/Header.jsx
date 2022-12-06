@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import Offcanvas from 'react-bootstrap/Offcanvas'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import useIsMobile from '../hooks/isMobile'
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import { FiChevronDown, FiChevronRight, FiX } from "react-icons/fi"
@@ -49,7 +49,7 @@ const Header = () => {
                         : <nav className='main'>
                             <ul>
                                 <li>
-                                    <a href='/'>Главная</a>
+                                    <NavLink to='/'>Главная</NavLink>
                                 </li>
                                 <li>
                                     <a href='/' onMouseEnter={()=>setServices(true)} onMouseLeave={()=>setServices(false)}>
@@ -67,7 +67,7 @@ const Header = () => {
                                     <a href='/'>Отзывы</a>
                                 </li>
                                 <li>
-                                    <a href='/'>Блог</a>
+                                    <NavLink to='blog'>Блог</NavLink>
                                 </li>
                                 <li>
                                     <a href='/'>Контакты</a>
@@ -184,7 +184,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/">
+                                <Link to="/blog">
                                     <img src={blog} alt="Блог" />
                                     <span>Блог</span>
                                 </Link>

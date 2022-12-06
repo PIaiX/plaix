@@ -2,6 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import {Link} from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, FreeMode, EffectFade } from 'swiper'
@@ -265,10 +266,10 @@ const Home = () => {
                             <ArticlePreview/>
                         </SwiperSlide>
                     </Swiper>
-                    <button type='button' className='btn-3 fs-13 mt-4 mt-sm-5 mx-auto'>
+                    <Link to='/blog' className='btn-3 fs-13 mt-4 mt-sm-5 mx-auto'>
                         <span>Перейти в блог</span>
                         <FiChevronRight/>
-                    </button>
+                    </Link>
                 </Container>
             </section>
         </main>
