@@ -157,7 +157,7 @@ const Header = () => {
             <Offcanvas show={mobileMenu} placement={'end'} onHide={handleCloseMM}>
                 <button type='button' className='close' onClick={handleCloseMM}><FiX/></button>
                 <Offcanvas.Body>
-                    <nav>
+                    <nav onClick={handleCloseMM}>
                         <ul>
                             <li>
                                 <Link to="/">
@@ -203,6 +203,15 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
+
+                    <figure className='offer'>
+                        <img src="imgs/offer-bg-1.jfif" alt="offer" />
+                        <figcaption>
+                            <h2 className='accent-1'>Lorem ipsum dolor </h2>
+                            <h4>Lorem ipsum dolor sit amet, consectetur </h4>
+                        </figcaption>
+                    </figure>
+
                     <p className='gray fs-12 mb-3 text-center mt-5'>Мы в соц сетях:</p>
                     <Social/>
                 </Offcanvas.Body>

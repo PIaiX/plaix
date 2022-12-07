@@ -387,6 +387,7 @@ h6 {
     &-8 {font-weight: 800;}
     &-9 {font-weight: 900;}
 }
+.font-color {color: $font-color;}
 .color-2 {color: $color-2;}
 .accent {color: $color-4;}
 .script {font-family: $font-script;}
@@ -414,6 +415,32 @@ h6 {
         margin-bottom: 3em;
     }
 }
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    font-size: .9em;
+    color: $gray;
+    font-weight: 300;
+    margin-bottom: 3em;
+    @media (max-width: 575px){
+        margin-bottom: 2em;
+    }
+    li {
+        &:not(:last-child){
+            margin-right: 1em;
+            &::after {
+                content: '/';
+                margin-left: 1em;
+            }
+        }
+    }
+}
+
 .swiper {
     position: unset;
     &-button {
@@ -454,6 +481,7 @@ h6 {
         }
     }
 }
+
 .logo {
     width: 225px;
     height: 65px;
@@ -1061,10 +1089,34 @@ article.preview {
     border-radius: 2em;
     &:hover {
         figcaption {
+            --opacity: 1;
             top: 0%;
             background-color: rgba($color: $color-1, $alpha: 1);
             animation: .5s showFull;
             padding-top: var(--pad-t-end);
+            p {
+                display: block;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                line-height: 1em;
+                height: 6em;
+                font-weight: 300;
+                margin-top: .75em;
+                @media (max-width: 1199px){
+                    -webkit-line-clamp: 4;
+                    height: 4em;
+                }
+                @media (max-width: 767px){
+                    -webkit-line-clamp: 3;
+                    height: 3em;
+                }
+                @media (max-width: 575px){
+                    -webkit-line-clamp: 35;
+                    height: 5em;
+                }
+            }
             .bottom {
                 .btn-4 {
                     display: block;
@@ -1100,7 +1152,8 @@ article.preview {
         figcaption {
             --start: 70%;
             --pad-t-start: 1.25em;
-            --pad-t-end: 6em; 
+            --pad-t-end: 4em;
+            --opacity: 0;
             position: absolute;
             top: var(--start);
             bottom: 0px;
@@ -1116,11 +1169,10 @@ article.preview {
             animation: .5s showLess;
             @media (max-width: 1399px){
                 --start: 65%;
-                --pad-t-end: 5em;
             }
             @media (max-width: 1199px){
                 --start: 60%;
-                --pad-t-end: 4em;
+                --pad-t-end: 3.5em;
             }
             h5 {
                 color: #fff;
@@ -1131,6 +1183,10 @@ article.preview {
                 overflow: hidden;
                 line-height: 1em;
                 height: 2em;
+            }
+            p {
+                display: none;
+                opacity: var(--opacity);
             }
             .bottom {
                 position: relative;
@@ -1231,11 +1287,13 @@ article.preview-mini {
       top: var(--start);
       background-color: rgba($color: $color-1, $alpha: .84);
       padding-top: var(--pad-t-start);
+      --opacity: 0;
     }
     to {
       top: 0%;
       background-color: rgba($color: $color-1, $alpha: 1);
       padding-top: var(--pad-t-end);
+      --opacity: 1;
     }
 }
 @keyframes showLess {
@@ -1243,11 +1301,13 @@ article.preview-mini {
       top: 0%;
       background-color: rgba($color: $color-1, $alpha: 1);
       padding-top: var(--pad-t-end);
+      --opacity: 1;
     }
     to {
       top: var(--start);
       background-color: rgba($color: $color-1, $alpha: .84);
       padding-top: var(--pad-t-start);
+      --opacity: 0;
     }
 }
 
@@ -1429,12 +1489,26 @@ footer {
             }
         }
         .social li a img {
-            width: 3em;
-            height: 3em;
+            width: 2.5em;
+            height: 2.5em;
         }
         @media (max-width: 575px){
             width: 100%;
             max-width: 100%;
+        }
+    }
+    .offer {
+        border: none;
+        padding: 0px;
+        img {
+            height: 200px;
+            @media (max-width: 575px){
+                height: 45vw;
+            }
+        }
+        h4 {
+            color: $font-color;
+            font-size: 1em;
         }
     }
     .close {

@@ -17,7 +17,7 @@ import stack from '../assets/imgs/stack.svg'
 import plant from '../assets/imgs/plant.png'
 import pencil from '../assets/imgs/pencil.png'
 import cup from '../assets/imgs/bg/bg-2.png'
-import { FiChevronRight, FiAward, FiHeadphones, FiCheckCircle } from "react-icons/fi"
+import { FiChevronRight, FiCheckCircle } from "react-icons/fi"
 import {ReactComponent as Logo} from '../assets/imgs/logo.svg'
 import ArticlePreview from '../components/ArticlePreview'
 import FormCallback from '../components/FormCallback'

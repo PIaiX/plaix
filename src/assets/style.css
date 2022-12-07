@@ -457,6 +457,10 @@ h6 {
   font-weight: 900;
 }
 
+.font-color {
+  color: #181818;
+}
+
 .color-2 {
   color: #F8AA4E;
 }
@@ -505,6 +509,31 @@ h6 {
   .mb-8 {
     margin-bottom: 3em;
   }
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0px;
+  font-size: 0.9em;
+  color: #636363;
+  font-weight: 300;
+  margin-bottom: 3em;
+}
+@media (max-width: 575px) {
+  .breadcrumbs {
+    margin-bottom: 2em;
+  }
+}
+.breadcrumbs li:not(:last-child) {
+  margin-right: 1em;
+}
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 1em;
 }
 
 .swiper {
@@ -1291,11 +1320,41 @@ article.preview {
   border-radius: 2em;
 }
 article.preview:hover figcaption {
+  --opacity: 1;
   top: 0%;
   background-color: #b479f8;
   -webkit-animation: 0.5s showFull;
           animation: 0.5s showFull;
   padding-top: var(--pad-t-end);
+}
+article.preview:hover figcaption p {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1em;
+  height: 6em;
+  font-weight: 300;
+  margin-top: 0.75em;
+}
+@media (max-width: 1199px) {
+  article.preview:hover figcaption p {
+    -webkit-line-clamp: 4;
+    height: 4em;
+  }
+}
+@media (max-width: 767px) {
+  article.preview:hover figcaption p {
+    -webkit-line-clamp: 3;
+    height: 3em;
+  }
+}
+@media (max-width: 575px) {
+  article.preview:hover figcaption p {
+    -webkit-line-clamp: 35;
+    height: 5em;
+  }
 }
 article.preview:hover figcaption .bottom .btn-4 {
   display: block;
@@ -1339,7 +1398,8 @@ article.preview figure img {
 article.preview figure figcaption {
   --start: 70%;
   --pad-t-start: 1.25em;
-  --pad-t-end: 6em;
+  --pad-t-end: 4em;
+  --opacity: 0;
   position: absolute;
   top: var(--start);
   bottom: 0px;
@@ -1358,13 +1418,12 @@ article.preview figure figcaption {
 @media (max-width: 1399px) {
   article.preview figure figcaption {
     --start: 65%;
-    --pad-t-end: 5em;
   }
 }
 @media (max-width: 1199px) {
   article.preview figure figcaption {
     --start: 60%;
-    --pad-t-end: 4em;
+    --pad-t-end: 3.5em;
   }
 }
 article.preview figure figcaption h5 {
@@ -1376,6 +1435,10 @@ article.preview figure figcaption h5 {
   overflow: hidden;
   line-height: 1em;
   height: 2em;
+}
+article.preview figure figcaption p {
+  display: none;
+  opacity: var(--opacity);
 }
 article.preview figure figcaption .bottom {
   position: relative;
@@ -1487,11 +1550,13 @@ article.preview-mini .info li span:not(:first-child) {
     top: var(--start);
     background-color: rgba(180, 121, 248, 0.84);
     padding-top: var(--pad-t-start);
+    --opacity: 0;
   }
   to {
     top: 0%;
     background-color: #b479f8;
     padding-top: var(--pad-t-end);
+    --opacity: 1;
   }
 }
 
@@ -1500,11 +1565,13 @@ article.preview-mini .info li span:not(:first-child) {
     top: var(--start);
     background-color: rgba(180, 121, 248, 0.84);
     padding-top: var(--pad-t-start);
+    --opacity: 0;
   }
   to {
     top: 0%;
     background-color: #b479f8;
     padding-top: var(--pad-t-end);
+    --opacity: 1;
   }
 }
 @-webkit-keyframes showLess {
@@ -1512,11 +1579,13 @@ article.preview-mini .info li span:not(:first-child) {
     top: 0%;
     background-color: #b479f8;
     padding-top: var(--pad-t-end);
+    --opacity: 1;
   }
   to {
     top: var(--start);
     background-color: rgba(180, 121, 248, 0.84);
     padding-top: var(--pad-t-start);
+    --opacity: 0;
   }
 }
 @keyframes showLess {
@@ -1524,11 +1593,13 @@ article.preview-mini .info li span:not(:first-child) {
     top: 0%;
     background-color: #b479f8;
     padding-top: var(--pad-t-end);
+    --opacity: 1;
   }
   to {
     top: var(--start);
     background-color: rgba(180, 121, 248, 0.84);
     padding-top: var(--pad-t-start);
+    --opacity: 0;
   }
 }
 .sec-home-8 .box {
@@ -1718,14 +1789,30 @@ footer address ul li:not(:first-child) {
   margin-left: 1em;
 }
 .offcanvas.offcanvas-end .social li a img {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 @media (max-width: 575px) {
   .offcanvas.offcanvas-end {
     width: 100%;
     max-width: 100%;
   }
+}
+.offcanvas .offer {
+  border: none;
+  padding: 0px;
+}
+.offcanvas .offer img {
+  height: 200px;
+}
+@media (max-width: 575px) {
+  .offcanvas .offer img {
+    height: 45vw;
+  }
+}
+.offcanvas .offer h4 {
+  color: #181818;
+  font-size: 1em;
 }
 .offcanvas .close {
   position: absolute;

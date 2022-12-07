@@ -10,6 +10,7 @@ const ArticlePreview = () => {
                 <figcaption>
                     <div>
                         <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices enim gravida tellus sodales duis. Nunc, hac velit viverra mi senectus massa, varius vel. Est non lacus suspendisse odio a amet. Ipsum in mus et, morbi. Suspendisse amet iaculis ac accumsan, feugiat.</p>
                     </div>
                     <div className="bottom">
                         <Link to='/blog/article' className='btn-4'>Читать далее</Link>

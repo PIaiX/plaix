@@ -4,12 +4,15 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ArticlePreview from '../components/ArticlePreview'
 import ArticlePreviewMini from '../components/ArticlePreviewMini'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 const Blog = () => {
     return (
         <main>
             <section className='pt-4 pt-sm-5 sec-home-8 mb-8'>
                 <Container className='custom-container'>
+                    <Breadcrumbs />
+                    
                     <h1 className='inner'>Блог</h1>
                     <Row className='flex-lg-row-reverse gx-4 gx-xl-5'>
                         <Col lg={4}>
