@@ -6,7 +6,7 @@ const ArticlePreview = () => {
     return (
         <article className='preview'>
             <figure>
-                <img src="imgs/img.jfif" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+                <img src="imgs/img.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
                 <figcaption>
                     <div>
                         <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>

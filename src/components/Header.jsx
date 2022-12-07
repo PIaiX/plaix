@@ -147,7 +147,7 @@ const Header = () => {
                                         <li><a href="/">Мобильные приложения 4</a></li>
                                         <li><a href="/">Мобильные приложения 5</a></li>
                                     </ul>
-                                    <img src="imgs/img2.jfif" alt="Мобильные приложения" />
+                                    <img src="imgs/img2.jpg" alt="Мобильные приложения" />
                                 </nav>
                             }
                         </div>
@@ -205,7 +205,7 @@ const Header = () => {
                     </nav>
 
                     <figure className='offer'>
-                        <img src="imgs/offer-bg-1.jfif" alt="offer" />
+                        <img src="imgs/offer-bg-1.jpg" alt="offer" />
                         <figcaption>
                             <h2 className='accent-1'>Lorem ipsum dolor </h2>
                             <h4>Lorem ipsum dolor sit amet, consectetur </h4>

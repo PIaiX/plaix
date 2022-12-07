@@ -73,16 +73,16 @@ const Home = () => {
                             <ServiceCard title={"Web разработка"} text={"Разрабатываем лендинги, интернет-магазины, web-сервисы. Берем на доработку и развитие."} imgUrl={"imgs/img1.jpg"}/>
                         </Col>
                         <Col>
-                            <ServiceCard title={"Мобильные приложения"} text={"Создаём приложения для iOS и Android. Разрабатываем серверную часть и API."} imgUrl={"imgs/img2.jfif"}/>
+                            <ServiceCard title={"Мобильные приложения"} text={"Создаём приложения для iOS и Android. Разрабатываем серверную часть и API."} imgUrl={"imgs/img2.jpg"}/>
                         </Col>
                         <Col>
-                            <ServiceCard title={"Дизайн"} text={"Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI."} imgUrl={"imgs/img3.jfif"}/>
+                            <ServiceCard title={"Дизайн"} text={"Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI."} imgUrl={"imgs/img3.jpg"}/>
                         </Col>
                         <Col>
-                            <ServiceCard title={"Продвижение"} text={"Поможем вам привлечь новых клиентов и продвинем сайт в Yandex и Google"} imgUrl={"imgs/img4.jfif"}/>
+                            <ServiceCard title={"Продвижение"} text={"Поможем вам привлечь новых клиентов и продвинем сайт в Yandex и Google"} imgUrl={"imgs/img4.jpg"}/>
                         </Col>
                         <Col>
-                            <ServiceCard title={"IT СУбподряд"} text={"Решаем задачи на субподряде для digital-агентств и IT-компаний."} imgUrl={"imgs/img5.jfif"}/>
+                            <ServiceCard title={"IT СУбподряд"} text={"Решаем задачи на субподряде для digital-агентств и IT-компаний."} imgUrl={"imgs/img5.jpg"}/>
                         </Col>
                         <Col>
                             <ServiceCard title={"b2b-продукты"} text={"Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию."} imgUrl={"imgs/img6.png"}/>
@@ -149,13 +149,13 @@ const Home = () => {
                                 >
                                 <SwiperSlide>
                                     <div className='team-imgs'>
-                                        <SvgMask imgLink0={'imgs/photo.jfif'} imgLink1={'imgs/team.jfif'} imgLink2={'imgs/team2.jfif'}/>
+                                        <SvgMask imgLink0={'imgs/photo.jpg'} imgLink1={'imgs/team.jpg'} imgLink2={'imgs/team2.jpg'}/>
                                         <h3>Дизайнер</h3>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className='team-imgs'>
-                                        <SvgMask imgLink0={'imgs/img1.jpg'} imgLink1={'imgs/team2.jfif'} imgLink2={'imgs/team.jfif'}/>
+                                        <SvgMask imgLink0={'imgs/img1.jpg'} imgLink1={'imgs/team2.jpg'} imgLink2={'imgs/team.jpg'}/>
                                         <h3>кто-то</h3>
                                     </div>
                                 </SwiperSlide>
@@ -192,16 +192,16 @@ const Home = () => {
                             }}
                             >
                             <SwiperSlide>
-                                <Offer imgUrl={"imgs/offer-bg-1.jfif"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={1}/>
+                                <Offer imgUrl={"imgs/offer-bg-1.jpg"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={1}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Offer imgUrl={"imgs/offer-bg-2.jfif"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
+                                <Offer imgUrl={"imgs/offer-bg-2.jpg"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Offer imgUrl={"imgs/offer-bg-3.jfif"} title={'Lorem ipsum dolor'} titleColor={2} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={1}/>
+                                <Offer imgUrl={"imgs/offer-bg-3.jpg"} title={'Lorem ipsum dolor'} titleColor={2} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={1}/>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Offer imgUrl={"imgs/offer-bg-4.jfif"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
+                                <Offer imgUrl={"imgs/offer-bg-4.jpg"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <Offer imgUrl={"imgs/offer-bg-5.png"} title={'Lorem ipsum dolor'} titleColor={0} text={'Lorem ipsum dolor sit amet, consectetur'} textColor={0}/>
