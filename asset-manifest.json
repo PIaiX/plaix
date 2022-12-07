@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.bf5c1d82.css",
+    "main.css": "/plaix/static/css/main.baf28cbb.css",
     "main.js": "/plaix/static/js/main.f7ff7ec7.js",
     "static/media/Brush font one.otf": "/plaix/static/media/Brush font one.e983456600a141ed9b85.otf",
     "static/media/instagram.png": "/plaix/static/media/instagram.31ca98b00c6bbfacb7e9.png",
@@ -25,11 +25,11 @@
     "static/media/mobile-home.svg": "/plaix/static/media/mobile-home.7e7d4503a151d06a082416cecfbb44df.svg",
     "static/media/home.svg": "/plaix/static/media/home.5b7836d3b606d906ab9cc8429774bb87.svg",
     "static/media/mark.svg": "/plaix/static/media/mark.75a115e5516724d0b167.svg",
-    "main.bf5c1d82.css.map": "/plaix/static/css/main.bf5c1d82.css.map",
+    "main.baf28cbb.css.map": "/plaix/static/css/main.baf28cbb.css.map",
     "main.f7ff7ec7.js.map": "/plaix/static/js/main.f7ff7ec7.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf5c1d82.css",
+    "static/css/main.baf28cbb.css",
     "static/js/main.f7ff7ec7.js"
   ]
 }
