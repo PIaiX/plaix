@@ -571,6 +571,7 @@ header {
     }
     .services {
         position: absolute;
+        z-index: 100;
         top: 100%;
         left: 0px;
         width: 100%;
