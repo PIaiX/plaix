@@ -1,15 +1,10 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.c17a4ded.css",
-    "main.js": "/plaix/static/js/main.4842fd6f.js",
+    "main.css": "/plaix/static/css/main.bf5c1d82.css",
+    "main.js": "/plaix/static/js/main.f7ff7ec7.js",
     "static/media/Brush font one.otf": "/plaix/static/media/Brush font one.e983456600a141ed9b85.otf",
-    "static/media/plant.png": "/plaix/static/media/plant.bcb2f87e73044ecd5531.png",
-    "static/media/bg-2.png": "/plaix/static/media/bg-2.8ee8bcb0974fc9c872f2.png",
-    "static/media/instagram.png": "/plaix/static/media/instagram.07dfe410fc7c1f35027c.png",
-    "static/media/brief.png": "/plaix/static/media/brief.01982c168dfabc23d01c.png",
-    "static/media/wapp.png": "/plaix/static/media/wapp.eca700d97569e0d4d228.png",
-    "static/media/tg.png": "/plaix/static/media/tg.a85c19d3244eb1044b30.png",
-    "static/media/vk.png": "/plaix/static/media/vk.cd186cf9fb4fe16c511c.png",
+    "static/media/instagram.png": "/plaix/static/media/instagram.31ca98b00c6bbfacb7e9.png",
+    "static/media/plant.png": "/plaix/static/media/plant.b655bc7b385148bf9dd7.png",
     "static/media/Online.svg": "/plaix/static/media/Online.88eaac486e150420a450b887d90f8b38.svg",
     "static/media/stack.svg": "/plaix/static/media/stack.6429b4642d8a0e0829313da5fcbc9246.svg",
     "static/media/logo.svg": "/plaix/static/media/logo.6ca224716b88a3b5dd5db95ae81cb448.svg",
@@ -30,11 +25,11 @@
     "static/media/mobile-home.svg": "/plaix/static/media/mobile-home.7e7d4503a151d06a082416cecfbb44df.svg",
     "static/media/home.svg": "/plaix/static/media/home.5b7836d3b606d906ab9cc8429774bb87.svg",
     "static/media/mark.svg": "/plaix/static/media/mark.75a115e5516724d0b167.svg",
-    "main.c17a4ded.css.map": "/plaix/static/css/main.c17a4ded.css.map",
-    "main.4842fd6f.js.map": "/plaix/static/js/main.4842fd6f.js.map"
+    "main.bf5c1d82.css.map": "/plaix/static/css/main.bf5c1d82.css.map",
+    "main.f7ff7ec7.js.map": "/plaix/static/js/main.f7ff7ec7.js.map"
   },
   "entrypoints": [
-    "static/css/main.c17a4ded.css",
-    "static/js/main.4842fd6f.js"
+    "static/css/main.bf5c1d82.css",
+    "static/js/main.f7ff7ec7.js"
   ]
 }
