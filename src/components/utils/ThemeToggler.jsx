@@ -1,8 +1,6 @@
 import React from 'react'
 import { ThemeContext, themes } from '../../contexts/ThemeContext'
 
-
-
 function ThemeToggler() {
     
   return (

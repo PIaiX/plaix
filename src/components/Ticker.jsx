@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 
 
-
 const Ticker = (props) => {
   // const isShowHeader = useRef()
   // const scrollTop = useRef(0)

@@ -1,18 +1,19 @@
-import React, {useState} from 'react'
-import Container from 'react-bootstrap/Container'
-import Offcanvas from 'react-bootstrap/Offcanvas'
-import {Link, NavLink} from 'react-router-dom'
-import useIsMobile from '../hooks/isMobile'
-import { FiX } from "react-icons/fi"
-import { IoPersonCircle, IoMenu } from "react-icons/io5"
-import home from '../assets/imgs/icons/mobile-home.svg'
-import portfolio from '../assets/imgs/icons/mobile-portfolio.svg'
-import about from '../assets/imgs/icons/mobile-about.svg'
-import reviews from '../assets/imgs/icons/mobile-reviews.svg'
-import blog from '../assets/imgs/icons/mobile-blog.svg'
-import contacts from '../assets/imgs/icons/mobile-contacts.svg'
-import account from '../assets/imgs/icons/mobile-account.svg'
-import LanguageSwitcher from './utils/LanguageSwitcher'
+import React, {useState} from 'react';
+import Container from 'react-bootstrap/Container';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import {Link, NavLink} from 'react-router-dom';
+import useIsMobile from '../hooks/isMobile';
+import { FiX } from "react-icons/fi";
+import { IoPersonCircle, IoMenu } from "react-icons/io5";
+import Logo from './svg/Logo';
+import home from '../assets/imgs/icons/mobile-home.svg';
+import portfolio from '../assets/imgs/icons/mobile-portfolio.svg';
+import about from '../assets/imgs/icons/mobile-about.svg';
+import reviews from '../assets/imgs/icons/mobile-reviews.svg';
+import blog from '../assets/imgs/icons/mobile-blog.svg';
+import contacts from '../assets/imgs/icons/mobile-contacts.svg';
+import account from '../assets/imgs/icons/mobile-account.svg';
+import LanguageSwitcher from './utils/LanguageSwitcher';
 import ThemeToggler from './utils/ThemeToggler';
 
 const Header = () => {
@@ -27,7 +28,7 @@ const Header = () => {
             <header>
                 <Container className='custom-container h-100 d-flex justify-content-between align-items-center'>
                     <div className='d-flex align-items-center'>
-                        <img src="imgs/logo.svg" alt="plaix" className='logo'/>
+                        <Logo className='logo'/>
                         {
                             (mobile)
                             ? <nav className='main'>
