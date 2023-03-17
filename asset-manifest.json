@@ -1,35 +1,18 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.baf28cbb.css",
-    "main.js": "/plaix/static/js/main.f7ff7ec7.js",
-    "static/media/Brush font one.otf": "/plaix/static/media/Brush font one.e983456600a141ed9b85.otf",
-    "static/media/instagram.png": "/plaix/static/media/instagram.31ca98b00c6bbfacb7e9.png",
-    "static/media/plant.png": "/plaix/static/media/plant.b655bc7b385148bf9dd7.png",
-    "static/media/Online.svg": "/plaix/static/media/Online.88eaac486e150420a450b887d90f8b38.svg",
-    "static/media/stack.svg": "/plaix/static/media/stack.6429b4642d8a0e0829313da5fcbc9246.svg",
-    "static/media/logo.svg": "/plaix/static/media/logo.6ca224716b88a3b5dd5db95ae81cb448.svg",
-    "static/media/message.svg": "/plaix/static/media/message.d93a631021678558c48d3271c6d3521a.svg",
-    "static/media/bg-1.svg": "/plaix/static/media/bg-1.16c74df1a66f158b0625.svg",
-    "static/media/mobile-about.svg": "/plaix/static/media/mobile-about.cafb6d2ab944d21e471a92e1731b3e28.svg",
-    "static/media/mobile-blog.svg": "/plaix/static/media/mobile-blog.cd734a1bc00c466ea1ff7efade5a4aa0.svg",
-    "static/media/services.svg": "/plaix/static/media/services.a8735b6eb94b0233d986bee8393da419.svg",
-    "static/media/mobile-account.svg": "/plaix/static/media/mobile-account.a829a7fa824e547c1097885477d14bff.svg",
-    "static/media/mobile-reviews.svg": "/plaix/static/media/mobile-reviews.ad0d8fb42e406a9fa56ae4e1ef055140.svg",
-    "static/media/mobile-contacts.svg": "/plaix/static/media/mobile-contacts.8393e3a985df48e241b7e1cbda3eb0f5.svg",
-    "static/media/portfolio.svg": "/plaix/static/media/portfolio.0900ab3aea5dc10a91e53f9d93a7f2fd.svg",
-    "static/media/star.svg": "/plaix/static/media/star.f22c5d16cf4a8c42807a056d971193c3.svg",
-    "static/media/call.svg": "/plaix/static/media/call.a8d37b12359bef68c05c92e84a784e32.svg",
-    "static/media/mobile-portfolio.svg": "/plaix/static/media/mobile-portfolio.8f0bbad2720a8b2bbb88ba26d985df9f.svg",
-    "static/media/cases.svg": "/plaix/static/media/cases.88e3b2738c3a30a48c2fe4a328125104.svg",
-    "index.html": "/plaix/index.html",
-    "static/media/mobile-home.svg": "/plaix/static/media/mobile-home.7e7d4503a151d06a082416cecfbb44df.svg",
-    "static/media/home.svg": "/plaix/static/media/home.5b7836d3b606d906ab9cc8429774bb87.svg",
-    "static/media/mark.svg": "/plaix/static/media/mark.75a115e5516724d0b167.svg",
-    "main.baf28cbb.css.map": "/plaix/static/css/main.baf28cbb.css.map",
-    "main.f7ff7ec7.js.map": "/plaix/static/js/main.f7ff7ec7.js.map"
+    "main.css": "/static/css/main.2b4e83bb.css",
+    "main.js": "/static/js/main.cf52323f.js",
+    "static/media/Brush font one.otf": "/static/media/Brush font one.e983456600a141ed9b85.otf",
+    "static/media/mask-1.png": "/static/media/mask-1.bfc609b473a8c956424c.png",
+    "static/media/mask-2.svg": "/static/media/mask-2.332891eb3c5d2bfa6f8a.svg",
+    "static/media/sun.svg": "/static/media/sun.4bbca3968f84994a048b.svg",
+    "index.html": "/index.html",
+    "static/media/moon.svg": "/static/media/moon.de8bf6364816591a6efc.svg",
+    "main.2b4e83bb.css.map": "/static/css/main.2b4e83bb.css.map",
+    "main.cf52323f.js.map": "/static/js/main.cf52323f.js.map"
   },
   "entrypoints": [
-    "static/css/main.baf28cbb.css",
-    "static/js/main.f7ff7ec7.js"
+    "static/css/main.2b4e83bb.css",
+    "static/js/main.cf52323f.js"
   ]
 }
