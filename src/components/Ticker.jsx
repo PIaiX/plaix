@@ -6,29 +6,31 @@ import 'swiper/css/free-mode';
 
 
 const Ticker = (props) => {
-  // const isShowHeader = useRef()
-  // const scrollTop = useRef(0)
+  const [direction, setDirection] = useState(props.reverse);
 
-  // const handleScroll = () => {
-  //   let currentScrollTop = window.pageYOffset
-  //   if (scrollTop.current <= currentScrollTop) {
-  //       isShowHeader.current.className = 'h-hide'
-  //   } else {
-  //       isShowHeader.current.className = 'h-show'
-  //   }
-  //   scrollTop.current = currentScrollTop
-  // }
+  const scrollTop = useRef(0);
 
-  // useEffect(() => {
-  //   document.addEventListener('scroll', handleScroll, true)
-  //   return () => {
-  //       document.removeEventListener('scroll', handleScroll, true)
-  //   }
-  // }, [])
+  const handleScroll = () => {
+    let currentScrollTop = window.pageYOffset
+    if (scrollTop.current <= currentScrollTop) {
+      setDirection(props.reverse)
+    } else {
+      setDirection(!direction)
+    }
+    scrollTop.current = currentScrollTop
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll, true)
+    return () => {
+        document.removeEventListener('scroll', handleScroll, true)
+    }
+  });
+  
 
   //ref={isShowHeader}
   return (
-    <div  className={'ticker ' + props.className}>
+    <div className={'ticker ' + props.className}>
       <Swiper
         modules={[Autoplay, FreeMode]}
         spaceBetween={50}
@@ -38,7 +40,7 @@ const Ticker = (props) => {
         speed={10000}
         autoplay={{ 
           delay: 0,
-          reverseDirection: props.reverse
+          reverseDirection: direction
         }}
       >
         <SwiperSlide><span>{props.text}</span></SwiperSlide>

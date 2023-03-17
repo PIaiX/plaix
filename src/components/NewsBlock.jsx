@@ -10,9 +10,9 @@ const NewsBlock = () => {
   return (
     <section className='sec-home-6 px-5 mb-45'>
       <Row className='gx-xxl-5 mb-5'>
-        <Col md={7}>
+        <Col md={6} xxl={7}>
           <h2>Новости</h2>
-          <ul className='my-5'>
+          <ul>
             <li>
               <Link to='/' className={(activeNews === 0)?'active':''} onMouseEnter={()=>setActiveNews(0)}>
                 <h4>GitHub сокращает 10% штата</h4>
@@ -34,7 +34,7 @@ const NewsBlock = () => {
           </ul>
           <Link to='/' className='btn-3'>Перейти в блог</Link>
         </Col>
-        <Col md={5}>
+        <Col md={6} xxl={5}>
           {
             (activeNews === 2)
             ? <article className='preview'>
@@ -92,20 +92,20 @@ const NewsBlock = () => {
             </article>
             : <article className='preview'>
               <img src="imgs/img2.jpg" alt="GitHub сокращает 10% штата" />
-              <div className='d-gray d-flex align-items-center mt-2'>
-                <div className='d-flex align-items-center'>
+              <ul className='info mt-2'>
+                <li>
                   <CiClock2/>
                   <span>2 мин</span>
-                </div>
-                <div className='d-flex align-items-center ms-4'>
+                </li>
+                <li>
                   <CiRead/>
                   <span>128</span>
-                </div>
-                <div className='d-flex align-items-center ms-4'>
+                </li>
+                <li>
                   <CiCalendar/>
                   <span>12.01.2023</span>
-                </div>
-              </div>
+                </li>
+              </ul>
               <p className='text'>Гендиректор GitHub Томас Домке сообщил сотрудникам, что компания сокращает 10% штата, закрывает все офисы, переходит полностью на удалёнку и предпримет значительные меры...</p>
               <ul className="markers">
                 <li>#Разработка</li>

@@ -5,38 +5,29 @@
 :root {
     --h-height: 76px;
     --f-height: 100px;
-    --w-cont: 1600px;
-    @media (max-width: 1679px){
-        --w-cont: 1320px;
-    }
-    @media (max-width: 1399px){
-        --w-cont: 1140px;
-        --f-height: 220px;
-    }
-    @media (max-width: 1199px){
-        --w-cont: 960px;
-    }
-    @media (max-width: 991px){
-        --w-cont: 720px;
-        --f-height: 60px;
-    }
-    @media (max-width: 767px){
-        --w-cont: 540px;
-    }
-    @media (max-width: 575px){
-        --h-height: 60px;
-        --w-cont: 100%;
+    @media (max-width:991px) {
+        --h-height: 65px;
     }
 }
 :root[data-theme='light'] {
+    --body-bg: #fff;
     --bg: #fff;
     --bg-invert: #060606;
     --switcher-bg: #EDEDED;
+    --accent-color: #B9FF4A;
+    --accent-color-invert: #0433FF;
+    --faded: #4F4F4F;
+    --invert: invert(0);
 }
 :root[data-theme='dark'] {
+    --body-bg: #151515;
     --bg: #151515;
     --bg-invert: #fff;
     --switcher-bg: #FFFFFF;
+    --accent-color: #0433FF;
+    --accent-color-invert: #B9FF4A;
+    --faded: #c9c9c9;
+    --invert: invert(1);
 }
 
 
@@ -47,8 +38,19 @@ $color-3: #557AFF;
 $silver: #EDEDED;
 $gray: #636363;
 $dark-gray:#4F4F4F;
+$white: #fff;
+$black: #060606;
 $transition: .3s ease;
 $radius: .8em;
+
+$bp-xs: 575px;
+$bp-sm: 767px;
+$bp-md: 991px;
+$bp-lg: 1199px;
+$bp-xl: 1399px;
+$bp-xxl: 1679px;
+$bp-3xl: 1849px;
+
 
 /* mixins */
 @mixin flex($dir, $x, $y, $wrap) {
@@ -184,12 +186,22 @@ h1, h2 {
     line-height: 130%;
     font-weight: 600;
     margin-bottom: 1em;
+    @media (max-width: $bp-xl) {
+        font-size: 3.2em;
+    }
+    @media (max-width: $bp-lg) {
+        font-size: 3em;
+        margin-bottom: .7em;
+    }
 }
 h3 {
     text-align: left;
     font-size: 2.5em;
     font-weight: 600;
     margin-bottom: 1em;
+    @media (max-width: $bp-md) {
+        font-size: 2em;
+    }
 }
 h4 {
     text-align: left;
@@ -381,18 +393,18 @@ button {
     border: 2px solid;
     &-1 {
         @extend .btn;
-        color: #fff;
+        color: var(--bg);
         background: transparent;
-        border-color: $color-2;
+        border-color: var(--accent-color);
         &:hover, &:focus {
-            color: #000;
-            background: $color-2;
+            color: var(--bg-invert);
+            background: var(--accent-color);
             transform: scale(1.1);
         }
         &:active {
-            color: #000;
-            background: $color-2;
-            box-shadow: 0px 0px 10px $color-2;
+            color: var(--bg-invert);
+            background: var(--accent-color);
+            box-shadow: 0px 0px 10px var(--accent-color);
         }
     }
     &-2 {
@@ -431,7 +443,6 @@ button {
 }
 
 
-
 /* Blocks */
 .flex-1 {flex: 1;}
 .container.custom-container {
@@ -443,31 +454,6 @@ button {
     }
 }
 .mb-45 {margin-bottom: 4.5em;}
-
-.breadcrumbs {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0px;
-    font-size: .9em;
-    color: $gray;
-    font-weight: 300;
-    margin-bottom: 3em;
-    @media (max-width: 575px){
-        margin-bottom: 2em;
-    }
-    li {
-        &:not(:last-child){
-            margin-right: 1em;
-            &::after {
-                content: '/';
-                margin-left: 1em;
-            }
-        }
-    }
-}
 
 // .swiper {
 //     position: unset;
@@ -591,19 +577,19 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 24px;
     font-weight: 400;
-    background-color: var(--bg);
+    background-color: var(--body-bg);
     color: var(--bg-invert);
     overflow-x: hidden;
-    @media (max-width: 1849px){
+    @media (max-width: $bp-3xl){
+        font-size: 22px;
+    }
+    @media (max-width: $bp-xxl){
         font-size: 20px;
     }
-    @media (max-width: 1679px){
-        font-size: 20px;
-    }
-    @media (max-width: 1399px){
+    @media (max-width: $bp-xl){
         font-size: 18px;
     }
-    @media (max-width: 767px){
+    @media (max-width: $bp-lg){
         font-size: 16px;
     }
 }
@@ -618,7 +604,6 @@ main {
 header {
     position: relative;
     height: var(--h-height);
-    
     nav.main {
         height: var(--h-height);
         ul {
@@ -630,10 +615,10 @@ header {
             li {
                 &:not(:first-child){
                     margin-left: 2.4em;
-                    @media (max-width: 1399px){
+                    @media (max-width: $bp-xl){
                         margin-left: 1.75em;
                     }
-                    @media (max-width: 1199px){
+                    @media (max-width: $bp-lg){
                         margin-left: 1.2em;
                     }
                 }
@@ -649,22 +634,64 @@ header {
         @include list();
         @include flex(row, center, center, nowrap);
         li:not(:first-child){margin-left: 2em;}
+        .menu {
+            color: var(--faded);
+            font-size: 1.75em;
+        }
     }
 }
 
 
 .sec-home-1 {
-    background-color: #000;
+    background-color: var(--bg-invert);
     border-radius: $radius;
     padding: 7% 7% 14%;
     min-height: calc(100vh - var(--h-height));
-    color: #fff;
+    color: var(--bg);
     @include flex(row, stretch, center, nowrap);
+    @media (max-width: $bp-xxl) {
+        padding: 6% 5% 12%;
+    }
     .projects-icons {
         @include list();
         @include flex(row, flex-start, center, nowrap);
         li {
             &:not(:first-child){margin-left: -.5em;}
+        }
+    }
+    h1 {
+        --w: 360px;
+        --h: 40px;
+        position: relative;
+        @media (max-width: $bp-xl) {
+            --w: 300px;
+            --h: 35px;
+        }
+        .line {
+            position: absolute;
+            top: 45%;
+            left: 0%;
+            width: var(--w);
+            max-width: 0px;
+            height: var(--h);
+            overflow: hidden;
+            transition: 500ms ease-in-out 500ms;
+            display: flex;
+            z-index: 1;
+            svg {
+                @include absBG();
+                width: var(--w);
+                height: var(--h);
+                color: var(--accent-color);
+            }
+            &.observing {
+                max-width: var(--w);
+            }
+        }
+        
+        span {
+            position: relative;
+            z-index: 10;
         }
     }
 }
@@ -693,6 +720,12 @@ header {
             span {transform: translateX(.65em);}
         }
     }
+    h3 {
+        font-size: 2em;
+        @media (max-width: $bp-md) {
+            font-size: 1.75em;
+        }
+    }
     .service {
         width: 100%;
         border-radius: $radius;
@@ -700,15 +733,33 @@ header {
         @include flex(column, flex-end, stretch, nowrap);
         overflow: hidden;
         @include safariFix();
+        @media (max-width: $bp-3xl) {
+            height: 620px;
+        }
+        @media (max-width: $bp-xxl) {
+            height: 550px;
+        }
+        @media (max-width: $bp-xl) {
+            height: 520px;
+        }
+        @media (max-width: $bp-lg) {
+            height: 460px;
+        }
         .box {
             margin: auto 0;
             padding: 0 3.5em;
+            @media (max-width: $bp-3xl) {
+                padding: 0 3em;
+            }
+            @media (max-width: $bp-lg){
+                padding: 0 2em;
+            }
         }
         &-white {
             @extend .service;
-            background-color: #fff;
+            background-color: $white;
+            color: $black;
             @include shadow();
-            padding: 2.5 3.5em;
             img {
                 width: 75%;
                 margin: 0px auto 2em;
@@ -717,9 +768,18 @@ header {
         &-white-2 {
             height: 570px;
             @extend .service;
-            background-color: #fff;
+            background-color: $white;
+            color: $black;
             @include shadow();
-            .box {margin: 1em 0 0;}
+            @media (max-width: $bp-3xl) {
+                height: 520px;
+            }
+            @media (max-width: $bp-xxl) {
+                height: 470px;
+            }
+            @media (max-width: $bp-lg) {
+                height: 400px;
+            }
             img {
                 width: 70%;
                 margin-left: auto;
@@ -737,6 +797,10 @@ header {
                     width: 45%;
                     margin: 0px 32% 0 23%;
                     display: block;
+                    @media (max-width: $bp-xxl) {
+                        width: 50%;
+                        margin: 0px 30% 2px 20%; 
+                    }
                 }
                 .billet {
                     position: absolute;
@@ -746,12 +810,14 @@ header {
                         @extend .billet;
                         top: 20%;
                         left: 15%;
+                        width: 18%;
                         transition: $transition 200ms;
                     }
                     &-2 {
                         @extend .billet;
                         bottom: 10%;
                         right: 10%;
+                        width: 34%;
                         transition: $transition 400ms;
                     }
                 }
@@ -766,12 +832,37 @@ header {
             height: 300px;
             @extend .service;
             flex-direction: row;
-            background-color: $color-3;
-            color: #fff;
+            justify-content: flex-start;
+            color: $white;
             padding-right: 0.5em;
+            background: url(imgs/bg/mask-1.png) no-repeat $color-3;
+            background-size: auto 100%;
+            background-position: 95% 50%;
+            @media (max-width: $bp-3xl) {
+                height: 270px;
+            }
+            @media (max-width: $bp-xxl) {
+                height: 220px;
+            }
+            @media (max-width: $bp-lg) {
+                height: 180px;
+            }
+            @media (max-width: $bp-md) {
+                background: url(imgs/bg/mask-2.svg) no-repeat $color-3;
+                background-size: auto 55%;
+                background-position: 100% 100%;
+            }
             .box {
                 margin: 0;
                 padding: 2em 3em;
+                width: 60%;
+                @media (max-width: $bp-lg) {
+                    padding: 2em;
+                }
+                @media (max-width: $bp-md) {
+                    padding: 1.5em;
+                    width: 75%;
+                }
             }
             img {
                 height: 100%;
@@ -781,13 +872,25 @@ header {
         &-green {
             @extend .service;
             background-color: $color-2;
+            color: $black;
             img {
                 width: calc(100% - 3.5em);
                 margin-left: 3.5em;
+                @media (max-width: $bp-3xl) {
+                    width: calc(100% - 3em);
+                    margin-left: 3em;
+                }
             }
         }
         &-folder {
-            @include folder(246px, 2px);
+            --height: 246px;
+            @include folder(var(--height), 2px);
+            @media (max-width: $bp-3xl) {
+                --height: 226px;
+            }
+            @media (max-width: $bp-lg) {
+                --height: 196px;
+            }
             .icon {
                 width: 3em;
                 margin-right: 1em;
@@ -803,10 +906,20 @@ header {
     height: 127px;
     font-size: 2.7em;
     transform: rotateZ(2deg);
-    // width: 110vw;
-    // margin-left: -5vw;
     overflow: hidden;
     pointer-events: none;
+    @media (max-width: $bp-xxl) {
+        height: 110px;
+        font-size: 2.4em;
+    }
+    @media (max-width: $bp-xl) {
+        height: 100px;
+        font-size: 2.2em;
+    }
+    @media (max-width: $bp-lg) {
+        height: 80px;
+        font-size: 2em;
+    }
     .swiper {
         height: 100%;
         &-wrapper {
@@ -842,21 +955,27 @@ header {
 }
 
 .sec-home-4 {
-    figure {
+    .union {
         position: relative;
-        img {
+        margin-bottom: -1px;
+        svg {
             width: 100%;
+            height: auto;
+            color: var(--bg-invert);
+            path {color: var(--bg-invert);}
         }
-        figcaption {
+        h3 {
             position: absolute;
             position: absolute;
             top: 27%;
             left: 43%;
             width: 57%;
             z-index: 1;
-            h3 {
-                color: var(--bg);
-                margin-bottom: 0px;
+            color: var(--bg);
+            margin-bottom: 0px;
+            @media (max-width: $bp-xxl) {
+                top: 30%;
+                font-size: 2em;
             }
         }
     }
@@ -872,8 +991,21 @@ header {
     .logotips {
         img {
             width: 100%;
-            height: 190px;
+            height: 180px;
             object-fit: scale-down;
+            filter: var(--invert);
+            @media (max-width: $bp-3xl) {
+                height: 160px;
+            }
+            @media (max-width: $bp-xxl) {
+                height: 140px;
+            }
+            @media (max-width: $bp-xl) {
+                height: 120px;
+            }
+            @media (max-width: $bp-lg) {
+                height: 100px;
+            }
         }
     }
     .box {
@@ -884,8 +1016,9 @@ header {
         .diagram {
             position: relative;
             margin-top: -2em;
-            img {
+            img, svg {
                 width: 70%;
+                height: auto;
                 margin: 0 10% 0 20%;
             }
             .title {
@@ -937,25 +1070,41 @@ header {
 
 .sec-home-5 {
     width: 100%;
+    --height: 310px;
+    @media (max-width: $bp-xxl) {
+        --height: 280px;
+    }
+    @media (max-width: $bp-xl) {
+        --height: 235px;
+    }
+    @media (max-width: $bp-lg) {
+        --height: 210px;
+    }
     .folder {
         width: 100%;
-        @include folder(310px, 2px);
+        @include folder(var(--height), 2px);
         .top-left {
             padding: .7em 0.25em 0 1.5em;
         }
         .bottom {
             padding: 2.5em 1.5em;
             @include flex(column, flex-end, flex-start, nowrap);
+            @media (max-width: $bp-lg) {
+                padding: 2em 1.5em;
+            }
         }
     }
     .card {
         border-radius: $radius;
         padding: 2.5em 1.5em;
-        height: 310px;
+        height: var(--height);
         background-color: $color-1;
         color: #fff;
         position: relative;
         @include flex(column, flex-end, flex-start, nowrap);
+        @media (max-width: $bp-lg) {
+            padding: 2em 1.5em;
+        }
         .marker {
             position: absolute;
             top: 1em;
@@ -978,7 +1127,11 @@ header {
 .sec-home-6 {
     ul {
         width: 90%;
+        margin: 1em 0;
         @include list();
+        @media (max-width: $bp-xxl) {
+            width: 100%;
+        }
         li {
             margin-bottom: 1em;
             a {
@@ -994,7 +1147,7 @@ header {
                     height: 2px;
                     width: 500px;
                     max-width: 0%;
-                    background-color: $color-1;
+                    background-color: var(--accent-color-invert);
                     transition: $transition;
                 }
                 h4 {
@@ -1029,11 +1182,29 @@ header {
             height: 400px;
             object-fit: cover;
             border-radius: $radius;
+            @media (max-width: $bp-3xl) {
+                height: 350px;
+            }
+            @media (max-width: $bp-xxl) {
+                height: 280px;
+            }
+        }
+        .info {
+            @include list();
+            @include flex(row, flex-start, center, nowrap);
+            color: var(--faded);
+            li {
+                @include flex(row, flex-start, center, nowrap);
+                &:not(:first-child){margin-left: 1em;}
+            }
         }
         .text {
             width: 90%;
             margin-top: 2em;
             @include clamp(4, 1em);
+            @media (max-width: $bp-xxl) {
+                margin-top: 1em;
+            }
         }
         .markers {
             position: absolute;
@@ -1103,10 +1274,10 @@ header {
 }
 
 .sec-home-7 {
-    background-color: #000;
+    background-color: var(--bg-invert);
     border-radius: $radius;
     padding: 5%;
-    color: #fff;
+    color: var(--bg);
 }
 
 
@@ -1141,62 +1312,25 @@ footer {
 }
 
 
-// .offcanvas {
-//     &.offcanvas-end {
-//         padding: 3em 2em;
-//         nav {
-//             margin-bottom: 2em;
-//             ul {
-//                 list-style: none;
-//                 padding-left: 0px;
-//                 li {
-//                     &:not(:first-child){margin-top: 1.5em;}
-//                     a {
-//                         font-size: 1.6em;
-//                         img {
-//                             width: 1.5em;
-//                             height: 1.5em;
-//                         }
-//                         span {
-//                             margin-left: 1em;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//         .social li a img {
-//             width: 2.5em;
-//             height: 2.5em;
-//         }
-//         @media (max-width: 575px){
-//             width: 100%;
-//             max-width: 100%;
-//         }
-//     }
-//     .offer {
-//         border: none;
-//         padding: 0px;
-//         img {
-//             height: 200px;
-//             @media (max-width: 575px){
-//                 height: 45vw;
-//             }
-//         }
-//         h4 {
-//             color: $font-color;
-//             font-size: 1em;
-//         }
-//     }
-//     .close {
-//         position: absolute;
-//         top: .2em;
-//         right: .2em;
-//         z-index: 10;
-//         font-size: 2.5em;
-//         color: $color-1;
-//         transition: $transition;
-//         &:hover, &:active {
-//             color: $color-4;
-//         }
-//     }
-// }
+.scroll-top {
+    position: fixed;
+    z-index: 100;
+    bottom: 2em;
+    right: 2em;
+    background-color: $white;
+    color: $color-1;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    @include flex(column, center, center, nowrap);
+    transition: $transition;
+    opacity: 1;
+    transform: scale(1);
+    svg {font-size: 1.25em;}
+    span {font-size: .7em;}
+    &.hide {
+        opacity: 0;
+        transform: scale(.5);
+    }
+}

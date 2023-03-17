@@ -8,21 +8,28 @@ import useObserver from '../hooks/useObserver';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import NewsBlock from '../components/NewsBlock';
+import Line from '../components/svg/Line';
+import Diagram from '../components/svg/Diagram';
+import Union from '../components/svg/Union';
 
 const Home = () => {
   const [objRef, isVisible] = useObserver({threshold: 1.0});
   const [objRef2, isVisible2] = useObserver({threshold: 0.5});
+  
   return (
     <main>
       <Container className='custom-container'>
         <section className='sec-home-1 mb-45'>
           <Row>
-            <Col md={7}>
-              <h1 className='mb-5'>Красивые сайты, которые работают</h1>
+            <Col lg={7}>
+              <h1 className='mb-4 mb-lg-5'>
+                <Line/>
+                <span>Красивые сайты, которые работают</span>
+              </h1>
               <button type='button' className='btn-1'>Оставить заявку</button>
             </Col>
-            <Col md={5} className='d-flex flex-column justify-content-between pt-5 pb-4'>
-              <p className='pe-5'>На создание и запуск проекта и ещё какой то текст для описания данного блока создание и запуск проекта и ещё какой то текст для описания данного блока</p>
+            <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between pt-3 pt-xl-4 pt-xxl-5 pb-xl-4'>
+              <p className='mb-5 mb-lg-0 pe-lg-5'>На создание и запуск проекта и ещё какой то текст для описания данного блока создание и запуск проекта и ещё какой то текст для описания данного блока</p>
               <div>
                 <ul className='projects-icons'>
                   <li><img src="imgs/Ellipse1.svg" alt="Ellipse1" /></li>
@@ -42,7 +49,7 @@ const Home = () => {
             <br/>проекту уже завтра
           </h2>
           <Row className='g-4'>
-            <Col md={4}>
+            <Col xs={12} sm={6} lg={4}>
               <div className="service-white">
                 <div className="box">
                   <h3 className='mb-3'>Web-разработка</h3>
@@ -51,10 +58,20 @@ const Home = () => {
                 <img src="imgs/logotips.gif" alt="Web-разработка" />
               </div>
             </Col>
-            <Col md={8}>
+            <Col xs={12} sm={6} lg={8}>
               <Swiper
                 spaceBetween={24}
-                slidesPerView={2}
+                slidesPerView={1}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                  },
+                  992: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <div className="service-blue">
@@ -80,7 +97,7 @@ const Home = () => {
                 </SwiperSlide>
               </Swiper>
             </Col>
-            <Col md={5}>
+            <Col xs={12} sm={6} lg={5}>
               <div className="service-white-2">
                 <div className="box">
                   <h3 className='mb-3'>IT-субподряд</h3>
@@ -89,13 +106,12 @@ const Home = () => {
                 <img src="imgs/img1.png" alt="IT-субподряд" />
               </div>
             </Col>
-            <Col md={7}>
+            <Col xs={12} sm={6} lg={7}>
               <div className="service-lightblue">
                 <div className="box">
                   <h3 className='mb-4'>Дизайн</h3>
                   <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
                 </div>
-                <img src="imgs/Mask Group.png" alt="Дизайн" />
               </div>
 
               <div className="service-folder mt-4">
@@ -116,18 +132,18 @@ const Home = () => {
         </section>
       </Container>
 
-      <section className='mb-45 py-5'>
+      <section className='mb-45 py-lg-5'>
         <Ticker reverse={true} text={'Развивай свой бизнес'}/> 
         <Ticker reverse={false} className={'type-2'} text={'Развивай свой бизнес'}/>
       </section>
 
       <Container className='custom-container'>
-        <section className='sec-home-3 px-xxl-5 mb-45'>
+        <section className='sec-home-3 ps-xxl-5 mb-45'>
           <Row className='align-items-center'>
-            <Col md={8}>
+            <Col md={7} xl={8} className='pe-xl-5'>
               <img src="imgs/slides.gif" alt="Проекты, которые говорят сами за себя"/>
             </Col>
-            <Col md={4}>
+            <Col md={5} xl={4}>
               <h3>Проекты, которые говорят сами за себя</h3>
               <p>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
               <button type='button' className='btn-2 mt-5'>Посмотреть все проекты</button>
@@ -138,14 +154,12 @@ const Home = () => {
         <section className='sec-home-4 px-xxl-5 mb-45'>
           <Row className='gx-4'>
             <Col md={9}>
-              <figure>
-                <img src="imgs/Union.png" alt="Union"/>
-                <figcaption>
-                  <h3>Наш многолетний опыт для твоих смелых идей</h3>
-                </figcaption>
-              </figure>
+              <div className='union'>
+                <Union />
+                <h3>Наш многолетний опыт для твоих смелых идей</h3>
+              </div>
             </Col>
-            <Col md={3} className='d-flex flex-column justify-content-end align-items-start pb-5 ps-5'>
+            <Col md={3} className='d-flex flex-column justify-content-end align-items-start pb-4 pb-xl-5 p-xxl-5'>
               <ul className='photos'>
                 <li><img src="imgs/img3.png" alt="img3"/></li>
                 <li><img src="imgs/img4.png" alt="img4"/></li>
@@ -172,17 +186,18 @@ const Home = () => {
             </Col>
             <Col md={6}>
               <div className="box">
-                <h4 className='fw-3'>К нам обращаются</h4>
+                <h4>К нам обращаются</h4>
                 <div className="diagram">
-                  <img src="imgs/diagram.svg" alt="diagram" />
+                  {/* <img src="imgs/diagram.svg" alt="diagram" /> */}
+                  <Diagram/>
                   <div className="title">
                     <h3 className='text-center mb-0'>100+</h3>
-                    <span className='fw-3'>реализованных проектов</span>
+                    <span>реализованных проектов</span>
                   </div>
-                  <div className="text-1 fw-3">Повторно</div>
-                  <div className="text-2 fw-3">По рекомендации</div>
-                  <div className="text-3 fw-3">За реализацией оригинальной идеи</div>
-                  <div className="text-4 fw-3">За сложной технической разработкой</div>
+                  <div className="text-1">Повторно</div>
+                  <div className="text-2">По рекомендации</div>
+                  <div className="text-3">За реализацией оригинальной идеи</div>
+                  <div className="text-4">За сложной технической разработкой</div>
                 </div>
               </div>
             </Col>
@@ -191,7 +206,7 @@ const Home = () => {
 
         <section className='sec-home-5 px-xxl-5 mb-45'>
           <h3>Акции и спец. предложения</h3>
-          <Row className='mb-5'>
+          <Row className='mb-4 mb-xl-5'>
             <Col md={8}>
               <h4>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу. </h4>
             </Col>
