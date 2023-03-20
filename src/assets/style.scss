@@ -193,6 +193,9 @@ h1, h2 {
         font-size: 3em;
         margin-bottom: .7em;
     }
+    @media (max-width: $bp-lg) {
+        font-size: 2.75em;
+    }
 }
 h3 {
     text-align: left;
@@ -455,46 +458,6 @@ button {
 }
 .mb-45 {margin-bottom: 4.5em;}
 
-// .swiper {
-//     position: unset;
-//     &-button {
-//         background-color: #fff;
-//         width: 4em;
-//         height: 4em;
-//         border-radius: 50%;
-//         box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.18);
-//         @include flex(row, center, center, nowrap);
-//         margin-top: 0px;
-//         transform: translateY(-50%);
-//         transition: $transition;
-//         &-next {
-//             @extend .swiper-button;
-//             right: -2em;
-//         }
-//         &-prev {
-//             @extend .swiper-button;
-//             left: -2em;
-//         }
-//         &::after {
-//             color: $color-1;
-//             font-weight: 700;
-//             font-size: 1.25em;
-//             line-height: 1.2em;
-//         }
-//         &:hover, &:focus {
-//             background-color: $color-1;
-//             &::after {
-//                 color: #fff;
-//             }
-//         }
-//         &:active {
-//             background-color: $color-4;
-//             &::after {
-//                 color: #fff;
-//             }
-//         }
-//     }
-// }
 
 .themes-switcher {
     input {
@@ -652,6 +615,10 @@ header {
     @media (max-width: $bp-xxl) {
         padding: 6% 5% 12%;
     }
+    @media (max-width: $bp-md) {
+        padding: 6% 10% 12%;
+        h6 {margin-top: 10%}
+    }
     .projects-icons {
         @include list();
         @include flex(row, flex-start, center, nowrap);
@@ -666,6 +633,9 @@ header {
         @media (max-width: $bp-xl) {
             --w: 300px;
             --h: 35px;
+        }
+        @media (max-width: $bp-md) {
+            line-height: 1.5em;
         }
         .line {
             position: absolute;
@@ -688,7 +658,6 @@ header {
                 max-width: var(--w);
             }
         }
-        
         span {
             position: relative;
             z-index: 10;
@@ -1016,6 +985,10 @@ header {
         .diagram {
             position: relative;
             margin-top: -2em;
+            font-size: 1.2vw;
+            @media (max-width: $bp-md) {
+                font-size: 2.2vw;
+            }
             img, svg {
                 width: 70%;
                 height: auto;
@@ -1028,15 +1001,16 @@ header {
                 width: 25%;
                 text-align: center;
                 color: var(--bg-invert);
-                font-size: 1.2vw;
                 z-index: 1;
+                @media (max-width: $bp-md) {
+                    top: 38%;
+                }
             }
             .text-1 {
                 position: absolute;
                 top: 15%;
                 right: 0%;
                 width: fit-content;
-                font-size: 1.2vw;
                 z-index: 1;
             }
             .text-2 {
@@ -1044,7 +1018,6 @@ header {
                 bottom: 3%;
                 right: 0%;
                 width: fit-content;
-                font-size: 1.2vw;
                 z-index: 1;
             }
             .text-3 {
@@ -1052,7 +1025,6 @@ header {
                 bottom: 10%;
                 left: 3%;
                 width: 35%;
-                font-size: 1.2vw;
                 z-index: 1;
                 text-align: right;
             }
@@ -1061,7 +1033,6 @@ header {
                 top: 30%;
                 left: 0%;
                 width: 40%;
-                font-size: 1.2vw;
                 z-index: 1;
             }
         }

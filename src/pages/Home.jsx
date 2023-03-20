@@ -29,7 +29,7 @@ const Home = () => {
               <button type='button' className='btn-1'>Оставить заявку</button>
             </Col>
             <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between pt-3 pt-xl-4 pt-xxl-5 pb-xl-4'>
-              <p className='mb-5 mb-lg-0 pe-lg-5'>На создание и запуск проекта и ещё какой то текст для описания данного блока создание и запуск проекта и ещё какой то текст для описания данного блока</p>
+              <h6 className='mb-5 mb-lg-0 pe-lg-5'>На создание и запуск проекта и ещё какой то текст для описания данного блока создание и запуск проекта и ещё какой то текст для описания данного блока</h6>
               <div>
                 <ul className='projects-icons'>
                   <li><img src="imgs/Ellipse1.svg" alt="Ellipse1" /></li>
@@ -153,13 +153,13 @@ const Home = () => {
 
         <section className='sec-home-4 px-xxl-5 mb-45'>
           <Row className='gx-4'>
-            <Col md={9}>
+            <Col xs={12} lg={9} className="order-1">
               <div className='union'>
                 <Union />
                 <h3>Наш многолетний опыт для твоих смелых идей</h3>
               </div>
             </Col>
-            <Col md={3} className='d-flex flex-column justify-content-end align-items-start pb-4 pb-xl-5 p-xxl-5'>
+            <Col xs={12} lg={3} className='order-4 order-lg-2 d-flex flex-column justify-content-end align-items-center align-items-lg-start pb-4 pb-xl-5 p-xxl-5 mt-5 mt-lg-0'>
               <ul className='photos'>
                 <li><img src="imgs/img3.png" alt="img3"/></li>
                 <li><img src="imgs/img4.png" alt="img4"/></li>
@@ -167,8 +167,8 @@ const Home = () => {
               </ul>
               <h6>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </Col>
-            <Col md={6}>
-              <h5>Используем большой стек технологий для решения клиентских задач</h5>
+            <Col xs={12} lg={6} className="order-3">
+              <h5 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h5>
               <Row className='logotips' md={2}>
                 <Col>
                   <img src="imgs/logotips/mongo.png" alt="mongo" />
@@ -184,7 +184,7 @@ const Home = () => {
                 </Col>
               </Row>
             </Col>
-            <Col md={6}>
+            <Col xs={12} lg={6} className="order-2 order-lg-4 mb-5 mb-lg-0">
               <div className="box">
                 <h4>К нам обращаются</h4>
                 <div className="diagram">
@@ -217,7 +217,17 @@ const Home = () => {
 
           <Swiper
               spaceBetween={24}
-              slidesPerView={3}
+              slidesPerView={1}
+              breakpoints={{
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 24,
+                },
+                992: {
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                },
+              }}
             >
             <SwiperSlide>
               <div className="folder">
