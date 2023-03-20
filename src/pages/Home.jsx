@@ -11,8 +11,11 @@ import NewsBlock from '../components/NewsBlock';
 import Line from '../components/svg/Line';
 import Diagram from '../components/svg/Diagram';
 import Union from '../components/svg/Union';
+import UnionMobile from '../components/svg/UnionMobile';
+import useIsMobile from '../hooks/isMobile';
 
 const Home = () => {
+  const {mobile} = useIsMobile('575px');
   const [objRef, isVisible] = useObserver({threshold: 1.0});
   const [objRef2, isVisible2] = useObserver({threshold: 0.5});
   
@@ -26,7 +29,7 @@ const Home = () => {
                 <Line/>
                 <span>Красивые сайты, которые работают</span>
               </h1>
-              <button type='button' className='btn-1'>Оставить заявку</button>
+              <button type='button' className='btn-1 mx-auto mx-sm-0'>Оставить заявку</button>
             </Col>
             <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between pt-3 pt-xl-4 pt-xxl-5 pb-xl-4'>
               <h6 className='mb-5 mb-lg-0 pe-lg-5'>На создание и запуск проекта и ещё какой то текст для описания данного блока создание и запуск проекта и ещё какой то текст для описания данного блока</h6>
@@ -43,12 +46,12 @@ const Home = () => {
           </Row>
         </section>
 
-        <section className='sec-home-2 px-xxl-5 pb-5 mb-45'>
+        <section className='sec-home-2 px-xxl-5 pb-md-5 mb-45'>
           <h2 className='text-center'>
-            Приступим <span ref={objRef} className='indicator-switch' data-observing={isVisible}><span></span></span> к вашему 
-            <br/>проекту уже завтра
+            Приступим <span ref={objRef} className='indicator-switch' data-observing={isVisible}><span></span></span> к вашему
+            <br className='d-none d-sm-inline'/> проекту уже завтра
           </h2>
-          <Row className='g-4'>
+          <Row className='g-3 g-md-4'>
             <Col xs={12} sm={6} lg={4}>
               <div className="service-white">
                 <div className="box">
@@ -62,7 +65,14 @@ const Home = () => {
               <Swiper
                 spaceBetween={24}
                 slidesPerView={1}
+                direction={'vertical'}
+                onResize={(swiper) => swiper.changeDirection((mobile)?'vertical':'horizontal', true)}
                 breakpoints={{
+                  576: {
+                    direction: 'horizontal',
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                  },
                   768: {
                     slidesPerView: 1,
                     spaceBetween: 24,
@@ -109,19 +119,19 @@ const Home = () => {
             <Col xs={12} sm={6} lg={7}>
               <div className="service-lightblue">
                 <div className="box">
-                  <h3 className='mb-4'>Дизайн</h3>
+                  <h3 className='mb-2 mb-md-4'>Дизайн</h3>
                   <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
                 </div>
               </div>
 
-              <div className="service-folder mt-4">
+              <div className="service-folder mt-3 mt-md-4">
                 <div className="top">
                   <div className='top-left'><h3 className='mb-0'>Продвижение</h3></div>
                   <div className='top-right'></div>
                 </div>
                 <div className='bottom'>
                   <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
-                  <div className='d-flex align-items-center mt-4'>
+                  <div className='d-flex align-items-center mt-2 mt-md-4'>
                     <img src="imgs/dazzle-stack-of-gold-coins.gif" className='icon' alt="coins" />
                     <p>Какой то короткий текст</p>
                   </div>
@@ -139,14 +149,16 @@ const Home = () => {
 
       <Container className='custom-container'>
         <section className='sec-home-3 ps-xxl-5 mb-45'>
+          <h2 className='d-md-none'>О проектах</h2>
+          <p className='d-md-none mb-4'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
           <Row className='align-items-center'>
-            <Col md={7} xl={8} className='pe-xl-5'>
+            <Col xs={12} md={7} xl={8} className='pe-xl-5 mb-4 mb-md-0'>
               <img src="imgs/slides.gif" alt="Проекты, которые говорят сами за себя"/>
             </Col>
-            <Col md={5} xl={4}>
-              <h3>Проекты, которые говорят сами за себя</h3>
-              <p>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
-              <button type='button' className='btn-2 mt-5'>Посмотреть все проекты</button>
+            <Col xs={12} md={5} xl={4}>
+              <h3 className='d-none d-md-block'>Проекты, которые говорят сами за себя</h3>
+              <p className='d-none d-md-block'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
+              <button type='button' className='btn-2 mt-md-5 w-sm-100'>Посмотреть все проекты</button>
             </Col>
           </Row>
         </section>
@@ -155,7 +167,8 @@ const Home = () => {
           <Row className='gx-4'>
             <Col xs={12} lg={9} className="order-1">
               <div className='union'>
-                <Union />
+                <Union className="d-none d-md-block"/>
+                <UnionMobile className="d-md-none"/>
                 <h3>Наш многолетний опыт для твоих смелых идей</h3>
               </div>
             </Col>
@@ -165,11 +178,11 @@ const Home = () => {
                 <li><img src="imgs/img4.png" alt="img4"/></li>
                 <li><img src="imgs/img5.png" alt="img5"/></li>
               </ul>
-              <h6>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
+              <h6 className='text-center text-lg-start'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </Col>
             <Col xs={12} lg={6} className="order-3">
               <h5 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h5>
-              <Row className='logotips' md={2}>
+              <Row className='logotips' xs={2}>
                 <Col>
                   <img src="imgs/logotips/mongo.png" alt="mongo" />
                 </Col>
@@ -202,9 +215,11 @@ const Home = () => {
               </div>
             </Col>
           </Row>
-        </section>        
+        </section>
+      </Container>     
 
-        <section className='sec-home-5 px-xxl-5 mb-45'>
+      <section className='sec-home-5 px-xxl-5 mb-45'>
+        <Container className='custom-container'>
           <h3>Акции и спец. предложения</h3>
           <Row className='mb-4 mb-xl-5'>
             <Col md={8}>
@@ -255,8 +270,10 @@ const Home = () => {
               </div>
             </SwiperSlide>
           </Swiper>
-        </section>
+        </Container>
+      </section>
 
+      <Container className='custom-container'>
         <NewsBlock/>
 
         <section className='sec-home-7'>

@@ -33,7 +33,7 @@ const Ticker = (props) => {
     <div className={'ticker ' + props.className}>
       <Swiper
         modules={[Autoplay, FreeMode]}
-        spaceBetween={50}
+        spaceBetween={20}
         slidesPerView={'auto'}
         loop={true}
         freeMode={true}
@@ -41,6 +41,14 @@ const Ticker = (props) => {
         autoplay={{ 
           delay: 0,
           reverseDirection: direction
+        }}
+        breakpoints={{
+          768: {
+            spaceBetween: 30,
+          },
+          992: {
+            spaceBetween: 50,
+          },
         }}
       >
         <SwiperSlide><span>{props.text}</span></SwiperSlide>
