@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.72426a19.css",
-    "main.js": "/plaix/static/js/main.0910a4af.js",
+    "main.css": "/plaix/static/css/main.ea949c14.css",
+    "main.js": "/plaix/static/js/main.75a16ef1.js",
     "static/media/Brush font one.otf": "/plaix/static/media/Brush font one.e983456600a141ed9b85.otf",
-    "static/media/mask-1.png": "/plaix/static/media/mask-1.bfc609b473a8c956424c.png",
+    "static/media/mask-1.png": "/plaix/static/media/mask-1.c4242e2ba436973bfe89.png",
     "static/media/mask-2.svg": "/plaix/static/media/mask-2.332891eb3c5d2bfa6f8a.svg",
     "static/media/sun.svg": "/plaix/static/media/sun.4bbca3968f84994a048b.svg",
     "index.html": "/plaix/index.html",
     "static/media/moon.svg": "/plaix/static/media/moon.de8bf6364816591a6efc.svg",
-    "main.72426a19.css.map": "/plaix/static/css/main.72426a19.css.map",
-    "main.0910a4af.js.map": "/plaix/static/js/main.0910a4af.js.map"
+    "main.ea949c14.css.map": "/plaix/static/css/main.ea949c14.css.map",
+    "main.75a16ef1.js.map": "/plaix/static/js/main.75a16ef1.js.map"
   },
   "entrypoints": [
-    "static/css/main.72426a19.css",
-    "static/js/main.0910a4af.js"
+    "static/css/main.ea949c14.css",
+    "static/js/main.75a16ef1.js"
   ]
 }
