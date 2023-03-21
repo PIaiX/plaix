@@ -14,7 +14,7 @@ import Diagram from '../components/svg/Diagram';
 import Union from '../components/svg/Union';
 import UnionMobile from '../components/svg/UnionMobile';
 import useIsMobile from '../hooks/isMobile';
-import CanvasAnimation from '../components/CanvasAnimation';
+import Bg from '../components/svg/Bg';
 
 const Home = () => {
   const {mobile} = useIsMobile('575px');
@@ -25,8 +25,8 @@ const Home = () => {
     <main>
       <Container className='custom-container'>
         <section className='sec-home-1 mb-45'>
-          {/* <CanvasAnimation/> */}
-          <Row className='position-relative'>
+          <Bg className="bg"/>
+          <Row className='position-relative z-10'>
             <Col lg={7}>
               <h1 className='mb-4 mb-lg-5'>
                 <Line/>
@@ -295,8 +295,11 @@ const Home = () => {
         <NewsBlock/>
 
         <section className='sec-home-7'>
-          <h2 className='text-center'>Пройдите опрос за 2 минуты и узнайте стоимость вашего проекта</h2>
-          <button type='button' className='btn-1 mx-auto'>Пройти</button>
+          <Bg className="bg"/>
+          <div className="text h-100">
+            <h2 className='text-center'>Пройдите опрос за 2 минуты и узнайте стоимость вашего проекта</h2>
+            <button type='button' className='btn-1 mx-auto'>Пройти</button>
+          </div>
         </section>
       </Container>
     </main>
