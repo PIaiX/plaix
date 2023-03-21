@@ -11,7 +11,7 @@
     }
     @media (max-width:575px) {
         --h-height: 50px;
-        --f-height: 50px;
+        // --f-height: 50px;
     }
 }
 :root[data-theme='light'] {
@@ -24,6 +24,7 @@
     --faded: #4F4F4F;
     --invert: invert(0);
     --footer-color: #A4A4A4;
+    --burger-color: #C1C1C1;
 }
 :root[data-theme='dark'] {
     --body-bg: #151515;
@@ -35,8 +36,16 @@
     --faded: #c9c9c9;
     --invert: invert(1);
     --footer-color: #A4A4A4;
+    --burger-color: #fff;
 }
-
+:root[data-theme='light'] .invert {
+    --bg: #060606;
+    --bg-invert: #FFF;
+}
+:root[data-theme='dark'] .invert {
+    --bg: #FFFFFF;
+    --bg-invert: #151515;
+}
 
 $main-font: "Source Sans Pro";
 $color-1: #0433FF;
@@ -475,6 +484,7 @@ button {
         &:active {
             color: #fff;
             background: $color-3;
+            border-color: $color-3;
             box-shadow: 0px 0px 10px $color-1;
         }
     }
@@ -535,6 +545,9 @@ button {
 }
 .lang-switcher {
     position: relative;
+    @media (max-width: $bp-md) {
+        font-size: 20px;
+    }
     button {
         width: 100%;
         border-radius: 5px;
@@ -654,7 +667,7 @@ header {
         @include flex(row, center, center, nowrap);
         li:not(:first-child){margin-left: 2em;}
         .menu {
-            color: var(--faded);
+            color: var(--burger-color);
             font-size: 1.75em;
         }
     }
@@ -668,6 +681,9 @@ header {
     min-height: calc(100vh - var(--h-height));
     color: var(--bg);
     @include flex(row, stretch, center, nowrap);
+    position: relative;
+    overflow: hidden;
+    @include safariFix();
     @media (max-width: $bp-xxl) {
         padding: 6% 5% 12%;
     }
@@ -678,6 +694,14 @@ header {
     @media (max-width: $bp-xs) {
         padding:1em;
         min-height: calc(100vh - var(--h-height) - var(--f-height));
+    }
+    canvas {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-invert);
     }
     .projects-icons {
         @include list();
@@ -835,8 +859,11 @@ header {
             @media (max-width: $bp-lg) {
                 height: 400px;
             }
+            @media (max-width: $bp-md) {
+                height: 460px;
+            }
             @media (max-width: $bp-sm) {
-                height: 337px;
+                height: 350px;
             }
             @media (max-width: $bp-xs) {
                 height: fit-content;
@@ -932,7 +959,7 @@ header {
                 background-position: 100% 100%;
             }
             @media (max-width: $bp-sm) {
-                height: 150px;
+                height: 170px;
             }
             @media (max-width: $bp-xs) {
                 height: 200px;
@@ -963,6 +990,9 @@ header {
             @extend .service;
             background-color: $color-2;
             color: $black;
+            @media (max-width: $bp-sm) {
+                height: 350px;
+            }
             @media (max-width: $bp-xs) {
                 height: calc(100vh - var(--h-height) - var(--f-height) - 1em);
                 .box {margin: 0 0 auto 0;}
@@ -992,6 +1022,11 @@ header {
             }
             @media (max-width: $bp-lg) {
                 --height: 196px;
+                
+            }
+            @media (max-width: $bp-md) {
+                --height: 180px;
+                .bottom {padding: 1em 1em 1em;}
             }
             @media (max-width: $bp-sm) {
                 --height: 170px;
@@ -1082,6 +1117,18 @@ header {
 }
 
 .sec-home-4 {
+    h5 {
+        @media (max-width: $bp-md) {
+            font-weight: 600;
+            font-size: 2em;
+        }
+        @media (max-width: $bp-sm) {
+            font-size: 1.5em;
+        }
+        @media (max-width: $bp-xs) {
+            font-size: 1.25em;
+        }
+    }
     .union {
         position: relative;
         margin-bottom: -1px;
@@ -1228,24 +1275,21 @@ header {
         --height: 235px;
     }
     @media (max-width: $bp-lg) {
-        --height: 210px;
+        --height: 200px;
     }
     @media (max-width: $bp-sm) {
+        --height: 160px;
+        .swiper {padding-right: 20%;}
+    }
+    @media (max-width: $bp-xs) {
         background-color: var(--bg-invert);
         color: var(--bg);
         padding: 2em 0px;
-        .swiper {padding-right: 15%;}
-    }
-    @media (max-width: $bp-xs) {
-        --height: 50vw;
+        --height: 115px;
     }
     .folder {
         width: 100%;
         @include folder(var(--height), 2px);
-        @media (max-width: $bp-sm) {
-            --bg: #060606;
-            --bg-invert: #fff;
-        }
         .top-left {
             padding: .7em 0.25em 0 1.5em;
         }
@@ -1254,6 +1298,9 @@ header {
             @include flex(column, flex-end, flex-start, nowrap);
             @media (max-width: $bp-lg) {
                 padding: 2em 1.5em;
+            }
+            @media (max-width: $bp-xs) {
+                padding: 0em 1.5em 1em;
             }
         }
     }
@@ -1283,7 +1330,7 @@ header {
             background-color: var(--bg-invert);
             color: var(--bg);
             .marker {background-color: $color-1;}
-            @media (max-width: $bp-sm) {
+            @media (max-width: $bp-xs) {
                 background-color: var(--bg);
                 color: var(--bg-invert);
             }
@@ -1465,6 +1512,7 @@ footer {
     a {margin-left: 2em;}
     @media (max-width:991px) {
         border-top: 0.5px solid #EDEDED;
+        border-radius: 0px;
         padding: 0;
         background-color: var(--bg);
         color: var(--bg-invert);
@@ -1492,6 +1540,7 @@ footer {
                     span {
                         @media (max-width: $bp-xs) {
                             font-size: .625em;
+                            margin-top: .5em;
                         }
                     }
                     svg {
@@ -1499,7 +1548,6 @@ footer {
                         transition: $transition;
                         @media (max-width: $bp-xs) {
                             font-size: 1em;
-                            margin-bottom: .2em;
                         }
                     }
                     &.active {

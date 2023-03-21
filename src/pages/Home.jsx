@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import {Link} from 'react-router-dom';
 import Ticker from '../components/Ticker';
 import useObserver from '../hooks/useObserver';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import NewsBlock from '../components/NewsBlock';
@@ -13,6 +14,7 @@ import Diagram from '../components/svg/Diagram';
 import Union from '../components/svg/Union';
 import UnionMobile from '../components/svg/UnionMobile';
 import useIsMobile from '../hooks/isMobile';
+import CanvasAnimation from '../components/CanvasAnimation';
 
 const Home = () => {
   const {mobile} = useIsMobile('575px');
@@ -23,7 +25,8 @@ const Home = () => {
     <main>
       <Container className='custom-container'>
         <section className='sec-home-1 mb-45'>
-          <Row>
+          {/* <CanvasAnimation/> */}
+          <Row className='position-relative'>
             <Col lg={7}>
               <h1 className='mb-4 mb-lg-5'>
                 <Line/>
@@ -61,7 +64,29 @@ const Home = () => {
                 <img src="imgs/logotips.gif" alt="Web-разработка" />
               </div>
             </Col>
-            <Col xs={12} sm={6} lg={8}>
+            <Col xs={12} sm={6} lg={4}>
+              <div className="service-blue">
+                <div className="box">
+                  <h3 className='mb-3'>Мобильные приложения</h3>
+                  <p>Создаём приложения для iOS и Android. Разрабатываем серверную часть и API.</p>
+                </div>
+                <div className='imgs-div' ref={objRef2} data-observing={isVisible2}>
+                  <img src="imgs/video without plates.gif" alt="Мобильные приложения" className='main'/>
+                  <img src="imgs/billetgreen.svg" alt="billetgreen" className='billet-1'/>
+                  <img src="imgs/billetwhite.svg" alt="billetwhite" className='billet-2'/>
+                </div>
+              </div>
+            </Col>
+            <Col xs={12} sm={6} lg={4}>
+              <div className="service-green">
+                <div className="box">
+                  <h3 className='mb-3'>B2B-продукты</h3>
+                  <p>Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию</p>
+                </div>
+                <img src="imgs/crm.gif" alt="B2B-продукты" />
+              </div>
+            </Col>
+            {/* <Col xs={12} sm={6} lg={8}>
               <Swiper
                 spaceBetween={24}
                 slidesPerView={1}
@@ -84,29 +109,13 @@ const Home = () => {
                 }}
               >
                 <SwiperSlide>
-                  <div className="service-blue">
-                    <div className="box">
-                      <h3 className='mb-3'>Мобильные приложения</h3>
-                      <p>Создаём приложения для iOS и Android. Разрабатываем серверную часть и API.</p>
-                    </div>
-                    <div className='imgs-div' ref={objRef2} data-observing={isVisible2}>
-                      <img src="imgs/video without plates.gif" alt="Мобильные приложения" className='main'/>
-                      <img src="imgs/billetgreen.svg" alt="billetgreen" className='billet-1'/>
-                      <img src="imgs/billetwhite.svg" alt="billetwhite" className='billet-2'/>
-                    </div>
-                  </div>
+                  
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="service-green">
-                    <div className="box">
-                      <h3 className='mb-3'>B2B-продукты</h3>
-                      <p>Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию</p>
-                    </div>
-                    <img src="imgs/crm.gif" alt="B2B-продукты" />
-                  </div>
+                  
                 </SwiperSlide>
               </Swiper>
-            </Col>
+            </Col> */}
             <Col xs={12} sm={6} lg={5}>
               <div className="service-white-2">
                 <div className="box">
@@ -116,27 +125,32 @@ const Home = () => {
                 <img src="imgs/img1.png" alt="IT-субподряд" />
               </div>
             </Col>
-            <Col xs={12} sm={6} lg={7}>
-              <div className="service-lightblue">
-                <div className="box">
-                  <h3 className='mb-2 mb-md-4'>Дизайн</h3>
-                  <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
-                </div>
-              </div>
-
-              <div className="service-folder mt-3 mt-md-4">
-                <div className="top">
-                  <div className='top-left'><h3 className='mb-0'>Продвижение</h3></div>
-                  <div className='top-right'></div>
-                </div>
-                <div className='bottom'>
-                  <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
-                  <div className='d-flex align-items-center mt-2 mt-md-4'>
-                    <img src="imgs/dazzle-stack-of-gold-coins.gif" className='icon' alt="coins" />
-                    <p>Какой то короткий текст</p>
+            <Col xs={12} lg={7}>
+              <Row xs={1} sm={2} lg={1} className='g-3 g-md-4'>
+                <Col>
+                  <div className="service-lightblue">
+                    <div className="box">
+                      <h3 className='mb-2 mb-md-4'>Дизайн</h3>
+                      <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </Col>
+                <Col>
+                  <div className="service-folder">
+                    <div className="top">
+                      <div className='top-left'><h3 className='mb-0'>Продвижение</h3></div>
+                      <div className='top-right'></div>
+                    </div>
+                    <div className='bottom'>
+                      <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
+                      <div className='d-flex align-items-center mt-2 mt-md-4'>
+                        <img src="imgs/dazzle-stack-of-gold-coins.gif" className='icon' alt="coins" />
+                        <p>Какой то короткий текст</p>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </section>
@@ -231,21 +245,25 @@ const Home = () => {
           </Row>
 
           <Swiper
-              spaceBetween={24}
-              slidesPerView={1}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 24,
-                },
-                992: {
-                  slidesPerView: 3,
-                  spaceBetween: 24,
-                },
-              }}
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoplay={{
+              delay: 5000,
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              },
+            }}
             >
             <SwiperSlide>
-              <div className="folder">
+              <div className={(mobile)?"folder invert":"folder"}>
                 <div className="top">
                   <div className='top-left'><h4 className='fw-6 mb-0'>Lorem ipsum</h4></div>
                   <div className='top-right'></div>
