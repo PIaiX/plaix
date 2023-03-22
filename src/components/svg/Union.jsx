@@ -10,7 +10,7 @@ const Union = (props) => {
       <defs>
         <linearGradient id="paint0_linear_438_1294" x1="522" y1="150" x2="387.97" y2="144.778" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="currentColor"/>
-          <stop offset="1" stopColor="currentColor" stop-opacity="0"/>
+          <stop offset="1" stopColor="currentColor" stopOpacity="0"/>
         </linearGradient>
         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_438_1294" transform="matrix(0.00016748 0 0 0.000659346 -0.00480037 -0.12828)"/>

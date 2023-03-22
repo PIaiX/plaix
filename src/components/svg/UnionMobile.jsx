@@ -15,11 +15,11 @@ const UnionMobile = (props) => {
         </pattern>
         <linearGradient id="paint0_linear_528_95" x1="116" y1="66" x2="116.127" y2="39.5126" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="currentColor"/>
-          <stop offset="1" stopColor="currentColor" stop-opacity="0"/>
+          <stop offset="1" stopColor="currentColor" stopOpacity="0"/>
         </linearGradient>
         <linearGradient id="paint1_linear_528_95" x1="181.5" y1="57.5" x2="160" y2="49.5" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="currentColor"/>
-          <stop offset="1" stopColor="currentColor" stop-opacity="0"/>
+          <stop offset="1" stopColor="currentColor" stopOpacity="0"/>
         </linearGradient>
         <ThemeContext.Consumer>
           {({ theme }) => (

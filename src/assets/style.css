@@ -788,47 +788,19 @@ svg.bg {
   z-index: 1;
 }
 svg.bg .ellipse-1 {
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  isolation: isolate;
-  transform: translateZ(0);
   fill: #0433FF;
-  -moz-filter: blur(150px);
-  -ms-filter: blur(150px);
-  filter: blur(150px);
   animation: Path1 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-2 {
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  isolation: isolate;
-  transform: translateZ(0);
   fill: #B9FF4A;
-  -moz-filter: blur(150px);
-  -ms-filter: blur(150px);
-  filter: blur(150px);
   animation: Path2 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-3 {
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  isolation: isolate;
-  transform: translateZ(0);
   fill: #0433FF;
-  -moz-filter: blur(150px);
-  -ms-filter: blur(150px);
-  filter: blur(150px);
   animation: Path3 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-4 {
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  isolation: isolate;
-  transform: translateZ(0);
   fill: #B9FF4A;
-  -moz-filter: blur(150px);
-  -ms-filter: blur(150px);
-  filter: blur(150px);
   animation: Path4 19s linear 0s infinite normal;
 }
 
@@ -941,22 +913,22 @@ svg.bg .ellipse-4 {
 @keyframes Path4 {
   from {
     transform: translate(0%, 0%) scale(100%);
-    opacity: 1;
+    opacity: 0;
   }
   35% {
     transform: translate(-10%, 0%) scale(100%);
     opacity: 1;
   }
   45% {
-    transform: translate(10%, -20%) scale(100%);
+    transform: translate(10%, -15%) scale(100%);
     opacity: 1;
   }
   60% {
-    transform: translate(30%, -30%) scale(100%);
+    transform: translate(30%, -20%) scale(100%);
     opacity: 1;
   }
   75% {
-    transform: translate(50%, -20%) scale(100%);
+    transform: translate(50%, -15%) scale(100%);
     opacity: 1;
   }
   85% {
@@ -973,7 +945,7 @@ svg.bg .ellipse-4 {
   }
   to {
     transform: translate(0%, 0%) scale(100%);
-    opacity: 1;
+    opacity: 0;
   }
 }
 .sec-home-2 .indicator-switch {

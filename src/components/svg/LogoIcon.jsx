@@ -9,8 +9,8 @@ const LogoIcon = () => {
       <rect y="9" width="2" height="2" fill="currentColor"/>
       <defs>
         <linearGradient id="paint0_linear_203_447" x1="9.65571" y1="11.7029" x2="6.39213" y2="11.7055" gradientUnits="userSpaceOnUse">
-          <stop stop-color="currentColor"/>
-          <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+          <stop stopColor="currentColor"/>
+          <stop offset="1" stopColor="currentColor" stopOpacity="0"/>
         </linearGradient>
       </defs>
     </svg>
