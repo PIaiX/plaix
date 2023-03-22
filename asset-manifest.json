@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.4f37658b.css",
-    "main.js": "/plaix/static/js/main.ee7c9f34.js",
-    "static/media/Brush font one.otf": "/plaix/static/media/Brush font one.e983456600a141ed9b85.otf",
-    "static/media/mask-1.png": "/plaix/static/media/mask-1.c4242e2ba436973bfe89.png",
-    "static/media/mask-2.svg": "/plaix/static/media/mask-2.332891eb3c5d2bfa6f8a.svg",
-    "static/media/sun.svg": "/plaix/static/media/sun.4bbca3968f84994a048b.svg",
-    "index.html": "/plaix/index.html",
-    "static/media/moon.svg": "/plaix/static/media/moon.de8bf6364816591a6efc.svg",
-    "main.4f37658b.css.map": "/plaix/static/css/main.4f37658b.css.map",
-    "main.ee7c9f34.js.map": "/plaix/static/js/main.ee7c9f34.js.map"
+    "main.css": "/static/css/main.77cde723.css",
+    "main.js": "/static/js/main.f8806463.js",
+    "static/media/Brush font one.otf": "/static/media/Brush font one.e983456600a141ed9b85.otf",
+    "static/media/mask-1.png": "/static/media/mask-1.c4242e2ba436973bfe89.png",
+    "static/media/mask-2.svg": "/static/media/mask-2.332891eb3c5d2bfa6f8a.svg",
+    "static/media/sun.svg": "/static/media/sun.4bbca3968f84994a048b.svg",
+    "index.html": "/index.html",
+    "static/media/moon.svg": "/static/media/moon.de8bf6364816591a6efc.svg",
+    "main.77cde723.css.map": "/static/css/main.77cde723.css.map",
+    "main.f8806463.js.map": "/static/js/main.f8806463.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f37658b.css",
-    "static/js/main.ee7c9f34.js"
+    "static/css/main.77cde723.css",
+    "static/js/main.f8806463.js"
   ]
 }
