@@ -681,22 +681,33 @@ header {
     background-color: var(--bg-invert);
     border-radius: $radius;
     padding: 7% 7% 14%;
-    min-height: calc(100vh - var(--h-height));
+    height: 800px;
     color: var(--bg);
     @include flex(row, stretch, center, nowrap);
     position: relative;
     overflow: hidden;
     @include safariFix();
+    @media (max-width: $bp-3xl) {
+        height: 750px;
+    }
     @media (max-width: $bp-xxl) {
         padding: 6% 5% 12%;
+        height: 700px;
+    }
+    @media (max-width: $bp-xl) {
+        height: 650px;
+    }
+    @media (max-width: $bp-lg) {
+        height: 550px;
     }
     @media (max-width: $bp-md) {
-        padding: 6% 10% 12%;
+        height: fit-content;
+        padding: 12% 10% 12%;
         h6 {margin-top: 10%}
     }
     @media (max-width: $bp-xs) {
         padding:1em;
-        min-height: calc(100vh - var(--h-height) - var(--f-height));
+        min-height: 440px;
     }
     .projects-icons {
         @include list();
@@ -773,15 +784,15 @@ svg.bg {
         opacity: 1;
     }
     5% {
-        transform: translate(20%, 0%) scale(80%);
+        transform: translate(20%, -40%) scale(80%);
         opacity: 1;
     }
     15% {
-        transform: translate(60%, 40%) scale(50%);
+        transform: translate(60%, 0%) scale(50%);
         opacity: .5;
     }
     20% {
-        transform: translate(80%, -20%) scale(50%);
+        transform: translate(80%, -10%) scale(50%);
         opacity: .2;
     }
     30% {
@@ -811,11 +822,11 @@ svg.bg {
         opacity: 1;
     }
     5% {
-        transform: translate(30%, -30%) scale(80%);
+        transform: translate(25%, -30%) scale(80%);
         opacity: 1;
     }
     15% {
-        transform: translate(80%, -100%) scale(50%);
+        transform: translate(60%, -100%) scale(50%);
         opacity: .5;
     }
     25% {
@@ -1041,7 +1052,7 @@ svg.bg {
             background-color: $color-1;
             color: #fff;
             @media (max-width: $bp-xs) {
-                height: calc(100vh - var(--h-height) - var(--f-height) - 1em);
+                height: fit-content;
             }
             .imgs-div {
                 position: relative;
@@ -1154,7 +1165,7 @@ svg.bg {
                 height: 350px;
             }
             @media (max-width: $bp-xs) {
-                height: calc(100vh - var(--h-height) - var(--f-height) - 1em);
+                height: fit-content;
                 .box {margin: 0 0 auto 0;}
             }
             img {
@@ -1672,15 +1683,10 @@ svg.bg {
         height: 360px;
     }
     @media (max-width: $bp-sm) {
-        height: 320px;
+        height: 350px;
     }
     @media (max-width: $bp-xs) {
-        height: 280px;
-    }
-    video {
-        @include absBG();
-        z-index: 1;
-        object-fit: cover;
+        height: 350px;
     }
     .text {
         position: relative;
@@ -1772,7 +1778,7 @@ footer {
                         width: 2em;
                         height: 2em;
                         border-radius: 50%;
-                        background-color: var(--accent-color);
+                        background-color: $color-2;
                         filter: blur(5px);
                         margin-top: -0.2em;
                         @media (max-width: $bp-xs) {

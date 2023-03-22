@@ -297,7 +297,7 @@ const Home = () => {
         <section className='sec-home-7'>
           <Bg className="bg"/>
           <div className="text h-100">
-            <h2 className='text-center'>Пройдите опрос за 2 минуты и узнайте стоимость вашего проекта</h2>
+            <h2 className='text-center mb-5'>Пройдите опрос за 2 минуты и узнайте стоимость вашего проекта</h2>
             <button type='button' className='btn-1 mx-auto'>Пройти</button>
           </div>
         </section>
