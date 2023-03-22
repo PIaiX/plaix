@@ -37,8 +37,6 @@ const Footer = () => {
         },
     ];
 
-    console.log(location);
-
     useEffect(
         () => {
         function updateMenu() {

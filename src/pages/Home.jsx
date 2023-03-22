@@ -186,7 +186,7 @@ const Home = () => {
                 <h3>Наш многолетний опыт для твоих смелых идей</h3>
               </div>
             </Col>
-            <Col xs={12} lg={3} className='order-4 order-lg-2 d-flex flex-column justify-content-end align-items-center align-items-lg-start pb-4 pb-xl-5 p-xxl-5 mt-5 mt-lg-0'>
+            <Col xs={12} lg={3} className='order-4 order-lg-2 d-flex flex-column justify-content-end align-items-center align-items-lg-start pb-4 pb-xl-5 ps-xxl-5 mt-5 mt-lg-0'>
               <ul className='photos'>
                 <li><img src="imgs/img3.png" alt="img3"/></li>
                 <li><img src="imgs/img4.png" alt="img4"/></li>

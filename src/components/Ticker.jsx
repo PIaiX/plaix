@@ -26,9 +26,8 @@ const Ticker = (props) => {
         document.removeEventListener('scroll', handleScroll, true)
     }
   });
-  
 
-  //ref={isShowHeader}
+
   return (
     <div className={'ticker ' + props.className}>
       <Swiper
