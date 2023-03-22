@@ -689,6 +689,8 @@ header .right .menu {
   flex-wrap: nowrap;
   position: relative;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
   isolation: isolate;
   transform: translateZ(0);
 }
@@ -786,22 +788,46 @@ svg.bg {
   z-index: 1;
 }
 svg.bg .ellipse-1 {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  isolation: isolate;
+  transform: translateZ(0);
   fill: #0433FF;
+  -moz-filter: blur(150px);
+  -ms-filter: blur(150px);
   filter: blur(150px);
   animation: Path1 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-2 {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  isolation: isolate;
+  transform: translateZ(0);
   fill: #B9FF4A;
+  -moz-filter: blur(150px);
+  -ms-filter: blur(150px);
   filter: blur(150px);
   animation: Path2 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-3 {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  isolation: isolate;
+  transform: translateZ(0);
   fill: #0433FF;
+  -moz-filter: blur(150px);
+  -ms-filter: blur(150px);
   filter: blur(150px);
   animation: Path3 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-4 {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  isolation: isolate;
+  transform: translateZ(0);
   fill: #B9FF4A;
+  -moz-filter: blur(150px);
+  -ms-filter: blur(150px);
   filter: blur(150px);
   animation: Path4 19s linear 0s infinite normal;
 }
@@ -998,6 +1024,8 @@ svg.bg .ellipse-4 {
   align-items: stretch;
   flex-wrap: nowrap;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
   isolation: isolate;
   transform: translateZ(0);
 }
@@ -2065,6 +2093,8 @@ svg.bg .ellipse-4 {
   color: var(--bg);
   position: relative;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
   isolation: isolate;
   transform: translateZ(0);
   height: 600px;

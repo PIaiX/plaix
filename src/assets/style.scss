@@ -84,6 +84,8 @@ $bp-3xl: 1849px;
     outline: none;
 }
 @mixin safariFix {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
     isolation: isolate;
     transform: translateZ(0);
 }
@@ -749,22 +751,38 @@ svg.bg {
     background-color: var(--bg-invert);
     z-index: 1;
     .ellipse-1 {
+        @include safariFix();
         fill: $color-1;
+        -webkit-filter: blur(150px);
+        -moz-filter: blur(150px);
+        -ms-filter: blur(150px);
         filter: blur(150px);
         animation: Path1 19s linear 0s infinite normal;
     }
     .ellipse-2 {
+        @include safariFix();
         fill: $color-2;
+        -webkit-filter: blur(150px);
+        -moz-filter: blur(150px);
+        -ms-filter: blur(150px);
         filter: blur(150px);
         animation: Path2 19s linear 0s infinite normal;
     }
     .ellipse-3 {
+        @include safariFix();
         fill: $color-1;
+        -webkit-filter: blur(150px);
+        -moz-filter: blur(150px);
+        -ms-filter: blur(150px);
         filter: blur(150px);
         animation: Path3 19s linear 0s infinite normal;
     }
     .ellipse-4 {
+        @include safariFix();
         fill: $color-2;
+        -webkit-filter: blur(150px);
+        -moz-filter: blur(150px);
+        -ms-filter: blur(150px);
         filter: blur(150px);
         animation: Path4 19s linear 0s infinite normal;
     }
