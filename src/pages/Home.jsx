@@ -15,6 +15,8 @@ import Union from '../components/svg/Union';
 import UnionMobile from '../components/svg/UnionMobile';
 import useIsMobile from '../hooks/isMobile';
 import Bg from '../components/svg/Bg';
+import Arrow from '../components/svg/Arrow';
+import FolderSvg2 from '../components/svg/FolderSvg2';
 
 const Home = () => {
   const {mobile} = useIsMobile('575px');
@@ -30,20 +32,20 @@ const Home = () => {
             <Col lg={7}>
               <h1 className='mb-4 mb-lg-5'>
                 <Line/>
-                <span>Красивые сайты, которые работают</span>
+                <span>Plaix - разработка <br/>цифровых сервисов</span>
               </h1>
               <button type='button' className='btn-1 mx-auto mx-sm-0'>Оставить заявку</button>
             </Col>
-            <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between pt-3 pt-xl-4 pt-xxl-5 pb-xl-4'>
-              <h6 className='mb-5 mb-lg-0 pe-lg-5'>На создание и запуск проекта и ещё какой то текст для описания данного блока создание и запуск проекта и ещё какой то текст для описания данного блока</h6>
+            <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between'>
+              <h6 className='mb-5 mb-lg-0 pe-lg-5'>Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
               <div>
                 <ul className='projects-icons'>
-                  <li><img src="imgs/Ellipse1.svg" alt="Ellipse1" /></li>
-                  <li><img src="imgs/Ellipse2.svg" alt="Ellipse2" /></li>
-                  <li><img src="imgs/Ellipse3.svg" alt="Ellipse3" /></li>
-                  <li><img src="imgs/Ellipse4.svg" alt="Ellipse4" /></li>
+                  <li><img src="imgs/logotips/BD.jpg" alt="BD" /></li>
+                  <li><img src="imgs/logotips/ON.jpg" alt="ON" className='br-white'/></li>
+                  <li><img src="imgs/logotips/yooapp.jpg" alt="yooapp" /></li>
+                  <li><img src="imgs/logotips/rowe.jpg" alt="rowe" /></li>
                 </ul>
-                <Link to='/' className='d-block mt-3'>Посмотреть все проекты</Link>
+                <p className='d-block mt-3'>100+ реализованных проектов</p>
               </div>
             </Col>
           </Row>
@@ -156,16 +158,15 @@ const Home = () => {
         </section>
       </Container>
 
-      <section className='mb-45 py-lg-5'>
+      <section className='sec-home-3 mb-45'>
         <Ticker reverse={true} text={'Развивай свой бизнес'}/> 
         <Ticker reverse={false} className={'type-2'} text={'Развивай свой бизнес'}/>
-      </section>
 
-      <Container className='custom-container'>
-        <section className='sec-home-3 ps-xxl-5 mb-45'>
-          <h2 className='d-md-none'>О проектах</h2>
-          <p className='d-md-none mb-4'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
-          <Row className='align-items-center'>
+        <Container>
+          <h3>Проекты, которые говорят сами за себя</h3>
+          <h4>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</h4>
+          <button type='button' className='btn-3'>Посмотреть все проекты</button>
+          {/* <Row className='align-items-center'>
             <Col xs={12} md={7} xl={8} className='pe-xl-5 mb-4 mb-md-0'>
               <img src="imgs/slides.gif" alt="Проекты, которые говорят сами за себя"/>
             </Col>
@@ -174,11 +175,61 @@ const Home = () => {
               <p className='d-none d-md-block'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</p>
               <button type='button' className='btn-2 mt-md-5 w-sm-100'>Посмотреть все проекты</button>
             </Col>
-          </Row>
-        </section>
+          </Row> */}
+        </Container>
+      </section>
 
-        <section className='sec-home-4 px-xxl-5 mb-45'>
-          <Row className='gx-4'>
+      <Container>
+        <section className='sec-home-4-new mb-45'>
+          <div className="grid-4">
+            <div className='grid-4-1'>
+              <h3>Наш многолетний опыт для твоих смелых идей</h3>
+            </div>
+            <div className='grid-4-2'>
+              <ul className='photos'>
+                <li><img src="imgs/img4.png" alt="img4"/></li>
+                <li><img src="imgs/img5.png" alt="img5"/></li>
+              </ul>
+              <h6 className='ms-3'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
+            </div>
+            <div className='grid-4-3'>
+              <div className="box">
+                <h4 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h4>
+                <Row className='logotips' xs={2}>
+                  <Col>
+                    <img src="imgs/logotips/mongo.png" alt="mongo" />
+                  </Col>
+                  <Col>
+                    <img src="imgs/logotips/react.png" alt="react" />
+                  </Col>
+                  <Col>
+                    <img src="imgs/logotips/ex.png" alt="ex" />
+                  </Col>
+                  <Col>
+                    <img src="imgs/logotips/node.png" alt="node" />
+                  </Col>
+                </Row>
+              </div>
+            </div>
+            <div className='grid-4-4'>
+              <div className="box">
+                <h4>К нам обращаются</h4>
+                <div className="diagram">
+                  <Diagram/>
+                  <div className="title">
+                    <h3 className='text-center mb-0'>100+</h3>
+                    <span>реализованных проектов</span>
+                  </div>
+                  <div className="text-1">Повторно</div>
+                  <div className="text-2">По рекомендации</div>
+                  <div className="text-3">За реализацией оригинальной идеи</div>
+                  <div className="text-4">За сложной технической разработкой</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <Row className='gx-4'>
             <Col xs={12} lg={9} className="order-1">
               <div className='union'>
                 <Union className="d-none d-md-block"/>
@@ -215,7 +266,6 @@ const Home = () => {
               <div className="box">
                 <h4>К нам обращаются</h4>
                 <div className="diagram">
-                  {/* <img src="imgs/diagram.svg" alt="diagram" /> */}
                   <Diagram/>
                   <div className="title">
                     <h3 className='text-center mb-0'>100+</h3>
@@ -228,22 +278,11 @@ const Home = () => {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </section>
-      </Container>     
 
-      <section className='sec-home-5 px-xxl-5 mb-45'>
-        <Container className='custom-container'>
+        <section className='sec-home-5 mb-4'>
           <h3>Акции и спец. предложения</h3>
-          <Row className='mb-4 mb-xl-5'>
-            <Col md={8}>
-              <h4>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу. </h4>
-            </Col>
-            <Col md={4}>
-              <button type='button' className='btn-3'>Оставить заявку</button>
-            </Col>
-          </Row>
-
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
@@ -263,44 +302,41 @@ const Home = () => {
             }}
             >
             <SwiperSlide>
-              <div className={(mobile)?"folder invert":"folder"}>
-                <div className="top">
-                  <div className='top-left'><h4 className='fw-6 mb-0'>Lorem ipsum</h4></div>
-                  <div className='top-right'></div>
+              <div className="card-1">
+                <h4 className='fw-4'>Lorem ipsum</h4>
+                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                <div className='marker'>
+                  <Arrow/>
                 </div>
-                <div className='bottom'>
-                  <h4 className='mb-0'>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h4>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="card">
-                <h4 className='fw-6'>Lorem ipsum</h4>
-                <h4 className='mb-0'>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h4>
-                <div className='marker'></div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="card-2">
-                <h4 className='fw-6'>Lorem ipsum</h4>
-                <h4 className='mb-0'>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h4>
-                <div className='marker'></div>
+                <h4 className='fw-4'>Lorem ipsum</h4>
+                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                <div className='marker'>
+                  <Arrow/>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card-3">
+                <FolderSvg2 className={'card-3-bg'}/>
+                <h4 className='fw-4'>Lorem ipsum</h4>
+                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
               </div>
             </SwiperSlide>
           </Swiper>
-        </Container>
-      </section>
+        </section>
 
-      <Container className='custom-container'>
-        <NewsBlock/>
-
-        <section className='sec-home-7'>
-          <Bg className="bg"/>
+        <section className='sec-home-7 mb-45'>
           <div className="text h-100">
-            <h2 className='text-center mb-5'>Пройдите опрос за 2 минуты и узнайте стоимость вашего проекта</h2>
-            <button type='button' className='btn-1 mx-auto'>Пройти</button>
+            <h2 className='text-center mb-5'>Plaix - разработка цифровых сервисов</h2>
+            <button type='button' className='btn-1 mx-auto'>Оставить заявку</button>
           </div>
         </section>
+
+        <NewsBlock/>
       </Container>
     </main>
   );

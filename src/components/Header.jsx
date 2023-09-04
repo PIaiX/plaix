@@ -45,7 +45,7 @@ const Header = () => {
                     <ul className='right'>
                         {
                             (!mobile) &&
-                            <li><Link to='/'>Личный кабинет</Link></li>
+                            <li><Link to='/' className='h5'>Личный кабинет</Link></li>
                         }
                         <li><ThemeToggler /></li>
                         <li><LanguageSwitcher/></li>
