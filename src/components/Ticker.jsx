@@ -23,7 +23,7 @@ const Ticker = (props) => {
   useEffect(() => {
     document.addEventListener('scroll', handleScroll, true)
     return () => {
-        document.removeEventListener('scroll', handleScroll, true)
+      document.removeEventListener('scroll', handleScroll, true)
     }
   });
 

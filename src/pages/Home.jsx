@@ -2,30 +2,30 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Link} from 'react-router-dom';
 import Ticker from '../components/Ticker';
 import useObserver from '../hooks/useObserver';
-import { Autoplay } from 'swiper';
+import { Autoplay, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import NewsBlock from '../components/NewsBlock';
 import Line from '../components/svg/Line';
 import Diagram from '../components/svg/Diagram';
-import Union from '../components/svg/Union';
-import UnionMobile from '../components/svg/UnionMobile';
+// import Union from '../components/svg/Union';
+// import UnionMobile from '../components/svg/UnionMobile';
 import useIsMobile from '../hooks/isMobile';
 import Bg from '../components/svg/Bg';
 import Arrow from '../components/svg/Arrow';
 import FolderSvg2 from '../components/svg/FolderSvg2';
+import FolderSvg3 from '../components/svg/FolderSvg3';
+import Chart from '../components/svg/Chart';
 
 const Home = () => {
-  const {mobile} = useIsMobile('575px');
   const [objRef, isVisible] = useObserver({threshold: 1.0});
   const [objRef2, isVisible2] = useObserver({threshold: 0.5});
   
   return (
     <main>
-      <Container className='custom-container'>
+      <Container>
         <section className='sec-home-1 mb-45'>
           <Bg className="bg"/>
           <Row className='position-relative z-10'>
@@ -51,16 +51,15 @@ const Home = () => {
           </Row>
         </section>
 
-        <section className='sec-home-2 px-xxl-5 pb-md-5 mb-45'>
+        <section className='sec-home-2-new'>
           <h2 className='text-center'>
-            Приступим <span ref={objRef} className='indicator-switch' data-observing={isVisible}><span></span></span> к вашему
-            <br className='d-none d-sm-inline'/> проекту уже завтра
+            Приступим <span ref={objRef} className='indicator-switch' data-observing={isVisible}><span></span></span> к вашему проекту уже завтра
           </h2>
           <Row className='g-3 g-md-4'>
             <Col xs={12} sm={6} lg={4}>
               <div className="service-white">
                 <div className="box">
-                  <h3 className='mb-3'>Web-разработка</h3>
+                  <h3 className='mb-2 mb-md-3'>Web-разработка</h3>
                   <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.</p>
                 </div>
                 <img src="imgs/logotips.gif" alt="Web-разработка" />
@@ -88,67 +87,41 @@ const Home = () => {
                 <img src="imgs/crm.gif" alt="B2B-продукты" />
               </div>
             </Col>
-            {/* <Col xs={12} sm={6} lg={8}>
-              <Swiper
-                spaceBetween={24}
-                slidesPerView={1}
-                direction={'vertical'}
-                onResize={(swiper) => swiper.changeDirection((mobile)?'vertical':'horizontal', true)}
-                breakpoints={{
-                  576: {
-                    direction: 'horizontal',
-                    slidesPerView: 1,
-                    spaceBetween: 24,
-                  },
-                  768: {
-                    slidesPerView: 1,
-                    spaceBetween: 24,
-                  },
-                  992: {
-                    slidesPerView: 2,
-                    spaceBetween: 24,
-                  },
-                }}
-              >
-                <SwiperSlide>
-                  
-                </SwiperSlide>
-                <SwiperSlide>
-                  
-                </SwiperSlide>
-              </Swiper>
-            </Col> */}
             <Col xs={12} sm={6} lg={5}>
               <div className="service-white-2">
                 <div className="box">
-                  <h3 className='mb-3'>IT-субподряд</h3>
+                  <h3 className='mb-2 mb-md-3'>IT-субподряд</h3>
                   <p>Решаем задачи на субподряде для digital-агентств и IT-компаний</p>
                 </div>
                 <img src="imgs/img1.png" alt="IT-субподряд" />
               </div>
             </Col>
             <Col xs={12} lg={7}>
-              <Row xs={1} sm={2} lg={1} className='g-3 g-md-4'>
+              <Row xs={1} sm={2} className='g-3 g-md-4'>
                 <Col>
-                  <div className="service-lightblue">
+                  <div className="service-black">
                     <div className="box">
-                      <h3 className='mb-2 mb-md-4'>Дизайн</h3>
+                      <img src="imgs/abstractForm.png" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
+                      <h3 className='mb-2 mb-md-3'>Дизайн и оформление</h3>
                       <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
                     </div>
                   </div>
                 </Col>
                 <Col>
                   <div className="service-folder">
-                    <div className="top">
-                      <div className='top-left'><h3 className='mb-0'>Продвижение</h3></div>
-                      <div className='top-right'></div>
-                    </div>
-                    <div className='bottom'>
-                      <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
-                      <div className='d-flex align-items-center mt-2 mt-md-4'>
-                        <img src="imgs/dazzle-stack-of-gold-coins.gif" className='icon' alt="coins" />
-                        <p>Какой то короткий текст</p>
+                    <FolderSvg3 className={'service-folder-bg'}/>
+                    <div className="box">
+                      <div>
+                        <h3 className='mb-2 mb-md-3'>Продвижение</h3>
+                        <p>Выполняем весь комплекс работ по развитию и продвижению вашего проекта</p>
                       </div>
+                      <ul>
+                        <li>SEO-оптимизация</li>
+                        <li>контекст</li>
+                        <li>реклама в социальных сетях</li>
+                        <li>target & retargeting</li>
+                      </ul>
+                      <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
                     </div>
                   </div>
                 </Col>
@@ -163,9 +136,13 @@ const Home = () => {
         <Ticker reverse={false} className={'type-2'} text={'Развивай свой бизнес'}/>
 
         <Container>
-          <h3>Проекты, которые говорят сами за себя</h3>
-          <h4>Отвечаем за результат вместе с вами. Нам важно создавать рабочие решения и помогать компаниям приносить пользу.</h4>
-          <button type='button' className='btn-3'>Посмотреть все проекты</button>
+          <h2 className='fw-6'>Проекты, которые говорят сами за себя</h2>
+          <h4 className='fw-3'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br/>решения и помогать компаниям приносить пользу.</h4>
+          <button type='button' className='btn-3 mx-auto mt-5'>
+            <span className='fw-7 me-2'>Посмотреть все проекты</span>
+            <Arrow/>
+          </button>
+
           {/* <Row className='align-items-center'>
             <Col xs={12} md={7} xl={8} className='pe-xl-5 mb-4 mb-md-0'>
               <img src="imgs/slides.gif" alt="Проекты, которые говорят сами за себя"/>
@@ -177,6 +154,59 @@ const Home = () => {
             </Col>
           </Row> */}
         </Container>
+
+        <Swiper
+          className='swiperProjects'
+          loop={true}
+          modules={[Autoplay, FreeMode]}
+          freeMode={true}
+          spaceBetween={30}
+          slidesPerView={'auto'}
+          speed={10000}
+          autoplay={{
+            delay: 0,
+          }}
+          >
+          <SwiperSlide>
+            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+          </SwiperSlide>
+        </Swiper>
+
+        <Swiper
+          className='swiperProjects'
+          loop={true}
+          modules={[Autoplay, FreeMode]}
+          freeMode={true}
+          spaceBetween={30}
+          slidesPerView={'auto'}
+          speed={10000}
+          autoplay={{
+            delay: 0,
+            reverseDirection: true
+          }}
+          >
+          <SwiperSlide>
+            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+          </SwiperSlide>
+        </Swiper>
       </section>
 
       <Container>
@@ -213,18 +243,8 @@ const Home = () => {
             </div>
             <div className='grid-4-4'>
               <div className="box">
-                <h4>К нам обращаются</h4>
-                <div className="diagram">
-                  <Diagram/>
-                  <div className="title">
-                    <h3 className='text-center mb-0'>100+</h3>
-                    <span>реализованных проектов</span>
-                  </div>
-                  <div className="text-1">Повторно</div>
-                  <div className="text-2">По рекомендации</div>
-                  <div className="text-3">За реализацией оригинальной идеи</div>
-                  <div className="text-4">За сложной технической разработкой</div>
-                </div>
+                <h4 className='ms-5'>К нам обращаются</h4>
+                <Chart/>
               </div>
             </div>
           </div>
@@ -331,7 +351,7 @@ const Home = () => {
 
         <section className='sec-home-7 mb-45'>
           <div className="text h-100">
-            <h2 className='text-center mb-5'>Plaix - разработка цифровых сервисов</h2>
+            <h2 className='h1'>Plaix - разработка цифровых сервисов</h2>
             <button type='button' className='btn-1 mx-auto'>Оставить заявку</button>
           </div>
         </section>
