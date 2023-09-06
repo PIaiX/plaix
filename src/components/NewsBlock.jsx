@@ -12,7 +12,7 @@ const NewsBlock = () => {
 
   return (
     <section className='sec-home-6 mb-45'>
-      <Row className='justify-content-between mb-5'>
+      <Row className='justify-content-between'>
         <Col xs={12} lg={6}>
           <h3>Новости</h3>
           <ul>
@@ -35,11 +35,11 @@ const NewsBlock = () => {
               </Link>
             </li>
           </ul>
-          <Link to='/' className='btn-3 mt-5'>Перейти в блог</Link>
+          <Link to='/' className='btn-3 mt-4 mt-md-5'>Перейти в блог</Link>
         </Col>
         {
           (!mobile) &&
-          <Col lg={6} xl={5}>
+          <Col xs={12} lg={6} xxl={5}>
             {
               (activeNews === 2)
               ? <ArticlePreview />

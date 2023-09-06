@@ -18,6 +18,7 @@ import Arrow from '../components/svg/Arrow';
 import FolderSvg2 from '../components/svg/FolderSvg2';
 import FolderSvg3 from '../components/svg/FolderSvg3';
 import Chart from '../components/svg/Chart';
+import CRM from '../components/svg/CRM';
 
 const Home = () => {
   const [objRef, isVisible] = useObserver({threshold: 1.0});
@@ -34,16 +35,16 @@ const Home = () => {
                 <Line/>
                 <span>Plaix - разработка <br/>цифровых сервисов</span>
               </h1>
-              <button type='button' className='btn-1 mx-auto mx-sm-0'>Оставить заявку</button>
+              <button type='button' className='btn-1'>Оставить заявку</button>
             </Col>
             <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between'>
-              <h6 className='mb-5 mb-lg-0 pe-lg-5'>Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
+              <h6 className='mb-4 mb-sm-5 mb-lg-0 pe-lg-5'>Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
               <div>
                 <ul className='projects-icons'>
-                  <li><img src="imgs/logotips/BD.jpg" alt="BD" /></li>
-                  <li><img src="imgs/logotips/ON.jpg" alt="ON" className='br-white'/></li>
-                  <li><img src="imgs/logotips/yooapp.jpg" alt="yooapp" /></li>
-                  <li><img src="imgs/logotips/rowe.jpg" alt="rowe" /></li>
+                  <li><img src="imgs/logotips/BD.webp" alt="BD" /></li>
+                  <li><img src="imgs/logotips/ON.webp" alt="ON" className='br-white'/></li>
+                  <li><img src="imgs/logotips/yooapp.webp" alt="yooapp" /></li>
+                  <li><img src="imgs/logotips/rowe.webp" alt="rowe" /></li>
                 </ul>
                 <p className='d-block mt-3'>100+ реализованных проектов</p>
               </div>
@@ -84,26 +85,29 @@ const Home = () => {
                   <h3 className='mb-3'>B2B-продукты</h3>
                   <p>Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию</p>
                 </div>
-                <img src="imgs/crm.gif" alt="B2B-продукты" />
+                <CRM/>
+                {/* <img src="imgs/crm.gif" alt="B2B-продукты" /> */}
               </div>
             </Col>
-            <Col xs={12} sm={6} lg={5}>
+            <Col xs={12} sm={6} lg={4} xxl={5}>
               <div className="service-white-2">
                 <div className="box">
                   <h3 className='mb-2 mb-md-3'>IT-субподряд</h3>
                   <p>Решаем задачи на субподряде для digital-агентств и IT-компаний</p>
                 </div>
-                <img src="imgs/img1.png" alt="IT-субподряд" />
+                <img src="imgs/img1.webp" alt="IT-субподряд" />
               </div>
             </Col>
-            <Col xs={12} lg={7}>
+            <Col xs={12} lg={8} xxl={7}>
               <Row xs={1} sm={2} className='g-3 g-md-4'>
                 <Col>
                   <div className="service-black">
                     <div className="box">
-                      <img src="imgs/abstractForm.png" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
-                      <h3 className='mb-2 mb-md-3'>Дизайн и оформление</h3>
-                      <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
+                      <img src="imgs/abstractForm.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
+                      <div>
+                        <h3 className='mb-2 mb-md-3'>Дизайн и оформление</h3>
+                        <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
+                      </div>
                     </div>
                   </div>
                 </Col>
@@ -138,7 +142,7 @@ const Home = () => {
         <Container>
           <h2 className='fw-6'>Проекты, которые говорят сами за себя</h2>
           <h4 className='fw-3'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br/>решения и помогать компаниям приносить пользу.</h4>
-          <button type='button' className='btn-3 mx-auto mt-5'>
+          <button type='button' className='btn-3 mx-auto mt-4 mt-md-5 mb-4 mb-sm-5'>
             <span className='fw-7 me-2'>Посмотреть все проекты</span>
             <Arrow/>
           </button>
@@ -160,24 +164,29 @@ const Home = () => {
           loop={true}
           modules={[Autoplay, FreeMode]}
           freeMode={true}
-          spaceBetween={30}
+          spaceBetween={15}
           slidesPerView={'auto'}
           speed={10000}
           autoplay={{
             delay: 0,
           }}
-          >
+          breakpoints={{
+            576: {
+              spaceBetween: 30,
+            },
+          }}
+        >
           <SwiperSlide>
-            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+            <img src="imgs/projects/parfe.webp" alt="parfe" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+            <img src="imgs/projects/rowe.webp" alt="rowe" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+            <img src="imgs/projects/parfe.webp" alt="parfe" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+            <img src="imgs/projects/rowe.webp" alt="rowe" />
           </SwiperSlide>
         </Swiper>
 
@@ -186,25 +195,30 @@ const Home = () => {
           loop={true}
           modules={[Autoplay, FreeMode]}
           freeMode={true}
-          spaceBetween={30}
+          spaceBetween={15}
           slidesPerView={'auto'}
           speed={10000}
           autoplay={{
             delay: 0,
             reverseDirection: true
           }}
-          >
+          breakpoints={{
+            576: {
+              spaceBetween: 30,
+            },
+          }}
+        >
           <SwiperSlide>
-            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+            <img src="imgs/projects/parfe.webp" alt="parfe" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+            <img src="imgs/projects/rowe.webp" alt="rowe" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/parfe.jpg" alt="parfe" />
+            <img src="imgs/projects/parfe.webp" alt="parfe" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/rowe.jpg" alt="rowe" />
+            <img src="imgs/projects/rowe.webp" alt="rowe" />
           </SwiperSlide>
         </Swiper>
       </section>
@@ -217,8 +231,8 @@ const Home = () => {
             </div>
             <div className='grid-4-2'>
               <ul className='photos'>
-                <li><img src="imgs/img4.png" alt="img4"/></li>
-                <li><img src="imgs/img5.png" alt="img5"/></li>
+                <li><img src="imgs/img4.webp" alt="img4"/></li>
+                <li><img src="imgs/img5.webp" alt="img5"/></li>
               </ul>
               <h6 className='ms-3'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </div>
@@ -227,23 +241,23 @@ const Home = () => {
                 <h4 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h4>
                 <Row className='logotips' xs={2}>
                   <Col>
-                    <img src="imgs/logotips/mongo.png" alt="mongo" />
+                    <img src="imgs/logotips/mongo.webp" alt="mongo" />
                   </Col>
                   <Col>
-                    <img src="imgs/logotips/react.png" alt="react" />
+                    <img src="imgs/logotips/react.webp" alt="react" />
                   </Col>
                   <Col>
-                    <img src="imgs/logotips/ex.png" alt="ex" />
+                    <img src="imgs/logotips/ex.webp" alt="ex" />
                   </Col>
                   <Col>
-                    <img src="imgs/logotips/node.png" alt="node" />
+                    <img src="imgs/logotips/node.webp" alt="node" />
                   </Col>
                 </Row>
               </div>
             </div>
             <div className='grid-4-4'>
               <div className="box">
-                <h4 className='ms-5'>К нам обращаются</h4>
+                <h4 className='ms-xxl-5'>К нам обращаются</h4>
                 <Chart/>
               </div>
             </div>
@@ -259,9 +273,9 @@ const Home = () => {
             </Col>
             <Col xs={12} lg={3} className='order-4 order-lg-2 d-flex flex-column justify-content-end align-items-center align-items-lg-start pb-4 pb-xl-5 ps-xxl-5 mt-5 mt-lg-0'>
               <ul className='photos'>
-                <li><img src="imgs/img3.png" alt="img3"/></li>
-                <li><img src="imgs/img4.png" alt="img4"/></li>
-                <li><img src="imgs/img5.png" alt="img5"/></li>
+                <li><img src="imgs/img3.webp" alt="img3"/></li>
+                <li><img src="imgs/img4.webp" alt="img4"/></li>
+                <li><img src="imgs/img5.webp" alt="img5"/></li>
               </ul>
               <h6 className='text-center text-lg-start'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </Col>
@@ -269,16 +283,16 @@ const Home = () => {
               <h5 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h5>
               <Row className='logotips' xs={2}>
                 <Col>
-                  <img src="imgs/logotips/mongo.png" alt="mongo" />
+                  <img src="imgs/logotips/mongo.webp" alt="mongo" />
                 </Col>
                 <Col>
-                  <img src="imgs/logotips/react.png" alt="react" />
+                  <img src="imgs/logotips/react.webp" alt="react" />
                 </Col>
                 <Col>
-                  <img src="imgs/logotips/ex.png" alt="ex" />
+                  <img src="imgs/logotips/ex.webp" alt="ex" />
                 </Col>
                 <Col>
-                  <img src="imgs/logotips/node.png" alt="node" />
+                  <img src="imgs/logotips/node.webp" alt="node" />
                 </Col>
               </Row>
             </Col>
@@ -304,17 +318,14 @@ const Home = () => {
         <section className='sec-home-5 mb-4'>
           <h3>Акции и спец. предложения</h3>
           <Swiper
+            className='offersSwiper'
             modules={[Autoplay]}
             spaceBetween={24}
-            slidesPerView={1}
+            slidesPerView={'auto'}
             autoplay={{
               delay: 5000,
             }}
             breakpoints={{
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-              },
               992: {
                 slidesPerView: 3,
                 spaceBetween: 24,
@@ -351,7 +362,7 @@ const Home = () => {
 
         <section className='sec-home-7 mb-45'>
           <div className="text h-100">
-            <h2 className='h1'>Plaix - разработка цифровых сервисов</h2>
+            <h2 className='h1 text-center'>Plaix - разработка цифровых сервисов</h2>
             <button type='button' className='btn-1 mx-auto'>Оставить заявку</button>
           </div>
         </section>

@@ -6,7 +6,7 @@ const ArticlePreview = () => {
   return (
     <article className='preview'>
         <FolderSvg className={'preview-bg'}/>
-        <img src="imgs/img1.png" alt="5 неочевидных возможностей FastAPI" />
+        <img src="imgs/img1.webp" alt="5 неочевидных возможностей FastAPI" />
         <div className='d-flex align-items-center mt-1'>
             <div className='d-flex align-items-center'>
             <HiOutlineClock className='fs-15 me-2'/>
