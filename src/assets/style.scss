@@ -1429,25 +1429,117 @@ svg.bg {
             @extend .service;
             background-color: $color-2;
             color: $black;
-            img {
+            .box {
+                padding-bottom: .5em;
+            }
+            // img {
+            //     width: calc(100% - 3.5em);
+            //     margin-left: 3.5em;
+            //     @media (max-width: $bp-lg) {
+            //         width: calc(100% - 2em);
+            //         margin-left: 2em;
+            //     }
+            //     @media (max-width: $bp-xs) {
+            //         width: 100%;
+            //         height: 200px;
+            //         object-fit: contain;
+            //         object-position: right bottom;
+            //         margin-left: auto;
+            //     }
+            // }
+            .crm {
                 width: calc(100% - 3.5em);
+                flex: 1;
                 margin-left: 3.5em;
-                @media (max-width: $bp-lg) {
-                    width: calc(100% - 2em);
-                    margin-left: 2em;
+                border-radius: calc(var(--radius)*2) 0px 0px 0px;
+                border-width: 0.5em;
+                border-style: solid;
+                border-color: $smoky;
+                background-color: $white;
+                padding: 1em;
+                @include flex(row, flex-start, stretch, wrap);
+                gap: 2%;
+                // &-box {
+
+                // }
+                &-1 {
+                    @include list();
+                    height: 54%;
+                    width: 54%;
+                    background-color: $black;
+                    border-radius: 1.25em;
+                    padding: 3% 2%;
+                    @include flex(row, flex-start, flex-end, wrap);
+                    align-content: flex-end;
+                    li {
+                        font-size: .8em;
+                        padding: .25em .5em;
+                        border-radius: 1em;
+                        &:nth-child(1) {
+                            background-color: #FFB1F3;
+                            color: $black;
+                            font-weight: 600;
+                        }
+                        &:nth-child(2) {
+                            background-color: $color-1;
+                            color: $white;
+                            margin-top: 3%;
+                            margin-right: 3%;
+                        }
+                        &:nth-child(3) {
+                            background-color: $white;
+                            color: $black;
+                            margin-top: 3%;
+                            font-weight: 600;
+                        }
+                    }
                 }
-                @media (max-width: $bp-xs) {
-                    width: 100%;
-                    height: 200px;
-                    object-fit: contain;
-                    object-position: right bottom;
-                    margin-left: auto;
+                &-2 {
+                    height: 54%;
+                    width: 44%;
+                    background-color: #99AFFD;
+                    padding: 4% 7%;
+                    border-radius: 1.25em;
+                    @include flex(row, space-between, flex-end, wrap);
+                    .bar {
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.39) 0%, #FFF 100%);
+                        width: 7%;
+                        height: 50%;
+                    }
+                }
+                &-3 {
+                    height: 44%;
+                    width: 40%;
+                    background-color: #EEEEEE;
+                    padding: 4% 7%;
+                    border-radius: 1.25em;
+                    @include flex(column, center, center, wrap);
+                    text-align: center;
+                    .num {
+                        font-size: 2em;
+                    }
+                }
+                &-4 {
+                    height: 44%;
+                    width: 58%;
+                    background-color: #EEEEEE;
+                    padding: 1em;
+                    border-radius: 1.25em;
+                    @include flex(row, space-between, center, nowrap);
+                    img {
+                        &:nth-child(1){
+                            height: 100%;
+                        }
+                        &:nth-child(2){
+                            margin-left: 1em;
+                        }
+                    }
                 }
             }
             .crm-svg {
-                width: calc(100% - 3.5em);
+                width: calc(100% - 3em);
                 height: auto;
-                margin-left: 3.5em;
+                margin-left: 3em;
                 @media (max-width: $bp-lg) {
                     width: calc(100% - 2em);
                     margin-left: 2em;
@@ -1590,6 +1682,10 @@ svg.bg {
         }
     }
 }
+.nums {
+    font-size: 32px;
+}
+
 /* Section 2 END */
 
 

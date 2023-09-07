@@ -1656,31 +1656,118 @@ svg.bg .ellipse-4 {
   background-color: #CFFF83;
   color: #111111;
 }
-.sec-home-2-new .service-green img {
+.sec-home-2-new .service-green .box {
+  padding-bottom: 0.5em;
+}
+.sec-home-2-new .service-green .crm {
   width: calc(100% - 3.5em);
+  flex: 1;
   margin-left: 3.5em;
+  border-radius: calc(var(--radius) * 2) 0px 0px 0px;
+  border-width: 0.5em;
+  border-style: solid;
+  border-color: #363636;
+  background-color: #fff;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2%;
 }
-@media (max-width: 1199px) {
-  .sec-home-2-new .service-green img {
-    width: calc(100% - 2em);
-    margin-left: 2em;
-  }
+.sec-home-2-new .service-green .crm-1 {
+  list-style: none;
+  padding-left: 0px;
+  height: 54%;
+  width: 54%;
+  background-color: #111111;
+  border-radius: 1.25em;
+  padding: 3% 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  align-content: flex-end;
 }
-@media (max-width: 575px) {
-  .sec-home-2-new .service-green img {
-    width: 100%;
-    height: 200px;
-    -o-object-fit: contain;
-       object-fit: contain;
-    -o-object-position: right bottom;
-       object-position: right bottom;
-    margin-left: auto;
-  }
+.sec-home-2-new .service-green .crm-1 li {
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  border-radius: 1em;
+}
+.sec-home-2-new .service-green .crm-1 li:nth-child(1) {
+  background-color: #FFB1F3;
+  color: #111111;
+  font-weight: 600;
+}
+.sec-home-2-new .service-green .crm-1 li:nth-child(2) {
+  background-color: #0077FF;
+  color: #fff;
+  margin-top: 3%;
+  margin-right: 3%;
+}
+.sec-home-2-new .service-green .crm-1 li:nth-child(3) {
+  background-color: #fff;
+  color: #111111;
+  margin-top: 3%;
+  font-weight: 600;
+}
+.sec-home-2-new .service-green .crm-2 {
+  height: 54%;
+  width: 44%;
+  background-color: #99AFFD;
+  padding: 4% 7%;
+  border-radius: 1.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.sec-home-2-new .service-green .crm-2 .bar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.39) 0%, #FFF 100%);
+  width: 7%;
+  height: 50%;
+}
+.sec-home-2-new .service-green .crm-3 {
+  height: 44%;
+  width: 40%;
+  background-color: #EEEEEE;
+  padding: 4% 7%;
+  border-radius: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.sec-home-2-new .service-green .crm-3 .num {
+  font-size: 2em;
+}
+.sec-home-2-new .service-green .crm-4 {
+  height: 44%;
+  width: 58%;
+  background-color: #EEEEEE;
+  padding: 1em;
+  border-radius: 1.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sec-home-2-new .service-green .crm-4 img:nth-child(1) {
+  height: 100%;
+}
+.sec-home-2-new .service-green .crm-4 img:nth-child(2) {
+  margin-left: 1em;
 }
 .sec-home-2-new .service-green .crm-svg {
-  width: calc(100% - 3.5em);
+  width: calc(100% - 3em);
   height: auto;
-  margin-left: 3.5em;
+  margin-left: 3em;
 }
 @media (max-width: 1199px) {
   .sec-home-2-new .service-green .crm-svg {
@@ -1828,6 +1915,10 @@ svg.bg .ellipse-4 {
 [data-theme=dark] .sec-home-2-new .service-folder-bg path {
   stroke: #0077FF;
   stroke-width: 2px;
+}
+
+.nums {
+  font-size: 32px;
 }
 
 /* Section 2 END */
