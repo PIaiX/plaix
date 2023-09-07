@@ -1040,6 +1040,7 @@ svg.bg {
                 margin-left: auto;
                 @media (max-width: $bp-sm) {
                     width: 90%;
+                    object-position: right bottom;
                 }
             }
         }
@@ -1309,12 +1310,13 @@ svg.bg {
             img {
                 width: 70%;
                 margin-left: auto;
+                object-fit: contain;
+                object-position: right bottom;
                 @media (max-width: $bp-xl) {
                     width: 100%;
                 }
                 @media (max-width: $bp-xs) {
                     height: 240px;
-                    object-fit: contain;
                 }
             }
         }
@@ -1452,7 +1454,7 @@ svg.bg {
                 }
                 @media (max-width: $bp-xs) {
                     width: 100%;
-                    height: 200px;
+                    height: 220px;
                     object-fit: contain;
                     object-position: right bottom;
                     margin-left: auto;

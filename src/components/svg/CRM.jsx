@@ -2,7 +2,7 @@ import React from 'react'
 
 const CRM = () => {
   return (
-    <svg className='crm-svg' width="456" height="367" viewBox="0 0 456 367" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg preserveAspectRatio='xMaxYMax meet' className='crm-svg' width="456" height="367" viewBox="0 0 456 367" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path title="рамка" d="M0.333008 30.669C0.333008 14.1004 13.7645 0.668945 30.333 0.668945H455.206V366.669H0.333008V30.669Z" fill="#343434"/>
         <path title="белый фон" d="M8.93463 28.3134C8.93463 17.2677 17.8889 8.31337 28.9346 8.31337H449.473V361.891H8.93463V28.3134Z" fill="white"/>
         <rect title="серый квадрат с цифрами" x="26.1389" y="211.86" width="158.632" height="132.83" rx="20" fill="#EEEEEE"/>
