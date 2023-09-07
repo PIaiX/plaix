@@ -42,7 +42,7 @@ const Home = () => {
               <div>
                 <ul className='projects-icons'>
                   <li><img src="imgs/logotips/BD.webp" alt="BD" /></li>
-                  <li><img src="imgs/logotips/ON.webp" alt="ON" className='br-white'/></li>
+                  <li><img src="imgs/logotips/on.webp" alt="ON" className='br-white'/></li>
                   <li><img src="imgs/logotips/yooapp.webp" alt="yooapp" /></li>
                   <li><img src="imgs/logotips/rowe.webp" alt="rowe" /></li>
                 </ul>
@@ -103,7 +103,7 @@ const Home = () => {
                 <Col>
                   <div className="service-black">
                     <div className="box">
-                      <img src="imgs/abstractForm.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
+                      <img src="imgs/abstractform.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
                       <div>
                         <h3 className='mb-2 mb-md-3'>Дизайн и оформление</h3>
                         <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
