@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.78d4522e.css",
+    "main.css": "/plaix/static/css/main.4092bc37.css",
     "main.js": "/plaix/static/js/main.bd227ec8.js",
     "static/media/bg-abstract-2.webp": "/plaix/static/media/bg-abstract-2.1b5f79b872e6fc5c0902.webp",
     "static/media/bg-abstract-1.webp": "/plaix/static/media/bg-abstract-1.319caf5d3e18d5eb5af5.webp",
@@ -76,11 +76,11 @@
     "static/media/sun.svg": "/plaix/static/media/sun.dd044238ec3ed2b4fbf0.svg",
     "index.html": "/plaix/index.html",
     "static/media/moon.svg": "/plaix/static/media/moon.93123c15d29c88c8c98c.svg",
-    "main.78d4522e.css.map": "/plaix/static/css/main.78d4522e.css.map",
+    "main.4092bc37.css.map": "/plaix/static/css/main.4092bc37.css.map",
     "main.bd227ec8.js.map": "/plaix/static/js/main.bd227ec8.js.map"
   },
   "entrypoints": [
-    "static/css/main.78d4522e.css",
+    "static/css/main.4092bc37.css",
     "static/js/main.bd227ec8.js"
   ]
 }
