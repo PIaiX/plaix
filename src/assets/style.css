@@ -11,13 +11,13 @@
 }
 @media (max-width: 767px) {
   :root {
-    --radius: 10px;
+    --radius: 12px;
   }
 }
 @media (max-width: 575px) {
   :root {
     --h-height: 50px;
-    --radius: 6px;
+    --radius: 8px;
   }
 }
 
@@ -389,7 +389,7 @@ button {
   width: fit-content;
   font-size: 1em;
   font-weight: 600;
-  border-radius: calc(var(--radius) * 2);
+  border-radius: calc(var(--radius) * 3);
   border: 2px solid;
   transition: 300ms linear;
   transition-property: background-color, box-shadow;
@@ -665,7 +665,7 @@ header .right .menu {
   background-image: url(imgs/bg/bg-abstract-1.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) * 2);
   padding: 7%;
   height: 550px;
   color: #fff;
@@ -723,14 +723,14 @@ header .right .menu {
      object-fit: cover;
 }
 .sec-home-1 h1 {
-  --w: 172px;
-  --h: 17px;
+  --w: 220px;
+  --h: 25px;
   position: relative;
 }
 .sec-home-1 h1 .line {
   position: absolute;
   bottom: -20%;
-  left: 30%;
+  left: 35%;
   width: var(--w);
   max-width: 0px;
   height: var(--h);
@@ -777,19 +777,15 @@ svg.bg {
   z-index: 1;
 }
 svg.bg .ellipse-1 {
-  fill: #0077FF;
   animation: Path1 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-2 {
-  fill: #CFFF83;
   animation: Path2 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-3 {
-  fill: #0077FF;
   animation: Path3 19s linear 0s infinite normal;
 }
 svg.bg .ellipse-4 {
-  fill: #CFFF83;
   animation: Path4 19s linear 0s infinite normal;
 }
 
@@ -1413,6 +1409,8 @@ svg.bg .ellipse-4 {
 }
 @media (max-width: 575px) {
   .sec-home-2-new {
+    --h1: auto;
+    --h2: auto;
     margin-bottom: 6em;
   }
 }
@@ -1465,6 +1463,11 @@ svg.bg .ellipse-4 {
     font-size: 12px;
   }
 }
+@media (max-width: 575px) {
+  .sec-home-2-new .service, [data-theme=dark] .sec-home-2-new .service-folder, .sec-home-2-new .service-black, .sec-home-2-new .service-folder, .sec-home-2-new .service-green, .sec-home-2-new .service-lightblue, .sec-home-2-new .service-blue, .sec-home-2-new .service-white-2, .sec-home-2-new .service-white {
+    font-size: 16px;
+  }
+}
 .sec-home-2-new .service .box, .sec-home-2-new .service-black .box, .sec-home-2-new .service-folder .box, .sec-home-2-new .service-green .box, .sec-home-2-new .service-lightblue .box, .sec-home-2-new .service-blue .box, .sec-home-2-new .service-white-2 .box, .sec-home-2-new .service-white .box {
   padding: 2.5em;
 }
@@ -1480,31 +1483,15 @@ svg.bg .ellipse-4 {
   color: var(--bg-invert);
   box-shadow: 4px 7px 26px rgba(0, 0, 0, 0.11);
 }
-.sec-home-2-new .service-white img {
-  width: 65%;
-  margin: 0px auto 2em;
-}
-@media (max-width: 767px) {
-  .sec-home-2-new .service-white img {
-    width: 80%;
-    margin: 0px auto 1em;
-  }
-}
-@media (max-width: 575px) {
-  .sec-home-2-new .service-white img {
-    width: 100%;
-    height: 200px;
-    -o-object-fit: contain;
-       object-fit: contain;
-    margin: 0px;
-  }
+.sec-home-2-new .service-white img, .sec-home-2-new .service-white svg {
+  width: 100%;
+  height: auto;
 }
 .sec-home-2-new .service-white-2 {
   height: var(--h2);
   background-color: #fff;
-  border: 2px solid #fff;
+  border: 2px solid #0077FF;
   color: var(--bg-invert);
-  box-shadow: 4px 7px 26px rgba(0, 0, 0, 0.11);
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -1555,9 +1542,11 @@ svg.bg .ellipse-4 {
 }
 @media (max-width: 575px) {
   .sec-home-2-new .service-blue .imgs-div .main {
-    height: 240px;
+    height: 320px;
     -o-object-fit: contain;
        object-fit: contain;
+    width: 65%;
+    margin: 0px 20% 0 15%;
   }
 }
 .sec-home-2-new .service-blue .imgs-div .billet, .sec-home-2-new .service-blue .imgs-div .billet-2, .sec-home-2-new .service-blue .imgs-div .billet-1 {
@@ -1685,6 +1674,12 @@ svg.bg .ellipse-4 {
   .sec-home-2-new .service-green .crm {
     width: calc(100% - 1.5em);
     margin-left: 1.5em;
+  }
+}
+@media (max-width: 575px) {
+  .sec-home-2-new .service-green .crm {
+    flex: unset;
+    height: 200px;
   }
 }
 .sec-home-2-new .service-green .crm-1 {
@@ -1888,6 +1883,11 @@ svg.bg .ellipse-4 {
 @media (max-width: 1399px) {
   .sec-home-2-new .service-folder ul {
     font-size: 1em;
+  }
+}
+@media (max-width: 575px) {
+  .sec-home-2-new .service-folder ul {
+    margin: 1em 0;
   }
 }
 .sec-home-2-new .service-folder ul li {
@@ -2118,8 +2118,12 @@ svg.bg .ellipse-4 {
   background-size: cover;
 }
 
+[data-theme=dark] .sec-home-2-new .service-white img, [data-theme=dark] .sec-home-2-new .service-white svg {
+  filter: invert(1);
+}
 [data-theme=dark] .sec-home-2-new .service-white-2 {
   background-color: #363636;
+  border-color: #fff;
 }
 [data-theme=dark] .sec-home-2-new .service-folder {
   height: var(--h2);
@@ -2213,9 +2217,17 @@ svg.bg .ellipse-4 {
 .sec-home-3 h4 {
   text-align: center;
 }
+@media (max-width: 767px) {
+  .sec-home-3 h4 {
+    font-size: 1.15em;
+  }
+}
 .sec-home-3 .swiperProjects {
   --w: 35vw;
   margin-top: calc(var(--radius) * 2);
+}
+.sec-home-3 .swiperProjects .swiper-wrapper {
+  transition-timing-function: linear !important;
 }
 @media (max-width: 575px) {
   .sec-home-3 .swiperProjects {
@@ -2962,6 +2974,7 @@ footer a:hover, footer a:focus, footer a:active {
   footer {
     border-top: 0.5px solid #EDEDED;
     border-radius: 0px;
+    border-width: 2px 0px 0px 0px;
     padding: 0;
     background-color: var(--bg);
     color: var(--bg-invert);

@@ -7,11 +7,11 @@
         --f-height: 65px;
     }
     @media (max-width:767px) {
-        --radius: 10px;
+        --radius: 12px;
     }
     @media (max-width:575px) {
         --h-height: 50px;
-        --radius: 6px;
+        --radius: 8px;
     }
 }
 :root[data-theme='light'] {
@@ -444,7 +444,7 @@ button {
     width: fit-content;
     font-size: 1em;
     font-weight: 600;
-    border-radius: calc(var(--radius)*2);
+    border-radius: calc(var(--radius)*3);
     border: 2px solid;
     transition: $transition;
     transition-property: background-color, box-shadow;
@@ -684,7 +684,7 @@ header {
     background-image: url(imgs/bg/bg-abstract-1.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius)*2);
     padding: 7%;
     height: 550px;
     color: $white;
@@ -717,20 +717,13 @@ header {
         }
     }
     h1 {
-        --w: 172px;
-        --h: 17px;
+        --w: 220px;
+        --h: 25px;
         position: relative;
-        // @media (max-width: $bp-xl) {
-        //     --w: 300px;
-        //     --h: 35px;
-        // }
-        // @media (max-width: $bp-md) {
-        //     line-height: 1.5em;
-        // }
         .line {
             position: absolute;
             bottom: -20%;
-            left: 30%;
+            left: 35%;
             width: var(--w);
             max-width: 0px;
             height: var(--h);
@@ -765,19 +758,15 @@ svg.bg {
     background-size: cover;
     z-index: 1;
     .ellipse-1 {
-        fill: $color-1;
         animation: Path1 19s linear 0s infinite normal;
     }
     .ellipse-2 {
-        fill: $color-2;
         animation: Path2 19s linear 0s infinite normal;
     }
     .ellipse-3 {
-        fill: $color-1;
         animation: Path3 19s linear 0s infinite normal;
     }
     .ellipse-4 {
-        fill: $color-2;
         animation: Path4 19s linear 0s infinite normal;
     }
 }
@@ -1229,6 +1218,8 @@ svg.bg {
         margin-bottom: 7.5em;
     }
     @media (max-width: $bp-xs){
+        --h1: auto;
+        --h2: auto;
         margin-bottom: 6em;
     }
     .indicator-switch {
@@ -1269,6 +1260,9 @@ svg.bg {
         @media (max-width: $bp-sm){
             font-size: 12px;
         }
+        @media (max-width: $bp-xs){
+            font-size: 16px;
+        }
         .box {
             padding: 2.5em;
             @media (max-width: $bp-xl){
@@ -1282,28 +1276,29 @@ svg.bg {
             border: 2px solid $white;
             color: var(--bg-invert);
             @include shadow();
-            img {
-                width: 65%;
-                margin: 0px auto 2em;
-                @media (max-width: $bp-sm){
-                    width: 80%;
-                    margin: 0px auto 1em;
-                }
-                @media (max-width: $bp-xs){
-                    width: 100%;
-                    height: 200px;
-                    object-fit: contain;
-                    margin: 0px;
-                }
+            img, svg {
+                width: 100%;
+                height: auto;
+                // margin: 0px auto 2em;
+                // @media (max-width: $bp-sm){
+                //     width: 80%;
+                //     margin: 0px auto 1em;
+                // }
+                // @media (max-width: $bp-xs){
+                //     width: 100%;
+                //     height: 200px;
+                //     object-fit: contain;
+                //     margin: 0px;
+                // }
             }
         }
         &-white-2 {
             height: var(--h2);
             @extend .service;
             background-color: $white;
-            border: 2px solid $white;
+            border: 2px solid $color-1;
             color: var(--bg-invert);
-            @include shadow();
+            // @include shadow();
             overflow: hidden;
             @include safariFix();
             .box {
@@ -1342,8 +1337,10 @@ svg.bg {
                     margin: 0px 32% 0 23%;
                     display: block;
                     @media (max-width: $bp-xs) {
-                        height: 240px;
+                        height: 320px;
                         object-fit: contain;
+                        width: 65%;
+                        margin: 0px 20% 0 15%;
                     }
                 }
                 .billet {
@@ -1437,21 +1434,6 @@ svg.bg {
             .box {
                 padding-bottom: .5em;
             }
-            // img {
-            //     width: calc(100% - 3.5em);
-            //     margin-left: 3.5em;
-            //     @media (max-width: $bp-lg) {
-            //         width: calc(100% - 2em);
-            //         margin-left: 2em;
-            //     }
-            //     @media (max-width: $bp-xs) {
-            //         width: 100%;
-            //         height: 200px;
-            //         object-fit: contain;
-            //         object-position: right bottom;
-            //         margin-left: auto;
-            //     }
-            // }
             .crm {
                 width: calc(100% - 3.5em);
                 flex: 1;
@@ -1467,6 +1449,10 @@ svg.bg {
                 @media (max-width: $bp-lg){
                     width: calc(100% - 1.5em);
                     margin-left: 1.5em;
+                }
+                @media (max-width: $bp-xs){
+                    flex: unset;
+                    height: 200px;
                 }
                 &-1 {
                     @include list();
@@ -1656,6 +1642,9 @@ svg.bg {
                 @include flex(row, flex-start, center, wrap);
                 @media (max-width: $bp-xl){
                     font-size: 1em;
+                }
+                @media (max-width: $bp-xs){
+                    margin: 1em 0;
                 }
                 li {
                     background-color: $silver;
@@ -1880,8 +1869,12 @@ svg.bg {
     }
 }
 [data-theme='dark'] .sec-home-2-new {
+    .service-white img, .service-white svg {
+        filter: invert(1);
+    }
     .service-white-2 {
         background-color: $smoky;
+        border-color: $white;
     }
     .service-folder {
         @extend .service;
@@ -1962,10 +1955,16 @@ svg.bg {
     }
     h4 {
         text-align: center;
+        @media (max-width: $bp-sm) {
+            font-size: 1.15em;
+        }
     }
     .swiperProjects {
         --w: 35vw;
         margin-top: calc(var(--radius)*2);
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
         @media (max-width: $bp-xs){
             --w: 55vw;
         }
@@ -2592,9 +2591,10 @@ footer {
             color: $color-2;
         }
     }
-    @media (max-width:991px) {
+    @media (max-width:$bp-md) {
         border-top: 0.5px solid #EDEDED;
         border-radius: 0px;
+        border-width: 2px 0px 0px 0px;
         padding: 0;
         background-color: var(--bg);
         color: var(--bg-invert);

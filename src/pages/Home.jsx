@@ -21,6 +21,7 @@ import Chart from '../components/svg/Chart';
 import CRM from '../components/svg/CRM';
 import Globe from '../assets/imgs/icons/globe.svg';
 import List from '../assets/imgs/icons/list.svg';
+import LogotipsSvg from '../components/svg/LogotipsSvg';
 
 const Home = () => {
   const [objRef, isVisible] = useObserver({threshold: 1.0});
@@ -65,7 +66,8 @@ const Home = () => {
                   <h3 className='mb-2 mb-md-3'>Web-разработка</h3>
                   <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.</p>
                 </div>
-                <img src="imgs/logotips.gif" alt="Web-разработка" />
+                <LogotipsSvg/>
+                {/* <img src="imgs/logotips.gif" alt="Web-разработка" /> */}
               </div>
             </Col>
             <Col xs={12} sm={6} lg={4}>
@@ -88,7 +90,7 @@ const Home = () => {
             <Col xs={12} sm={6} lg={4}>
               <div className="service-green">
                 <div className="box">
-                  <h3 className='mb-3'>B2B-продукты <span className='nums'></span></h3>
+                  <h3 className='mb-3'>B2B-продукты</h3>
                   <p>Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию</p>
                 </div>
                 <div className='crm'>
@@ -173,7 +175,7 @@ const Home = () => {
           <h2 className='fw-6'>Проекты, которые говорят сами за себя</h2>
           <h4 className='fw-3'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br/>решения и помогать компаниям приносить пользу.</h4>
           <button type='button' className='btn-3 mx-auto mt-4 mt-md-5 mb-4 mb-sm-5'>
-            <span className='fw-7 me-2'>Посмотреть все проекты</span>
+            <span className='me-2'>Посмотреть все проекты</span>
             <Arrow/>
           </button>
 
@@ -196,7 +198,7 @@ const Home = () => {
           freeMode={true}
           spaceBetween={15}
           slidesPerView={'auto'}
-          speed={10000}
+          speed={15000}
           autoplay={{
             delay: 0,
           }}
@@ -227,7 +229,7 @@ const Home = () => {
           freeMode={true}
           spaceBetween={15}
           slidesPerView={'auto'}
-          speed={10000}
+          speed={15000}
           autoplay={{
             delay: 0,
             reverseDirection: true
@@ -261,8 +263,8 @@ const Home = () => {
             </div>
             <div className='grid-4-2'>
               <ul className='photos'>
-                <li><img src="imgs/img4.webp" alt="img4"/></li>
-                <li><img src="imgs/img5.webp" alt="img5"/></li>
+                <li><img src="imgs/img4.webp" alt="man"/></li>
+                <li><img src="imgs/img3.webp" alt="woman"/></li>
               </ul>
               <h6 className='ms-3'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </div>

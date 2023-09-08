@@ -14,6 +14,7 @@ const Footer = () => {
     const [activeMenu, setActiveMenu] = useState('pos-2');
     const currentYear = new Date().getFullYear();
     const {mobile} = useIsMobile('991px');
+    console.log(123);
 
     const links = [
         {
