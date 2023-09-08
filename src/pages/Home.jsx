@@ -75,7 +75,11 @@ const Home = () => {
                   <p>Создаём приложения для iOS и Android. Разрабатываем серверную часть и API.</p>
                 </div>
                 <div className='imgs-div' ref={objRef2} data-observing={isVisible2}>
-                  <img src="imgs/video without plates.gif" alt="Мобильные приложения" className='main'/>
+                  <picture>
+                    <source srcset="imgs/smartphoneVideoMini2.gif" media="(max-width: 767px)" />
+                    <img src="imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main' />
+                  </picture>
+                  {/* <img src="imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main'/> */}
                   <img src="imgs/billetgreen.svg" alt="billetgreen" className='billet-1'/>
                   <img src="imgs/billetwhite.svg" alt="billetwhite" className='billet-2'/>
                 </div>
@@ -89,26 +93,26 @@ const Home = () => {
                 </div>
                 <div className='crm'>
                   <ul className='crm-1'>
-                    <li>Автоматизация</li>
-                    <li>Управление</li>
-                    <li>Аналитика</li>
+                    <li className='pill-1'>Автоматизация</li>
+                    <li className='pill-2'>Управление</li>
+                    <li className='pill-3'>Аналитика</li>
                   </ul>
                   <div className='crm-2'>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
+                    <div className="bar-1"></div>
+                    <div className="bar-2"></div>
+                    <div className="bar-3"></div>
+                    <div className="bar-4"></div>
+                    <div className="bar-5"></div>
+                    <div className="bar-6"></div>
+                    <div className="bar-7"></div>
                   </div>
                   <div className='crm-3'>
-                    <div className='num'>1235</div>
+                    <div className='num'></div>
                     <div>клиентов</div>
                   </div>
                   <div className='crm-4'>
-                    <img src={Globe} alt="Globe" />
-                    <img src={List} alt="List" />
+                    <img src={Globe} alt="Globe" className='crm-4-globe' />
+                    <img src={List} alt="List" className='crm-4-list'/>
                   </div>
                 </div>
                 {/* <CRM/> */}

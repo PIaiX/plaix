@@ -46,6 +46,11 @@
     --bg: #FFFFFF;
     --bg-invert: #151515;
 }
+@property --num {
+    syntax: '<integer>';
+    initial-value: 1235;
+    inherits: false;
+}
 
 // "homepage": "https://ngf93.github.io/plaix",
 
@@ -1459,9 +1464,6 @@ svg.bg {
                 padding: 1em;
                 @include flex(row, flex-start, stretch, wrap);
                 gap: 2%;
-                // &-box {
-
-                // }
                 &-1 {
                     @include list();
                     height: 54%;
@@ -1475,22 +1477,26 @@ svg.bg {
                         font-size: .8em;
                         padding: .25em .5em;
                         border-radius: 1em;
-                        &:nth-child(1) {
+                        opacity: 0;
+                        &.pill-1 {
                             background-color: #FFB1F3;
                             color: $black;
                             font-weight: 600;
+                            animation: pill1 10s infinite linear;
                         }
-                        &:nth-child(2) {
+                        &.pill-2 {
                             background-color: $color-1;
                             color: $white;
                             margin-top: 3%;
                             margin-right: 3%;
+                            animation: pill2 10s infinite linear;
                         }
-                        &:nth-child(3) {
+                        &.pill-3 {
                             background-color: $white;
                             color: $black;
                             margin-top: 3%;
                             font-weight: 600;
+                            animation: pill3 10s infinite linear;
                         }
                     }
                 }
@@ -1505,6 +1511,41 @@ svg.bg {
                         background: linear-gradient(180deg, rgba(255, 255, 255, 0.39) 0%, #FFF 100%);
                         width: 7%;
                         height: 50%;
+                        &-1 {
+                            @extend .bar;
+                            height: 40%;
+                            animation: bar1 5s infinite ease-in;
+                        }
+                        &-2 {
+                            @extend .bar;
+                            height: 40%;
+                            animation: bar2 3s infinite ease-in;
+                        }
+                        &-3 {
+                            @extend .bar;
+                            height: 60%;
+                            animation: bar3 4s infinite ease-in;
+                        }
+                        &-4 {
+                            @extend .bar;
+                            height: 50%;
+                            animation: bar4 5s infinite ease-in;
+                        }
+                        &-5 {
+                            @extend .bar;
+                            height: 70%;
+                            animation: bar5 4s infinite ease-in;
+                        }
+                        &-6 {
+                            @extend .bar;
+                            height: 75%;
+                            animation: bar6 6s infinite ease-in;
+                        }
+                        &-7 {
+                            @extend .bar;
+                            height: 60%;
+                            animation: bar7 3s infinite ease-in;
+                        }
                     }
                 }
                 &-3 {
@@ -1517,6 +1558,11 @@ svg.bg {
                     text-align: center;
                     .num {
                         font-size: 2em;
+                        counter-reset: num var(--num);
+                        animation: counter 3s infinite alternate ease-in-out;
+                        &::after {
+                            content: counter(num);
+                        }
                     }
                 }
                 &-4 {
@@ -1526,13 +1572,15 @@ svg.bg {
                     padding: 1em;
                     border-radius: 1.25em;
                     @include flex(row, space-between, center, nowrap);
-                    img {
-                        &:nth-child(1){
-                            height: 100%;
-                        }
-                        &:nth-child(2){
-                            margin-left: 1em;
-                        }
+                    &-globe {
+                        height: 100%;
+                        transform: rotate(0deg);
+                        animation: spin 5s infinite linear;
+                        max-width: 48%;
+                    }
+                    &-list {
+                        margin-left: 8%;
+                        max-width: 44%;
                     }
                 }
             }
@@ -1656,6 +1704,165 @@ svg.bg {
         .swiper {
             height: calc(100vh - var(--h-height) - var(--f-height) - 1em);
         }
+    }
+}
+@keyframes pill1 {
+    from {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes pill2 {
+    from {
+        opacity: 0;
+    }
+    5% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes pill3 {
+    from {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes bar1 {
+    from {
+        height: 40%;
+    }
+    50% {
+        height: 90%;
+    }
+    to {
+        height: 40%;
+    }
+}
+@keyframes bar2 {
+    from {
+        height: 40%;
+    }
+    50% {
+        height: 70%;
+    }
+    to {
+        height: 40%;
+    }
+}
+@keyframes bar3 {
+    from {
+        height: 60%;
+    }
+    15% {
+        height: 30%;
+    }
+    70% {
+        height: 100%;
+    }
+    to {
+        height: 60%;
+    }
+}
+@keyframes bar4 {
+    from {
+        height: 50%;
+    }
+    50% {
+        height: 100%;
+    }
+    to {
+        height: 50%;
+    }
+}
+@keyframes bar5 {
+    from {
+        height: 70%;
+    }
+    15% {
+        height: 45%;
+    }
+    70% {
+        height: 80%;
+    }
+    to {
+        height: 70%;
+    }
+}
+@keyframes bar6 {
+    from {
+        height: 75%;
+    }
+    50% {
+        height: 30%;
+    }
+    to {
+        height: 75%;
+    }
+}
+@keyframes bar7 {
+    from {
+        height: 60%;
+    }
+    10% {
+        height: 50%;
+    }
+    60% {
+        height: 80%;
+    }
+    to {
+        height: 60%;
+    }
+}
+@keyframes counter {
+    from {
+      --num: 1235;
+    }
+    to {
+      --num: 1258;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
 [data-theme='light'] .sec-home-2-new {

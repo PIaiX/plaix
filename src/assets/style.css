@@ -57,6 +57,11 @@
   --bg-invert: #151515;
 }
 
+@property --num {
+  syntax: "<integer>";
+  initial-value: 1235;
+  inherits: false;
+}
 /* mixins */
 /* Typography */
 a, a:hover, a:focus, a:active {
@@ -1695,23 +1700,27 @@ svg.bg .ellipse-4 {
   font-size: 0.8em;
   padding: 0.25em 0.5em;
   border-radius: 1em;
+  opacity: 0;
 }
-.sec-home-2-new .service-green .crm-1 li:nth-child(1) {
+.sec-home-2-new .service-green .crm-1 li.pill-1 {
   background-color: #FFB1F3;
   color: #111111;
   font-weight: 600;
+  animation: pill1 10s infinite linear;
 }
-.sec-home-2-new .service-green .crm-1 li:nth-child(2) {
+.sec-home-2-new .service-green .crm-1 li.pill-2 {
   background-color: #0077FF;
   color: #fff;
   margin-top: 3%;
   margin-right: 3%;
+  animation: pill2 10s infinite linear;
 }
-.sec-home-2-new .service-green .crm-1 li:nth-child(3) {
+.sec-home-2-new .service-green .crm-1 li.pill-3 {
   background-color: #fff;
   color: #111111;
   margin-top: 3%;
   font-weight: 600;
+  animation: pill3 10s infinite linear;
 }
 .sec-home-2-new .service-green .crm-2 {
   height: 54%;
@@ -1725,10 +1734,38 @@ svg.bg .ellipse-4 {
   align-items: flex-end;
   flex-wrap: wrap;
 }
-.sec-home-2-new .service-green .crm-2 .bar {
+.sec-home-2-new .service-green .crm-2 .bar, .sec-home-2-new .service-green .crm-2 .bar-7, .sec-home-2-new .service-green .crm-2 .bar-6, .sec-home-2-new .service-green .crm-2 .bar-5, .sec-home-2-new .service-green .crm-2 .bar-4, .sec-home-2-new .service-green .crm-2 .bar-3, .sec-home-2-new .service-green .crm-2 .bar-2, .sec-home-2-new .service-green .crm-2 .bar-1 {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.39) 0%, #FFF 100%);
   width: 7%;
   height: 50%;
+}
+.sec-home-2-new .service-green .crm-2 .bar-1 {
+  height: 40%;
+  animation: bar1 5s infinite ease-in;
+}
+.sec-home-2-new .service-green .crm-2 .bar-2 {
+  height: 40%;
+  animation: bar2 3s infinite ease-in;
+}
+.sec-home-2-new .service-green .crm-2 .bar-3 {
+  height: 60%;
+  animation: bar3 4s infinite ease-in;
+}
+.sec-home-2-new .service-green .crm-2 .bar-4 {
+  height: 50%;
+  animation: bar4 5s infinite ease-in;
+}
+.sec-home-2-new .service-green .crm-2 .bar-5 {
+  height: 70%;
+  animation: bar5 4s infinite ease-in;
+}
+.sec-home-2-new .service-green .crm-2 .bar-6 {
+  height: 75%;
+  animation: bar6 6s infinite ease-in;
+}
+.sec-home-2-new .service-green .crm-2 .bar-7 {
+  height: 60%;
+  animation: bar7 3s infinite ease-in;
 }
 .sec-home-2-new .service-green .crm-3 {
   height: 44%;
@@ -1745,6 +1782,11 @@ svg.bg .ellipse-4 {
 }
 .sec-home-2-new .service-green .crm-3 .num {
   font-size: 2em;
+  counter-reset: num var(--num);
+  animation: counter 3s infinite alternate ease-in-out;
+}
+.sec-home-2-new .service-green .crm-3 .num::after {
+  content: counter(num);
 }
 .sec-home-2-new .service-green .crm-4 {
   height: 44%;
@@ -1758,11 +1800,15 @@ svg.bg .ellipse-4 {
   align-items: center;
   flex-wrap: nowrap;
 }
-.sec-home-2-new .service-green .crm-4 img:nth-child(1) {
+.sec-home-2-new .service-green .crm-4-globe {
   height: 100%;
+  transform: rotate(0deg);
+  animation: spin 5s infinite linear;
+  max-width: 48%;
 }
-.sec-home-2-new .service-green .crm-4 img:nth-child(2) {
-  margin-left: 1em;
+.sec-home-2-new .service-green .crm-4-list {
+  margin-left: 8%;
+  max-width: 44%;
 }
 .sec-home-2-new .service-green .crm-svg {
   width: calc(100% - 3em);
@@ -1896,6 +1942,165 @@ svg.bg .ellipse-4 {
   }
 }
 
+@keyframes pill1 {
+  from {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pill2 {
+  from {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pill3 {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes bar1 {
+  from {
+    height: 40%;
+  }
+  50% {
+    height: 90%;
+  }
+  to {
+    height: 40%;
+  }
+}
+@keyframes bar2 {
+  from {
+    height: 40%;
+  }
+  50% {
+    height: 70%;
+  }
+  to {
+    height: 40%;
+  }
+}
+@keyframes bar3 {
+  from {
+    height: 60%;
+  }
+  15% {
+    height: 30%;
+  }
+  70% {
+    height: 100%;
+  }
+  to {
+    height: 60%;
+  }
+}
+@keyframes bar4 {
+  from {
+    height: 50%;
+  }
+  50% {
+    height: 100%;
+  }
+  to {
+    height: 50%;
+  }
+}
+@keyframes bar5 {
+  from {
+    height: 70%;
+  }
+  15% {
+    height: 45%;
+  }
+  70% {
+    height: 80%;
+  }
+  to {
+    height: 70%;
+  }
+}
+@keyframes bar6 {
+  from {
+    height: 75%;
+  }
+  50% {
+    height: 30%;
+  }
+  to {
+    height: 75%;
+  }
+}
+@keyframes bar7 {
+  from {
+    height: 60%;
+  }
+  10% {
+    height: 50%;
+  }
+  60% {
+    height: 80%;
+  }
+  to {
+    height: 60%;
+  }
+}
+@keyframes counter {
+  from {
+    --num: 1235;
+  }
+  to {
+    --num: 1258;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 [data-theme=light] .sec-home-2-new .service-blue {
   background-image: linear-gradient(161deg, #2A2A2A 12.41%, #0077FF 74.51%);
   background-repeat: no-repeat;
