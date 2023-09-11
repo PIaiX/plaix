@@ -2,6 +2,7 @@
     --h-height: 76px;
     --f-height: 100px;
     --radius: 15px;
+    --num: 1235;
     @media (max-width:991px) {
         --h-height: 65px;
         --f-height: 65px;
@@ -46,11 +47,11 @@
     --bg: #FFFFFF;
     --bg-invert: #151515;
 }
-@property --num {
-    syntax: '<integer>';
-    initial-value: 1235;
-    inherits: false;
-}
+// @property --num {
+//     syntax: '<integer>';
+//     initial-value: 1235;
+//     inherits: false;
+// }
 
 // "homepage": "https://ngf93.github.io/plaix",
 
@@ -318,7 +319,7 @@ input, textarea {
     line-height: normal;
     outline: none;
     display: block;
-    transition: $transition;
+    transition: border-color $transition;
     &:-moz-placeholder, &::-moz-placeholder,
     &::-webkit-input-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder {
         color: #B7B7B7;
@@ -340,7 +341,7 @@ input {
         box-shadow: none;
         padding: 0px;
         margin: 0px;
-        transition: $transition;
+        transition: border-color $transition;
         position: relative;
         &::before {
             content: '';
@@ -354,7 +355,7 @@ input {
             background-repeat: no-repeat;
             background-position: center center;
             background-size: contain;
-            transition: $transition;
+            transition: border-color $transition;
             opacity: 0;
         }
         &:checked {
@@ -389,7 +390,7 @@ input {
     }
 }
 .form-control[type='file'] {
-    background: #F6F6F6;
+    background-color: #F6F6F6;
     border: none !important;
     border-radius: 4px;
     padding: 0px !important;
@@ -397,7 +398,7 @@ input {
     line-height: normal;
     outline: none;
     display: block;
-    transition: $transition;
+    transition: background-color $transition;
     height: 3.2em;
     font-size: 1em;
     box-sizing: border-box;
@@ -446,7 +447,8 @@ button {
     font-weight: 600;
     border-radius: calc(var(--radius)*3);
     border: 2px solid;
-    transition: $transition;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in;
     transition-property: background-color, box-shadow;
     &-1 {
         @extend .btn;
@@ -537,7 +539,7 @@ button {
             background-image: url(imgs/icons/sun.svg);
             background-color: transparent;
             transform: scale(2.6);
-            transition: $transition;
+            transition: left $transition;
             opacity: 1;
         }
         &:checked {
@@ -728,7 +730,7 @@ header {
             max-width: 0px;
             height: var(--h);
             overflow: hidden;
-            transition: 500ms ease-in-out 500ms;
+            transition: max-width 500ms ease-in-out 500ms;
             display: flex;
             z-index: 1;
             @media (max-width: $bp-xs) {
@@ -922,281 +924,6 @@ svg.bg {
 
 
 /* Section 2 - Projects */
-.sec-home-2 {
-    .indicator-switch {
-        display: inline-block;
-        width: 1.4em;
-        height: .75em;
-        border-radius: .75em;
-        background-color: #C4C4C4;
-        transition: 300ms ease-in 500ms;
-        padding: .1em;
-        @include shadow();
-        vertical-align: middle;
-        span {
-            display: block;
-            background-color: #fff;
-            height: .55em;
-            width: .55em;
-            border-radius: .55em;
-            transition: 400ms ease-in 100ms;
-        }
-        &[data-observing=true]{
-            background-color: #40D20D;
-            span {transform: translateX(.65em);}
-        }
-    }
-    h3 {
-        font-size: 2em;
-        @media (max-width: $bp-md) {
-            font-size: 1.75em;
-        }
-        @media (max-width: $bp-sm) {
-            font-size: 1.5em;
-        }
-    }
-    .service {
-        width: 100%;
-        border-radius: var(--radius);
-        height: 700px;
-        @include flex(column, flex-end, stretch, nowrap);
-        overflow: hidden;
-        @include safariFix();
-        @media (max-width: $bp-xxl) {
-            height: 550px;
-        }
-        @media (max-width: $bp-xl) {
-            height: 520px;
-        }
-        @media (max-width: $bp-lg) {
-            height: 460px;
-        }
-        @media (max-width: $bp-sm) {
-            height: 385px;
-        }
-        .box {
-            margin: auto 0;
-            padding: 0 3.5em;
-            @media (max-width: $bp-lg){
-                padding: 0 2em;
-            }
-            @media (max-width: $bp-sm){
-                padding: 0 1em;
-            }
-            @media (max-width: $bp-xs){
-                padding: 1.25em;
-            }
-        }
-        &-white {
-            @extend .service;
-            background-color: $white;
-            color: $black;
-            @include shadow();
-            @media (max-width: $bp-xs) {
-                height: fit-content;
-            }
-            img {
-                width: 75%;
-                margin: 0px auto 2em;
-                @media (max-width: $bp-sm){
-                    width: 80%;
-                    margin: 0px auto 1em;
-                }
-                @media (max-width: $bp-xs){
-                    width: 100%;
-                    margin: 0px;
-                }
-            }
-        }
-        &-white-2 {
-            height: 570px;
-            @extend .service;
-            background-color: $white;
-            color: $black;
-            @include shadow();
-            @media (max-width: $bp-xxl) {
-                height: 470px;
-            }
-            @media (max-width: $bp-lg) {
-                height: 400px;
-            }
-            @media (max-width: $bp-md) {
-                height: 460px;
-            }
-            @media (max-width: $bp-sm) {
-                height: 350px;
-            }
-            @media (max-width: $bp-xs) {
-                height: fit-content;
-            }
-            img {
-                width: 70%;
-                margin-left: auto;
-                @media (max-width: $bp-sm) {
-                    width: 90%;
-                    object-position: right bottom;
-                }
-            }
-        }
-        &-blue {
-            @extend .service;
-            background-color: $color-1;
-            color: #fff;
-            @media (max-width: $bp-xs) {
-                height: fit-content;
-            }
-            .imgs-div {
-                position: relative;
-                .main {
-                    position: relative;
-                    z-index: 1;
-                    width: 45%;
-                    margin: 0px 32% 0 23%;
-                    display: block;
-                    @media (max-width: $bp-xxl) {
-                        width: 50%;
-                        margin: 0px 30% 2px 20%; 
-                    }
-                    @media (max-width: $bp-xs) {
-                        width: 65%;
-                        margin: 0px 15% 2px 15%;
-                    }
-                }
-                .billet {
-                    position: absolute;
-                    z-index: 2;
-                    opacity: 0;
-                    &-1 {
-                        @extend .billet;
-                        top: 20%;
-                        left: 15%;
-                        width: 18%;
-                        transition: $transition 200ms;
-                        @media (max-width: $bp-xs) {
-                            left: 6%;
-                            width: 22%;
-                        }
-                    }
-                    &-2 {
-                        @extend .billet;
-                        bottom: 10%;
-                        right: 10%;
-                        width: 34%;
-                        transition: $transition 400ms;
-                        @media (max-width: $bp-xs) {
-                            right: 3%;
-                            width: 45%;
-                        }
-                    }
-                }
-                &[data-observing=true]{
-                    .billet {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-        &-lightblue {
-            height: 300px;
-            @extend .service;
-            flex-direction: row;
-            justify-content: flex-start;
-            color: $white;
-            padding-right: 0.5em;
-            background: url(imgs/bg/mask-1.webp) no-repeat $color-3;
-            background-size: auto 100%;
-            background-position: 95% 50%;
-            @media (max-width: $bp-xxl) {
-                height: 220px;
-            }
-            @media (max-width: $bp-lg) {
-                height: 180px;
-            }
-            @media (max-width: $bp-md) {
-                background: url(imgs/bg/mask-2.svg) no-repeat $color-3;
-                background-size: auto 55%;
-                background-position: 100% 100%;
-            }
-            @media (max-width: $bp-sm) {
-                height: 170px;
-            }
-            @media (max-width: $bp-xs) {
-                height: 200px;
-                background-size: auto 60%;
-            }
-            .box {
-                margin: 0;
-                padding: 2em 3em;
-                width: 60%;
-                @media (max-width: $bp-lg) {
-                    padding: 2em;
-                }
-                @media (max-width: $bp-md) {
-                    padding: 1.5em;
-                    width: 75%;
-                }
-                @media (max-width: $bp-sm) {
-                    padding: 1em;
-                    width: 80%;
-                }
-            }
-            img {
-                height: 100%;
-                margin: 0 auto;
-            }
-        }
-        &-green {
-            @extend .service;
-            background-color: $color-2;
-            color: $black;
-            @media (max-width: $bp-sm) {
-                height: 350px;
-            }
-            @media (max-width: $bp-xs) {
-                height: fit-content;
-                .box {margin: 0 0 auto 0;}
-            }
-            img {
-                width: calc(100% - 3.5em);
-                margin-left: 3.5em;
-                @media (max-width: $bp-lg) {
-                    width: calc(100% - 2em);
-                    margin-left: 2em;
-                }
-                @media (max-width: $bp-xs) {
-                    width: calc(100% - 1em);
-                    margin-left: 1em;
-                }
-            }
-        }
-        &-folder {
-            --height: 246px;
-            @include folder(var(--height), 2px);
-            @media (max-width: $bp-lg) {
-                --height: 196px;
-                
-            }
-            @media (max-width: $bp-md) {
-                --height: 180px;
-                .bottom {padding: 1em 1em 1em;}
-            }
-            @media (max-width: $bp-sm) {
-                --height: 170px;
-                .top-left {padding: 0.5em 0 0 1em;}
-                .bottom {padding: .5em 1em 1em;}
-            }
-            .icon {
-                width: 3em;
-                margin-right: 1em;
-            }
-        }
-    }
-    @media (max-width: $bp-xs) {
-        .swiper {
-            height: calc(100vh - var(--h-height) - var(--f-height) - 1em);
-        }
-    }
-}
 .sec-home-2-new {
     --h1: 530px;
     --h2: 500px;
@@ -1228,7 +955,7 @@ svg.bg {
         height: .75em;
         border-radius: .75em;
         background-color: #C4C4C4;
-        transition: 300ms ease-in 500ms;
+        transition: background-color 300ms ease-in 500ms;
         padding: .1em;
         @include shadow();
         vertical-align: middle;
@@ -1238,7 +965,8 @@ svg.bg {
             height: .55em;
             width: .55em;
             border-radius: .55em;
-            transition: 400ms ease-in 100ms;
+            transform: translateX(0em);
+            transition: transform 400ms ease-in 100ms;
         }
         &[data-observing=true]{
             background-color: #40D20D;
@@ -1547,7 +1275,7 @@ svg.bg {
                     background-color: #EEEEEE;
                     padding: 4% 7%;
                     border-radius: 1.25em;
-                    @include flex(column, center, center, wrap);
+                    @include flex(column, center, center, nowrap);
                     text-align: center;
                     .num {
                         font-size: 2em;
@@ -1847,10 +1575,67 @@ svg.bg {
 }
 @keyframes counter {
     from {
-      --num: 1235;
+        --num: 1235;
+    }
+    5% {
+        --num: 1236;
+    }
+    10% {
+        --num: 1237;
+    }
+    15% {
+        --num: 1238;
+    }
+    20% {
+        --num: 1239;
+    }
+    25% {
+        --num: 1240;
+    }
+    30% {
+        --num: 1241;
+    }
+    35% {
+        --num: 1242;
+    }
+    40% {
+        --num: 1243;
+    }
+    45% {
+        --num: 1244;
+    }
+    50% {
+        --num: 1245;
+    }
+    55% {
+        --num: 1246;
+    }
+    60% {
+        --num: 1247;
+    }
+    65% {
+        --num: 1248;
+    }
+    70% {
+        --num: 1249;
+    }
+    75% {
+        --num: 1250;
+    }
+    80% {
+        --num: 1251;
+    }
+    85% {
+        --num: 1252;
+    }
+    90% {
+        --num: 1253;
+    }
+    95% {
+        --num: 1254;
     }
     to {
-      --num: 1258;
+        --num: 1255;
     }
 }
 @keyframes spin {
@@ -2324,6 +2109,7 @@ svg.bg {
 
 .sec-home-5 {
     width: 100%;
+    overflow: hidden;
     .swiper {
         &-slide {
             @media (max-width: $bp-md) {

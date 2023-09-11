@@ -7,7 +7,7 @@ const Bg = (props) => {
   let blur = (mobile) ? "50" : "120";
 
   return (
-    <svg className={props.className} preserveAspectRatio="xMaxYMidslice" width={(mobile)?"550":"1780"} height={(mobile)?"440":"800"} viewBox={(mobile)?"0 0 350 440":"0 0 1780 800"} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={props.className} preserveAspectRatio="xMaxYMid slice" width={(mobile)?"550":"1780"} height={(mobile)?"440":"800"} viewBox={(mobile)?"0 0 350 440":"0 0 1780 800"} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Blue 1 */}
       <g filter="url(#filter1)">
         <ellipse className='ellipse-1' fill="#0077FF" cx="10%" cy="200%" rx="24%" ry="42%"/>
