@@ -26,6 +26,7 @@
     --invert: invert(0);
     --footer-color: #A4A4A4;
     --burger-color: #C1C1C1;
+    --silver: #EDEDED;
 }
 :root[data-theme='dark'] {
     --body-bg: #111111;
@@ -38,6 +39,7 @@
     --invert: invert(1);
     --footer-color: #A4A4A4;
     --burger-color: #fff;
+    --silver: #363636;
 }
 :root[data-theme='light'] .invert {
     --bg: #060606;
@@ -1159,6 +1161,9 @@ svg.bg {
             @extend .service;
             background-color: $color-2;
             color: $black;
+            border-radius: calc(var(--radius)*2);
+            overflow: hidden;
+            @include safariFix();
             .box {
                 padding-bottom: .5em;
             }
@@ -1280,7 +1285,11 @@ svg.bg {
                     .num {
                         font-size: 2em;
                         counter-reset: num var(--num);
-                        animation: counter 3s infinite alternate ease-in-out;
+                        animation-name: myCounter;
+                        animation-duration: 3s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: linear;
+                        animation-direction: alternate;
                         &::after {
                             content: counter(num);
                         }
@@ -1573,69 +1582,39 @@ svg.bg {
         height: 60%;
     }
 }
-@keyframes counter {
+@keyframes myCounter {
     from {
         --num: 1235;
     }
-    5% {
+    10% {
         --num: 1236;
     }
-    10% {
+    20% {
         --num: 1237;
     }
-    15% {
+    30% {
         --num: 1238;
     }
-    20% {
+    40% {
         --num: 1239;
     }
-    25% {
+    50% {
         --num: 1240;
     }
-    30% {
+    60% {
         --num: 1241;
     }
-    35% {
+    70% {
         --num: 1242;
     }
-    40% {
+    80% {
         --num: 1243;
     }
-    45% {
+    90% {
         --num: 1244;
     }
-    50% {
-        --num: 1245;
-    }
-    55% {
-        --num: 1246;
-    }
-    60% {
-        --num: 1247;
-    }
-    65% {
-        --num: 1248;
-    }
-    70% {
-        --num: 1249;
-    }
-    75% {
-        --num: 1250;
-    }
-    80% {
-        --num: 1251;
-    }
-    85% {
-        --num: 1252;
-    }
-    90% {
-        --num: 1253;
-    }
-    95% {
-        --num: 1254;
-    }
     to {
-        --num: 1255;
+        --num: 1245;
     }
 }
 @keyframes spin {
@@ -2119,7 +2098,7 @@ svg.bg {
     }
 }
 .card {
-    border-radius: calc(var(--radius)*2);
+    
     padding: 2.5em;
     height: 190px;
     background-color: $color-1;
@@ -2141,11 +2120,19 @@ svg.bg {
         border-radius: calc(var(--radius)*2);
         background-color: $white;
         color: $black;
-        padding: .75em 1.5em;
-        font-size: .85em;
+        padding: .65em 1.4em;
+        font-size: .9em;
         @include flex();
+        @media (max-width: $bp-sm) {
+            padding: .5em 1.2em;
+            font-size: 1em;
+        }
+    }
+    &-1 {
+        border-radius: calc(var(--radius)*2);
     }
     &-2 {
+        border-radius: calc(var(--radius)*2);
         @extend .card;
         background-color: $color-1;
         color: $white;
@@ -2378,9 +2365,9 @@ footer {
         }
     }
     @media (max-width:$bp-md) {
-        border-top: 0.5px solid #EDEDED;
+        border-color: var(--silver);
         border-radius: 0px;
-        border-width: 2px 0px 0px 0px;
+        border-width: .5px 0px 0px 0px;
         padding: 0;
         background-color: var(--bg);
         color: var(--bg-invert);
