@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/plaix/static/css/main.5c9e6af1.css",
-    "main.js": "/plaix/static/js/main.6da8648a.js",
+    "main.css": "/plaix/static/css/main.946e9d4c.css",
+    "main.js": "/plaix/static/js/main.9fb790a6.js",
     "static/media/bg-abstract-2.webp": "/plaix/static/media/bg-abstract-2.1b5f79b872e6fc5c0902.webp",
     "static/media/bg-abstract-1.webp": "/plaix/static/media/bg-abstract-1.319caf5d3e18d5eb5af5.webp",
     "static/media/Mont-ThinItalic.eot": "/plaix/static/media/Mont-ThinItalic.5510e8d36aaaf841911a.eot",
@@ -76,11 +76,11 @@
     "static/media/sun.svg": "/plaix/static/media/sun.dd044238ec3ed2b4fbf0.svg",
     "index.html": "/plaix/index.html",
     "static/media/moon.svg": "/plaix/static/media/moon.93123c15d29c88c8c98c.svg",
-    "main.5c9e6af1.css.map": "/plaix/static/css/main.5c9e6af1.css.map",
-    "main.6da8648a.js.map": "/plaix/static/js/main.6da8648a.js.map"
+    "main.946e9d4c.css.map": "/plaix/static/css/main.946e9d4c.css.map",
+    "main.9fb790a6.js.map": "/plaix/static/js/main.9fb790a6.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c9e6af1.css",
-    "static/js/main.6da8648a.js"
+    "static/css/main.946e9d4c.css",
+    "static/js/main.9fb790a6.js"
   ]
 }
