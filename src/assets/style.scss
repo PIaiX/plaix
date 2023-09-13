@@ -313,10 +313,10 @@ h6 {
 
 /* Form elements */
 input, textarea {
-    background: #F6F6F6;
+    background: var(--silver);
     border: none;
-    border-radius: 4px;
-    padding: 1em 1.5em;
+    border-radius: calc(var(--radius)*3);
+    padding: .75em 1.4em;
     width: 100%;
     line-height: normal;
     outline: none;
@@ -495,6 +495,26 @@ button {
             background-color: $color-2;
             border-color: $color-2;
             box-shadow: 0px 0px 10px 0px $color-2;
+        }
+    }
+}
+
+.callback {
+    @include flex(row, flex-start, stretch, nowrap);
+    margin-bottom: 1em;
+    @media (max-width:$bp-lg) {
+        display: block;
+    }
+    input {
+        margin-right: .5em;
+        @media (max-width:$bp-lg) {
+            margin-right: 0em;
+            margin-bottom: 0.5em;
+        }
+    }
+    button {
+        @media (max-width:$bp-lg) {
+            width: 100%;
         }
     }
 }
@@ -1656,7 +1676,6 @@ svg.bg {
 .nums {
     font-size: 32px;
 }
-
 /* Section 2 END */
 
 
@@ -2512,4 +2531,42 @@ footer {
     background-color: $smoky;
     color: $white;
     border: 1px solid currentColor;
+}
+
+
+.modal {
+    &-content {
+        background-color: var(--bg);
+        border: 2px solid var(--silver);
+        border-radius: calc(var(--radius)*2);
+    }
+    &-body {
+        position: relative;
+        z-index: 1;
+        padding: 3em;
+        @media (max-width:$bp-lg) {
+            padding: 2.5em;
+        }
+        @media (max-width:$bp-sm) {
+            padding: 2em;
+        }
+    }
+    &-close {
+        position: absolute;
+        top: .25em;
+        right: .25em;
+        z-index: 10;
+        font-size: 2em;
+        @include flex();
+        color: var(--bg-invert);
+        opacity: .7;
+        transition: opacity $transition;
+        &:hover, &:focus, &:active {
+            opacity: 1;
+        }
+        @media (max-width:$bp-sm) {
+            top: .1em;
+            right: .1em;
+        }
+    }
 }

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,23 +10,25 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import NewsBlock from '../components/NewsBlock';
 import Line from '../components/svg/Line';
-import Diagram from '../components/svg/Diagram';
 // import Union from '../components/svg/Union';
 // import UnionMobile from '../components/svg/UnionMobile';
-import useIsMobile from '../hooks/isMobile';
 import Bg from '../components/svg/Bg';
 import Arrow from '../components/svg/Arrow';
 import FolderSvg2 from '../components/svg/FolderSvg2';
 import FolderSvg3 from '../components/svg/FolderSvg3';
 import Chart from '../components/svg/Chart';
-import CRM from '../components/svg/CRM';
 import Globe from '../assets/imgs/icons/globe.svg';
 import List from '../assets/imgs/icons/list.svg';
 import LogotipsSvg from '../components/svg/LogotipsSvg';
+import { IoCloseOutline } from "react-icons/io5";
 
 const Home = () => {
   const [objRef, isVisible] = useObserver({threshold: 1.0});
   const [objRef2, isVisible2] = useObserver({threshold: 0.5});
+
+  const [showCallback, setShowCallback] = useState(false);
+  const handleCloseCallback = () => setShowCallback(false);
+  const handleShowCallback = () => setShowCallback(true);
   
   return (
     <main>
@@ -38,7 +41,7 @@ const Home = () => {
                 <Line/>
                 <span>Plaix - разработка <br/>цифровых сервисов</span>
               </h1>
-              <button type='button' className='btn-1'>Оставить заявку</button>
+              <button type='button' className='btn-1' onClick={handleShowCallback}>Оставить заявку</button>
             </Col>
             <Col lg={5} className='mt-4 mt-lg-0 d-flex flex-column justify-content-between'>
               <h6 className='mb-4 mb-sm-5 mb-lg-0 pe-lg-5'>Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
@@ -174,7 +177,7 @@ const Home = () => {
         <Container>
           <h2 className='fw-6'>Проекты, которые говорят сами за себя</h2>
           <h4 className='fw-3'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br/>решения и помогать компаниям приносить пользу.</h4>
-          <button type='button' className='btn-3 mx-auto mt-4 mt-md-5 mb-4 mb-sm-5'>
+          <button type='button' onClick={handleShowCallback} className='btn-3 mx-auto mt-4 mt-md-5 mb-4 mb-sm-5'>
             <span className='me-2'>Посмотреть все проекты</span>
             <Arrow/>
           </button>
@@ -395,12 +398,27 @@ const Home = () => {
         <section className='sec-home-7 mb-45'>
           <div className="text h-100">
             <h2 className='h1 text-center'>Plaix - разработка цифровых сервисов</h2>
-            <button type='button' className='btn-1 mx-auto'>Оставить заявку</button>
+            <button type='button' onClick={handleShowCallback} className='btn-1 mx-auto'>Оставить заявку</button>
           </div>
         </section>
 
         <NewsBlock/>
       </Container>
+
+      <Modal size="lg" show={showCallback} onHide={handleCloseCallback}>
+        <button type='button' className='modal-close' onClick={handleCloseCallback}>
+          <IoCloseOutline/>
+        </button>
+        <Modal.Body>
+          <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
+          <form action="" className='callback'>
+            <input type="text" placeholder='Имя'/>
+            <input type="text" placeholder='+7-___-___-__-__'/>
+            <button type='submit' className='btn-2'>Отправить</button>
+          </form>
+          <p className='fs-08'>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</p>
+        </Modal.Body>
+      </Modal>
     </main>
   );
 };
