@@ -2264,6 +2264,7 @@ svg.bg .ellipse-4 {
 }
 
 /* Section 4 END */
+/* Section 5 */
 .sec-home-5 {
   width: 100%;
   overflow: hidden;
@@ -2372,6 +2373,8 @@ svg.bg .ellipse-4 {
   stroke: #fff;
 }
 
+/* Section 5 END */
+/* Section 6 */
 .sec-home-6 ul {
   width: 90%;
   margin: 1em 0;
@@ -2458,7 +2461,7 @@ svg.bg .ellipse-4 {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 2em;
+  border-radius: 1em;
 }
 @media (max-width: 1599px) {
   .preview img {

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import {Link, NavLink} from 'react-router-dom';
 import useIsMobile from '../hooks/isMobile';
 import Logo from './svg/Logo';
@@ -8,7 +9,10 @@ import LanguageSwitcher from './utils/LanguageSwitcher';
 import ThemeToggler from './utils/ThemeToggler';
 
 const Header = () => {
-    const {mobile} = useIsMobile('991px')
+    const {mobile} = useIsMobile('991px');
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
@@ -56,6 +60,15 @@ const Header = () => {
                     </ul>
                 </Container>
             </header>
+
+            <Offcanvas show={show} onHide={handleClose}>
+                <Offcanvas.Body>
+                    <ul>
+                        <li>Блог</li>
+                        <li>Политика конфиденциальности</li>
+                    </ul>
+                </Offcanvas.Body>
+            </Offcanvas>
         </>
     );
 };

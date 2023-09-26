@@ -49,11 +49,6 @@
     --bg: #FFFFFF;
     --bg-invert: #151515;
 }
-// @property --num {
-//     syntax: '<integer>';
-//     initial-value: 1235;
-//     inherits: false;
-// }
 
 // "homepage": "https://ngf93.github.io/plaix",
 
@@ -2105,6 +2100,7 @@ svg.bg {
 /* Section 4 END */
 
 
+/* Section 5 */
 .sec-home-5 {
     width: 100%;
     overflow: hidden;
@@ -2117,7 +2113,6 @@ svg.bg {
     }
 }
 .card {
-    
     padding: 2.5em;
     height: 190px;
     background-color: $color-1;
@@ -2205,7 +2200,9 @@ svg.bg {
         }
     }
 }
+/* Section 5 END */
 
+/* Section 6 */
 .sec-home-6 {
     ul {
         width: 90%;
@@ -2273,7 +2270,7 @@ svg.bg {
         width: 100%;
         height: 300px;
         object-fit: cover;
-        border-radius: 2em;
+        border-radius: 1em;
         @media (max-width: $bp-xxl) {
             height: 280px;
         }

@@ -3,12 +3,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Link} from 'react-router-dom';
 import Arrow from './svg/Arrow';
-import useIsMobile from '../hooks/isMobile';
 import ArticlePreview from './ArticlePreview';
+import jsonData from "../data/articles";
 
 const NewsBlock = () => {
-  const {mobile} = useIsMobile('991px');
-  const [activeNews, setActiveNews] = useState(0);
+  const [activeNews, setActiveNews] = useState(jsonData[0].id);
 
   return (
     <section className='sec-home-6 mb-45'>
@@ -16,6 +15,18 @@ const NewsBlock = () => {
         <Col xs={12} lg={6}>
           <h3>Новости</h3>
           <ul>
+          {
+            jsonData.map( obj => {
+              return <li key={obj.id}>
+                <Link to='/' className={(activeNews === obj.id)?'active':''} onMouseEnter={()=>setActiveNews(obj.id)}>
+                  <h4>{obj.title}</h4>
+                  <Arrow className='icon'/>
+                </Link>
+              </li>
+            })
+          }
+          </ul>
+          {/* <ul>
             <li>
               <Link to='/' className={(activeNews === 0)?'active':''} onMouseEnter={()=>setActiveNews(0)}>
                 <h4>GitHub сокращает 10% штата</h4>
@@ -34,21 +45,12 @@ const NewsBlock = () => {
                 <Arrow className='icon'/>
               </Link>
             </li>
-          </ul>
+          </ul> */}
           <Link to='/' className='btn-3 mt-4 mt-md-5'>Перейти в блог</Link>
         </Col>
-        {
-          (!mobile) &&
-          <Col xs={12} lg={6} xxl={5}>
-            {
-              (activeNews === 2)
-              ? <ArticlePreview />
-              : (activeNews === 1) 
-              ? <ArticlePreview />
-              : <ArticlePreview />
-            }
-          </Col>
-        }
+        <Col xs={12} lg={6} xxl={5} className='d-none d-lg-block'>
+          <ArticlePreview data={jsonData[activeNews]} />
+        </Col>
       </Row>
     </section>
   );

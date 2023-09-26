@@ -21,6 +21,7 @@ import Globe from '../assets/imgs/icons/globe.svg';
 import List from '../assets/imgs/icons/list.svg';
 import LogotipsSvg from '../components/svg/LogotipsSvg';
 import { IoCloseOutline } from "react-icons/io5";
+import jsonData from "../data/articles";
 
 const Home = () => {
   const [objRef, isVisible] = useObserver({threshold: 1.0});
@@ -212,16 +213,28 @@ const Home = () => {
           }}
         >
           <SwiperSlide>
+            <img src="imgs/projects/myaso.webp" alt="Мясо в миску" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/moonka.webp" alt="Moonka" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/techlight.webp" alt="Techlight" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/yooapp.webp" alt="Yoo.App" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/dent.webp" alt="Престиж Дент" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/otk.webp" alt="ОТК Сервис" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/rowe.webp" alt="roweoil" />
+          </SwiperSlide>
+          <SwiperSlide>
             <img src="imgs/projects/parfe.webp" alt="parfe" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="imgs/projects/rowe.webp" alt="rowe" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="imgs/projects/parfe.webp" alt="parfe" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="imgs/projects/rowe.webp" alt="rowe" />
           </SwiperSlide>
         </Swiper>
 
@@ -244,16 +257,28 @@ const Home = () => {
           }}
         >
           <SwiperSlide>
+            <img src="imgs/projects/myaso.webp" alt="Мясо в миску" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/moonka.webp" alt="Moonka" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/techlight.webp" alt="Techlight" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/yooapp.webp" alt="Yoo.App" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/dent.webp" alt="Престиж Дент" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/otk.webp" alt="ОТК Сервис" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="imgs/projects/rowe.webp" alt="roweoil" />
+          </SwiperSlide>
+          <SwiperSlide>
             <img src="imgs/projects/parfe.webp" alt="parfe" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="imgs/projects/rowe.webp" alt="rowe" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="imgs/projects/parfe.webp" alt="parfe" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="imgs/projects/rowe.webp" alt="rowe" />
           </SwiperSlide>
         </Swiper>
       </section>
