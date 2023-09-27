@@ -624,6 +624,7 @@ body {
     background-color: var(--body-bg);
     color: var(--bg-invert);
     overflow-x: hidden;
+    padding-top: var(--h-height);
     @media (max-width: $bp-lg){
         font-size: 16px;
     }
@@ -641,20 +642,13 @@ main {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    z-index: 100;
+    z-index: 1100;
     height: var(--h-height);
     background-color: var(--bg);
-    @media (max-width: $bp-md) {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        z-index: 100;
-    }
     nav.main {
         height: var(--h-height);
         ul {
@@ -2360,6 +2354,127 @@ svg.bg {
     }
 }
 
+.sec-contacts {
+    .imgLarge {
+        width: 100%;
+        border-radius: 2em;
+    }
+    .box {
+        background-color: $white;
+        border-radius: 2em;
+        padding: 2em;
+        @include shadow();
+    }
+    .contacts-grid {
+        --fontSize: 2em;
+        display: grid;
+        grid-template-columns: 5fr 3fr 4fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "img info1 info1"
+        "img info2 info3";
+        gap: 1.25em;
+        @media (max-width: $bp-xl) {
+            --fontSize: 1.5em;
+        }
+        @media (max-width: $bp-lg) {
+            grid-template-columns: 3fr 4fr;
+            grid-template-rows: auto 150px 150px;
+            grid-template-areas: 
+            "img img"
+            "info1 info1"
+            "info2 info3";
+        }
+        @media (max-width: $bp-xs) {
+            --fontSize: 1.25em;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "img" "info3" "info2" "info1";
+        }
+        .img {
+            grid-area: img;
+            position: relative;
+            img {
+                width: 100%;
+            }
+            button {
+                position: absolute;
+                top: var(--fontSize);
+                left: var(--fontSize);
+                @media (max-width: $bp-lg) {
+                    display: none;
+                }
+            }
+        }
+        a {
+            background-color: var(--bg);
+            border-radius: 1em;
+            padding: 1em;
+            @include shadow();
+            font-size: var(--fontSize);
+            @include flex(column, space-between, flex-start, nowrap);
+            @media (max-width: $bp-xs) {
+                border-radius: 2em;
+                padding: 0.75em 1em;
+                box-shadow: none;
+            }
+            .icon {
+                font-size: 1.85em;
+            }
+        }
+        .info1 {
+            grid-area: info1;
+            @media (max-width: $bp-xs) {
+                flex-direction: row;
+                align-items: center;
+                background-color: var(--bg-invert);
+                color: var(--bg);
+                padding-right: 3em;
+            }
+            .icon {
+                color: $gray;
+            }
+        }
+        .info2 {
+            grid-area: info2;
+            @media (max-width: $bp-xs) {
+                align-items: center;
+                text-align: center;
+                background-color: $color-1;
+                color: $white;
+                .icon {display: none;}
+            }
+        }
+        .info3 {
+            grid-area: info3;
+            @media (max-width: $bp-xs) {
+                padding-left: 3em;
+                background-color: var(--bg);
+                border: 1px solid var(--bg-invert);
+                color: var(--bg-invert);
+            }
+            .icon {
+                color: $gray;
+                @media (max-width: $bp-xs) {
+                    display: none;
+                }
+            }
+            .arrow {
+                color: $color-1;
+                border: 1px solid;
+                width: 2em;
+                height: 1.2em;
+                padding: 0.25em;
+                border-radius: 0.75em;
+                @media (max-width: $bp-xs) {
+                    padding: 0em;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
 
 footer {
     height: var(--f-height);
@@ -2391,7 +2506,7 @@ footer {
         bottom: 0px;
         left: 0px;
         width: 100%;
-        z-index: 100;
+        z-index: 1100;
         margin: 0;
         ul {
             @include list();
@@ -2564,6 +2679,36 @@ footer {
         @media (max-width:$bp-sm) {
             top: .1em;
             right: .1em;
+        }
+    }
+}
+
+
+.offcanvas {
+    &-body {
+        padding: calc(var(--h-height) + 1em) 2em calc(var(--f-height) + 1em);
+        background-color: $white;
+        .box {
+            border-radius: 1em;
+            padding: .7em;
+            background: #FFF;
+            box-shadow: 4px 0px 30px 0px rgba(0, 0, 0, 0.08);
+            img {
+                width: 100%;
+                border-radius: .7em;
+            }
+            ul {
+                @include list();
+                li {
+                    &:not(:first-child){
+                        border-top: 1px solid $silver;
+                    }
+                    a, button {
+                        padding: 1em 1.5em;
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }

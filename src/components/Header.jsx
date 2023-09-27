@@ -7,12 +7,11 @@ import Logo from './svg/Logo';
 import Menu from './svg/Menu';
 import LanguageSwitcher from './utils/LanguageSwitcher';
 import ThemeToggler from './utils/ThemeToggler';
+import Close from './svg/Close';
 
 const Header = () => {
     const {mobile} = useIsMobile('991px');
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const [showMenu, setShowMenu] = useState(false);
 
     return (
         <>
@@ -37,10 +36,10 @@ const Header = () => {
                                         <a href='/'>Отзывы</a>
                                     </li>
                                     <li>
-                                        <NavLink to='blog'>Блог</NavLink>
+                                        <NavLink to='/blog'>Блог</NavLink>
                                     </li>
                                     <li>
-                                        <a href='/'>Контакты</a>
+                                        <NavLink to='/contacts'>Контакты</NavLink>
                                     </li>
                                 </ul>
                             </nav>
@@ -55,18 +54,37 @@ const Header = () => {
                         <li><LanguageSwitcher/></li>
                         {
                             (mobile) &&
-                            <li><button type='button' className='menu'><Menu/></button></li>
+                            <li>
+                                <button 
+                                type='button' 
+                                className='menu'
+                                onClick={()=>setShowMenu(!showMenu)}
+                                >
+                                    {
+                                        (showMenu)
+                                        ? <Close/>
+                                        : <Menu/>
+                                    }
+                                </button>
+                            </li>
                         }
                     </ul>
                 </Container>
             </header>
 
-            <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas show={showMenu} onHide={()=>setShowMenu(false)}>
                 <Offcanvas.Body>
-                    <ul>
-                        <li>Блог</li>
-                        <li>Политика конфиденциальности</li>
-                    </ul>
+                    <div className="box">
+                        <img src="imgs/plaix-menu-bg.jpg" alt="plaix"/>
+                        <ul>
+                            <li>
+                                <Link to="">Блог</Link>
+                            </li>
+                            <li>
+                                <Link to="">Политика конфиденциальности</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </Offcanvas.Body>
             </Offcanvas>
         </>
