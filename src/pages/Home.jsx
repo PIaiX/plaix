@@ -21,7 +21,6 @@ import Globe from '../assets/imgs/icons/globe.svg';
 import List from '../assets/imgs/icons/list.svg';
 import LogotipsSvg from '../components/svg/LogotipsSvg';
 import { IoCloseOutline } from "react-icons/io5";
-import jsonData from "../data/articles";
 
 const Home = () => {
   const [objRef, isVisible] = useObserver({threshold: 1.0});
@@ -82,7 +81,7 @@ const Home = () => {
                 </div>
                 <div className='imgs-div' ref={objRef2} data-observing={isVisible2}>
                   <picture>
-                    <source srcset="imgs/smartphoneVideoMini2.gif" media="(max-width: 767px)" />
+                    <source srcSet="imgs/smartphoneVideoMini2.gif" media="(max-width: 767px)" />
                     <img src="imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main' />
                   </picture>
                   {/* <img src="imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main'/> */}

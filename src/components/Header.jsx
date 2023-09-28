@@ -27,16 +27,16 @@ const Header = () => {
                                         <NavLink to='/'>Главная</NavLink>
                                     </li>
                                     <li>
-                                        <a href='/'>Услуги</a>
+                                        <NavLink to='/ffff'>Услуги</NavLink>
                                     </li>
                                     <li>
-                                        <a href='/'>Проекты</a>
+                                        <NavLink to='/'>Проекты</NavLink>
                                     </li>
                                     <li>
-                                        <a href='/'>Отзывы</a>
+                                        <NavLink to='/'>Отзывы</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/blog'>Блог</NavLink>
+                                        <NavLink to='/article'>Блог</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/contacts'>Контакты</NavLink>
@@ -48,7 +48,7 @@ const Header = () => {
                     <ul className='right'>
                         {
                             (!mobile) &&
-                            <li><Link to='/' className='h5'>Личный кабинет</Link></li>
+                            <li><Link to='/login' className='h5'>Личный кабинет</Link></li>
                         }
                         <li><ThemeToggler /></li>
                         <li><LanguageSwitcher/></li>
@@ -75,7 +75,7 @@ const Header = () => {
             <Offcanvas show={showMenu} onHide={()=>setShowMenu(false)}>
                 <Offcanvas.Body>
                     <div className="box">
-                        <img src="imgs/plaix-menu-bg.jpg" alt="plaix"/>
+                        <img src="imgs/plaix-menu-bg.webp" alt="plaix"/>
                         <ul>
                             <li>
                                 <Link to="">Блог</Link>

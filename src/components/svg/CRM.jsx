@@ -195,32 +195,32 @@ const CRM = () => {
         </path>
         <defs>
         <linearGradient id="paint0_linear_0_5" x1="278.405" y1="127.766" x2="278.405" y2="185.103" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         <linearGradient id="paint1_linear_0_5" x1="297.516" y1="127.766" x2="297.516" y2="185.103" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         <linearGradient id="paint2_linear_0_5" x1="316.638" y1="99.0973" x2="316.638" y2="185.103" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         <linearGradient id="paint3_linear_0_5" x1="335.743" y1="115.341" x2="335.743" y2="185.101" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         <linearGradient id="paint4_linear_0_5" x1="354.862" y1="77.1193" x2="354.862" y2="185.104" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         <linearGradient id="paint5_linear_0_5" x1="373.973" y1="66.6069" x2="373.973" y2="185.103" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         <linearGradient id="paint6_linear_0_5" x1="393.086" y1="99.0971" x2="393.086" y2="185.102" gradientUnits="userSpaceOnUse">
-        <stop stop-color="white" stop-opacity="0.39"/>
-        <stop offset="1" stop-color="white"/>
+        <stop stopColor="white" stopOpacity="0.39"/>
+        <stop offset="1" stopColor="white"/>
         </linearGradient>
         {/* <clipPath id="clip0_0_5">
         <rect width="454.873" height="366" fill="white" transform="translate(0.333008 0.668945)"/>

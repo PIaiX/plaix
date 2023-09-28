@@ -14,40 +14,39 @@ const Footer = () => {
     const [activeMenu, setActiveMenu] = useState('pos-2');
     const currentYear = new Date().getFullYear();
     const {mobile} = useIsMobile('991px');
-    console.log(123);
 
-    const links = [
-        {
-            path: '/services',
-            class: 'pos-0'
-        },
-        {
-            path: '/projects',
-            class: 'pos-1'
-        },
-        {
-            path: '/',
-            class: 'pos-2'
-        },{
-            path: '/contacts',
-            class: 'pos-3'
-        },
-        {
-            path: '/account',
-            class: 'pos-4'
-        },
-    ];
+    // const links = [
+    //     {
+    //         path: '/services',
+    //         class: 'pos-0'
+    //     },
+    //     {
+    //         path: '/projects',
+    //         class: 'pos-1'
+    //     },
+    //     {
+    //         path: '/',
+    //         class: 'pos-2'
+    //     },{
+    //         path: '/contacts',
+    //         class: 'pos-3'
+    //     },
+    //     {
+    //         path: '/account',
+    //         class: 'pos-4'
+    //     },
+    // ];
 
-    useEffect(
-        () => {
-        function updateMenu() {
-            setActiveMenu(links.find(obj => obj.path === location.pathname).class)
-        }
+    // useEffect(
+    //     () => {
+    //     function updateMenu() {
+    //         setActiveMenu(links.find(obj => obj.path === location.pathname).class)
+    //     }
 
-        window.addEventListener('beforeunload', updateMenu)
-        updateMenu()
-        return () => window.removeEventListener('beforeunload', updateMenu)
-    });
+    //     window.addEventListener('beforeunload', updateMenu)
+    //     updateMenu()
+    //     return () => window.removeEventListener('beforeunload', updateMenu)
+    // });
 
     if (mobile) {
         return <footer>

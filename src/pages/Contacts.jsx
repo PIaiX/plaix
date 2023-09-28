@@ -1,7 +1,5 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import ContactsPhone from '../components/svg/ContactsPhone';
 import ContactsTelegram from '../components/svg/ContactsTelegram';
 import ContactsVK from '../components/svg/ContactsVK';
@@ -14,7 +12,7 @@ const Contacts = () => {
             <Container>
                 <div className="contacts-grid">
                     <div className='img'>
-                        <img src="imgs/img10.jpg" alt="plaix" className='imgLarge' />
+                        <img src="imgs/img10.webp" alt="plaix" className='imgLarge' />
                         <button type='button' className='btn-3'>Заказать звонок</button>
                     </div>
                     <a href="tel:+79172555060" className='info1'>

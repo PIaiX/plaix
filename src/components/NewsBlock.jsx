@@ -18,7 +18,7 @@ const NewsBlock = () => {
           {
             jsonData.map( obj => {
               return <li key={obj.id}>
-                <Link to='/' className={(activeNews === obj.id)?'active':''} onMouseEnter={()=>setActiveNews(obj.id)}>
+                <Link to={"/article/"+obj.id} className={(activeNews === obj.id)?'active':''} onMouseEnter={()=>setActiveNews(obj.id)}>
                   <h4>{obj.title}</h4>
                   <Arrow className='icon'/>
                 </Link>
@@ -46,7 +46,7 @@ const NewsBlock = () => {
               </Link>
             </li>
           </ul> */}
-          <Link to='/' className='btn-3 mt-4 mt-md-5'>Перейти в блог</Link>
+          <Link to='/article' className='btn-3 mt-4 mt-md-5'>Перейти в блог</Link>
         </Col>
         <Col xs={12} lg={6} xxl={5} className='d-none d-lg-block'>
           <ArticlePreview data={jsonData[activeNews]} />
