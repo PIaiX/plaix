@@ -15,7 +15,7 @@ const Portfolio = () => {
                     <Col>
                         <PortfolioItem
                             title="Разработка сайта для клиники стоматологии Престиж Дент" 
-                            imgLink="imgs/projects/dent.webp"
+                            imgLink="/imgs/projects/dent.webp"
                             tagsArr={["Интернет - магазины"]}
                             itemStyle="black"
                         />
@@ -23,35 +23,35 @@ const Portfolio = () => {
                     <Col>
                         <PortfolioItem
                             title="Разработка интернет-магазина для магазина Moonka" 
-                            imgLink="imgs/projects/moonka.webp"
+                            imgLink="/imgs/projects/moonka.webp"
                             tagsArr={["Интернет - магазины"]}
                         />
                     </Col>
                     <Col>
                         <PortfolioItem
                             title="Разработка интернет-магазина и приложения для магазина Мясо в миску" 
-                            imgLink="imgs/projects/myaso.webp"
+                            imgLink="/imgs/projects/myaso.webp"
                             tagsArr={["Интернет - магазины", "Мобильные приложения"]}
                         />
                     </Col>
                     <Col>
                         <PortfolioItem
                             title="Разработка интернет-магазина для ОТК Сервис" 
-                            imgLink="imgs/projects/otk.webp"
+                            imgLink="/imgs/projects/otk.webp"
                             tagsArr={["Интернет - магазины"]}
                         />
                     </Col>
                     <Col>
                         <PortfolioItem
                             title="Разработка интернет-магазина для Parfe" 
-                            imgLink="imgs/projects/parfe.webp"
+                            imgLink="/imgs/projects/parfe.webp"
                             tagsArr={["Интернет - магазины"]}
                         />
                     </Col>
                     <Col>
                         <PortfolioItem
                             title="Разработка интернет-магазина для RoweOil" 
-                            imgLink="imgs/projects/rowe.webp"
+                            imgLink="/imgs/projects/rowe.webp"
                             tagsArr={["Интернет - магазины"]}
                             itemStyle="black"
                         />
@@ -59,7 +59,7 @@ const Portfolio = () => {
                     <Col>
                         <PortfolioItem
                             title="Разработка интернет-магазина для Techlight" 
-                            imgLink="imgs/projects/techlight.webp"
+                            imgLink="/imgs/projects/techlight.webp"
                             tagsArr={["Интернет - магазины"]}
                             itemStyle="black"
                         />
@@ -67,7 +67,7 @@ const Portfolio = () => {
                     <Col>
                         <PortfolioItem
                             title="Собственная разработка для кафе, пиццерий и суши-баров" 
-                            imgLink="imgs/projects/yooapp.webp"
+                            imgLink="/imgs/projects/yooapp.webp"
                             tagsArr={["Интернет - магазины", "Мобильные приложения"]}
                         />
                     </Col>

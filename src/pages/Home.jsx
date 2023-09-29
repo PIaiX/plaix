@@ -47,10 +47,10 @@ const Home = () => {
               <h6 className='mb-4 mb-sm-5 mb-lg-0 pe-lg-5'>Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
               <div>
                 <ul className='projects-icons'>
-                  <li><img src="imgs/logotips/BD.webp" alt="BD" /></li>
-                  <li><img src="imgs/logotips/on.webp" alt="ON" className='br-white'/></li>
-                  <li><img src="imgs/logotips/yooapp.webp" alt="yooapp" /></li>
-                  <li><img src="imgs/logotips/rowe.webp" alt="rowe" /></li>
+                  <li><img src="/imgs/logotips/BD.webp" alt="BD" /></li>
+                  <li><img src="/imgs/logotips/on.webp" alt="ON" className='br-white'/></li>
+                  <li><img src="/imgs/logotips/yooapp.webp" alt="yooapp" /></li>
+                  <li><img src="/imgs/logotips/rowe.webp" alt="rowe" /></li>
                 </ul>
                 <p className='d-block mt-3'>100+ реализованных проектов</p>
               </div>
@@ -70,7 +70,7 @@ const Home = () => {
                   <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.</p>
                 </div>
                 <LogotipsSvg/>
-                {/* <img src="imgs/logotips.gif" alt="Web-разработка" /> */}
+                {/* <img src="/imgs/logotips.gif" alt="Web-разработка" /> */}
               </div>
             </Col>
             <Col xs={12} sm={6} lg={4}>
@@ -81,12 +81,12 @@ const Home = () => {
                 </div>
                 <div className='imgs-div' ref={objRef2} data-observing={isVisible2}>
                   <picture>
-                    <source srcSet="imgs/smartphoneVideoMini2.gif" media="(max-width: 767px)" />
-                    <img src="imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main' />
+                    <source srcSet="/imgs/smartphoneVideoMini2.gif" media="(max-width: 767px)" />
+                    <img src="/imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main' />
                   </picture>
-                  {/* <img src="imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main'/> */}
-                  <img src="imgs/billetgreen.svg" alt="billetgreen" className='billet-1'/>
-                  <img src="imgs/billetwhite.svg" alt="billetwhite" className='billet-2'/>
+                  {/* <img src="/imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main'/> */}
+                  <img src="/imgs/billetgreen.svg" alt="billetgreen" className='billet-1'/>
+                  <img src="/imgs/billetwhite.svg" alt="billetwhite" className='billet-2'/>
                 </div>
               </div>
             </Col>
@@ -121,7 +121,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* <CRM/> */}
-                {/* <img src="imgs/crm.gif" alt="B2B-продукты" /> */}
+                {/* <img src="/imgs/crm.gif" alt="B2B-продукты" /> */}
               </div>
             </Col>
             <Col xs={12} sm={6} lg={4} xxl={5}>
@@ -130,7 +130,7 @@ const Home = () => {
                   <h3 className='mb-2 mb-md-3'>IT-субподряд</h3>
                   <p>Решаем задачи на субподряде для digital-агентств и IT-компаний</p>
                 </div>
-                <img src="imgs/img1.webp" alt="IT-субподряд" />
+                <img src="/imgs/img1.webp" alt="IT-субподряд" />
               </div>
             </Col>
             <Col xs={12} lg={8} xxl={7}>
@@ -138,7 +138,7 @@ const Home = () => {
                 <Col>
                   <div className="service-black">
                     <div className="box">
-                      <img src="imgs/abstractform.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
+                      <img src="/imgs/abstractform.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
                       <div>
                         <h3 className='mb-2 mb-md-3'>Дизайн и оформление</h3>
                         <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
@@ -184,7 +184,7 @@ const Home = () => {
 
           {/* <Row className='align-items-center'>
             <Col xs={12} md={7} xl={8} className='pe-xl-5 mb-4 mb-md-0'>
-              <img src="imgs/slides.gif" alt="Проекты, которые говорят сами за себя"/>
+              <img src="/imgs/slides.gif" alt="Проекты, которые говорят сами за себя"/>
             </Col>
             <Col xs={12} md={5} xl={4}>
               <h3 className='d-none d-md-block'>Проекты, которые говорят сами за себя</h3>
@@ -212,28 +212,28 @@ const Home = () => {
           }}
         >
           <SwiperSlide>
-            <img src="imgs/projects/myaso.webp" alt="Мясо в миску" />
+            <img src="/imgs/projects/myaso.webp" alt="Мясо в миску" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/moonka.webp" alt="Moonka" />
+            <img src="/imgs/projects/moonka.webp" alt="Moonka" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/techlight.webp" alt="Techlight" />
+            <img src="/imgs/projects/techlight.webp" alt="Techlight" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/yooapp.webp" alt="Yoo.App" />
+            <img src="/imgs/projects/yooapp.webp" alt="Yoo.App" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/dent.webp" alt="Престиж Дент" />
+            <img src="/imgs/projects/dent.webp" alt="Престиж Дент" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/otk.webp" alt="ОТК Сервис" />
+            <img src="/imgs/projects/otk.webp" alt="ОТК Сервис" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/rowe.webp" alt="roweoil" />
+            <img src="/imgs/projects/rowe.webp" alt="roweoil" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/parfe.webp" alt="parfe" />
+            <img src="/imgs/projects/parfe.webp" alt="parfe" />
           </SwiperSlide>
         </Swiper>
 
@@ -256,28 +256,28 @@ const Home = () => {
           }}
         >
           <SwiperSlide>
-            <img src="imgs/projects/myaso.webp" alt="Мясо в миску" />
+            <img src="/imgs/projects/myaso.webp" alt="Мясо в миску" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/moonka.webp" alt="Moonka" />
+            <img src="/imgs/projects/moonka.webp" alt="Moonka" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/techlight.webp" alt="Techlight" />
+            <img src="/imgs/projects/techlight.webp" alt="Techlight" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/yooapp.webp" alt="Yoo.App" />
+            <img src="/imgs/projects/yooapp.webp" alt="Yoo.App" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/dent.webp" alt="Престиж Дент" />
+            <img src="/imgs/projects/dent.webp" alt="Престиж Дент" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/otk.webp" alt="ОТК Сервис" />
+            <img src="/imgs/projects/otk.webp" alt="ОТК Сервис" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/rowe.webp" alt="roweoil" />
+            <img src="/imgs/projects/rowe.webp" alt="roweoil" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="imgs/projects/parfe.webp" alt="parfe" />
+            <img src="/imgs/projects/parfe.webp" alt="parfe" />
           </SwiperSlide>
         </Swiper>
       </section>
@@ -290,8 +290,8 @@ const Home = () => {
             </div>
             <div className='grid-4-2'>
               <ul className='photos'>
-                <li><img src="imgs/img4.webp" alt="man"/></li>
-                <li><img src="imgs/img3.webp" alt="woman"/></li>
+                <li><img src="/imgs/img4.webp" alt="man"/></li>
+                <li><img src="/imgs/img3.webp" alt="woman"/></li>
               </ul>
               <h6 className='ms-3'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </div>
@@ -300,16 +300,16 @@ const Home = () => {
                 <h4 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h4>
                 <Row className='logotips' xs={2}>
                   <Col>
-                    <img src="imgs/logotips/mongo.webp" alt="mongo" />
+                    <img src="/imgs/logotips/mongo.webp" alt="mongo" />
                   </Col>
                   <Col>
-                    <img src="imgs/logotips/react.webp" alt="react" />
+                    <img src="/imgs/logotips/react.webp" alt="react" />
                   </Col>
                   <Col>
-                    <img src="imgs/logotips/ex.webp" alt="ex" />
+                    <img src="/imgs/logotips/ex.webp" alt="ex" />
                   </Col>
                   <Col>
-                    <img src="imgs/logotips/node.webp" alt="node" />
+                    <img src="/imgs/logotips/node.webp" alt="node" />
                   </Col>
                 </Row>
               </div>
@@ -332,9 +332,9 @@ const Home = () => {
             </Col>
             <Col xs={12} lg={3} className='order-4 order-lg-2 d-flex flex-column justify-content-end align-items-center align-items-lg-start pb-4 pb-xl-5 ps-xxl-5 mt-5 mt-lg-0'>
               <ul className='photos'>
-                <li><img src="imgs/img3.webp" alt="img3"/></li>
-                <li><img src="imgs/img4.webp" alt="img4"/></li>
-                <li><img src="imgs/img5.webp" alt="img5"/></li>
+                <li><img src="/imgs/img3.webp" alt="img3"/></li>
+                <li><img src="/imgs/img4.webp" alt="img4"/></li>
+                <li><img src="/imgs/img5.webp" alt="img5"/></li>
               </ul>
               <h6 className='text-center text-lg-start'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </Col>
@@ -342,16 +342,16 @@ const Home = () => {
               <h5 className='text-center text-lg-start'>Используем большой стек технологий для решения клиентских задач</h5>
               <Row className='logotips' xs={2}>
                 <Col>
-                  <img src="imgs/logotips/mongo.webp" alt="mongo" />
+                  <img src="/imgs/logotips/mongo.webp" alt="mongo" />
                 </Col>
                 <Col>
-                  <img src="imgs/logotips/react.webp" alt="react" />
+                  <img src="/imgs/logotips/react.webp" alt="react" />
                 </Col>
                 <Col>
-                  <img src="imgs/logotips/ex.webp" alt="ex" />
+                  <img src="/imgs/logotips/ex.webp" alt="ex" />
                 </Col>
                 <Col>
-                  <img src="imgs/logotips/node.webp" alt="node" />
+                  <img src="/imgs/logotips/node.webp" alt="node" />
                 </Col>
               </Row>
             </Col>

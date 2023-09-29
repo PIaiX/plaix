@@ -75,7 +75,7 @@ const Header = () => {
             <Offcanvas show={showMenu} onHide={()=>setShowMenu(false)}>
                 <Offcanvas.Body>
                     <div className="box">
-                        <img src="imgs/plaix-menu-bg.webp" alt="plaix"/>
+                        <img src="/imgs/plaix-menu-bg.webp" alt="plaix"/>
                         <ul>
                             <li>
                                 <Link to="/article">Блог</Link>

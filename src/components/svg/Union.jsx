@@ -17,7 +17,7 @@ const Union = (props) => {
         </pattern>
         <ThemeContext.Consumer>
           {({ theme }) => (
-            <image id="image0_438_1294" width="2500" height="1667" xlinkHref={(theme === themes.light)?"imgs/img6.webp":"imgs/img7.webp"}/>
+            <image id="image0_438_1294" width="2500" height="1667" xlinkHref={(theme === themes.light)?"/imgs/img6.webp":"/imgs/img7.webp"}/>
           )}
         </ThemeContext.Consumer>
       </defs>

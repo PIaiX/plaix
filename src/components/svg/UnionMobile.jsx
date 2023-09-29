@@ -23,7 +23,7 @@ const UnionMobile = (props) => {
         </linearGradient>
         <ThemeContext.Consumer>
           {({ theme }) => (
-            <image id="image0_528_95" width="2500" height="1667" xlinkHref={(theme === themes.light)?"imgs/img8.webp":"imgs/img9.webp"}/>
+            <image id="image0_528_95" width="2500" height="1667" xlinkHref={(theme === themes.light)?"/imgs/img8.webp":"/imgs/img9.webp"}/>
           )}
         </ThemeContext.Consumer>
       </defs>

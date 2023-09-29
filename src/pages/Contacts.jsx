@@ -12,7 +12,7 @@ const Contacts = () => {
             <Container>
                 <div className="contacts-grid">
                     <div className='img'>
-                        <img src="imgs/img10.webp" alt="plaix" className='imgLarge' />
+                        <img src="/imgs/img10.webp" alt="plaix" className='imgLarge' />
                         <button type='button' className='btn-3'>Заказать звонок</button>
                     </div>
                     <a href="tel:+79172555060" className='info1'>

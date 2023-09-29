@@ -30,7 +30,7 @@ const Blog = () => {
                             <li className='css'>#CSS</li>
                         </ul>
 
-                        <img src="imgs/img2.webp" alt="git" className='mt-5 img-fluid'/>
+                        <img src="/imgs/img2.webp" alt="git" className='mt-5 img-fluid'/>
                     </Col>
                 </Row>
             </section>

@@ -12,7 +12,7 @@ const Login = () => {
             <Row className='justify-content-center'>
                 <Col xs={12} sm={9} md={7} lg={6} xl={5} xxl={4}>
                     <form action="">
-                        <img src="imgs/login.webp" alt="login" />
+                        <img src="/imgs/login.webp" alt="login" />
                         <h1 className='h2 text-center fw-6'>Вход в личный кабинет</h1>
                         <p className='faded mb-4'>Авторизация доступна только для действующих клиентов Plaix</p>
 
