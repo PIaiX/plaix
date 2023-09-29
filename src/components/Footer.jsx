@@ -53,17 +53,17 @@ const Footer = () => {
             <Container className='custom-container'>
                 <nav>
                     <ul>
-                        <li className={'indicator '+activeMenu}>
+                        {/* <li className={'indicator '+activeMenu}>
                             <div></div>
-                        </li>
+                        </li> */}
                         <li>
-                            <NavLink to='/services'>
+                            <NavLink to='/'>
                                 <ServiceIcon/>
                                 <span>Услуги</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/projects'>
+                            <NavLink to='/portfolio'>
                                 <ProjectsIcon/>
                                 <span>Проекты</span>
                             </NavLink>
@@ -81,7 +81,7 @@ const Footer = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/account'>
+                            <NavLink to='/login'>
                                 <AccountIcon/>
                                 <span>Аккаунт</span>
                             </NavLink>

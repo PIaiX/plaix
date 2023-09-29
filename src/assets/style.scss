@@ -112,13 +112,17 @@ $bp-xxl: 1599px;
     border-radius: $rad;
     object-fit: cover;
 }
-@mixin clamp($count, $line) {
+@mixin clamp($count, $line, $strict: false) {
     display: -webkit-box;
     -webkit-line-clamp: $count;
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: $line;
-    max-height: $line * $count;
+    @if $strict {
+       height: $line * $count;
+    } @else {
+       max-height: $line * $count;
+    }
 }
 @mixin list {
     list-style: none;
@@ -2362,6 +2366,7 @@ svg.bg {
         color: $white;
         text-align: center;
         border-radius: 1em;
+        border: 1px solid $white;
     }
     &-list {
         @include list();
@@ -2608,6 +2613,75 @@ article.page-article {
     }
 }
 
+.page-portfolio {
+    h1 {
+        background-color: var(--bg-invert);
+        background-image: url(imgs/bg/bg-abstract-2.webp);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        color: $white;
+        text-align: center;
+        border-radius: 1em;
+        border: 1px solid $white;
+    }
+    &-item {
+        padding: 1.25em;
+        background-color: transparent;
+        border: 1px solid var(--silver);
+        border-radius: 2em;
+        height: 100%;
+        @include flex(column, space-between, stretch, nowrap);
+        @media (max-width: $bp-xs) {
+            font-size: 12px;
+            border-radius: 1em;
+        }
+        &.black {
+            background-color: $black;
+            color: $white;
+        }
+        img {
+            width: 100%;
+            border-radius: 2em;
+            margin-bottom: 1.5em;
+            @media (max-width: $bp-xs) {
+                border-radius: 1em;
+            }
+        }
+        h5 {
+            font-size: 1.25em;
+            font-weight: 800;
+            margin-bottom: 1em;
+            @include clamp(2, 1.2em, true);
+        }
+        .bottom {
+            @include flex(row, space-between, flex-end, nowrap);
+            ul {
+                flex: 1;
+                @include list();
+                @include flex(row, flex-start, center, wrap);
+                li {
+                    margin-right: .5em;
+                    margin-bottom: .25em;
+                    height: 2.5em;
+                    padding: 0em 1em;
+                    border: 1px solid;
+                    border-radius: 2em;
+                    @include flex();
+                }
+            }
+            button {
+                font-size: 1em;
+                width: 2.5em;
+                height: 2.5em;
+                border: 1px solid;
+                border-radius: 50%;
+                @include flex();
+            }
+        }
+    }
+    
+}
+
 
 .login-page {
     text-align: center;
@@ -2616,6 +2690,15 @@ article.page-article {
         border-radius: 1.2em;
         padding: 3em;
         box-shadow: 21px 54px 42px 0px rgba(0, 0, 0, 0.05);
+        @media (max-width: $bp-md) {
+            padding: 2em;
+        }
+        @media (max-width: $bp-sm) {
+            padding: 1em;
+        }
+        @media (max-width: $bp-xs) {
+            padding: .5em;
+        }
         img {
             width: 100%;
             border-radius: .6em;
@@ -2689,8 +2772,14 @@ footer {
                             font-size: 1em;
                         }
                     }
+                    &:hover,  &:focus {
+                        color: var(--bg-invert);
+                    }
                     &.active {
                         color: var(--bg-invert);
+                        svg {
+                            background-image: radial-gradient(circle, $color-2, transparent);
+                        }
                     }
                 }
                 &.indicator {

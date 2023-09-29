@@ -10,7 +10,7 @@ const Login = () => {
         <Container>
             <section className='login-page mb-5'>
             <Row className='justify-content-center'>
-                <Col xs={12} sm={8} md={7} lg={6} xl={5} xxl={4}>
+                <Col xs={12} sm={9} md={7} lg={6} xl={5} xxl={4}>
                     <form action="">
                         <img src="imgs/login.webp" alt="login" />
                         <h1 className='h2 text-center fw-6'>Вход в личный кабинет</h1>

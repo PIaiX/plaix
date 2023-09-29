@@ -7,6 +7,7 @@ import Contacts from '../pages/Contacts'
 import Blog from '../pages/Blog'
 import Article from '../pages/Article'
 import Login from '../pages/Login'
+import Portfolio from '../pages/Portfolio'
 
 const router = createHashRouter(
     createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createHashRouter(
             <Route path="contacts" element={<Contacts/>} />
             <Route path="article" element={<Blog/>} />
             <Route path="article/:articleId" element={<Article />}/>
+            <Route path="portfolio" element={<Portfolio/>} />
             <Route path="login" element={<Login/>} />
             <Route path="*" element={<NotFound />} />
         </Route>

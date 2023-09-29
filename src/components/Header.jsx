@@ -27,10 +27,10 @@ const Header = () => {
                                         <NavLink to='/'>Главная</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/ffff'>Услуги</NavLink>
+                                        <NavLink to='/'>Услуги</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/'>Проекты</NavLink>
+                                        <NavLink to='/portfolio'>Проекты</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/'>Отзывы</NavLink>
@@ -78,10 +78,10 @@ const Header = () => {
                         <img src="imgs/plaix-menu-bg.webp" alt="plaix"/>
                         <ul>
                             <li>
-                                <Link to="">Блог</Link>
+                                <Link to="/article">Блог</Link>
                             </li>
                             <li>
-                                <Link to="">Политика конфиденциальности</Link>
+                                <Link to="/">Политика конфиденциальности</Link>
                             </li>
                         </ul>
                     </div>
