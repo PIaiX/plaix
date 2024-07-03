@@ -64,42 +64,77 @@
 
 /* mixins */
 /* Typography */
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
   color: inherit;
   outline: none;
   text-decoration: none;
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6, p, label, span, a, button, form, fieldset, legend, select, input, textarea, button, div, blockquote, cite, figure, figcaption, table, ul, ol, dl, address {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+span,
+a,
+button,
+form,
+fieldset,
+legend,
+select,
+input,
+textarea,
+button,
+div,
+blockquote,
+cite,
+figure,
+figcaption,
+table,
+ul,
+ol,
+dl,
+address {
   line-height: normal;
   margin-bottom: 0px;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   text-align: left;
   font-size: 3em;
   font-weight: 700;
   margin-bottom: 1em;
 }
 @media (max-width: 1399px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 3em;
   }
 }
 @media (max-width: 1199px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 3em;
     margin-bottom: 0.7em;
   }
 }
 @media (max-width: 1199px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 2.75em;
   }
 }
 @media (max-width: 767px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 1.75em;
   }
 }
@@ -145,7 +180,8 @@ h4 {
   }
 }
 
-h5, .h5 {
+h5,
+.h5 {
   text-align: left;
   font-size: 1.125em;
   font-weight: 600;
@@ -253,7 +289,8 @@ h6 {
 }
 
 /* Form elements */
-input, textarea {
+input,
+textarea {
   background: var(--body-bg);
   border: 1px solid var(--silver);
   border-radius: var(--radius);
@@ -268,11 +305,16 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   color: #B7B7B7;
   font-weight: 400;
 }
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #B7B7B7;
   font-weight: 400;
 }
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:active {
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--bg) inset !important;
   -webkit-text-fill-color: var(--faded) !important;
 }
@@ -411,7 +453,8 @@ label span {
 .labeled-input label svg.wrong {
   color: red;
 }
-.labeled-input input, .labeled-input textarea {
+.labeled-input input,
+.labeled-input textarea {
   position: relative;
   z-index: 1;
 }
@@ -560,11 +603,12 @@ button {
 .themes-switcher input::before {
   content: "";
   top: 0px;
-  left: 0px;
+  left: auto;
+  right: 0;
   width: 10px;
   height: 100%;
   border-radius: 50%;
-  background-image: url(imgs/icons/sun.svg);
+  background-image: url(imgs/icons/moon.svg);
   background-color: transparent;
   transform: scale(2.6);
   transition: left 300ms linear;
@@ -574,8 +618,9 @@ button {
   border: none;
 }
 .themes-switcher input:checked::before {
-  left: 20px;
-  background-image: url(imgs/icons/moon.svg);
+  left: 0;
+  right: auto;
+  background-image: url(imgs/icons/sun.svg);
 }
 
 .lang-switcher {
@@ -644,7 +689,7 @@ body {
   background-color: var(--body-bg);
   color: var(--bg-invert);
   overflow-x: hidden;
-  padding-top: var(--h-height);
+  min-width: 100%;
 }
 @media (max-width: 1199px) {
   body {
@@ -666,9 +711,10 @@ main {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0px;
-  left: 0px;
+  left: auto;
+  right: 0px;
   width: 100%;
   z-index: 1100;
   height: var(--h-height);
@@ -697,7 +743,8 @@ header nav.main ul li:not(:first-child) {
     margin-left: 1.2em;
   }
 }
-header nav.main ul li a, header nav.main ul li button {
+header nav.main ul li a,
+header nav.main ul li button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -708,7 +755,8 @@ header nav.main ul li a, header nav.main ul li button {
   font-weight: 600;
 }
 @media (max-width: 1199px) {
-  header nav.main ul li a, header nav.main ul li button {
+  header nav.main ul li a,
+  header nav.main ul li button {
     font-size: 1em;
   }
 }
@@ -1114,7 +1162,8 @@ svg.bg .ellipse-4 {
   color: var(--bg-invert);
   box-shadow: 4px 7px 26px rgba(0, 0, 0, 0.11);
 }
-.sec-home-2-new .service-white img, .sec-home-2-new .service-white svg {
+.sec-home-2-new .service-white img,
+.sec-home-2-new .service-white svg {
   width: 100%;
   height: auto;
 }
@@ -1786,7 +1835,8 @@ svg.bg .ellipse-4 {
   background-size: cover;
 }
 
-[data-theme=dark] .sec-home-2-new .service-white img, [data-theme=dark] .sec-home-2-new .service-white svg {
+[data-theme=dark] .sec-home-2-new .service-white img,
+[data-theme=dark] .sec-home-2-new .service-white svg {
   filter: invert(1);
 }
 [data-theme=dark] .sec-home-2-new .service-white-2 {
@@ -2050,7 +2100,8 @@ svg.bg .ellipse-4 {
     font-size: 2.2vw;
   }
 }
-.sec-home-4 .box .diagram img, .sec-home-4 .box .diagram svg {
+.sec-home-4 .box .diagram img,
+.sec-home-4 .box .diagram svg {
   width: 70%;
   height: auto;
   margin: 0 10% 0 20%;
@@ -2242,7 +2293,8 @@ svg.bg .ellipse-4 {
     font-size: 2.2vw;
   }
 }
-.sec-home-4-new .box .diagram img, .sec-home-4-new .box .diagram svg {
+.sec-home-4-new .box .diagram img,
+.sec-home-4-new .box .diagram svg {
   width: 70%;
   height: auto;
   margin: 0 10% 0 20%;
@@ -3061,7 +3113,8 @@ footer a:hover, footer a:focus, footer a:active {
     width: 20%;
     z-index: 2;
   }
-  footer ul li a, footer ul li button {
+  footer ul li a,
+  footer ul li button {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -3075,30 +3128,37 @@ footer a:hover, footer a:focus, footer a:active {
   }
 }
 @media (max-width: 991px) and (max-width: 575px) {
-  footer ul li a span, footer ul li button span {
+  footer ul li a span,
+  footer ul li button span {
     font-size: 0.625em;
     margin-top: 0.5em;
   }
 }
 @media (max-width: 991px) {
-  footer ul li a svg, footer ul li button svg {
+  footer ul li a svg,
+  footer ul li button svg {
     font-size: 1.6em;
     transition: 300ms linear;
   }
 }
 @media (max-width: 991px) and (max-width: 575px) {
-  footer ul li a svg, footer ul li button svg {
+  footer ul li a svg,
+  footer ul li button svg {
     font-size: 1em;
   }
 }
 @media (max-width: 991px) {
-  footer ul li a:hover, footer ul li a:focus, footer ul li button:hover, footer ul li button:focus {
+  footer ul li a:hover, footer ul li a:focus,
+  footer ul li button:hover,
+  footer ul li button:focus {
     color: var(--bg-invert);
   }
-  footer ul li a.active, footer ul li button.active {
+  footer ul li a.active,
+  footer ul li button.active {
     color: var(--bg-invert);
   }
-  footer ul li a.active svg, footer ul li button.active svg {
+  footer ul li a.active svg,
+  footer ul li button.active svg {
     background-image: radial-gradient(circle, #CFFF83, transparent);
   }
   footer ul li.indicator {
@@ -3226,14 +3286,17 @@ footer a:hover, footer a:focus, footer a:active {
   border: 1px solid currentColor;
 }
 
+.modal {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
 .modal-content {
   background-color: var(--bg);
   border: 2px solid var(--silver);
   border-radius: calc(var(--radius) * 2);
 }
 .modal-body {
-  position: relative;
-  z-index: 1;
   padding: 3em;
 }
 @media (max-width: 1199px) {
@@ -3292,7 +3355,8 @@ footer a:hover, footer a:focus, footer a:active {
 .offcanvas-body .box ul li:not(:first-child) {
   border-top: 1px solid #EDEDED;
 }
-.offcanvas-body .box ul li a, .offcanvas-body .box ul li button {
+.offcanvas-body .box ul li a,
+.offcanvas-body .box ul li button {
   padding: 1em 1.5em;
   display: block;
 }/*# sourceMappingURL=style.css.map */

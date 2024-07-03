@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useIsMobile from '../hooks/isMobile';
 import Logo from './svg/Logo';
 import Menu from './svg/Menu';
@@ -10,7 +10,7 @@ import ThemeToggler from './utils/ThemeToggler';
 import Close from './svg/Close';
 
 const Header = () => {
-    const {mobile} = useIsMobile('991px');
+    const { mobile } = useIsMobile('991px');
     const [showMenu, setShowMenu] = useState(false);
 
     return (
@@ -18,9 +18,9 @@ const Header = () => {
             <header>
                 <Container className='custom-container h-100 d-flex justify-content-between align-items-center'>
                     <div className='d-flex align-items-center'>
-                        <Logo className='logo'/>
+                        <NavLink to='/'><Logo className='logo' /></NavLink>
                         {
-                            (!mobile) && 
+                            (!mobile) &&
                             <nav className='main ms-5'>
                                 <ul>
                                     <li>
@@ -51,19 +51,19 @@ const Header = () => {
                             <li><Link to='/login' className='h5'>Личный кабинет</Link></li>
                         }
                         <li><ThemeToggler /></li>
-                        <li><LanguageSwitcher/></li>
+                        <li><LanguageSwitcher /></li>
                         {
                             (mobile) &&
                             <li>
-                                <button 
-                                type='button' 
-                                className='menu'
-                                onClick={()=>setShowMenu(!showMenu)}
+                                <button
+                                    type='button'
+                                    className='menu'
+                                    onClick={() => setShowMenu(!showMenu)}
                                 >
                                     {
                                         (showMenu)
-                                        ? <Close/>
-                                        : <Menu/>
+                                            ? <Close />
+                                            : <Menu />
                                     }
                                 </button>
                             </li>
@@ -72,10 +72,10 @@ const Header = () => {
                 </Container>
             </header>
 
-            <Offcanvas show={showMenu} onHide={()=>setShowMenu(false)}>
+            <Offcanvas show={showMenu} onHide={() => setShowMenu(false)}>
                 <Offcanvas.Body>
                     <div className="box">
-                        <img src="/imgs/plaix-menu-bg.webp" alt="plaix"/>
+                        <img src="/imgs/plaix-menu-bg.webp" alt="plaix" />
                         <ul>
                             <li>
                                 <Link to="/article">Блог</Link>

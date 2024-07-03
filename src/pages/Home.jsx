@@ -23,23 +23,23 @@ import LogotipsSvg from '../components/svg/LogotipsSvg';
 import { IoCloseOutline } from "react-icons/io5";
 
 const Home = () => {
-  const [objRef, isVisible] = useObserver({threshold: 1.0});
-  const [objRef2, isVisible2] = useObserver({threshold: 0.5});
+  const [objRef, isVisible] = useObserver({ threshold: 1.0 });
+  const [objRef2, isVisible2] = useObserver({ threshold: 0.5 });
 
   const [showCallback, setShowCallback] = useState(false);
   const handleCloseCallback = () => setShowCallback(false);
   const handleShowCallback = () => setShowCallback(true);
-  
+
   return (
     <main>
       <Container>
         <section className='sec-home-1 mb-45'>
-          <Bg className="bg"/>
+          <Bg className="bg" />
           <Row className='position-relative z-10'>
             <Col lg={7}>
               <h1 className='mb-4 mb-lg-5'>
-                <Line/>
-                <span>Plaix - разработка <br/>цифровых сервисов</span>
+                <Line />
+                <span>Plaix - разработка <br />цифровых сервисов</span>
               </h1>
               <button type='button' className='btn-1' onClick={handleShowCallback}>Оставить заявку</button>
             </Col>
@@ -48,7 +48,7 @@ const Home = () => {
               <div>
                 <ul className='projects-icons'>
                   <li><img src="/imgs/logotips/BD.webp" alt="BD" /></li>
-                  <li><img src="/imgs/logotips/on.webp" alt="ON" className='br-white'/></li>
+                  <li><img src="/imgs/logotips/on.webp" alt="ON" className='br-white' /></li>
                   <li><img src="/imgs/logotips/yooapp.webp" alt="yooapp" /></li>
                   <li><img src="/imgs/logotips/rowe.webp" alt="rowe" /></li>
                 </ul>
@@ -69,7 +69,7 @@ const Home = () => {
                   <h3 className='mb-2 mb-md-3'>Web-разработка</h3>
                   <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.</p>
                 </div>
-                <LogotipsSvg/>
+                <LogotipsSvg />
                 {/* <img src="/imgs/logotips.gif" alt="Web-разработка" /> */}
               </div>
             </Col>
@@ -85,8 +85,8 @@ const Home = () => {
                     <img src="/imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main' />
                   </picture>
                   {/* <img src="/imgs/smartphoneVideoMax.gif" alt="Мобильные приложения" className='main'/> */}
-                  <img src="/imgs/billetgreen.svg" alt="billetgreen" className='billet-1'/>
-                  <img src="/imgs/billetwhite.svg" alt="billetwhite" className='billet-2'/>
+                  <img src="/imgs/billetgreen.svg" alt="billetgreen" className='billet-1' />
+                  <img src="/imgs/billetwhite.svg" alt="billetwhite" className='billet-2' />
                 </div>
               </div>
             </Col>
@@ -117,7 +117,7 @@ const Home = () => {
                   </div>
                   <div className='crm-4'>
                     <img src={Globe} alt="Globe" className='crm-4-globe' />
-                    <img src={List} alt="List" className='crm-4-list'/>
+                    <img src={List} alt="List" className='crm-4-list' />
                   </div>
                 </div>
                 {/* <CRM/> */}
@@ -138,7 +138,7 @@ const Home = () => {
                 <Col>
                   <div className="service-black">
                     <div className="box">
-                      <img src="/imgs/abstractform.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4'/>
+                      <img src="/imgs/abstractform.webp" alt="Дизайн и оформление" className='img-fluid d-block ms-auto mb-4' />
                       <div>
                         <h3 className='mb-2 mb-md-3'>Дизайн и оформление</h3>
                         <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
@@ -148,7 +148,7 @@ const Home = () => {
                 </Col>
                 <Col>
                   <div className="service-folder">
-                    <FolderSvg3 className={'service-folder-bg'}/>
+                    <FolderSvg3 className={'service-folder-bg'} />
                     <div className="box">
                       <div>
                         <h3 className='mb-2 mb-md-3'>Продвижение</h3>
@@ -171,15 +171,15 @@ const Home = () => {
       </Container>
 
       <section className='sec-home-3 mb-45'>
-        <Ticker reverse={true} text={'Развивай свой бизнес'}/> 
-        <Ticker reverse={false} className={'type-2'} text={'Развивай свой бизнес'}/>
+        <Ticker reverse={true} text={'Развивай свой бизнес'} />
+        <Ticker reverse={false} className={'type-2'} text={'Развивай свой бизнес'} />
 
         <Container>
           <h2 className='fw-6'>Проекты, которые говорят сами за себя</h2>
-          <h4 className='fw-3'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br/>решения и помогать компаниям приносить пользу.</h4>
+          <h4 className='fw-3'>Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br />решения и помогать компаниям приносить пользу.</h4>
           <button type='button' onClick={handleShowCallback} className='btn-3 mx-auto mt-4 mt-md-5 mb-4 mb-sm-5'>
             <span className='me-2'>Посмотреть все проекты</span>
-            <Arrow/>
+            <Arrow />
           </button>
 
           {/* <Row className='align-items-center'>
@@ -290,8 +290,8 @@ const Home = () => {
             </div>
             <div className='grid-4-2'>
               <ul className='photos'>
-                <li><img src="/imgs/img4.webp" alt="man"/></li>
-                <li><img src="/imgs/img3.webp" alt="woman"/></li>
+                <li><img src="/imgs/img4.webp" alt="man" /></li>
+                <li><img src="/imgs/img3.webp" alt="woman" /></li>
               </ul>
               <h6 className='ms-3'>Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
             </div>
@@ -317,7 +317,7 @@ const Home = () => {
             <div className='grid-4-4'>
               <div className="box">
                 <h4 className='ms-xxl-5'>К нам обращаются</h4>
-                <Chart/>
+                <Chart />
               </div>
             </div>
           </div>
@@ -390,13 +390,13 @@ const Home = () => {
                 spaceBetween: 24,
               },
             }}
-            >
+          >
             <SwiperSlide>
               <div className="card-1">
                 <h4 className='fw-4'>Lorem ipsum</h4>
                 <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
                 <div className='marker'>
-                  <Arrow/>
+                  <Arrow />
                 </div>
               </div>
             </SwiperSlide>
@@ -405,13 +405,13 @@ const Home = () => {
                 <h4 className='fw-4'>Lorem ipsum</h4>
                 <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
                 <div className='marker'>
-                  <Arrow/>
+                  <Arrow />
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="card-3">
-                <FolderSvg2 className={'card-3-bg'}/>
+                <FolderSvg2 className={'card-3-bg'} />
                 <h4 className='fw-4'>Lorem ipsum</h4>
                 <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
               </div>
@@ -426,18 +426,18 @@ const Home = () => {
           </div>
         </section>
 
-        <NewsBlock/>
+        <NewsBlock />
       </Container>
 
-      <Modal size="lg" show={showCallback} onHide={handleCloseCallback}>
+      <Modal size="lg" show={showCallback} onHide={handleCloseCallback} centered scrollable>
         <button type='button' className='modal-close' onClick={handleCloseCallback}>
-          <IoCloseOutline/>
+          <IoCloseOutline />
         </button>
         <Modal.Body>
           <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
           <form action="" className='callback'>
-            <input type="text" placeholder='Имя'/>
-            <input type="text" placeholder='+7-___-___-__-__'/>
+            <input type="text" placeholder='Имя' />
+            <input type="text" placeholder='+7-___-___-__-__' />
             <button type='submit' className='btn-2'>Отправить</button>
           </form>
           <p className='fs-08'>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</p>
