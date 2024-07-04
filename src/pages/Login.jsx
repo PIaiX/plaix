@@ -12,7 +12,7 @@ const Login = () => {
     } = useTranslation();
 
     const login = () => {
-        NotificationManager.error(t("Неправильный пароль или логин"));
+        NotificationManager.error("Неправильный пароль или логин");
     };
 
     return (
@@ -23,8 +23,8 @@ const Login = () => {
                         <Col xs={12} sm={9} md={7} lg={6} xl={5} xxl={4}>
                             <form action="">
                                 <img src="/imgs/login.webp" alt="login" />
-                                <h1 className="h2 text-center fw-6">{t("Вход в личный кабинет")}</h1>
-                                <p className="faded mb-4">{t("Авторизация доступна только для действующих клиентов Plaix")}</p>
+                                <h1 className="h2 text-center fw-6">Вход в личный кабинет</h1>
+                                <p className="faded mb-4">Авторизация доступна только для действующих клиентов Plaix</p>
                                 <div className="labeled-input mb-3">
                                     <label>
                                         <span>Email</span>
@@ -33,16 +33,16 @@ const Login = () => {
                                 </div>
                                 <div className="labeled-input mb-3">
                                     <label>
-                                        <span>{t("Пароль")}</span>
+                                        <span>Пароль</span>
                                     </label>
-                                    <input type="password" placeholder={t("Введите пароль")} />
+                                    <input type="password" placeholder='Введите пароль' />
                                 </div>
                                 <button
                                     type="button"
                                     className="btn-2"
                                     onClick={e => {
                                         login();
-                                    }}>{t("Войти")}</button>
+                                    }}>Войти</button>
                             </form>
                         </Col>
                     </Row>
