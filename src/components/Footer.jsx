@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
@@ -13,7 +13,7 @@ const Footer = () => {
     let location = useLocation();
     const [activeMenu, setActiveMenu] = useState('pos-2');
     const currentYear = new Date().getFullYear();
-    const {mobile} = useIsMobile('991px');
+    const { mobile } = useIsMobile('991px');
 
     // const links = [
     //     {
@@ -57,32 +57,46 @@ const Footer = () => {
                             <div></div>
                         </li> */}
                         <li>
-                            <NavLink to='/'>
-                                <ServiceIcon/>
+                            <NavLink
+                                to="/"
+                                onClick={() => {
+                                    setTimeout(() => {
+                                        const element = document.getElementById("uslugy");
+
+                                        if (element) {
+                                            window.scrollTo({
+                                                top: element.getBoundingClientRect().top + window.pageYOffset - 140,
+                                                behavior: "smooth"
+                                            });
+                                        }
+                                    }, 100);
+                                }}>
+                                <ServiceIcon />
                                 <span>Услуги</span>
                             </NavLink>
                         </li>
+
                         <li>
                             <NavLink to='/portfolio'>
-                                <ProjectsIcon/>
+                                <ProjectsIcon />
                                 <span>Проекты</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/'>
-                                <LogoIcon/>
+                                <LogoIcon />
                                 <span>Главная</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/contacts'>
-                                <ContactsIcon/>
+                                <ContactsIcon />
                                 <span>Контакты</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/login'>
-                                <AccountIcon/>
+                                <AccountIcon />
                                 <span>Аккаунт</span>
                             </NavLink>
                         </li>

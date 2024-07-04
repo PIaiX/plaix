@@ -1,29 +1,41 @@
-import React from 'react'
-import { ThemeContext, themes } from '../contexts/ThemeContext'
+import React from "react";
+import { ThemeContext, themes } from "../contexts/ThemeContext";
 
 const getTheme = () => {
-  const theme = `${window?.localStorage?.getItem('theme')}`
-  if (Object.values(themes).includes(theme)) return theme
+    const theme = `${window?.localStorage?.getItem("theme")}`;
 
-  const userMedia = window.matchMedia('(prefers-color-scheme: light)')
-  if (userMedia.matches) return themes.light
+    if (Object.values(themes).includes(theme))
+        return theme;
 
-  return themes.dark
-}
+    const userMedia = window.matchMedia("(prefers-color-scheme: light)");
 
-const ThemeProvider = ({ children }) => {
-  const [ theme, setTheme ] = React.useState(getTheme)
+    if (userMedia.matches)
+        return themes.light;
 
-  React.useEffect(() => {
-    document.documentElement.dataset.theme = theme
-    localStorage.setItem('theme', theme)
-  }, [ theme ])
+    return themes.dark;
+};
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
+const ThemeProvider = (
+    {
+        children
+    }
+) => {
+    const [theme, setTheme] = React.useState(getTheme);
 
-export default ThemeProvider
+    React.useEffect(() => {
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    return (
+        (<ThemeContext.Provider
+            value={{
+                theme,
+                setTheme
+            }}>
+            {children}
+        </ThemeContext.Provider>)
+    );
+};
+
+export default ThemeProvider;

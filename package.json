@@ -3,17 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/parser": "^7.24.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "ast-types": "^0.16.1",
+    "axios": "^1.7.2",
     "bootstrap": "^5.2.3",
+    "clientjs": "^0.2.1",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.2.0",
     "gh-pages": "^4.0.0",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.5.2",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.1",
+    "react-i18next": "^14.1.2",
     "react-icons": "^4.6.0",
+    "react-input-mask": "^2.0.4",
+    "react-notifications": "^1.7.4",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
+    "recast": "^0.23.9",
     "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },
@@ -23,7 +38,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "translate": "node ./translate.js"
   },
   "browserslist": {
     "production": [
@@ -36,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "i18next-parser": "^9.0.0"
   }
 }

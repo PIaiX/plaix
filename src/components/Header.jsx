@@ -27,7 +27,22 @@ const Header = () => {
                                         <NavLink to='/'>Главная</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/'>Услуги</NavLink>
+                                        <NavLink
+                                            to="/"
+                                            onClick={() => {
+                                                setTimeout(() => {
+                                                    const element = document.getElementById("uslugy");
+
+                                                    if (element) {
+                                                        window.scrollTo({
+                                                            top: element.getBoundingClientRect().top + window.pageYOffset - 140,
+                                                            behavior: "smooth"
+                                                        });
+                                                    }
+                                                }, 100);
+                                            }}>
+                                            Услуги
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/portfolio'>Проекты</NavLink>

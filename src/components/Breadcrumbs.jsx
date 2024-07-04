@@ -1,19 +1,19 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Breadcrumbs = () => {
     return (
-        <ul className='breadcrumbs'>
+        (<ul className="breadcrumbs">
             <li>
-                <Link to='/'>Главная</Link>
+                <Link to="/">Главная</Link>
             </li>
             <li>
-                <Link to='/'>Внутренняя</Link>
+                <Link to="/">Внутренняя</Link>
             </li>
             <li>
-                <Link to='/'>Третий уровень</Link>
+                <Link to="/">Третий уровень</Link>
             </li>
-        </ul>
+        </ul>)
     );
 };
 

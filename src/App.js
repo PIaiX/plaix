@@ -1,10 +1,9 @@
-import React from 'react'
-import AppRouter from './routes/AppRouter'
+import React from "react";
+import AppRouter from "./routes/AppRouter";
+// import "./hooks/i18n";
 
 function App() {
-  return (
-    <AppRouter />
-  );
+    return (<AppRouter />);
 }
 
-export default App
+export default App;
