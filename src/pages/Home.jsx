@@ -183,7 +183,7 @@ const Home = () => {
                             <div className="service-white-2">
                                 <div className="box">
                                     <h3 className="mb-2 mb-md-3">IT-субподряд</h3>
-                                    <p>Решаем задачи на субподряде для digital-агентств и IT-компаний</p>
+                                    <p>Решаем задачи на субподряде для digital-агентств и IT-компаний</p>
                                 </div>
                                 <img src="/imgs/img1.webp" alt='IT-субподряд' />
                             </div>
@@ -387,7 +387,7 @@ const Home = () => {
                         <SwiperSlide>
                             <div className="card-1">
                                 <h4 className="fw-4">Lorem ipsum</h4>
-                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
                                 <div className="marker">
                                     <Arrow />
                                 </div>
@@ -396,7 +396,7 @@ const Home = () => {
                         <SwiperSlide>
                             <div className="card-2">
                                 <h4 className="fw-4">Lorem ipsum</h4>
-                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
                                 <div className="marker">
                                     <Arrow />
                                 </div>
@@ -406,7 +406,7 @@ const Home = () => {
                             <div className="card-3">
                                 <FolderSvg2 className={"card-3-bg"} />
                                 <h4 className="fw-4">Lorem ipsum</h4>
-                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
                             </div>
                         </SwiperSlide>
                     </Swiper>
@@ -429,7 +429,7 @@ const Home = () => {
                     <IoCloseOutline />
                 </button>
                 <Modal.Body>
-                    <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
+                    <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
                     <form action="" className="callback">
                         <Input
                             type="text"

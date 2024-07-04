@@ -13,7 +13,7 @@ function readFiles(directoryPath) {
         const stat = fs.statSync(filePath);
         if (stat.isDirectory()) {
             readFiles(filePath); // Рекурсивно проходить по подпапкам
-        } else if (path.extname(file) === '.js' || path.extname(file) === '.jsx') { // Условие для обработки файлов .js и .jsx
+        } else {
             let content = fs.readFileSync(filePath, 'utf8');
 
             // Игнорируем комментарии

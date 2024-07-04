@@ -88,7 +88,7 @@ const Contacts = () => {
                     <IoCloseOutline />
                 </button>
                 <Modal.Body>
-                    <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
+                    <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
                     <form action="" className="callback">
                         <Input
                             type="text"
@@ -103,7 +103,7 @@ const Contacts = () => {
                             onChange={e => setValue("phone", e)} />
                         <button type="submit" className="btn-2" onClick={handleSubmit(onCallback)}>Отправить</button>
                     </form>
-                    <p className="fs-08">Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</p>
+                    <p className="fs-08">Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</p>
                 </Modal.Body>
             </Modal>
         </main>)
