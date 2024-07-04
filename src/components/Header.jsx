@@ -40,9 +40,7 @@ const Header = () => {
                                                         });
                                                     }
                                                 }, 100);
-                                            }}>
-                                            Услуги
-                                        </NavLink>
+                                            }}>Услуги</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/portfolio'>Проекты</NavLink>
