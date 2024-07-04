@@ -1,13 +1,3 @@
-// createCallback(data)
-//   .then((res) => {
-//     res && dispatch(setUser(res));
-//     NotificationManager.success("Данные успешно отправлены");
-//   })
-//   .catch((err) => {
-//     NotificationManager.error(
-//       err?.response?.data?.error ?? "Ошибка при отправке"
-//     );
-//   });
 import React, { useCallback, useState } from "react";
 import Container from "react-bootstrap/Container";
 import ContactsPhone from "../components/svg/ContactsPhone";

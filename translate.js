@@ -12,8 +12,8 @@ function readFiles(directoryPath) {
         const filePath = path.join(directoryPath, file);
         const stat = fs.statSync(filePath);
         if (stat.isDirectory()) {
-            readFiles(filePath);
-        } else if (['.js', '.jsx'].includes(path.extname(file))) {
+            readFiles(filePath); // Рекурсивно проходить по подпапкам
+        } else if (path.extname(file) === '.js' || path.extname(file) === '.jsx') { // Условие для обработки файлов .js и .jsx
             let content = fs.readFileSync(filePath, 'utf8');
 
             // Игнорируем комментарии
@@ -25,14 +25,12 @@ function readFiles(directoryPath) {
                 });
             }
 
-            // Находим слова с учетом знаков препинания и дефисов, исключая слова в кавычках
-            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*)+(?![^']*')/gi);
+            // Находим последовательности русских слов, учитывая знаки препинания, дефисы и абзацы
+            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*[.?!,;:;\s]*)+/gis);
             if (russianWords) {
                 russianWords.forEach((word) => {
-                    // Проверка на уже обработанные слова
                     const wrappedWord = `{t('${word}')}`;
                     if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word)))) {
-
                         content = content.replace(word, wrappedWord);
                         if (!i18nContent[word]) {
                             i18nContent[word] = word;
