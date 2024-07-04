@@ -5,6 +5,8 @@ const directoryPath = './src/pages'; // Укажите путь к директ�
 
 const i18nContent = {};
 const ignoredComments = []; // Список комментариев, которые не нужно трогать
+const ignoredDirectories = ['assets', 'config', 'contexts', 'hooks', 'layouts', 'locales', 'providers', 'routes', 'services']; // Папки, которые нужно игнорировать
+const processedFiles = []; // Список обработанных файлов
 
 function readFiles(directoryPath) {
     const files = fs.readdirSync(directoryPath);
@@ -12,8 +14,10 @@ function readFiles(directoryPath) {
         const filePath = path.join(directoryPath, file);
         const stat = fs.statSync(filePath);
         if (stat.isDirectory()) {
-            readFiles(filePath); // Рекурсивно проходить по подпапкам
-        } else {
+            if (!ignoredDirectories.includes(file)) { // Проверяем, не находится ли папка в списке игнорируемых
+                readFiles(filePath); // Рекурсивно проходить по подпапкам
+            }
+        } else if (['.js', '.jsx'].includes(path.extname(file)) && !processedFiles.includes(filePath)) { // Проверяем, не был ли файл уже обработан
             let content = fs.readFileSync(filePath, 'utf8');
 
             // Игнорируем комментарии
@@ -26,10 +30,11 @@ function readFiles(directoryPath) {
             }
 
             // Находим последовательности русских слов, учитывая знаки препинания, дефисы и абзацы
-            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*[.?!,;:;\s]*)+/gis);
+            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁа-яё]*?[-а-яё]*[,.?!:;«»()\-_'’"]+)([а-яё]+[.!?]?)/gis);
+
             if (russianWords) {
                 russianWords.forEach((word) => {
-                    const wrappedWord = `{t('${word}')}`;
+                    const wrappedWord = `{t('${word}')}`
                     if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word)))) {
                         content = content.replace(word, wrappedWord);
                         if (!i18nContent[word]) {
@@ -39,6 +44,8 @@ function readFiles(directoryPath) {
                 });
                 fs.writeFileSync(filePath, content);
             }
+
+            processedFiles.push(filePath); // Добавляем файл в список обработанных
         }
     });
 }
