@@ -1,9 +1,10 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const directoryPath = './src'; // Укажите путь к директории с файлами
+const directoryPath = './src/pages'; // Укажите путь к директории с файлами
 
 const i18nContent = {};
+const ignoredComments = []; // Список комментариев, которые не нужно трогать
 
 function readFiles(directoryPath) {
     const files = fs.readdirSync(directoryPath);
@@ -14,13 +15,28 @@ function readFiles(directoryPath) {
             readFiles(filePath);
         } else if (['.js', '.jsx'].includes(path.extname(file))) {
             let content = fs.readFileSync(filePath, 'utf8');
-            const russianWords = content.match(/[а-яё]+/gi); // Находим русские слова
+
+            // Игнорируем комментарии
+            const comments = content.match(/\/\*.+\*\/|\/\/.+/gs);
+            if (comments) {
+                ignoredComments.push(...comments);
+                comments.forEach((comment) => {
+                    content = content.replace(comment, '');
+                });
+            }
+
+            // Находим слова с учетом знаков препинания и дефисов, исключая слова в кавычках
+            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*)+(?![^']*')/gi);
             if (russianWords) {
                 russianWords.forEach((word) => {
-                    const wrappedWord = `${word}`;
-                    content = content.replace(new RegExp(word, 'g'), wrappedWord);
-                    if (!i18nContent[word]) {
-                        i18nContent[word] = word;
+                    // Проверка на уже обработанные слова
+                    const wrappedWord = `{t('${word}')}`;
+                    if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word)))) {
+
+                        content = content.replace(word, wrappedWord);
+                        if (!i18nContent[word]) {
+                            i18nContent[word] = word;
+                        }
                     }
                 });
                 fs.writeFileSync(filePath, content);
