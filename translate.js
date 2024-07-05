@@ -6,7 +6,7 @@ const directoryPath = './src/pages'; // Укажите путь к директ�
 const i18nContent = {};
 const ignoredComments = []; // Список комментариев, которые не нужно трогать
 const ignoredDirectories = ['assets', 'config', 'contexts', 'hooks', 'layouts', 'locales', 'providers', 'routes', 'services']; // Папки, которые нужно игнорировать
-const processedFiles = []; // Список обработанных файлов
+const processedFiles = {}; // Объект для хранения информации о обработанных файлах
 
 function readFiles(directoryPath) {
     const files = fs.readdirSync(directoryPath);
@@ -17,35 +17,35 @@ function readFiles(directoryPath) {
             if (!ignoredDirectories.includes(file)) { // Проверяем, не находится ли папка в списке игнорируемых
                 readFiles(filePath); // Рекурсивно проходить по подпапкам
             }
-        } else if (['.js', '.jsx'].includes(path.extname(file)) && !processedFiles.includes(filePath)) { // Проверяем, не был ли файл уже обработан
-            let content = fs.readFileSync(filePath, 'utf8');
+        } else if (['.js', '.jsx'].includes(path.extname(file))) { // Проверяем расширение файла
+            if (!processedFiles[filePath]) { // Проверяем, не был ли файл уже обработан
+                let content = fs.readFileSync(filePath, 'utf8');
 
-            // Игнорируем комментарии
-            const comments = content.match(/\/\*.+\*\/|\/\/.+/gs);
-            if (comments) {
-                ignoredComments.push(...comments);
-                comments.forEach((comment) => {
-                    content = content.replace(comment, '');
-                });
-            }
+                // Игнорируем комментарии
+                const comments = content.match(/\/\*.+\*\/|\/\/.+/gs);
+                if (comments) {
+                    ignoredComments.push(...comments);
+                    comments.forEach((comment) => {
+                        content = content.replace(comment, '');
+                    });
+                }
 
-            // Находим последовательности русских слов, учитывая знаки препинания, дефисы и абзацы
-            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁа-яё]*?[-а-яё]*[,.?!:;«»()\-_'’"]+)([а-яё]+[.!?]?)/gis);
+                // Находим последовательности русских слов, учитывая знаки препинания, дефисы и абзацы
+                const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*[.?!,:\s]*)+/gis);
 
-            if (russianWords) {
-                russianWords.forEach((word) => {
-                    const wrappedWord = `{t('${word}')}`
-                    if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word)))) {
-                        content = content.replace(word, wrappedWord);
-                        if (!i18nContent[word]) {
+                if (russianWords) {
+                    russianWords.forEach((word) => {
+                        const wrappedWord = `{t('${word}')}`;
+                        if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word)))) {
+                            content = content.replace(word, wrappedWord);
                             i18nContent[word] = word;
                         }
-                    }
-                });
-                fs.writeFileSync(filePath, content);
-            }
+                    });
+                    fs.writeFileSync(filePath, content);
+                }
 
-            processedFiles.push(filePath); // Добавляем файл в список обработанных
+                processedFiles[filePath] = true; // Помечаем файл как обработанный
+            }
         }
     });
 }

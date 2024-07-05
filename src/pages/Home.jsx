@@ -91,9 +91,7 @@ const Home = () => {
                         <Col
                             lg={5}
                             className="mt-4 mt-lg-0 d-flex flex-column justify-content-between">
-                            <h6 className="mb-4 mb-sm-5 mb-lg-0 pe-lg-5">{t(
-                                "Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами."
-                            )}</h6>
+                            <h6 className="mb-4 mb-sm-5 mb-lg-0 pe-lg-5">Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
                             <div>
                                 <ul className="projects-icons">
                                     <li><img src="/imgs/logotips/BD.webp" alt="BD" /></li>
@@ -115,9 +113,7 @@ const Home = () => {
                             <div className="service-white">
                                 <div className="box">
                                     <h3 className="mb-2 mb-md-3">Web-разработка</h3>
-                                    <p>{t(
-                                        "Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие."
-                                    )}</p>
+                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.</p>
                                 </div>
                                 <LogotipsSvg />
                             </div>
@@ -126,9 +122,7 @@ const Home = () => {
                             <div className="service-blue">
                                 <div className="box">
                                     <h3 className="mb-3">Мобильные приложения</h3>
-                                    <p>{t(
-                                        "Создаём приложения для iOS и Android. Разрабатываем серверную часть и API."
-                                    )}</p>
+                                    <p>Создаём приложения для iOS и Android. Разрабатываем серверную часть и API.</p>
                                 </div>
                                 <div className="imgs-div" ref={objRef2} data-observing={isVisible2}>
                                     <picture>
@@ -147,9 +141,7 @@ const Home = () => {
                             <div className="service-green">
                                 <div className="box">
                                     <h3 className="mb-3">B2B-продукты</h3>
-                                    <p>{t(
-                                        "Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию"
-                                    )}</p>
+                                    <p>Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию</p>
                                 </div>
                                 <div className="crm">
                                     <ul className="crm-1">
@@ -218,9 +210,7 @@ const Home = () => {
                                                 <li>реклама в социальных сетях</li>
                                                 <li>target & retargeting</li>
                                             </ul>
-                                            <p>{t(
-                                                "Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах"
-                                            )}</p>
+                                            <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
                                         </div>
                                     </div>
                                 </Col>
@@ -336,9 +326,7 @@ const Home = () => {
                                 <li><img src="/imgs/img4.webp" alt="man" /></li>
                                 <li><img src="/imgs/img3.webp" alt="woman" /></li>
                             </ul>
-                            <h6 className="ms-3">{t(
-                                "Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов"
-                            )}</h6>
+                            <h6 className="ms-3">Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
                         </div>
                         <div className="grid-4-3">
                             <div className="box">
@@ -444,9 +432,7 @@ const Home = () => {
                             onChange={e => setValue("phone", e)} />
                         <button type="submit" className="btn-2" onClick={handleSubmit(onCallback)}>Отправить</button>
                     </form>
-                    <p className="fs-08">{t(
-                        "Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности"
-                    )}</p>
+                    <p className="fs-08">Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</p>
                 </Modal.Body>
             </Modal>
         </main>)
