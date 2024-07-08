@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
+
 const directoryPath = './src/pages'; // Укажите путь к директории с файлами
 
 const i18nContent = {};
@@ -34,15 +35,16 @@ function readFiles(directoryPath) {
             // const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*[.?!,:\s]*)+/gis);
             // const russianWords = content.match(/(?:["'(]*)([а-яА-ЯёЁ]+(?:[-а-яА-ЯёЁ\s]*\s)*[,.?!«»()\-_'’"\s]+[а-яА-ЯёЁ]*?[.?!]*)/gis);
             const russianWords = content.match(/(?:["'(]*)([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*?[,.?!«»()\-_'’"\s]*)+/gis);
-
-            if (russianWords) {
-                russianWords.forEach((word) => {
+            const uniqueRussianWords = [...new Set(russianWords)];
+            if (uniqueRussianWords) {
+                uniqueRussianWords.sort((a, b) => b.length - a.length).forEach((word) => {
 
                     let i = 0;
                     let newWord;
                     if (word.startsWith('(')) {
                         newWord = word.replace(/^[(]|[)]$/g, '');
                         newWord = newWord.trim().replace(/^["']|["']$/g, '');
+
                         i = 1;
                     }
                     else if (word.startsWith('"') || word.startsWith("'")) {
@@ -52,16 +54,33 @@ function readFiles(directoryPath) {
                         newWord = word;
                     }
                     if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word))) && !oneFilesWord[newWord]) {
-                        if (i == 1) {
-                            content = content.replace(word, `(t('${newWord}'))`); // замените только одно вхождение
-                        }
-                        else {
-                            content = content.replace(word, `{t('${newWord}')}`); // замените только одно вхождение
+                        function shouldReplace(word, content) {
+                            const regex = new RegExp(`(?<![^а-яА-Я\\w])[\\w\\s',.?!«»()_\\-\'’"\\s]*${word}[\\w\\s',.?!«»()_\\-'’"\\s]*(?![^а-яА-Я\\w])`, 'g');
+                            const match = content.match(regex);
+                            return match;
                         }
 
-                        if (!i18nContent[newWord]) {
+                        if (i === 1) {
+                            content = content.replace(new RegExp(word, 'g'), match => {
+                                if (!shouldReplace(word, content)) {
+                                    return match.replace(new RegExp(word, 'g'), `t('${newWord}')`);
+                                } else {
+                                    return match;
+                                }
+                            });
+                        } else {
+                            content = content.replace(new RegExp(word, 'g'), match => {
+                                if (!shouldReplace(word, content)) {
+                                    return match.replace(new RegExp(word, 'g'), `{t('${newWord}')}`);
+                                } else {
+                                    return match;
+                                }
+                            });
+                        }
+
+                        if (!i18nContent[newWord.trim()]) {
                             oneFilesWord[newWord] = newWord;
-                            i18nContent[newWord] = newWord;
+                            i18nContent[newWord.trim()] = newWord.trim();
                         }
                     }
                 });
