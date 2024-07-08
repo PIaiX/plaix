@@ -105,9 +105,7 @@ const Home = () => {
                     </Row>
                 </section>
                 <section className="sec-home-2-new" id="uslugy">
-                    <h2 className="text-center">
-                        Приступим <span ref={objRef} className="indicator-switch" data-observing={isVisible}><span></span></span> к вашему проекту уже завтра
-                    </h2>
+                    <h2 className="text-center">Приступим <span ref={objRef} className="indicator-switch" data-observing={isVisible}><span></span></span> к вашему проекту уже завтра</h2>
                     <Row className="g-3 g-md-4">
                         <Col xs={12} sm={6} lg={4}>
                             <div className="service-white">

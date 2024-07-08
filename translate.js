@@ -11,6 +11,7 @@ const processedFiles = []; // Список обработанных файлов
 function readFiles(directoryPath) {
     const files = fs.readdirSync(directoryPath);
     files.forEach((file) => {
+        let oneFilesWord = {};
         const filePath = path.join(directoryPath, file);
         const stat = fs.statSync(filePath);
         if (stat.isDirectory()) {
@@ -30,23 +31,43 @@ function readFiles(directoryPath) {
             }
 
             // Находим последовательности русских слов, учитывая знаки препинания, дефисы и абзацы
-            const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*[.?!,:\s]*)+/gis);
-
+            // const russianWords = content.match(/([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*[.?!,:\s]*)+/gis);
+            // const russianWords = content.match(/(?:["'(]*)([а-яА-ЯёЁ]+(?:[-а-яА-ЯёЁ\s]*\s)*[,.?!«»()\-_'’"\s]+[а-яА-ЯёЁ]*?[.?!]*)/gis);
+            const russianWords = content.match(/(?:["'(]*)([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*?[,.?!«»()\-_'’"\s]*)+/gis);
 
             if (russianWords) {
                 russianWords.forEach((word) => {
-                    const wrappedWord = `{t('${word}')}`
-                    if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word)))) {
-                        content = content.replace(word, wrappedWord);
-                        if (!i18nContent[word]) {
-                            i18nContent[word] = word;
+
+                    let i = 0;
+                    let newWord;
+                    if (word.startsWith('(')) {
+                        newWord = word.replace(/^[(]|[)]$/g, '');
+                        newWord = newWord.trim().replace(/^["']|["']$/g, '');
+                        i = 1;
+                    }
+                    else if (word.startsWith('"') || word.startsWith("'")) {
+                        newWord = word.trim().replace(/^["']|["']$/g, '');
+                    }
+                    else {
+                        newWord = word;
+                    }
+                    if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word))) && !oneFilesWord[newWord]) {
+                        if (i == 1) {
+                            content = content.replace(word, `(t('${newWord}'))`); // замените только одно вхождение
+                        }
+                        else {
+                            content = content.replace(word, `{t('${newWord}')}`); // замените только одно вхождение
+                        }
+
+                        if (!i18nContent[newWord]) {
+                            oneFilesWord[newWord] = newWord;
+                            i18nContent[newWord] = newWord;
                         }
                     }
                 });
                 fs.writeFileSync(filePath, content);
             }
 
-            processedFiles.push(filePath); // Добавляем файл в список обработанных
         }
     });
 }
