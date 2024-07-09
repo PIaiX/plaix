@@ -51,27 +51,28 @@ function readFiles(directoryPath) {
                         newWord = word.trim().replace(/^["']|["']$/g, '');
                     }
                     else {
-                        newWord = word;
+                        newWord = word.trim();
                     }
                     if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word))) && !oneFilesWord[newWord]) {
                         function shouldReplace(word, content) {
-                            const regex = new RegExp(`(?<![^а-яА-Я\\w])[\\w\\s',.?!«»()_\\-\'’"\\s]*${word}[\\w\\s',.?!«»()_\\-'’"\\s]*(?![^а-яА-Я\\w])`, 'g');
+                            const regex = new RegExp(`(?<=[а-яА-Я])[\\s]*?[',.?!«»()_\\-\'’"]*?[\\s]*?${word}[\\s]*?[',.?!«»()_\\-'’"]*?[\\s]*?(?=([а-яА-Я]))`, 'g');
+
                             const match = content.match(regex);
                             return match;
                         }
 
                         if (i === 1) {
-                            content = content.replace(new RegExp(word, 'g'), match => {
-                                if (!shouldReplace(word, content)) {
-                                    return match.replace(new RegExp(word, 'g'), `t('${newWord}')`);
+                            content = content.replace(new RegExp(word.trim(), 'g'), match => {
+                                if (!shouldReplace(word.trim(), content)) {
+                                    return match.replace(new RegExp(word.trim(), 'g'), `t('${newWord}')`);
                                 } else {
                                     return match;
                                 }
                             });
                         } else {
-                            content = content.replace(new RegExp(word, 'g'), match => {
-                                if (!shouldReplace(word, content)) {
-                                    return match.replace(new RegExp(word, 'g'), `{t('${newWord}')}`);
+                            content = content.replace(new RegExp(word.trim(), 'g'), match => {
+                                if (!shouldReplace(word.trim(), content)) {
+                                    return match.replace(new RegExp(word.trim(), 'g'), `{t('${newWord}')}`);
                                 } else {
                                     return match;
                                 }
@@ -79,7 +80,7 @@ function readFiles(directoryPath) {
                         }
 
                         if (!i18nContent[newWord.trim()]) {
-                            oneFilesWord[newWord] = newWord;
+                            oneFilesWord[newWord.trim()] = newWord.trim();
                             i18nContent[newWord.trim()] = newWord.trim();
                         }
                     }
