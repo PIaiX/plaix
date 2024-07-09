@@ -6,6 +6,9 @@ const directoryPath = './src/pages'; // Укажите путь к директ�
 
 const i18nContent = {};
 const ignoredComments = []; // Список комментариев, которые не нужно трогать
+const ignoredSentences = [];
+const savedComments = [];
+const savedSentences = [];
 const ignoredDirectories = ['assets', 'config', 'contexts', 'hooks', 'layouts', 'locales', 'providers', 'routes', 'services']; // Папки, которые нужно игнорировать
 const processedFiles = []; // Список обработанных файлов
 
@@ -23,12 +26,41 @@ function readFiles(directoryPath) {
             let content = fs.readFileSync(filePath, 'utf8');
 
             // Игнорируем комментарии
-            const comments = content.match(/\/\*.+\*\/|\/\/.+/gs);
+            const comments = content.match(/\/\*[\s\S]*?\*\/|\/\/.+/g);
+
             if (comments) {
-                ignoredComments.push(...comments);
+                // Сохраняем комментарии и их позиции
+                comments.forEach((comment) => {
+                    const startIndexComments = content.indexOf(comment);
+                    savedComments.push({ comment, startIndexComments });
+                    content = content.slice(0, startIndexComments) + `startIndexComments[${startIndexComments}]` + content.slice(startIndexComments + comment.length);
+
+                });
+
+                // Удаляем комментарии из content
                 comments.forEach((comment) => {
                     content = content.replace(comment, '');
                 });
+
+                // Добавляем удаленные комментарии в список ignoredComments
+                ignoredComments.push(...comments);
+            }
+            const tSentences = content.match(/t\('[^']+'\)/g);
+            if (tSentences) {
+                // Сохраняем комментарии и их позиции
+                tSentences.forEach((sentence) => {
+                    const startIndexSentences = content.indexOf(sentence);
+                    savedSentences.push({ sentence, startIndexSentences });
+                    content = content.slice(0, startIndexSentences) + `startIndexSentences[${startIndexSentences}]` + content.slice(startIndexSentences + sentence.length);
+                });
+
+                // Удаляем комментарии из content
+                tSentences.forEach((sentence) => {
+                    content = content.replace(sentence, '');
+                });
+
+                // Добавляем удаленные комментарии в список ignoredComments
+                ignoredSentences.push(...tSentences);
             }
 
             // Находим последовательности русских слов, учитывая знаки препинания, дефисы и абзацы
@@ -37,7 +69,7 @@ function readFiles(directoryPath) {
             const russianWords = content.match(/(?:["'(]*)([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*?[,.?!«»()\-_'’"\s]*)+/gis);
             const uniqueRussianWords = [...new Set(russianWords)];
             if (uniqueRussianWords) {
-                uniqueRussianWords.sort((a, b) => b.length - a.length).forEach((word) => {
+                uniqueRussianWords.forEach((word) => {
 
                     let i = 0;
                     let newWord;
@@ -53,7 +85,7 @@ function readFiles(directoryPath) {
                     else {
                         newWord = word.trim();
                     }
-                    if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word))) && !oneFilesWord[newWord]) {
+                    if (!ignoredComments.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word))) && !ignoredSentences.includes(content.substring(content.indexOf(word) - 10, content.indexOf(word))) && !oneFilesWord[newWord]) {
                         function shouldReplace(word, content) {
                             const regex = new RegExp(`(?<=[а-яА-Я])[\\s]*?[',.?!«»()_\\-\'’"]*?[\\s]*?${word}[\\s]*?[',.?!«»()_\\-'’"]*?[\\s]*?(?=([а-яА-Я]))`, 'g');
 
@@ -84,6 +116,12 @@ function readFiles(directoryPath) {
                             i18nContent[newWord.trim()] = newWord.trim();
                         }
                     }
+                });
+                savedComments.forEach(({ comment, startIndexComments }) => {
+                    content = content.replace(`startIndexComments[${startIndexComments}]`, comment);
+                });
+                savedSentences.forEach(({ sentence, startIndexSentences }) => {
+                    content = content.replace(`startIndexSentences[${startIndexSentences}]`, sentence);
                 });
                 fs.writeFileSync(filePath, content);
             }
