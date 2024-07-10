@@ -57,7 +57,13 @@ function readFiles(directoryPath) {
                 ignoredSentences.push(...tSentences);
             }
 
-            const russianWords = content.match(/(?:["'(\[\]]*)([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*?[,.?!«»()\-_'’"\s]*)+/gis);
+
+
+
+
+            const russianWords = content.match(/([>"'()\[\]]*)(?:[0-9]*?[a-zA-Z]*[А-Яа-яЁё]+[А-Яа-яЁё]*[\sА-Яа-яЁё]+?[\s0-9]*?[\sa-zA-Z]*?[\s,.?!«»%()\]\-_'’"\s]+[/sА-Яа-яЁё]*?[,.?!«»%()<\]\-_'’"0-9a-zA-Z\s]*)+/gis);
+
+            // const russianWords = content.match(/(?:["'(\[\]]*)([а-яё]+[-а-яё]*[\sА-ЯЁ]+[-а-яё]*?[,.?!«»()\-_'’"\s]*)+/gis); // Machine worked
             if (russianWords) {
                 // Сохраняем комментарии и их позиции
                 russianWords.forEach((words) => {
@@ -77,7 +83,6 @@ function readFiles(directoryPath) {
                     newWord = `(t('${newWord}'))`;
                 }
                 else if (word.startsWith('[')) {
-                    console.log(word)
                     newWord = word.replace(/^\[|\]$/g, ''); // Удаляем скобки в начале и конце строки
                     newWord = newWord.trim(); // Удаляем пробелы в начале и конце
                     newWord = newWord.replace(/^["']|["']$/g, ''); // Удаляем кавычки
@@ -90,12 +95,12 @@ function readFiles(directoryPath) {
                         newWord = `[t('${newWord}')`;
                     }
                 }
-                // else if (word.startsWith("'") && !word.endsWith("'")) {
-                //     result = `'{${word.substring(1).replace('субподряд', newWord)}}'`;
-                // }
-                // else if (word.endsWith("'") && !word.startsWith("'")) {
-                //     result = `{'${word.substring(0, word.length - 1).replace('субподряд', newWord)}'}`;
-                // }
+                else if (word.startsWith('>')) {
+                    newWord = word.trim().replace(/^[>]|[<]$/g, '');
+                    newWord = newWord.trim();
+                    newWord = `>{t('${newWord}')}`;
+
+                }
                 else {
                     newWord = word.replace(/^["']|["']$/g, '');
                     newWord = newWord.trim();
