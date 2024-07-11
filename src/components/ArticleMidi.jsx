@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,7 +7,8 @@ const ArticleMidi = memo((
         data
     }
 ) => {
-    return (
+    const {t} = useTranslation();
+return (
         (<article className="midi">
             <img src={data.imgLink} alt={data.title} />
             <div className="text">
@@ -15,9 +17,9 @@ const ArticleMidi = memo((
                     <p>{data.text}</p>
                 </div>
                 <div className="d-flex justify-content-between align-items-end">
-                    <Link to={"/article/" + data.id} className="btn-3">Подробнее</Link>
+                    <Link to={"/article/" + data.id} className="btn-3">{t('Подробнее')}</Link>
                     <ul className="markers">
-                        <li className="dev">#Разработка</li>
+                        <li className="dev">{t('#Разработка')}</li>
                         <li className="css">#CSS</li>
                     </ul>
                 </div>

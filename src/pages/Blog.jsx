@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -6,11 +7,12 @@ import jsonData from "../data/articles";
 import ArticleMidi from "../components/ArticleMidi";
 
 const Blog = () => {
-  return (
+  const {t} = useTranslation();
+return (
     <main>
         <Container>
             <section className='page-articles mb-5'>
-                <h1>Новости и статьи</h1>
+                <h1>{t('Новости и статьи')}</h1>
                 <Row className='gx-5'>
                     <Col lg={8}>
                         <ul className='page-articles-list'>
@@ -24,9 +26,9 @@ const Blog = () => {
                         </ul>
                     </Col>
                     <Col lg={4}>
-                        <h5 className='mb-4'>Новости по категориям</h5>
+                        <h5 className='mb-4'>{t('Новости по категориям')}</h5>
                         <ul className="markers">
-                            <li className='dev'>#Разработка</li>
+                            <li className='dev'>{t('#Разработка')}</li>
                             <li className='css'>#CSS</li>
                         </ul>
 

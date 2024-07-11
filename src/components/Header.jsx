@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -13,7 +14,8 @@ const Header = () => {
     const { mobile } = useIsMobile('991px');
     const [showMenu, setShowMenu] = useState(false);
 
-    return (
+    const {t} = useTranslation();
+return (
         <>
             <header>
                 <Container className='custom-container h-100 d-flex justify-content-between align-items-center'>
@@ -24,7 +26,7 @@ const Header = () => {
                             <nav className='main ms-5'>
                                 <ul>
                                     <li>
-                                        <NavLink to='/'>Главная</NavLink>
+                                        <NavLink to='/'>{t('Главная')}</NavLink>
                                     </li>
                                     <li>
                                         <NavLink
@@ -40,19 +42,19 @@ const Header = () => {
                                                         });
                                                     }
                                                 }, 100);
-                                            }}>Услуги</NavLink>
+                                            }}>{t('Услуги')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/portfolio'>Проекты</NavLink>
+                                        <NavLink to='/portfolio'>{t('Проекты')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/'>Отзывы</NavLink>
+                                        <NavLink to='/'>{t('Отзывы')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/article'>Блог</NavLink>
+                                        <NavLink to='/article'>{t('Блог')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/contacts'>Контакты</NavLink>
+                                        <NavLink to='/contacts'>{t('Контакты')}</NavLink>
                                     </li>
                                 </ul>
                             </nav>
@@ -61,7 +63,7 @@ const Header = () => {
                     <ul className='right'>
                         {
                             (!mobile) &&
-                            <li><Link to='/login' className='h5'>Личный кабинет</Link></li>
+                            <li><Link to='/login' className='h5'>{t('Личный кабинет')}</Link></li>
                         }
                         <li><ThemeToggler /></li>
                         <li><LanguageSwitcher /></li>
@@ -91,10 +93,10 @@ const Header = () => {
                         <img src="/imgs/plaix-menu-bg.webp" alt="plaix" />
                         <ul>
                             <li>
-                                <Link to="/article">Блог</Link>
+                                <Link to="/article">{t('Блог')}</Link>
                             </li>
                             <li>
-                                <Link to="/">Политика конфиденциальности</Link>
+                                <Link to="/">{t('Политика конфиденциальности')}</Link>
                             </li>
                         </ul>
                     </div>
