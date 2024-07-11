@@ -39,7 +39,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "translate": "node ./translate.js"
+    "translate": "node ./src/locales/translate.js",
+    "collect": "node ./src/locales/collect.js"
   },
   "browserslist": {
     "production": [
