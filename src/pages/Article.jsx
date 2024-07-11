@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,8 +11,7 @@ const Article = () => {
     let { articleId } = useParams();
     let thisArticle = jsonData[articleId];
 
-    const {t} = useTranslation();
-return (
+    return (
         <main>
             <Container>
                 <article className='page-article mb-5'>
@@ -23,7 +21,7 @@ return (
                             <div className='d-flex align-items-center mb-4'>
                                 <div className='d-flex align-items-center'>
                                 <HiOutlineClock className='fs-15 me-2'/>
-                                <span>{t('2 мин')}</span>
+                                <span>2 мин</span>
                                 </div>
                                 <div className='d-flex align-items-center ms-4'>
                                 <HiOutlineEye className='fs-15 me-2'/>
@@ -38,7 +36,7 @@ return (
                             <p>{thisArticle.text}</p>
                         </Col>
                         <Col lg={3}>
-                            <h6>{t('Вам может быть интересно')}</h6>
+                            <h6>Вам может быть интересно</h6>
                             <ul>
                                 {
                                     jsonData.map(obj=>{

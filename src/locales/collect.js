@@ -11,22 +11,12 @@ const savedComments = [];
 const savedSentences = [];
 const savedWords = [];
 const ignoredDirectories = ['assets', 'config', 'contexts', 'hooks', 'layouts', 'locales', 'providers', 'routes', 'services']; // Папки, которые нужно игнорировать
-
-
-const translateFolderPath = './src/locales/translate';
-if (!fs.existsSync(translateFolderPath)) {
-    fs.mkdirSync(translateFolderPath);
-}
-
-const filesFolderPath = './src/locales/files';
-if (!fs.existsSync(filesFolderPath)) {
-    fs.mkdirSync(filesFolderPath);
-}
-const RuPath = path.join(__dirname, './translate/ru.json');
+const RuPath = path.join(__dirname, 'ru.json');
 if (fs.existsSync(RuPath)) {
     i18nContent = JSON.parse(fs.readFileSync(RuPath, 'utf8'));
 }
-const i18nPath = path.join(__dirname, './files/i18n.json');
+const i18nPath = path.join(__dirname, 'i18n.json');
+
 
 
 
@@ -106,12 +96,7 @@ function readFiles(directoryPath) {
                     savedWords.push({ word, startIndexWord });
                     content = content.slice(0, startIndexWord) + `{startIndexWord[${startIndexWord}]}` + content.slice(startIndexWord + word.length);
                 });
-
             }
-
-
-
-
             savedWords.forEach(({ word, startIndexWord }) => {
                 let newWord;
                 let saveRu = [];
@@ -166,18 +151,12 @@ function readFiles(directoryPath) {
 
 
             });
-
-
             savedComments.forEach(({ comment, startIndexComments }) => {
                 content = content.replace(`{startIndexComments[${startIndexComments}]}`, comment);
             });
             savedSentences.forEach(({ sentence, startIndexIgnoredSentences }) => {
                 content = content.replace(`{startIndexIgnoredSentences[${startIndexIgnoredSentences}]}`, sentence);
             });
-            if (result && result.length > 0) {
-                content = `import { useTranslation } from "react-i18next";\n${content}`;
-                content = content.replace(/(return \()/, 'const {t} = useTranslation();\n$1');
-            }
             fs.writeFileSync(filePath, content);
         }
     });

@@ -29,7 +29,7 @@ const Bg = (props) => {
         <filter id="filter1"  filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
           <feGaussianBlur stdDeviation={blur} result="effect1_foregroundBlur_14_277"/>
         </filter>
-        {//     function updateMenu() {}
+        {/* Blue 2 */}
         <filter id="filter3" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
           <feGaussianBlur stdDeviation={blur} result="effect1_foregroundBlur_14_277"/>
         </filter>

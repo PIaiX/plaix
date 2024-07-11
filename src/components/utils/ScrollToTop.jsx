@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import ArrowTop from "../svg/ArrowTop";
 
@@ -23,8 +22,7 @@ const ScrollToTop = () => {
     useEffect(() => {
         document.addEventListener("scroll", toggleVisible, true);
 
-        const {t} = useTranslation();
-return () => {
+        return () => {
             document.removeEventListener("scroll", toggleVisible, true);
         };
     });
@@ -35,7 +33,7 @@ return () => {
             onClick={toTop}
             className={visible ? "scroll-top" : "scroll-top hide"}>
             <ArrowTop />
-            <span>{t('вверх')}</span>
+            <span>вверх</span>
         </button>)
     );
 };

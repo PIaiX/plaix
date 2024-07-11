@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -14,8 +13,7 @@ const Header = () => {
     const { mobile } = useIsMobile('991px');
     const [showMenu, setShowMenu] = useState(false);
 
-    const {t} = useTranslation();
-return (
+    return (
         <>
             <header>
                 <Container className='custom-container h-100 d-flex justify-content-between align-items-center'>
@@ -26,7 +24,7 @@ return (
                             <nav className='main ms-5'>
                                 <ul>
                                     <li>
-                                        <NavLink to='/'>{t('Главная')}</NavLink>
+                                        <NavLink to='/'>Главная</NavLink>
                                     </li>
                                     <li>
                                         <NavLink
@@ -42,19 +40,19 @@ return (
                                                         });
                                                     }
                                                 }, 100);
-                                            }}>{t('Услуги')}</NavLink>
+                                            }}>Услуги</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/portfolio'>{t('Проекты')}</NavLink>
+                                        <NavLink to='/portfolio'>Проекты</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/'>{t('Отзывы')}</NavLink>
+                                        <NavLink to='/'>Отзывы</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/article'>{t('Блог')}</NavLink>
+                                        <NavLink to='/article'>Блог</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/contacts'>{t('Контакты')}</NavLink>
+                                        <NavLink to='/contacts'>Контакты</NavLink>
                                     </li>
                                 </ul>
                             </nav>
@@ -63,7 +61,7 @@ return (
                     <ul className='right'>
                         {
                             (!mobile) &&
-                            <li><Link to='/login' className='h5'>{t('Личный кабинет')}</Link></li>
+                            <li><Link to='/login' className='h5'>Личный кабинет</Link></li>
                         }
                         <li><ThemeToggler /></li>
                         <li><LanguageSwitcher /></li>
@@ -93,10 +91,10 @@ return (
                         <img src="/imgs/plaix-menu-bg.webp" alt="plaix" />
                         <ul>
                             <li>
-                                <Link to="/article">{t('Блог')}</Link>
+                                <Link to="/article">Блог</Link>
                             </li>
                             <li>
-                                <Link to="/">{t('Политика конфиденциальности')}</Link>
+                                <Link to="/">Политика конфиденциальности</Link>
                             </li>
                         </ul>
                     </div>

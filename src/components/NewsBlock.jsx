@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import React, {useState} from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,12 +9,11 @@ import jsonData from "../data/articles";
 const NewsBlock = () => {
   const [activeNews, setActiveNews] = useState(jsonData[0].id);
 
-  const {t} = useTranslation();
-return (
+  return (
     <section className='sec-home-6 mb-45'>
       <Row className='justify-content-between'>
         <Col xs={12} lg={6}>
-          <h3>{t('Новости')}</h3>
+          <h3>Новости</h3>
           <ul>
           {
             jsonData.map( obj => {
@@ -48,7 +46,7 @@ return (
               </Link>
             </li>
           </ul> */}
-          <Link to='/article' className='btn-3 mt-4 mt-md-5'>{t('Перейти в блог')}</Link>
+          <Link to='/article' className='btn-3 mt-4 mt-md-5'>Перейти в блог</Link>
         </Col>
         <Col xs={12} lg={6} xxl={5} className='d-none d-lg-block'>
           <ArticlePreview data={jsonData[activeNews]} />

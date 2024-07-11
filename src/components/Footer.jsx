@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -46,8 +45,7 @@ const Footer = () => {
 
     //     window.addEventListener('beforeunload', updateMenu)
     //     updateMenu()
-    //     const {t} = useTranslation();
-return () => window.removeEventListener('beforeunload', updateMenu)
+    //     return () => window.removeEventListener('beforeunload', updateMenu)
     // });
 
     if (mobile) {
@@ -74,32 +72,32 @@ return () => window.removeEventListener('beforeunload', updateMenu)
                                     }, 100);
                                 }}>
                                 <ServiceIcon />
-                                <span>{t('Услуги')}</span>
+                                <span>Услуги</span>
                             </NavLink>
                         </li>
 
                         <li>
                             <NavLink to='/portfolio'>
                                 <ProjectsIcon />
-                                <span>{t('Проекты')}</span>
+                                <span>Проекты</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/'>
                                 <LogoIcon />
-                                <span>{t('Главная')}</span>
+                                <span>Главная</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/contacts'>
                                 <ContactsIcon />
-                                <span>{t('Контакты')}</span>
+                                <span>Контакты</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/login'>
                                 <AccountIcon />
-                                <span>{t('Аккаунт')}</span>
+                                <span>Аккаунт</span>
                             </NavLink>
                         </li>
                     </ul>
@@ -110,8 +108,8 @@ return () => window.removeEventListener('beforeunload', updateMenu)
         return <Container className='custom-container'>
             <footer>
                 <span>Plaix {currentYear}</span>
-                <Link to='/'>{t('Пользовательское соглашние')}</Link>
-                <Link to='/'>{t('Политика конфиденциальности')}</Link>
+                <Link to='/'>Пользовательское соглашние</Link>
+                <Link to='/'>Политика конфиденциальности</Link>
             </footer>
         </Container>
     }
