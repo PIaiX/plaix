@@ -176,9 +176,10 @@ function readFiles(directoryPath) {
             });
             if (result && result.length > 0) {
                 content = `import { useTranslation } from "react-i18next";\n${content}`;
-                content = content.replace(/^( = () => {)/, '$1\nconst {t} = useTranslation();');
+                content = content.replace(/(\) => {)/, '$1\nconst {t} = useTranslation();');
+                fs.writeFileSync(filePath, content);
             }
-            fs.writeFileSync(filePath, content);
+
         }
     });
 }

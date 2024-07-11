@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React, { useCallback, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -25,6 +26,7 @@ import Input from "../components/utils/Input";
 import useObserver from "../hooks/useObserver";
 
 const Home = () => {
+const {t} = useTranslation();
     const [objRef, isVisible] = useObserver({
         threshold: 1.0
     });
@@ -60,14 +62,14 @@ const Home = () => {
 
     const onCallback = useCallback(data => {
         if (!data.name) {
-            return NotificationManager.error("Заполните город");
+            return NotificationManager.error(t('Заполните город'));
         }
 
         if (!data.phone) {
-            return NotificationManager.error("Заполните номер телефона");
+            return NotificationManager.error(t('Заполните номер телефона'));
         }
 
-        NotificationManager.success("Данные успешно отправлены");
+        NotificationManager.success(t('Данные успешно отправлены'));
         setShowCallback(false);
     }, []);
 
@@ -80,14 +82,14 @@ const Home = () => {
                         <Col lg={7}>
                             <h1 className="mb-4 mb-lg-5">
                                 <Line />
-                                <span>Plaix - разработка <br />цифровых сервисов</span>
+                                <span>{t('Plaix - разработка')}<br />{t('цифровых сервисов')}</span>
                             </h1>
-                            <button type="button" className="btn-1" onClick={handleShowCallback}>Оставить заявку</button>
+                            <button type="button" className="btn-1" onClick={handleShowCallback}>{t('Оставить заявку')}</button>
                         </Col>
                         <Col
                             lg={5}
                             className="mt-4 mt-lg-0 d-flex flex-column justify-content-between">
-                            <h6 className="mb-4 mb-sm-5 mb-lg-0 pe-lg-5">Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.</h6>
+                            <h6 className="mb-4 mb-sm-5 mb-lg-0 pe-lg-5">{t('Веб и мобильная разработка. Бэкенд и интеграции любой сложности. Проектирование архитектуры и управление процессами.')}</h6>
                             <div>
                                 <ul className="projects-icons">
                                     <li><img src="/imgs/logotips/BD.webp" alt="BD" /></li>
@@ -95,19 +97,19 @@ const Home = () => {
                                     <li><img src="/imgs/logotips/yooapp.webp" alt="yooapp" /></li>
                                     <li><img src="/imgs/logotips/rowe.webp" alt="rowe" /></li>
                                 </ul>
-                                <p className="d-block mt-3">100+ реализованных проектов</p>
+                                <p className="d-block mt-3">{t('100+ реализованных проектов')}</p>
                             </div>
                         </Col>
                     </Row>
                 </section>
                 <section className="sec-home-2-new" id="uslugy">
-                    <h2 className="text-center">Приступим <span ref={objRef} className="indicator-switch" data-observing={isVisible}><span></span></span> к вашему проекту уже завтра</h2>
+                    <h2 className="text-center">{t('Приступим')}<span ref={objRef} className="indicator-switch" data-observing={isVisible}><span></span></span>{t('к вашему проекту уже завтра')}</h2>
                     <Row className="g-3 g-md-4">
                         <Col xs={12} sm={6} lg={4}>
                             <div className="service-white">
                                 <div className="box">
-                                    <h3 className="mb-2 mb-md-3">Web-разработка</h3>
-                                    <p>Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.</p>
+                                    <h3 className="mb-2 mb-md-3">{t('Web-разработка')}</h3>
+                                    <p>{t('Разрабатываем лендинги, интернет-магазины, web-сервисы. Берём на доработку и развитие.')}</p>
                                 </div>
                                 <LogotipsSvg />
                             </div>
@@ -115,15 +117,15 @@ const Home = () => {
                         <Col xs={12} sm={6} lg={4}>
                             <div className="service-blue">
                                 <div className="box">
-                                    <h3 className="mb-3">Мобильные приложения</h3>
-                                    <p>Создаём приложения для iOS и Android. Разрабатываем серверную часть и API.</p>
+                                    <h3 className="mb-3">{t('Мобильные приложения')}</h3>
+                                    <p>{t('Создаём приложения для iOS и Android. Разрабатываем серверную часть и API.')}</p>
                                 </div>
                                 <div className="imgs-div" ref={objRef2} data-observing={isVisible2}>
                                     <picture>
                                         <source srcSet="/imgs/smartphoneVideoMini2.gif" media="(max-width: 767px)" />
                                         <img
                                             src="/imgs/smartphoneVideoMax.gif"
-                                            alt='Мобильные приложения'
+                                            alt={t('Мобильные приложения')}
                                             className="main" />
                                     </picture>
                                     <img src="/imgs/billetgreen.svg" alt="billetgreen" className="billet-1" />
@@ -134,14 +136,14 @@ const Home = () => {
                         <Col xs={12} sm={6} lg={4}>
                             <div className="service-green">
                                 <div className="box">
-                                    <h3 className="mb-3">B2B-продукты</h3>
-                                    <p>Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию</p>
+                                    <h3 className="mb-3">{t('B2B-продукты')}</h3>
+                                    <p>{t('Делаем сервисы автоматизации и аналитики, CRM и ERP, кабинеты, чат-боты, уникальные решения по техзаданию')}</p>
                                 </div>
                                 <div className="crm">
                                     <ul className="crm-1">
-                                        <li className="pill-1">Автоматизация</li>
-                                        <li className="pill-2">Управление</li>
-                                        <li className="pill-3">Аналитика</li>
+                                        <li className="pill-1">{t('Автоматизация')}</li>
+                                        <li className="pill-2">{t('Управление')}</li>
+                                        <li className="pill-3">{t('Аналитика')}</li>
                                     </ul>
                                     <div className="crm-2">
                                         <div className="bar-1"></div>
@@ -154,7 +156,7 @@ const Home = () => {
                                     </div>
                                     <div className="crm-3">
                                         <div className="num"></div>
-                                        <div>клиентов</div>
+                                        <div>{t('клиентов')}</div>
                                     </div>
                                     <div className="crm-4">
                                         <img src={Globe} alt="Globe" className="crm-4-globe" />
@@ -168,10 +170,10 @@ const Home = () => {
                         <Col xs={12} sm={6} lg={4} xxl={5}>
                             <div className="service-white-2">
                                 <div className="box">
-                                    <h3 className="mb-2 mb-md-3">IT-субподряд</h3>
-                                    <p>Решаем задачи на субподряде для digital-агентств и IT-компаний</p>
+                                    <h3 className="mb-2 mb-md-3">{t('IT-субподряд')}</h3>
+                                    <p>{t('Решаем задачи на субподряде для digital-агентств и IT-компаний')}</p>
                                 </div>
-                                <img src="/imgs/img1.webp" alt='IT-субподряд' />
+                                <img src="/imgs/img1.webp" alt={t('IT-субподряд')} />
                             </div>
                         </Col>
                         <Col xs={12} lg={8} xxl={7}>
@@ -181,11 +183,11 @@ const Home = () => {
                                         <div className="box">
                                             <img
                                                 src="/imgs/abstractform.webp"
-                                                alt='Дизайн и оформление'
+                                                alt={t('Дизайн и оформление')}
                                                 className="img-fluid d-block ms-auto mb-4" />
                                             <div>
-                                                <h3 className="mb-2 mb-md-3">Дизайн и оформление</h3>
-                                                <p>Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI</p>
+                                                <h3 className="mb-2 mb-md-3">{t('Дизайн и оформление')}</h3>
+                                                <p>{t('Проектируем суперудобные интерфейсы, опираясь на принципы UX/UI')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -195,16 +197,16 @@ const Home = () => {
                                         <FolderSvg3 className={"service-folder-bg"} />
                                         <div className="box">
                                             <div>
-                                                <h3 className="mb-2 mb-md-3">Продвижение</h3>
-                                                <p>Выполняем весь комплекс работ по развитию и продвижению вашего проекта</p>
+                                                <h3 className="mb-2 mb-md-3">{t('Продвижение')}</h3>
+                                                <p>{t('Выполняем весь комплекс работ по развитию и продвижению вашего проекта')}</p>
                                             </div>
                                             <ul>
-                                                <li>SEO-оптимизация</li>
-                                                <li>контекст</li>
-                                                <li>реклама в социальных сетях</li>
+                                                <li>{t('SEO-оптимизация')}</li>
+                                                <li>{t('контекст')}</li>
+                                                <li>{t('реклама в социальных сетях')}</li>
                                                 <li>target & retargeting</li>
                                             </ul>
-                                            <p>Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах</p>
+                                            <p>{t('Поможем вам привлечь новых клиентов и продвинем сайт в поисковых системах')}</p>
                                         </div>
                                     </div>
                                 </Col>
@@ -214,13 +216,13 @@ const Home = () => {
                 </section>
             </Container>
             <section className="sec-home-3 mb-45">
-                <Ticker reverse={true} text='Развивай свой бизнес' />
-                <Ticker reverse={false} className={"type-2"} text='Развивай свой бизнес' />
+                <Ticker reverse={true} text={t('Развивай свой бизнес')} />
+                <Ticker reverse={false} className={"type-2"} text={t('Развивай свой бизнес')} />
                 <Container>
-                    <h2 className="fw-6">Проекты, которые говорят сами за себя</h2>
-                    <h4 className="fw-3">Отвечаем за результат вместе с вами. Нам важно создавать рабочие <br />решения и помогать компаниям приносить пользу.</h4>
+                    <h2 className="fw-6">{t('Проекты, которые говорят сами за себя')}</h2>
+                    <h4 className="fw-3">{t('Отвечаем за результат вместе с вами. Нам важно создавать рабочие')}<br />{t('решения и помогать компаниям приносить пользу.')}</h4>
                     <Link to="/portfolio" className="btn-3 mx-auto mt-4 mt-md-5 mb-4 mb-sm-5">
-                        <span className="me-2">Посмотреть все проекты</span>
+                        <span className="me-2">{t('Посмотреть все проекты')}</span>
                         <Arrow />
                     </Link>
                     { }
@@ -242,7 +244,7 @@ const Home = () => {
                         }
                     }}>
                     <SwiperSlide>
-                        <img src="/imgs/projects/myaso.webp" alt="Мясо в миску" />
+                        <img src="/imgs/projects/myaso.webp" alt={t('Мясо в миску')} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src="/imgs/projects/moonka.webp" alt="Moonka" />
@@ -254,10 +256,10 @@ const Home = () => {
                         <img src="/imgs/projects/yooapp.webp" alt="Yoo.App" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/imgs/projects/dent.webp" alt="Престиж Дент" />
+                        <img src="/imgs/projects/dent.webp" alt={t('Престиж Дент')} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/imgs/projects/otk.webp" alt="ОТК Сервис" />
+                        <img src="/imgs/projects/otk.webp" alt={t('ОТК Сервис')} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src="/imgs/projects/rowe.webp" alt="roweoil" />
@@ -284,7 +286,7 @@ const Home = () => {
                         }
                     }}>
                     <SwiperSlide>
-                        <img src="/imgs/projects/myaso.webp" alt="Мясо в миску" />
+                        <img src="/imgs/projects/myaso.webp" alt={t('Мясо в миску')} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src="/imgs/projects/moonka.webp" alt="Moonka" />
@@ -296,10 +298,10 @@ const Home = () => {
                         <img src="/imgs/projects/yooapp.webp" alt="Yoo.App" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/imgs/projects/dent.webp" alt="Престиж Дент" />
+                        <img src="/imgs/projects/dent.webp" alt={t('Престиж Дент')} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="/imgs/projects/otk.webp" alt="ОТК Сервис" />
+                        <img src="/imgs/projects/otk.webp" alt={t('ОТК Сервис')} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <img src="/imgs/projects/rowe.webp" alt="roweoil" />
@@ -313,18 +315,18 @@ const Home = () => {
                 <section className="sec-home-4-new mb-45">
                     <div className="grid-4">
                         <div className="grid-4-1">
-                            <h3>Наш многолетний опыт для твоих смелых идей</h3>
+                            <h3>{t('Наш многолетний опыт для твоих смелых идей')}</h3>
                         </div>
                         <div className="grid-4-2">
                             <ul className="photos">
                                 <li><img src="/imgs/img4.webp" alt="man" /></li>
                                 <li><img src="/imgs/img3.webp" alt="woman" /></li>
                             </ul>
-                            <h6 className="ms-3">Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов</h6>
+                            <h6 className="ms-3">{t('Обеспечиваем стабильность разработки за счет вовлечения команды профессионалов')}</h6>
                         </div>
                         <div className="grid-4-3">
                             <div className="box">
-                                <h4 className="text-center text-lg-start">Используем большой стек технологий для решения клиентских задач</h4>
+                                <h4 className="text-center text-lg-start">{t('Используем большой стек технологий для решения клиентских задач')}</h4>
                                 <Row className="logotips" xs={2}>
                                     <Col>
                                         <img src="/imgs/logotips/mongo.webp" alt="mongo" />
@@ -343,7 +345,7 @@ const Home = () => {
                         </div>
                         <div className="grid-4-4">
                             <div className="box">
-                                <h4 className="ms-xxl-5">К нам обращаются</h4>
+                                <h4 className="ms-xxl-5">{t('К нам обращаются')}</h4>
                                 <Chart />
                             </div>
                         </div>
@@ -351,7 +353,7 @@ const Home = () => {
                     { }
                 </section>
                 <section className="sec-home-5 mb-4">
-                    <h3>Акции и спец. предложения</h3>
+                    <h3>{t('Акции и спец. предложения')}</h3>
                     <Swiper
                         className="offersSwiper"
                         modules={[Autoplay]}
@@ -369,7 +371,7 @@ const Home = () => {
                         <SwiperSlide>
                             <div className="card-1">
                                 <h4 className="fw-4">Lorem ipsum</h4>
-                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                                <h6>{t('Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей')}</h6>
                                 <div className="marker">
                                     <Arrow />
                                 </div>
@@ -378,7 +380,7 @@ const Home = () => {
                         <SwiperSlide>
                             <div className="card-2">
                                 <h4 className="fw-4">Lorem ipsum</h4>
-                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                                <h6>{t('Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей')}</h6>
                                 <div className="marker">
                                     <Arrow />
                                 </div>
@@ -388,15 +390,15 @@ const Home = () => {
                             <div className="card-3">
                                 <FolderSvg2 className={"card-3-bg"} />
                                 <h4 className="fw-4">Lorem ipsum</h4>
-                                <h6>Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей</h6>
+                                <h6>{t('Скидка 50% на SEO и Контекст, а также стратегия за 0 рублей')}</h6>
                             </div>
                         </SwiperSlide>
                     </Swiper>
                 </section>
                 <section className="sec-home-7 mb-45">
                     <div className="text h-100">
-                        <h2 className="h1 text-center">Plaix - разработка цифровых сервисов</h2>
-                        <button type="button" onClick={handleShowCallback} className="btn-1 mx-auto">Оставить заявку</button>
+                        <h2 className="h1 text-center">{t('Plaix - разработка цифровых сервисов')}</h2>
+                        <button type="button" onClick={handleShowCallback} className="btn-1 mx-auto">{t('Оставить заявку')}</button>
                     </div>
                 </section>
                 <NewsBlock />
@@ -411,11 +413,11 @@ const Home = () => {
                     <IoCloseOutline />
                 </button>
                 <Modal.Body>
-                    <h4>Оставьте заявку и мы перезвоним через 15 минут или раньше.</h4>
+                    <h4>{t('Оставьте заявку и мы перезвоним через 15 минут или раньше.')}</h4>
                     <form action="" className="callback">
                         <Input
                             type="text"
-                            placeholder='Имя'
+                            placeholder={t('Имя')}
                             value={data?.name}
                             onChange={e => setValue("name", e)} />
                         <Input
@@ -424,9 +426,9 @@ const Home = () => {
                             placeholder="+7-___-___-__-__"
                             mask={"+ 7(999) 999-99-99"}
                             onChange={e => setValue("phone", e)} />
-                        <button type="submit" className="btn-2" onClick={handleSubmit(onCallback)}>Отправить</button>
+                        <button type="submit" className="btn-2" onClick={handleSubmit(onCallback)}>{t('Отправить')}</button>
                     </form>
-                    <p className="fs-08">Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности</p>
+                    <p className="fs-08">{t('Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных и соглашаетесь с Политикой конфиденциальности')}</p>
                 </Modal.Body>
             </Modal>
         </main>)

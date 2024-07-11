@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -10,6 +11,7 @@ import LogoIcon from './svg/LogoIcon';
 import AccountIcon from './svg/AccountIcon';
 
 const Footer = () => {
+const {t} = useTranslation();
     let location = useLocation();
     const [activeMenu, setActiveMenu] = useState('pos-2');
     const currentYear = new Date().getFullYear();
@@ -72,32 +74,32 @@ const Footer = () => {
                                     }, 100);
                                 }}>
                                 <ServiceIcon />
-                                <span>Услуги</span>
+                                <span>{t('Услуги')}</span>
                             </NavLink>
                         </li>
 
                         <li>
                             <NavLink to='/portfolio'>
                                 <ProjectsIcon />
-                                <span>Проекты</span>
+                                <span>{t('Проекты')}</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/'>
                                 <LogoIcon />
-                                <span>Главная</span>
+                                <span>{t('Главная')}</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/contacts'>
                                 <ContactsIcon />
-                                <span>Контакты</span>
+                                <span>{t('Контакты')}</span>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/login'>
                                 <AccountIcon />
-                                <span>Аккаунт</span>
+                                <span>{t('Аккаунт')}</span>
                             </NavLink>
                         </li>
                     </ul>
@@ -108,8 +110,8 @@ const Footer = () => {
         return <Container className='custom-container'>
             <footer>
                 <span>Plaix {currentYear}</span>
-                <Link to='/'>Пользовательское соглашние</Link>
-                <Link to='/'>Политика конфиденциальности</Link>
+                <Link to='/'>{t('Пользовательское соглашние')}</Link>
+                <Link to='/'>{t('Политика конфиденциальности')}</Link>
             </footer>
         </Container>
     }

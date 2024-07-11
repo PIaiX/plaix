@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,6 +9,7 @@ import { HiOutlineEye, HiOutlineCalendar, HiOutlineClock } from "react-icons/hi2
 import {Link} from 'react-router-dom';
 
 const Article = () => {
+const {t} = useTranslation();
     let { articleId } = useParams();
     let thisArticle = jsonData[articleId];
 
@@ -21,7 +23,7 @@ const Article = () => {
                             <div className='d-flex align-items-center mb-4'>
                                 <div className='d-flex align-items-center'>
                                 <HiOutlineClock className='fs-15 me-2'/>
-                                <span>2 мин</span>
+                                <span>{t('2 мин')}</span>
                                 </div>
                                 <div className='d-flex align-items-center ms-4'>
                                 <HiOutlineEye className='fs-15 me-2'/>
@@ -36,7 +38,7 @@ const Article = () => {
                             <p>{thisArticle.text}</p>
                         </Col>
                         <Col lg={3}>
-                            <h6>Вам может быть интересно</h6>
+                            <h6>{t('Вам может быть интересно')}</h6>
                             <ul>
                                 {
                                     jsonData.map(obj=>{

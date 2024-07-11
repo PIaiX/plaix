@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
-import { useTranslation } from "react-i18next";
+import i18n from 'i18next';
+
 
 const langsArr = [{
     title: "Ru",
@@ -16,13 +17,11 @@ const LanguageSwitcher = () => {
     const [showSwitcher, setShowSwitcher] = useState(false);
     const ref = useRef();
 
-    const {
-        i18n
-    } = useTranslation();
 
     const handleClick = elTitle => {
         i18n.changeLanguage(elTitle);
 
+        console.log(elTitle)
         setLang(lang.map(item => {
             if (item.title === elTitle) {
                 return {

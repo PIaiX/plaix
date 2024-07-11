@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import ArrowTop from "../svg/ArrowTop";
 
 const ScrollToTop = () => {
+const {t} = useTranslation();
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () => {
@@ -33,7 +35,7 @@ const ScrollToTop = () => {
             onClick={toTop}
             className={visible ? "scroll-top" : "scroll-top hide"}>
             <ArrowTop />
-            <span>вверх</span>
+            <span>{t('вверх')}</span>
         </button>)
     );
 };

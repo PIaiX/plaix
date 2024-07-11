@@ -6,22 +6,22 @@ const translatesDir = './src/locales/translate'; // Папка для сохра
 
 // Функция для чтения и записи данных в файлы
 function processFile(filename) {
-    const filePath = path.join(filesDir, filename);
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const filePath = path.join(filesDir, filename);
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-    const translatedFilePath = path.join(translatesDir, filename);
-    const translatedData = {};
+  const translatedFilePath = path.join(translatesDir, filename);
+  const translatedData = {};
 
-    // Чтение файла i18n.json
-    const i18nData = JSON.parse(fs.readFileSync(path.join(filesDir, 'i18n.json'), 'utf8'));
+  // Чтение файла i18n.json
+  const i18nData = JSON.parse(fs.readFileSync(path.join(filesDir, 'i18n.json'), 'utf8'));
 
-    // Создание объекта перевода
-    for (let i = 0; i < i18nData.length; i++) {
-        translatedData[i18nData[i]] = data[i];
-    }
+  // Создание объекта перевода
+  for (let i = 0; i < i18nData.length; i++) {
+    translatedData[i18nData[i]] = data[i];
+  }
 
-    // Запись переведенных данных в файл
-    fs.writeFileSync(translatedFilePath, JSON.stringify(translatedData, null, 2));
+  // Запись переведенных данных в файл
+  fs.writeFileSync(translatedFilePath, JSON.stringify(translatedData, null, 2));
 }
 
 // Получение списка файлов в папке
@@ -29,9 +29,9 @@ const files = fs.readdirSync(filesDir);
 
 // Обработка каждого файла
 files.forEach(filename => {
-    if (filename.endsWith('.json') && filename !== 'i18n.json') {
-        processFile(filename);
-    }
+  if (filename.endsWith('.json') && filename !== 'i18n.json') {
+    processFile(filename);
+  }
 });
 
 console.log('Файлы успешно переведены!');
@@ -39,11 +39,11 @@ console.log('Файлы успешно переведены!');
 const translates = fs.readdirSync(translatesDir);
 let i18nJsContent = '';
 for (const filename of translates) {
-    if (filename.endsWith('.json')) {
-        const lang = filename.replace('.json', '');
-        i18nJsContent += `import ${lang} from './locales/${lang}.json';
+  if (filename.endsWith('.json')) {
+    const lang = filename.replace('.json', '');
+    i18nJsContent += `import ${lang} from './translate/${lang}.json';
   `;
-    }
+  }
 }
 i18nJsContent += `
   import i18n from 'i18next';
@@ -54,14 +54,14 @@ i18nJsContent += `
   const resources = {
   `;
 for (const filename of translates) {
-    if (filename.endsWith('.json')) {
-        const lang = filename.replace('.json', '');
-        i18nJsContent += `
+  if (filename.endsWith('.json')) {
+    const lang = filename.replace('.json', '');
+    i18nJsContent += `
     ${lang}: {
       translation: ${lang}
     },
   `;
-    }
+  }
 }
 i18nJsContent += `
   };
