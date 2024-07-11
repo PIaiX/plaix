@@ -1,15 +1,10 @@
 import React from "react";
+import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { GoVerified, GoStop } from "react-icons/go";
 import { NotificationManager } from "react-notifications";
-import { useTranslation } from "react-i18next";
 
 const Login = () => {
-    const {
-        t
-    } = useTranslation();
 
     const login = () => {
         NotificationManager.error("Неправильный пароль или логин");

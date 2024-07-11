@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import { useForm, useWatch } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { IoCloseOutline } from "react-icons/io5";
 import { NotificationManager } from "react-notifications";
 import { Link } from "react-router-dom";
@@ -34,9 +33,6 @@ const Home = () => {
         threshold: 0.5
     });
 
-    const {
-        t
-    } = useTranslation();
 
     const [showCallback, setShowCallback] = useState(false);
     const handleCloseCallback = () => setShowCallback(false);
@@ -73,7 +69,7 @@ const Home = () => {
 
         NotificationManager.success("Данные успешно отправлены");
         setShowCallback(false);
-    }, [t]);
+    }, []);
 
     return (
         (<main>

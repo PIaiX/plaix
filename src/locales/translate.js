@@ -1,26 +1,51 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const filesDir = 'files'; // Папка с исходными файлами
-const translatesDir = 'translates'; // Папка для сохранения переведенных файлов
+const filesDir = './src/locales/files'; // Папка с исходными файлами
+const translatesDir = './src/locales/translate'; // Папка для сохранения переведенных файлов
 
 // Функция для чтения и записи данных в файлы
-async function processFile(filename) {
+function processFile(filename) {
     const filePath = path.join(filesDir, filename);
-    const data = JSON.parse(await fs.readFile(filePath, 'utf8'));
-
-    const translatedData = {};
-    for (const key in data) {
-        translatedData[`i18n:${filename.replace('.json', '')}`] = data[key];
-    }
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
     const translatedFilePath = path.join(translatesDir, filename);
-    await fs.writeFile(translatedFilePath, JSON.stringify(translatedData, null, 2));
+    const translatedData = {};
+
+    // Чтение файла i18n.json
+    const i18nData = JSON.parse(fs.readFileSync(path.join(filesDir, 'i18n.json'), 'utf8'));
+
+    // Создание объекта перевода
+    for (let i = 0; i < i18nData.length; i++) {
+        translatedData[i18nData[i]] = data[i];
+    }
+
+    // Запись переведенных данных в файл
+    fs.writeFileSync(translatedFilePath, JSON.stringify(translatedData, null, 2));
 }
 
+// Получение списка файлов в папке
+const files = fs.readdirSync(filesDir);
+
+// Обработка каждого файла
+files.forEach(filename => {
+    if (filename.endsWith('.json') && filename !== 'i18n.json') {
+        processFile(filename);
+    }
+});
+
+console.log('Файлы успешно переведены!');
 // Создание i18n.js
-async function createI18nJs() {
-    let i18nJsContent = `
+const translates = fs.readdirSync(translatesDir);
+let i18nJsContent = '';
+for (const filename of translates) {
+    if (filename.endsWith('.json')) {
+        const lang = filename.replace('.json', '');
+        i18nJsContent += `import ${lang} from './locales/${lang}.json';
+  `;
+    }
+}
+i18nJsContent += `
   import i18n from 'i18next';
   import { initReactI18next } from 'react-i18next';
   import Backend from 'i18next-http-backend';
@@ -28,20 +53,17 @@ async function createI18nJs() {
 
   const resources = {
   `;
-    const files = await fs.readdir(translatesDir);
-    for (const filename of files) {
-        if (filename.endsWith('.json')) {
-            const lang = filename.replace('.json', '');
-            i18nJsContent += `
+for (const filename of translates) {
+    if (filename.endsWith('.json')) {
+        const lang = filename.replace('.json', '');
+        i18nJsContent += `
     ${lang}: {
-      translation: {
-        // Вставьте сюда переведенные данные из ${lang}.json
-      }
+      translation: ${lang}
     },
   `;
-        }
     }
-    i18nJsContent += `
+}
+i18nJsContent += `
   };
 
   i18n
@@ -58,20 +80,7 @@ async function createI18nJs() {
 
   export default i18n;
   `;
-    await fs.writeFile(path.join(translatesDir, 'i18n.js'), i18nJsContent);
-}
+fs.writeFile(path.join(__dirname, 'i18n.js'), i18nJsContent);
 
-// Получение списка файлов в папке
-const files = await fs.readdir(filesDir);
 
-// Обработка каждого файла
-for (const filename of files) {
-    if (filename.endsWith('.json')) {
-        await processFile(filename);
-    }
-}
-
-// Создание i18n.js
-await createI18nJs();
-
-console.log('Файлы успешно переведены!');
+console.log('Файлы успешно добавлены!');
