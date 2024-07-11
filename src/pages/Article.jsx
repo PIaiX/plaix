@@ -4,13 +4,20 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useParams } from 'react-router-dom';
-import jsonData from "../data/articles";
 import { HiOutlineEye, HiOutlineCalendar, HiOutlineClock } from "react-icons/hi2";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Article = () => {
-const {t} = useTranslation();
+    const { t, i18n } = useTranslation();
+    const selectedLanguage = i18n.language;
     let { articleId } = useParams();
+
+    let jsonData;
+    if (selectedLanguage === 'Ru') {
+        jsonData = require("../data/articlesRu.json");
+    } else if (selectedLanguage === 'En') {
+        jsonData = require("../data/articlesEn.json");
+    }
     let thisArticle = jsonData[articleId];
 
     return (
@@ -22,16 +29,16 @@ const {t} = useTranslation();
                         <Col lg={9}>
                             <div className='d-flex align-items-center mb-4'>
                                 <div className='d-flex align-items-center'>
-                                <HiOutlineClock className='fs-15 me-2'/>
-                                <span>{t('2 мин')}</span>
+                                    <HiOutlineClock className='fs-15 me-2' />
+                                    <span>{t('2 мин')}</span>
                                 </div>
                                 <div className='d-flex align-items-center ms-4'>
-                                <HiOutlineEye className='fs-15 me-2'/>
-                                <span>128</span>
+                                    <HiOutlineEye className='fs-15 me-2' />
+                                    <span>128</span>
                                 </div>
                                 <div className='d-flex align-items-center ms-4'>
-                                <HiOutlineCalendar className='fs-15 me-2'/>
-                                <span>{thisArticle.date}</span>
+                                    <HiOutlineCalendar className='fs-15 me-2' />
+                                    <span>{thisArticle.date}</span>
                                 </div>
                             </div>
                             <h1>{thisArticle.title}</h1>
@@ -41,11 +48,11 @@ const {t} = useTranslation();
                             <h6>{t('Вам может быть интересно')}</h6>
                             <ul>
                                 {
-                                    jsonData.map(obj=>{
-                                    return <li key={obj.id}>
-                                        <p><Link to={"/article/"+obj.id}>{obj.title}</Link></p>
-                                        <p className="color-1 mt-2">{obj.date}</p>
-                                    </li>
+                                    jsonData.map(obj => {
+                                        return <li key={obj.id}>
+                                            <p><Link to={"/article/" + obj.id}>{obj.title}</Link></p>
+                                            <p className="color-1 mt-2">{obj.date}</p>
+                                        </li>
                                     })
                                 }
                             </ul>

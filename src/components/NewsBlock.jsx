@@ -1,14 +1,20 @@
 import { useTranslation } from "react-i18next";
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Arrow from './svg/Arrow';
 import ArticlePreview from './ArticlePreview';
-import jsonData from "../data/articles";
 
 const NewsBlock = () => {
-const {t} = useTranslation();
+  const { t, i18n } = useTranslation();
+  const selectedLanguage = i18n.language;
+  let jsonData;
+  if (selectedLanguage === 'Ru') {
+    jsonData = require("../data/articlesRu.json");
+  } else if (selectedLanguage === 'En') {
+    jsonData = require("../data/articlesEn.json");
+  }
   const [activeNews, setActiveNews] = useState(jsonData[0].id);
 
   return (
@@ -17,16 +23,16 @@ const {t} = useTranslation();
         <Col xs={12} lg={6}>
           <h3>{t('Новости')}</h3>
           <ul>
-          {
-            jsonData.map( obj => {
-              return <li key={obj.id}>
-                <Link to={"/article/"+obj.id} className={(activeNews === obj.id)?'active':''} onMouseEnter={()=>setActiveNews(obj.id)}>
-                  <h4>{obj.title}</h4>
-                  <Arrow className='icon'/>
-                </Link>
-              </li>
-            })
-          }
+            {
+              jsonData.map(obj => {
+                return <li key={obj.id}>
+                  <Link to={"/article/" + obj.id} className={(activeNews === obj.id) ? 'active' : ''} onMouseEnter={() => setActiveNews(obj.id)}>
+                    <h4>{obj.title}</h4>
+                    <Arrow className='icon' />
+                  </Link>
+                </li>
+              })
+            }
           </ul>
           {/* <ul>
             <li>
