@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
-import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
 
 
 const langsArr = [{
@@ -13,6 +13,8 @@ const langsArr = [{
 }];
 
 const LanguageSwitcher = () => {
+    const { t, i18n } = useTranslation();
+    const selectedLanguage = i18n.resolvedLanguage;
     const [lang, setLang] = useState(langsArr);
     const [showSwitcher, setShowSwitcher] = useState(false);
     const ref = useRef();
@@ -44,11 +46,11 @@ const LanguageSwitcher = () => {
             ref={ref}
             className={showSwitcher ? "lang-switcher opened" : "lang-switcher"}>
             <button type="button" onClick={() => setShowSwitcher(!showSwitcher)}>
-                <span>{lang.reduce((res, obj) => obj.state === true ? obj.title : res, "")}</span>
+                <span>{selectedLanguage}</span>
                 {showSwitcher ? <IoChevronUpOutline /> : <IoChevronDownOutline />}
             </button>
             {showSwitcher && <ul>
-                {lang.filter(obj => obj.state === false).map(el => {
+                {lang.map(el => {
                     return (
                         (<li key={el.title}>
                             <button type="button" onClick={() => handleClick(el.title)}>

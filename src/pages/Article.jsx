@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Article = () => {
     const { t, i18n } = useTranslation();
-    const selectedLanguage = i18n.language;
+    const selectedLanguage = i18n.resolvedLanguage;
     let { articleId } = useParams();
 
     let jsonData;

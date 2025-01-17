@@ -7,7 +7,7 @@ import ArticleMidi from "../components/ArticleMidi";
 
 const Blog = () => {
     const { t, i18n } = useTranslation();
-    const selectedLanguage = i18n.language;
+    const selectedLanguage = i18n.resolvedLanguage;
     let jsonData;
     if (selectedLanguage === 'Ru') {
         jsonData = require("../data/articlesRu.json");
