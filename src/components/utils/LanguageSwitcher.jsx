@@ -20,8 +20,6 @@ const LanguageSwitcher = () => {
 
     const handleClick = elTitle => {
         i18n.changeLanguage(elTitle);
-
-        console.log(elTitle)
         setLang(lang.map(item => {
             if (item.title === elTitle) {
                 return {
